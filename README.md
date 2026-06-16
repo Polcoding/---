@@ -1,0 +1,134 @@
+# 공공기관 행정문서 AI 자동화 시스템 1단계
+
+## 프로젝트 한 줄 정의
+
+비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 1단계 준비 저장소입니다.
+
+## 이번 저장소의 목적
+
+이 저장소는 실제 자동화 구현물이 아닙니다. 안전한 Custom GPT 테스트판을 만들기 위한 문서, 프롬프트, 테스트 케이스, 평가표, 보안 기준을 정리합니다.
+
+핵심 메시지는 다음과 같습니다.
+
+> 이 프로젝트는 AI가 공문을 마음대로 작성하는 시스템이 아니라, 비식별 업무 지시를 받아 공공기관 행정문서 초안을 만들고 사람이 최종 승인하는 시스템입니다.
+
+## 1단계에서 하는 일
+
+- Custom GPT에 붙여넣을 Instructions v0.1 작성
+- GPT 이름, 설명, 대화 시작 문구 정리
+- 처리 가능 업무와 처리 금지 업무 기준 정리
+- 개인정보와 민감정보 비식별화 규칙 정리
+- 테스트용 업무 지시 샘플과 모범 출력 예시 작성
+- 테스트 결과 평가표 작성
+- 향후 Make.com 또는 OpenAI API 연동 전 점검할 항목 정리
+
+## 1단계에서 하지 않는 일
+
+- 실제 이메일 발송 자동화
+- Make.com, Gmail, Outlook, OpenAI API 실제 연동 코드 작성
+- 실제 공공기관 원문 문서 업로드 또는 학습
+- 실제 개인정보, 민감정보, 내부자료, 대외비 자료 사용
+- 결재, 계약, 업체 선정, 예산 집행, 법률 판단, 민원 처리 결론 자동화
+- 문서 서식 렌더링 엔진 구현
+
+## 전체 시스템 아키텍처 개요
+
+```text
+사용자 입력
+→ 입력 정규화
+→ 보안ㆍ개인정보 필터
+→ 업무 유형 분류
+→ AI 초안 생성
+→ 문서 템플릿 렌더링
+→ 사용자 검토
+→ 사람 승인 후 실무 적용
+```
+
+1단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서만 다룹니다.
+
+## 폴더 구조
+
+```text
+.
+├── README.md
+├── AGENTS.md
+├── docs/
+├── prompts/
+├── examples/
+└── checklists/
+```
+
+## 빠른 시작 방법
+
+1. `prompts/custom_gpt_instructions_v0.1.md`의 내용을 Custom GPT Instructions에 붙여넣습니다.
+2. `prompts/conversation_starters.md`의 문구를 Conversation Starters에 등록합니다.
+3. Custom GPT의 Knowledge는 비워 둡니다.
+4. Capabilities와 Actions/Apps는 초기 테스트에서 사용하지 않습니다.
+5. `docs/08_custom_gpt_test_execution_guide.md`에 따라 Preview에서 테스트 1~5를 실행합니다.
+6. `docs/05_evaluation_sheet.md`로 결과를 채점합니다.
+7. `checklists/custom_gpt_manual_test_checklist.md`로 실행 상태를 확인합니다.
+8. `checklists/security_review_checklist.md`로 민감정보 포함 여부를 확인합니다.
+
+## Custom GPT 테스트 흐름
+
+```text
+Instructions 복사
+→ Conversation Starters 복사
+→ Knowledge 비워 둠
+→ Capabilities 비활성 권장
+→ Actions/Apps 미사용
+→ Preview 테스트 1~5 실행
+→ 평가표 채점
+→ 위험 응답 기록
+→ Instructions 개선
+→ 재테스트
+```
+
+## 문서 목록
+
+- `AGENTS.md`: Codex 작업 규칙
+- `docs/00_project_overview.md`: 전체 프로젝트 설명
+- `docs/01_custom_gpt_setup.md`: Custom GPT 설정 절차
+- `docs/02_security_policy.md`: 처리 가능 업무와 금지 업무 기준
+- `docs/03_deidentification_rules.md`: 비식별화 규칙
+- `docs/04_test_cases.md`: 테스트 케이스
+- `docs/05_evaluation_sheet.md`: 평가표
+- `docs/06_future_architecture.md`: 향후 아키텍처
+- `docs/07_make_api_next_steps.md`: 자동화 전 준비사항
+- `docs/08_custom_gpt_test_execution_guide.md`: Custom GPT Preview 수동 테스트 절차
+- `docs/09_phase1_review_and_next_steps.md`: 1단계 검수 후 다음 스텝
+- `docs/11_document_inventory.md`: 원천 문서 인벤토리 기준
+- `docs/12_security_classification.md`: 문서 보안 분류 기준
+- `docs/13_deidentified_style_samples.md`: 비식별 문체 샘플
+- `docs/14_document_pattern_library.md`: 문서 패턴 라이브러리
+- `docs/15_style_specification.md`: 문체 명세
+- `docs/16_knowledge_candidate_review.md`: Knowledge 후보 검토 기준
+- `prompts/`: GPT 프롬프트와 대화 시작 문구
+- `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
+- `checklists/phase1_completion_checklist.md`: 1단계 완료 체크리스트
+- `checklists/security_review_checklist.md`: 보안 검토 체크리스트
+- `checklists/before_automation_checklist.md`: 자동화 전 체크리스트
+- `checklists/custom_gpt_manual_test_checklist.md`: Custom GPT 수동 테스트 체크리스트
+- `checklists/codex_second_review_checklist.md`: Codex 2차 검수 체크리스트
+- `checklists/source_document_review_checklist.md`: 원천 문서 검토 체크리스트
+- `checklists/deidentification_review_checklist.md`: 비식별화 검토 체크리스트
+- `checklists/knowledge_candidate_checklist.md`: Knowledge 후보 체크리스트
+- `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
+
+## 보안 주의사항
+
+- 비식별화된 업무 지시만 사용합니다.
+- 원문 학습이 아니라 서식ㆍ문체ㆍ구조 추출을 목표로 합니다.
+- AI는 초안만 작성합니다.
+- 사람이 최종 검토ㆍ승인합니다.
+- 민감정보가 포함된 경우 처리 제한합니다.
+- 확인되지 않은 정보는 `[확인 필요]`로 표시합니다.
+
+## 다음 단계
+
+1. 테스트 케이스 5개 이상을 Custom GPT Preview에서 실행합니다.
+2. 평가표 기준으로 결과를 기록합니다.
+3. 위험 요청 처리 결과를 별도로 확인합니다.
+4. 비식별화 규칙을 실제 조직 정책과 대조합니다.
+5. `docs/09_phase1_review_and_next_steps.md`의 조건을 충족한 뒤 다음 단계 설계를 검토합니다.
+6. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 시작합니다.
