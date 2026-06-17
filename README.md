@@ -121,6 +121,7 @@ Instructions 복사
 - `docs/33_hwpx_minimal_poc_scope.md`: HWPX 최소 PoC 구현 범위
 - `docs/34_hwpx_minimal_poc_result.md`: HWPX 최소 PoC 결과
 - `docs/35_hwpx_test_template_preparation_guide.md`: HWPX 테스트 템플릿 준비 가이드
+- `docs/36_hwpx_placeholder_render_test_result.md`: HWPX placeholder 렌더링 테스트 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
