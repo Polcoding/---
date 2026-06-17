@@ -29,6 +29,12 @@ ALLOWED_PLACEHOLDERS = {
     "{{reference}}",
     "{{title}}",
     "{{body_sections}}",
+    "{{body_section_1}}",
+    "{{body_section_2}}",
+    "{{body_section_3}}",
+    "{{body_section_1_child_1}}",
+    "{{body_section_2_child_1}}",
+    "{{body_section_2_child_2}}",
     "{{sub_sections}}",
     "{{overview_table}}",
     "{{schedule_table}}",
@@ -108,6 +114,7 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
     """Build allowed placeholder values from a sample JSON payload."""
     document = _first_document(data)
     security_review = data.get("security_review", {})
+    body_section_placeholders = _build_body_section_placeholders(document.get("body_sections"))
 
     placeholder_map = {
         "{{document_number}}": _safe_string(document.get("document_number")),
@@ -135,6 +142,7 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
         "{{review_items}}": _format_list(document.get("review_items")),
         "{{future_plan}}": _safe_string(document.get("future_plan")),
     }
+    placeholder_map.update(body_section_placeholders)
 
     return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
 
@@ -267,6 +275,42 @@ def _format_body_sections(sections: Any, depth: int = 0) -> str:
         else:
             lines.append(f"{indent}- {_safe_string(section)}")
     return "\n".join(line for line in lines if line)
+
+
+def _build_body_section_placeholders(sections: Any) -> dict[str, str]:
+    placeholders = {
+        "{{body_section_1}}": DEFAULT_PLACEHOLDER_VALUE,
+        "{{body_section_2}}": DEFAULT_PLACEHOLDER_VALUE,
+        "{{body_section_3}}": DEFAULT_PLACEHOLDER_VALUE,
+        "{{body_section_1_child_1}}": "",
+        "{{body_section_2_child_1}}": "",
+        "{{body_section_2_child_2}}": "",
+    }
+
+    if not isinstance(sections, list):
+        return placeholders
+
+    for index, section in enumerate(sections[:3], start=1):
+        placeholder = f"{{{{body_section_{index}}}}}"
+        placeholders[placeholder] = _format_numbered_section(section)
+
+        if isinstance(section, dict):
+            children = section.get("children")
+            if isinstance(children, list):
+                for child_index, child in enumerate(children[:2], start=1):
+                    child_placeholder = f"{{{{body_section_{index}_child_{child_index}}}}}"
+                    if child_placeholder in placeholders:
+                        placeholders[child_placeholder] = _format_numbered_section(child)
+
+    return placeholders
+
+
+def _format_numbered_section(section: Any) -> str:
+    if isinstance(section, dict):
+        number = _safe_string(section.get("number"))
+        content = _safe_string(section.get("content"))
+        return f"{number} {content}".strip()
+    return _safe_string(section)
 
 
 def _format_attachments(attachments: Any) -> str:

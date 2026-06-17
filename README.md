@@ -124,6 +124,7 @@ Instructions 복사
 - `docs/36_hwpx_placeholder_render_test_result.md`: HWPX placeholder 렌더링 테스트 결과
 - `docs/37_hwpx_placeholder_actual_render_test_result.md`: HWPX placeholder 실제 치환 테스트 결과
 - `docs/38_hwpx_rendered_output_review.md`: HWPX 렌더링 결과 수동 검수 보고서
+- `docs/39_hwpx_paragraph_rendering_improvement.md`: HWPX 본문 문단 렌더링 개선
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내

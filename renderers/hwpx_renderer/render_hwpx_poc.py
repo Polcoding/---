@@ -80,6 +80,31 @@ def write_blocked_report(input_name: str, reasons: list[str]) -> Path:
     return output_path
 
 
+def summarize_paragraph_placeholders(placeholder_map: dict[str, str]) -> dict[str, Any]:
+    body_keys = [
+        "{{body_section_1}}",
+        "{{body_section_2}}",
+        "{{body_section_3}}",
+    ]
+    child_keys = [
+        "{{body_section_1_child_1}}",
+        "{{body_section_2_child_1}}",
+        "{{body_section_2_child_2}}",
+    ]
+
+    return {
+        "body_section_placeholder_count": sum(
+            1 for key in body_keys if _has_rendered_paragraph_value(placeholder_map.get(key))
+        ),
+        "child_placeholder_count": sum(1 for key in child_keys if placeholder_map.get(key)),
+        "body_sections_fallback_preserved": "{{body_sections}}" in placeholder_map,
+    }
+
+
+def _has_rendered_paragraph_value(value: str | None) -> bool:
+    return bool(value) and value != "[확인 필요]"
+
+
 def render_sample(sample: dict[str, str]) -> dict[str, Any]:
     input_name = sample["input"]
     template_name = sample["template"]
@@ -110,6 +135,9 @@ def render_sample(sample: dict[str, str]) -> dict[str, Any]:
         )
         return result
 
+    placeholder_map = build_placeholder_map(data)
+    result["paragraph_placeholder_summary"] = summarize_paragraph_placeholders(placeholder_map)
+
     if not is_hwpx_template_available(template_path):
         report_path = write_template_required_report(
             OUTPUT_DIR,
@@ -125,7 +153,6 @@ def render_sample(sample: dict[str, str]) -> dict[str, Any]:
         )
         return result
 
-    placeholder_map = build_placeholder_map(data)
     render_result = replace_placeholders_in_hwpx(template_path, output_path, placeholder_map)
     result.update(render_result)
     return result
