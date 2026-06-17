@@ -125,12 +125,14 @@ Instructions 복사
 - `docs/37_hwpx_placeholder_actual_render_test_result.md`: HWPX placeholder 실제 치환 테스트 결과
 - `docs/38_hwpx_rendered_output_review.md`: HWPX 렌더링 결과 수동 검수 보고서
 - `docs/39_hwpx_paragraph_rendering_improvement.md`: HWPX 본문 문단 렌더링 개선
+- `docs/40_hwpx_institution_style_values_review.md`: HWPX 기관 표준 서식값 확인 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
 - [비식별 문체 샘플 작성 템플릿](templates/deidentified_sample_template.md)
 - `templates/hwpx/template_manifest.md`: HWPX 템플릿 manifest
 - `templates/hwpx/local_template_policy.md`: HWPX 로컬 템플릿 보관 정책
+- `templates/hwpx/style_profile_manifest.md`: HWPX style profile manifest
 - `checklists/phase1_completion_checklist.md`: 1단계 완료 체크리스트
 - `checklists/security_review_checklist.md`: 보안 검토 체크리스트
 - `checklists/before_automation_checklist.md`: 자동화 전 체크리스트
@@ -148,6 +150,7 @@ Instructions 복사
 - `checklists/hwpx_minimal_poc_approval_checklist.md`: HWPX 최소 PoC 구현 승인 체크리스트
 - `checklists/hwpx_test_template_safety_checklist.md`: HWPX 테스트 템플릿 안전 체크리스트
 - `checklists/hwpx_rendered_output_manual_review_checklist.md`: HWPX 렌더링 결과 수동 검수 체크리스트
+- `checklists/hwpx_institution_style_value_collection_checklist.md`: HWPX 기관 표준 서식값 수집 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
