@@ -106,6 +106,7 @@ Instructions 복사
 - `docs/18_ai_output_json_schema.md`: AI 출력 JSON 스키마 정의
 - `docs/19_xlsx_template_poc_plan.md`: XLSX 조사표 템플릿 PoC 설계
 - `docs/20_hwpx_template_poc_plan.md`: HWPX 공문 템플릿 PoC 설계
+- `docs/21_template_renderer_requirements.md`: 템플릿 렌더러 요구사항
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - [비식별 문체 샘플 작성 템플릿](templates/deidentified_sample_template.md)
