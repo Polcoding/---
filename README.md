@@ -114,6 +114,7 @@ Instructions 복사
 - `docs/26_markdown_renderer_poc_result.md`: Markdown 미리보기 렌더러 PoC 결과
 - `docs/27_email_renderer_poc_result.md`: Email 초안 렌더러 PoC 결과
 - `docs/28_local_poc_integration_test_report.md`: 로컬 PoC 통합 검수 보고서
+- `docs/29_xlsx_renderer_v02_result.md`: XLSX 렌더러 v0.2 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
