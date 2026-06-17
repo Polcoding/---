@@ -23,11 +23,12 @@
 
 | template_id | 문서유형 | 용도 | 구현 우선순위 |
 |---|---|---|---|
-| hwpx_official_letter_basic | 일반 공문 | 공문 초안 | 1 |
-| hwpx_survey_request_letter | 현황조사 지시 공문 | 조사 요청 공문 | 1 |
-| hwpx_project_plan_basic | 추진계획서 | 계획서 초안 | 2 |
-| hwpx_result_report_basic | 결과보고서 | 결과보고 초안 | 3 |
-| hwpx_review_report_basic | 검토보고서 | 검토자료 초안 | 3 |
+| hwpx_one_page_report_basic | 원페이지 보고서 | 보고서 초안 | 1 |
+| hwpx_project_plan_basic | 추진계획서 | 계획서 초안 | 1 |
+| hwpx_result_report_basic | 결과보고서 | 결과보고 초안 | 1 |
+| hwpx_review_report_basic | 검토보고서 | 검토자료 초안 | 2 |
+| hwpx_official_letter_basic | 일반 공문 | 공문 초안 | 3 |
+| hwpx_survey_request_letter | 현황조사 지시 공문 | 조사 요청 공문 | 3 |
 
 실제 HWPX 파일은 아직 만들지 않습니다.
 
