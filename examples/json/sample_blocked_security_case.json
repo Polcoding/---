@@ -1,0 +1,46 @@
+{
+  "request_id": "[요청 ID placeholder]",
+  "input_summary": "[보안 차단 조건 검증용 입력]",
+  "task_type": "draft_document",
+  "document_type": "blocked_security_case",
+  "output_targets": ["blocked"],
+  "security_review": {
+    "risk_level": "blocked",
+    "contains_personal_info": true,
+    "contains_sensitive_info": true,
+    "contains_internal_info": true,
+    "blocked_items": [
+      "[실제 개인정보로 보이는 항목]",
+      "[실제 문서번호 또는 민원번호로 보이는 항목]",
+      "[실제 내부 운영정보로 보이는 항목]"
+    ],
+    "allowed_processing": [],
+    "required_review": ["human_review", "privacy_review", "security_review"],
+    "notes": "[렌더링 차단 테스트 목적의 placeholder 샘플]"
+  },
+  "missing_fields": [
+    {
+      "field_name": "비식별 재입력",
+      "reason": "렌더링 차단 조건 확인",
+      "required_for": "security_review",
+      "suggested_placeholder": "[비식별 입력 필요]"
+    }
+  ],
+  "assumptions": [],
+  "draft_status": "draft",
+  "human_review_required": true,
+  "documents": [],
+  "attachments": [],
+  "email_draft": null,
+  "checklist": ["렌더링 차단 여부 확인", "비식별 재요청 필요", "사람 최종 검토"],
+  "renderer_hints": {
+    "target_format": "blocked",
+    "template_id": null,
+    "style_profile": null,
+    "table_template": null,
+    "placeholder_map": {},
+    "requires_xlsx": false,
+    "requires_hwpx": false,
+    "requires_manual_review": true
+  }
+}

@@ -107,8 +107,10 @@ Instructions 복사
 - `docs/19_xlsx_template_poc_plan.md`: XLSX 조사표 템플릿 PoC 설계
 - `docs/20_hwpx_template_poc_plan.md`: HWPX 공문 템플릿 PoC 설계
 - `docs/21_template_renderer_requirements.md`: 템플릿 렌더러 요구사항
+- `docs/22_renderer_validation_samples.md`: 렌더러 검증용 샘플 JSON
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
+- `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
 - [비식별 문체 샘플 작성 템플릿](templates/deidentified_sample_template.md)
 - `checklists/phase1_completion_checklist.md`: 1단계 완료 체크리스트
 - `checklists/security_review_checklist.md`: 보안 검토 체크리스트

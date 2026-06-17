@@ -1,0 +1,96 @@
+{
+  "request_id": "[요청 ID placeholder]",
+  "input_summary": "[비식별 추진계획서 작성 요청]",
+  "task_type": "draft_document",
+  "document_type": "project_plan",
+  "output_targets": ["hwpx", "markdown"],
+  "security_review": {
+    "risk_level": "low",
+    "contains_personal_info": false,
+    "contains_sensitive_info": false,
+    "contains_internal_info": false,
+    "blocked_items": [],
+    "allowed_processing": true,
+    "required_review": ["human_review"],
+    "notes": "[placeholder 기반 추진계획서 샘플]"
+  },
+  "missing_fields": [
+    {
+      "field_name": "추진기간",
+      "reason": "추진개요 작성에 필요",
+      "required_for": "overview",
+      "suggested_placeholder": "[추진기간 확인 필요]"
+    },
+    {
+      "field_name": "소요예산",
+      "reason": "예산 임의 생성 금지",
+      "required_for": "budget",
+      "suggested_placeholder": "[소요예산 확인 필요]"
+    }
+  ],
+  "assumptions": [],
+  "draft_status": "draft",
+  "human_review_required": true,
+  "documents": [
+    {
+      "title": "[사업명] 추진계획",
+      "background": "[업무 발생 배경]",
+      "purpose": "[활용 목적]",
+      "overview": {
+        "사업명": "[사업명 확인 필요]",
+        "추진기간": "[추진기간 확인 필요]",
+        "추진대상": "[추진대상 확인 필요]",
+        "추진방식": "[추진방식 확인 필요]",
+        "소요예산": "[소요예산 확인 필요]",
+        "담당부서": "[담당부서]"
+      },
+      "main_contents": ["[주요 내용 확인 필요]"],
+      "detailed_plan": [
+        {
+          "step": "[단계명]",
+          "description": "[세부 추진내용 확인 필요]"
+        }
+      ],
+      "schedule": [
+        {
+          "phase": "[추진 단계]",
+          "period": "[확인 필요]",
+          "details": "[일정 세부내용 확인 필요]"
+        }
+      ],
+      "budget": {
+        "total": "[소요예산 확인 필요]",
+        "items": [
+          {
+            "name": "[예산 항목]",
+            "amount": "[확인 필요]",
+            "basis": "[산출 기준 확인 필요]"
+          }
+        ]
+      },
+      "expected_effects": ["[기대효과 확인 필요]"],
+      "review_items": ["[검토사항 확인 필요]"],
+      "future_plan": "[향후계획 확인 필요]",
+      "attachments": [],
+      "checklist": ["예산 확인", "일정 확인", "사람 최종 검토"]
+    }
+  ],
+  "attachments": [],
+  "email_draft": null,
+  "checklist": ["확정 표현 여부 확인", "예산 임의 생성 여부 확인"],
+  "renderer_hints": {
+    "target_format": "hwpx",
+    "template_id": "[템플릿 ID 확인 필요]",
+    "style_profile": "[서식 프로필 확인 필요]",
+    "table_template": "[계획서 표 템플릿 확인 필요]",
+    "placeholder_map": {
+      "{{title}}": "documents[0].title",
+      "{{overview_table}}": "documents[0].overview",
+      "{{schedule_table}}": "documents[0].schedule",
+      "{{budget_table}}": "documents[0].budget"
+    },
+    "requires_xlsx": false,
+    "requires_hwpx": true,
+    "requires_manual_review": true
+  }
+}
