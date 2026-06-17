@@ -123,6 +123,7 @@ Instructions 복사
 - `docs/35_hwpx_test_template_preparation_guide.md`: HWPX 테스트 템플릿 준비 가이드
 - `docs/36_hwpx_placeholder_render_test_result.md`: HWPX placeholder 렌더링 테스트 결과
 - `docs/37_hwpx_placeholder_actual_render_test_result.md`: HWPX placeholder 실제 치환 테스트 결과
+- `docs/38_hwpx_rendered_output_review.md`: HWPX 렌더링 결과 수동 검수 보고서
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -145,6 +146,7 @@ Instructions 복사
 - `checklists/hwpx_placeholder_template_review_checklist.md`: HWPX placeholder 템플릿 검수 체크리스트
 - `checklists/hwpx_minimal_poc_approval_checklist.md`: HWPX 최소 PoC 구현 승인 체크리스트
 - `checklists/hwpx_test_template_safety_checklist.md`: HWPX 테스트 템플릿 안전 체크리스트
+- `checklists/hwpx_rendered_output_manual_review_checklist.md`: HWPX 렌더링 결과 수동 검수 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
