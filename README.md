@@ -109,6 +109,7 @@ Instructions 복사
 - `docs/21_template_renderer_requirements.md`: 템플릿 렌더러 요구사항
 - `docs/22_renderer_validation_samples.md`: 렌더러 검증용 샘플 JSON
 - `docs/23_poc_readiness_review.md`: PoC 구현 전 통합 검수
+- `docs/24_sample_json_validation_report.md`: 샘플 JSON 세부 검수 보고서
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -122,6 +123,7 @@ Instructions 복사
 - `checklists/deidentification_review_checklist.md`: 비식별화 검토 체크리스트
 - `checklists/knowledge_candidate_checklist.md`: Knowledge 후보 체크리스트
 - `checklists/poc_implementation_readiness_checklist.md`: PoC 구현 준비 체크리스트
+- `checklists/sample_json_validation_checklist.md`: 샘플 JSON 검수 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 
 ## 보안 주의사항
