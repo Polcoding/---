@@ -111,6 +111,7 @@ Instructions 복사
 - `docs/23_poc_readiness_review.md`: PoC 구현 전 통합 검수
 - `docs/24_sample_json_validation_report.md`: 샘플 JSON 세부 검수 보고서
 - `docs/25_xlsx_renderer_poc_result.md`: XLSX 렌더러 PoC 결과
+- `docs/26_markdown_renderer_poc_result.md`: Markdown 미리보기 렌더러 PoC 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -126,6 +127,7 @@ Instructions 복사
 - `checklists/poc_implementation_readiness_checklist.md`: PoC 구현 준비 체크리스트
 - `checklists/sample_json_validation_checklist.md`: 샘플 JSON 검수 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
+- `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 
 ## 보안 주의사항
 
