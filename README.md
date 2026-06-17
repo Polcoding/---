@@ -110,6 +110,7 @@ Instructions 복사
 - `docs/22_renderer_validation_samples.md`: 렌더러 검증용 샘플 JSON
 - `docs/23_poc_readiness_review.md`: PoC 구현 전 통합 검수
 - `docs/24_sample_json_validation_report.md`: 샘플 JSON 세부 검수 보고서
+- `docs/25_xlsx_renderer_poc_result.md`: XLSX 렌더러 PoC 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
