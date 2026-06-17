@@ -103,6 +103,7 @@ Instructions 복사
 - `docs/14_document_pattern_library.md`: 문서 패턴 라이브러리
 - `docs/15_style_specification.md`: 문체 명세
 - `docs/16_knowledge_candidate_review.md`: Knowledge 후보 검토 기준
+- `docs/18_ai_output_json_schema.md`: AI 출력 JSON 스키마 정의
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - [비식별 문체 샘플 작성 템플릿](templates/deidentified_sample_template.md)
