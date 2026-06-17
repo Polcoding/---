@@ -115,6 +115,8 @@ Instructions 복사
 - `docs/27_email_renderer_poc_result.md`: Email 초안 렌더러 PoC 결과
 - `docs/28_local_poc_integration_test_report.md`: 로컬 PoC 통합 검수 보고서
 - `docs/29_xlsx_renderer_v02_result.md`: XLSX 렌더러 v0.2 결과
+- `docs/30_hwpx_renderer_preimplementation_review.md`: HWPX 렌더러 PoC 구현 전 재검수
+- `docs/31_hwpx_style_and_language_requirements.md`: HWPX 서식 및 공문체 요구사항
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -130,6 +132,8 @@ Instructions 복사
 - `checklists/poc_implementation_readiness_checklist.md`: PoC 구현 준비 체크리스트
 - `checklists/sample_json_validation_checklist.md`: 샘플 JSON 검수 체크리스트
 - `checklists/local_poc_integration_checklist.md`: 로컬 PoC 통합 검수 체크리스트
+- `checklists/hwpx_style_fidelity_checklist.md`: HWPX 서식 충실도 체크리스트
+- `checklists/official_document_language_checklist.md`: 공공기관 문체 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
