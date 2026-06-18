@@ -34,6 +34,8 @@
 
 template_id는 실제 파일명이 아니라 설계용 식별자입니다.
 
+보고서 HWPX 자동화의 최우선 흐름은 원페이지 보고서, 추진계획서, 결과보고서입니다. 검토보고서는 핵심 문서 후보에 포함하되, 계획ㆍ결과 보고서 placeholder 구조가 안정화된 뒤 확장합니다.
+
 ## 공통 placeholder 목록
 
 - {{document_number}}
@@ -102,12 +104,16 @@ template_id는 실제 파일명이 아니라 설계용 식별자입니다.
 |---|---|---|
 | 제목 | {{title}} | 결과보고서 제목 |
 | 추진개요 | {{overview_table}} | 사업 개요 |
+| 기존 계획 연결 | {{linked_project_plan}} | 실제 원문이나 실제 파일명 대신 placeholder 사용 |
+| 계획 대비 결과 | {{plan_result_mapping}} | 계획 항목과 결과 항목 대응 |
 | 추진결과 | {{results}} | 실제 수치 임의 생성 금지 |
 | 주요성과 | {{main_outcomes}} | 과장 표현 금지 |
 | 문제점 및 개선사항 | {{issues}}, {{improvements}} | 개조식 정리 |
 | 향후계획 | {{future_plan}} | 후속 조치 |
 | 붙임 | {{attachments}} | 붙임 목록 |
 | 체크리스트 | {{checklist}} | 검토용 |
+
+결과보고서에서는 기존 추진계획서와의 연결 여부를 placeholder로만 관리합니다. 실제 계획서 원문, 실제 문서번호, 실제 파일 경로, 실제 담당자명은 템플릿에 넣지 않습니다.
 
 ## 공문 번호체계 규칙
 
