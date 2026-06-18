@@ -162,6 +162,8 @@ Instructions 복사
 - `docs/50_result_report_hwpx_render_test_result.md`: 결과보고서 HWPX 렌더링 테스트 결과
 - `docs/51_review_report_hwpx_template_preparation.md`: 검토보고서 HWPX 최소 템플릿 준비
 - `docs/52_review_report_hwpx_render_test_result.md`: 검토보고서 HWPX 렌더링 테스트 결과
+- `docs/53_real_hwpx_template_intake_safety_procedure.md`: 실제 HWPX 양식 투입 전 안전 절차
+- `docs/54_hwpx_common_placeholder_design.md`: HWPX 공통 placeholder 설계
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -189,6 +191,7 @@ Instructions 복사
 - `checklists/hwpx_institution_style_value_collection_checklist.md`: HWPX 기관 표준 서식값 수집 체크리스트
 - `checklists/report_sample_json_validation_checklist.md`: 보고서 샘플 JSON 검수 체크리스트
 - `checklists/one_page_report_hwpx_template_checklist.md`: 원페이지 보고서 HWPX 템플릿 검수 체크리스트
+- `checklists/real_hwpx_template_intake_checklist.md`: 실제 HWPX 양식 투입 전 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -207,7 +210,7 @@ Instructions 복사
 ## 다음 단계
 
 1. GitHub Desktop에서 현재 작업 묶음을 검수 후 push합니다.
-2. 실제 기관 양식이 아닌 최소 placeholder HWPX 템플릿으로 결과보고서 또는 검토보고서 치환 테스트를 진행합니다.
-3. output HWPX를 한컴에서 열어 문단 겹침, 줄간격, 번호체계, 개조식 표시를 수동 검수합니다.
-4. 실제 기관 양식 원본을 투입하기 전에는 `templates/hwpx/local_template_policy.md`와 관련 체크리스트를 먼저 확인합니다.
+2. 실제 기관 양식 원본을 투입하기 전 `docs/53_real_hwpx_template_intake_safety_procedure.md`와 `checklists/real_hwpx_template_intake_checklist.md`를 확인합니다.
+3. HWPX 공통 placeholder 설계를 기준으로 문서 유형별 로컬 템플릿을 준비합니다.
+4. output HWPX를 한컴에서 열어 문단 겹침, 줄간격, 번호체계, 개조식 표시를 수동 검수합니다.
 5. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 검토합니다.

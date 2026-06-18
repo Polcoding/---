@@ -19,7 +19,8 @@
 - 템플릿 렌더러 요구사항 설계
 - XLSX, Markdown, Email, HWPX 로컬 PoC 렌더러 작성
 - 원페이지 보고서 HWPX 로컬 placeholder 템플릿 치환 테스트
-- 결과보고서와 검토보고서 HWPX 렌더러 입력 지원 확인
+- 결과보고서와 검토보고서 HWPX 로컬 placeholder 템플릿 치환 테스트
+- 실제 HWPX 양식 투입 전 안전 절차와 공통 placeholder 설계 정리
 
 ## 1. 최우선 원칙
 
@@ -131,6 +132,7 @@
 - 실제 기관명, 문서번호, 결재선, 직인, 로고, 담당자명은 테스트 템플릿에 넣지 않습니다.
 - 모든 동적 값은 {{title}}, {{body_section_1}}, {{overview_table}}, {{attachments}} 같은 placeholder로 처리합니다.
 - HWPX 보고서 자동화에서는 기존 양식의 폰트, 자간, 줄간격, 표 양식, 문단 배치 유지가 핵심입니다.
+- 실제 기관 양식으로 넘어가기 전에는 안전 절차와 체크리스트를 먼저 통과해야 합니다.
 
 ## 공문서 작성 요령 PDF 반영 원칙
 
@@ -471,6 +473,7 @@ Codex는 작업 완료 후 다음 형식으로 보고합니다.
 - AI 출력 JSON 스키마 있음
 - XLSX, Markdown, Email, HWPX 로컬 PoC 렌더러 있음
 - 원페이지 보고서 HWPX placeholder 치환 성공 기록 있음
-- 결과보고서와 검토보고서 HWPX 렌더러 입력 지원 확인 기록 있음
+- 결과보고서와 검토보고서 HWPX 로컬 placeholder 치환 검수 기록 있음
+- 실제 HWPX 양식 투입 전 안전 절차와 공통 placeholder 설계 문서 있음
 - 모든 예시는 placeholder 기반
 - 실제 원문, 실제 개인정보, 실제 내부 운영정보 없음
