@@ -201,11 +201,26 @@ def _build_result_report_placeholder_map(data: dict) -> dict[str, str]:
 
     placeholder_map = {
         "{{title}}": _safe_string(document.get("title")),
-        "{{linked_plan_reference}}": _format_mapping_or_list(document.get("linked_plan_reference")),
-        "{{overview_table}}": _format_mapping_or_list(document.get("overview")),
-        "{{planned_items}}": _format_mapping_or_list(document.get("planned_items")),
-        "{{actual_results}}": _format_mapping_or_list(document.get("actual_results")),
-        "{{comparison_to_plan}}": _format_mapping_or_list(document.get("comparison_to_plan")),
+        "{{linked_plan_reference}}": _format_result_summary_field(
+            document.get("linked_plan_reference"),
+            "[기존 추진계획서 참조 확인 필요]",
+        ),
+        "{{overview_table}}": _format_result_summary_field(
+            document.get("overview"),
+            "[사업명ㆍ추진기간ㆍ추진대상ㆍ담당부서 확인 필요]",
+        ),
+        "{{planned_items}}": _format_result_summary_field(
+            document.get("planned_items"),
+            "[계획 항목 확인 필요]",
+        ),
+        "{{actual_results}}": _format_result_summary_field(
+            document.get("actual_results"),
+            "[추진결과ㆍ실적 수치ㆍ참여 인원ㆍ예산 집행액 확인 필요]",
+        ),
+        "{{comparison_to_plan}}": _format_result_summary_field(
+            document.get("comparison_to_plan"),
+            "[계획 대비 결과 확인 필요]",
+        ),
         "{{main_outcomes}}": _format_list(document.get("main_outcomes")),
         "{{issues}}": _format_list(document.get("issues")),
         "{{improvements}}": _format_list(document.get("improvements")),
@@ -515,6 +530,14 @@ def _format_report_summary(value: Any) -> str:
         return "[보고일자ㆍ담당부서ㆍ검토자ㆍ보고목적 확인 필요]"
     if isinstance(value, list):
         return "[보고 개요 확인 필요]"
+    return _safe_string(value)
+
+
+def _format_result_summary_field(value: Any, fallback: str) -> str:
+    if value is None or value == "":
+        return DEFAULT_PLACEHOLDER_VALUE
+    if isinstance(value, (dict, list)):
+        return fallback
     return _safe_string(value)
 
 
