@@ -6,7 +6,7 @@
 
 ## 이번 저장소의 목적
 
-이 저장소는 실제 자동화 구현물이 아닙니다. 안전한 Custom GPT 테스트판을 만들기 위한 문서, 프롬프트, 테스트 케이스, 평가표, 보안 기준을 정리합니다.
+이 저장소는 실제 업무 자동화 운영물이 아닙니다. 안전한 Custom GPT 테스트판, placeholder 기반 샘플 JSON, 로컬 PoC 렌더러, 테스트 결과 문서, 보안 기준을 정리합니다.
 
 핵심 메시지는 다음과 같습니다.
 
@@ -20,6 +20,8 @@
 - 개인정보와 민감정보 비식별화 규칙 정리
 - 테스트용 업무 지시 샘플과 모범 출력 예시 작성
 - 테스트 결과 평가표 작성
+- placeholder 기반 HWPX/XLSX/Markdown/Email 로컬 PoC 렌더러 검증
+- HWPX 보고서 템플릿 자동화 우선순위 검증
 - 향후 Make.com 또는 OpenAI API 연동 전 점검할 항목 정리
 
 ## 현재 자동화 우선순위
@@ -48,7 +50,7 @@
 - 실제 공공기관 원문 문서 업로드 또는 학습
 - 실제 개인정보, 민감정보, 내부자료, 대외비 자료 사용
 - 결재, 계약, 업체 선정, 예산 집행, 법률 판단, 민원 처리 결론 자동화
-- 문서 서식 렌더링 엔진 구현
+- 실제 기관 양식 원본 기반 문서 서식 렌더링 엔진 구현
 
 ## 전체 시스템 아키텍처 개요
 
@@ -63,7 +65,7 @@
 → 사람 승인 후 실무 적용
 ```
 
-1단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서만 다룹니다.
+현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러만 다룹니다.
 
 ## 폴더 구조
 
@@ -74,7 +76,10 @@
 ├── docs/
 ├── prompts/
 ├── examples/
-└── checklists/
+├── checklists/
+├── templates/
+├── renderers/
+└── tasks/
 ```
 
 ## 빠른 시작 방법
@@ -106,6 +111,7 @@ Instructions 복사
 ## 문서 목록
 
 - `AGENTS.md`: Codex 작업 규칙
+- `docs/00_chatgpt_handoff.md`: ChatGPT 프로젝트 인수인계
 - `docs/00_project_overview.md`: 전체 프로젝트 설명
 - `docs/01_custom_gpt_setup.md`: Custom GPT 설정 절차
 - `docs/02_security_policy.md`: 처리 가능 업무와 금지 업무 기준
@@ -149,6 +155,9 @@ Instructions 복사
 - `docs/43_report_template_automation_priority.md`: HWPX 보고서 템플릿 자동화 우선순위
 - `docs/44_report_sample_json_set.md`: HWPX 보고서용 샘플 JSON 세트
 - `docs/45_one_page_report_hwpx_template_strategy.md`: 원페이지 보고서 HWPX 템플릿 전략
+- `docs/46_one_page_report_hwpx_render_test_result.md`: 원페이지 보고서 HWPX 렌더링 테스트 결과
+- `docs/47_result_review_report_hwpx_support_check.md`: 결과보고서ㆍ검토보고서 HWPX 렌더러 지원 확인
+- `docs/48_git_push_timing_and_summary.md`: GitHub Desktop push 타이밍과 summary 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -180,6 +189,7 @@ Instructions 복사
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
 - `renderers/hwpx_renderer/README.md`: HWPX 최소 PoC 렌더러 안내
+- `tasks/NEXT_STEP.md`: 다음 작업 목록
 
 ## 보안 주의사항
 
@@ -192,9 +202,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. 테스트 케이스 5개 이상을 Custom GPT Preview에서 실행합니다.
-2. 평가표 기준으로 결과를 기록합니다.
-3. 위험 요청 처리 결과를 별도로 확인합니다.
-4. 비식별화 규칙을 실제 조직 정책과 대조합니다.
-5. `docs/09_phase1_review_and_next_steps.md`의 조건을 충족한 뒤 다음 단계 설계를 검토합니다.
-6. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 시작합니다.
+1. GitHub Desktop에서 현재 작업 묶음을 검수 후 push합니다.
+2. 실제 기관 양식이 아닌 최소 placeholder HWPX 템플릿으로 결과보고서 또는 검토보고서 치환 테스트를 진행합니다.
+3. output HWPX를 한컴에서 열어 문단 겹침, 줄간격, 번호체계, 개조식 표시를 수동 검수합니다.
+4. 실제 기관 양식 원본을 투입하기 전에는 `templates/hwpx/local_template_policy.md`와 관련 체크리스트를 먼저 확인합니다.
+5. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 검토합니다.

@@ -59,6 +59,18 @@ ALLOWED_PLACEHOLDERS = {
     "{{expected_effects}}",
     "{{review_items}}",
     "{{future_plan}}",
+    "{{linked_plan_reference}}",
+    "{{planned_items}}",
+    "{{actual_results}}",
+    "{{comparison_to_plan}}",
+    "{{main_outcomes}}",
+    "{{issues}}",
+    "{{improvements}}",
+    "{{review_background}}",
+    "{{review_scope}}",
+    "{{risks}}",
+    "{{required_reviews}}",
+    "{{next_actions}}",
 }
 
 DEFAULT_PLACEHOLDER_VALUE = "[확인 필요]"
@@ -120,6 +132,10 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
     """Build allowed placeholder values from a sample JSON payload."""
     if data.get("document_type") == "one_page_report":
         return _build_one_page_report_placeholder_map(data)
+    if data.get("document_type") == "result_report":
+        return _build_result_report_placeholder_map(data)
+    if data.get("document_type") == "review_report":
+        return _build_review_report_placeholder_map(data)
 
     document = _first_document(data)
     security_review = data.get("security_review", {})
@@ -162,7 +178,7 @@ def _build_one_page_report_placeholder_map(data: dict) -> dict[str, str]:
 
     placeholder_map = {
         "{{title}}": _safe_string(document.get("title")),
-        "{{report_summary}}": _format_mapping_or_list(document.get("report_summary")),
+        "{{report_summary}}": _format_report_summary(document.get("report_summary")),
         "{{background}}": _safe_string(document.get("background")),
         "{{main_points}}": _format_list(document.get("main_points")),
         "{{review_opinion}}": _safe_string(document.get("review_opinion")),
@@ -171,6 +187,56 @@ def _build_one_page_report_placeholder_map(data: dict) -> dict[str, str]:
         "{{action_items}}": _format_mapping_or_list(document.get("action_items")),
         "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
         "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{security_review}}": _format_security_review(security_review),
+        "{{draft_status}}": _safe_string(data.get("draft_status")),
+        "{{human_review_required}}": _safe_string(data.get("human_review_required")),
+    }
+
+    return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
+
+
+def _build_result_report_placeholder_map(data: dict) -> dict[str, str]:
+    document = _first_document(data)
+    security_review = data.get("security_review", {})
+
+    placeholder_map = {
+        "{{title}}": _safe_string(document.get("title")),
+        "{{linked_plan_reference}}": _format_mapping_or_list(document.get("linked_plan_reference")),
+        "{{overview_table}}": _format_mapping_or_list(document.get("overview")),
+        "{{planned_items}}": _format_mapping_or_list(document.get("planned_items")),
+        "{{actual_results}}": _format_mapping_or_list(document.get("actual_results")),
+        "{{comparison_to_plan}}": _format_mapping_or_list(document.get("comparison_to_plan")),
+        "{{main_outcomes}}": _format_list(document.get("main_outcomes")),
+        "{{issues}}": _format_list(document.get("issues")),
+        "{{improvements}}": _format_list(document.get("improvements")),
+        "{{future_plan}}": _safe_string(document.get("future_plan")),
+        "{{attachments}}": _format_attachments(document.get("attachments") or data.get("attachments")),
+        "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
+        "{{security_review}}": _format_security_review(security_review),
+        "{{draft_status}}": _safe_string(data.get("draft_status")),
+        "{{human_review_required}}": _safe_string(data.get("human_review_required")),
+    }
+
+    return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
+
+
+def _build_review_report_placeholder_map(data: dict) -> dict[str, str]:
+    document = _first_document(data)
+    security_review = data.get("security_review", {})
+
+    placeholder_map = {
+        "{{title}}": _safe_string(document.get("title")),
+        "{{review_background}}": _safe_string(document.get("review_background")),
+        "{{review_scope}}": _safe_string(document.get("review_scope")),
+        "{{review_items}}": _format_mapping_or_list(document.get("review_items")),
+        "{{review_opinion}}": _safe_string(document.get("review_opinion")),
+        "{{risks}}": _format_list(document.get("risks")),
+        "{{required_reviews}}": _format_list(document.get("required_reviews")),
+        "{{next_actions}}": _format_list(document.get("next_actions")),
+        "{{attachments}}": _format_attachments(document.get("attachments") or data.get("attachments")),
+        "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
         "{{security_review}}": _format_security_review(security_review),
         "{{draft_status}}": _safe_string(data.get("draft_status")),
         "{{human_review_required}}": _safe_string(data.get("human_review_required")),
@@ -193,37 +259,59 @@ def replace_placeholders_in_hwpx(
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    replaced_count = 0
-    remaining_placeholders: set[str] = set()
-    processed_files: list[str] = []
+    candidate_paths = (
+        output_path,
+        output_path.with_name(f"{output_path.stem}_latest{output_path.suffix}"),
+        *[
+            output_path.with_name(f"{output_path.stem}_run{index}{output_path.suffix}")
+            for index in range(1, 6)
+        ],
+    )
 
-    with zipfile.ZipFile(template_path, "r") as source:
-        with zipfile.ZipFile(output_path, "w") as target:
-            for info in source.infolist():
-                raw = source.read(info.filename)
+    for candidate_path in candidate_paths:
+        replaced_count = 0
+        remaining_placeholders: set[str] = set()
+        processed_files: list[str] = []
 
-                if _is_text_like_name(info.filename):
-                    try:
-                        text = raw.decode("utf-8")
-                    except UnicodeDecodeError:
-                        target.writestr(info, raw)
-                        continue
+        try:
+            with zipfile.ZipFile(template_path, "r") as source:
+                with zipfile.ZipFile(candidate_path, "w") as target:
+                    for info in source.infolist():
+                        raw = source.read(info.filename)
 
-                    text, count = _replace_text_placeholders(text, placeholder_map)
-                    replaced_count += count
-                    remaining_placeholders.update(find_placeholders_in_text(text))
-                    processed_files.append(info.filename)
-                    target.writestr(info, text.encode("utf-8"))
-                else:
-                    target.writestr(info, raw)
+                        if _is_text_like_name(info.filename):
+                            try:
+                                text = raw.decode("utf-8")
+                            except UnicodeDecodeError:
+                                target.writestr(info, raw)
+                                continue
+
+                            text, count = _replace_text_placeholders(text, placeholder_map)
+                            replaced_count += count
+                            remaining_placeholders.update(find_placeholders_in_text(text))
+                            processed_files.append(info.filename)
+                            target.writestr(info, text.encode("utf-8"))
+                        else:
+                            target.writestr(info, raw)
+        except PermissionError:
+            continue
+
+        return {
+            "status": "rendered",
+            "output_path": str(candidate_path),
+            "processed_text_files": processed_files,
+            "replaced_count": replaced_count,
+            "remaining_placeholders": sorted(remaining_placeholders),
+            "errors": [],
+        }
 
     return {
-        "status": "rendered",
+        "status": "output_error",
         "output_path": str(output_path),
-        "processed_text_files": processed_files,
-        "replaced_count": replaced_count,
-        "remaining_placeholders": sorted(remaining_placeholders),
-        "errors": [],
+        "processed_text_files": [],
+        "replaced_count": 0,
+        "remaining_placeholders": [],
+        "errors": ["HWPX output 파일을 쓸 수 없습니다."],
     }
 
 
@@ -231,6 +319,7 @@ def write_template_required_report(output_dir: Path, reason: str) -> Path:
     """Write a Markdown report when rendering cannot proceed without a template."""
     output_dir.mkdir(parents=True, exist_ok=True)
     report_path = output_dir / "template_required_report.md"
+    fallback_path = output_dir / "template_required_report_latest.md"
     report = "\n".join(
         [
             "# HWPX 템플릿 필요 보고",
@@ -251,8 +340,16 @@ def write_template_required_report(output_dir: Path, reason: str) -> Path:
             "",
         ]
     )
-    report_path.write_text(report, encoding="utf-8")
-    return report_path
+    for candidate_path in (report_path, fallback_path):
+        try:
+            candidate_path.write_text(report, encoding="utf-8")
+            return candidate_path
+        except PermissionError:
+            continue
+
+    if report_path.exists():
+        return report_path
+    raise PermissionError(f"템플릿 필요 보고서를 쓸 수 없습니다: {report_path}")
 
 
 def _is_text_like_name(name: str) -> bool:
@@ -408,6 +505,16 @@ def _format_mapping_or_list(value: Any) -> str:
         if not value:
             return DEFAULT_PLACEHOLDER_VALUE
         return "\n".join(f"- {key}: {_safe_string(item)}" for key, item in value.items())
+    return _safe_string(value)
+
+
+def _format_report_summary(value: Any) -> str:
+    if value is None or value == "":
+        return DEFAULT_PLACEHOLDER_VALUE
+    if isinstance(value, dict):
+        return "[보고일자ㆍ담당부서ㆍ검토자ㆍ보고목적 확인 필요]"
+    if isinstance(value, list):
+        return "[보고 개요 확인 필요]"
     return _safe_string(value)
 
 

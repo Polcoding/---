@@ -123,6 +123,8 @@ def has_forbidden_pattern(text: str) -> list[str]:
                 reasons.append(f"금지 키워드 감지: {label}")
 
         for keyword, label in CONFIRMED_ACTION_KEYWORDS.items():
+            if keyword == "예산 집행" and "예산 집행액" in text:
+                continue
             if keyword in text:
                 reasons.append(f"확정 표현 의심: {label}")
 

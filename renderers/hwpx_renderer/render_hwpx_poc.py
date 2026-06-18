@@ -39,6 +39,16 @@ SAMPLES = [
         "template": "placeholder_project_plan.hwpx",
         "output": "sample_project_plan_poc.hwpx",
     },
+    {
+        "input": "sample_result_report.json",
+        "template": "placeholder_result_report.hwpx",
+        "output": "sample_result_report_poc.hwpx",
+    },
+    {
+        "input": "sample_review_report.json",
+        "template": "placeholder_review_report.hwpx",
+        "output": "sample_review_report_poc.hwpx",
+    },
 ]
 
 
@@ -49,8 +59,17 @@ def load_json(path: Path) -> dict[str, Any]:
 
 def write_json(path: Path, data: Any) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    return path
+    fallback_path = path.with_name(f"{path.stem}_latest{path.suffix}")
+    for candidate_path in (path, fallback_path):
+        try:
+            candidate_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+            return candidate_path
+        except PermissionError:
+            continue
+
+    if path.exists():
+        return path
+    raise PermissionError(f"JSON 파일을 쓸 수 없습니다: {path}")
 
 
 def write_blocked_report(input_name: str, reasons: list[str]) -> Path:
@@ -172,7 +191,7 @@ def main() -> None:
         "note": "실제 기관 양식, 실제 공문 원문, 실제 개인정보는 사용하지 않습니다.",
         "results": results,
     }
-    write_json(OUTPUT_DIR / SUMMARY_OUTPUT, summary)
+    summary_path = write_json(OUTPUT_DIR / SUMMARY_OUTPUT, summary)
 
     print("HWPX 최소 PoC 실행 결과")
     for item in results:
@@ -180,7 +199,7 @@ def main() -> None:
         if item.get("report"):
             print(f"  보고서: {item['report']}")
 
-    print(f"요약: {str((OUTPUT_DIR / SUMMARY_OUTPUT).relative_to(REPO_ROOT))}")
+    print(f"요약: {str(summary_path.relative_to(REPO_ROOT))}")
     print("주의: API 호출, 이메일 자동화, HWPX 새 문서 조립은 수행하지 않았습니다.")
 
 
