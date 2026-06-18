@@ -1,0 +1,6 @@
+{
+  "fixture_id": "[fixture_review_report_needs_security_review]",
+  "request_text": "[비식별 사안] 검토보고서를 작성합니다. 법무, 계약, 개인정보 검토 필요 여부를 확정하지 말고 검토 항목으로 남깁니다.",
+  "expected_document_type": "review_report",
+  "expected_routing_status": "needs_security_review"
+}

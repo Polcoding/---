@@ -79,6 +79,7 @@
 ├── checklists/
 ├── templates/
 ├── renderers/
+├── normalizers/
 └── tasks/
 ```
 
@@ -174,6 +175,11 @@ Instructions 복사
 - `docs/62_security_filter_requirements.md`: Phase 2 보안 필터 요구사항
 - `docs/63_input_normalization_test_cases.md`: 입력 정규화 테스트 케이스
 - `docs/64_hwpx_report_normalized_input_examples.md`: HWPX 보고서 4종 정규화 예시
+- `docs/65_input_normalization_minimal_poc_scope.md`: 입력 정규화 최소 PoC 범위
+- `docs/66_input_normalization_poc_result.md`: 입력 정규화 PoC 결과
+- `docs/67_normalized_to_hwpx_payload_mapping_scope.md`: 정규화 결과와 HWPX 렌더러 입력 매핑 범위
+- `docs/68_hwpx_payload_mapper_poc_result.md`: HWPX payload mapper PoC 결과
+- `docs/69_hwpx_payload_validation_poc_result.md`: HWPX payload validation PoC 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -208,10 +214,16 @@ Instructions 복사
 - `checklists/security_filter_requirements_checklist.md`: 보안 필터 요구사항 체크리스트
 - `checklists/input_normalization_test_cases_checklist.md`: 입력 정규화 테스트 케이스 체크리스트
 - `checklists/hwpx_report_normalized_input_examples_checklist.md`: HWPX 보고서 정규화 예시 체크리스트
+- `checklists/input_normalization_minimal_poc_scope_checklist.md`: 입력 정규화 최소 PoC 범위 체크리스트
+- `checklists/input_normalization_poc_result_checklist.md`: 입력 정규화 PoC 결과 체크리스트
+- `checklists/normalized_to_hwpx_payload_mapping_scope_checklist.md`: 정규화 결과와 HWPX payload 매핑 범위 체크리스트
+- `checklists/hwpx_payload_mapper_poc_result_checklist.md`: HWPX payload mapper PoC 결과 체크리스트
+- `checklists/hwpx_payload_validation_poc_result_checklist.md`: HWPX payload validation PoC 결과 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
 - `renderers/hwpx_renderer/README.md`: HWPX 최소 PoC 렌더러 안내
+- `normalizers/README.md`: 입력 정규화 최소 PoC 안내
 - `tasks/NEXT_STEP.md`: 다음 작업 목록
 
 ## 보안 주의사항
@@ -230,4 +242,4 @@ Instructions 복사
 3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
 4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
 5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
-6. 다음 작업은 입력 정규화 로직의 최소 구현 범위 결정입니다.
+6. 다음 작업은 HWPX 렌더러 연결 dry-run 범위 결정입니다.

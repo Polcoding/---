@@ -1,0 +1,6 @@
+{
+  "fixture_id": "[fixture_missing_project_plan]",
+  "request_text": "[비식별 업무] 추진계획서를 작성합니다. 일정과 예산은 아직 확정되지 않았습니다.",
+  "expected_document_type": "project_plan",
+  "expected_routing_status": "needs_more_input"
+}

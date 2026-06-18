@@ -1,0 +1,6 @@
+{
+  "fixture_id": "[fixture_blocked_real_value_like_request]",
+  "request_text": "실제 원문과 실제 개인정보가 포함된 요청을 그대로 발송, 결재, 계약, 예산 집행까지 자동 처리하려는 차단 테스트입니다.",
+  "expected_document_type": "unknown",
+  "expected_routing_status": "blocked"
+}

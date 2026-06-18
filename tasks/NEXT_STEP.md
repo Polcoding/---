@@ -2,7 +2,7 @@
 
 ## 목표
 
-입력 정규화 로직의 최소 구현 범위를 결정합니다.
+HWPX 렌더러 연결 dry-run 범위를 결정합니다.
 
 ## 현재 완료 상태
 
@@ -18,6 +18,12 @@
 - Phase 2 보안 필터 요구사항 문서화 완료
 - 입력 정규화 테스트 케이스 문서화 완료
 - HWPX 보고서 4종별 정규화 예시 문서화 완료
+- 입력 정규화 최소 구현 범위 문서화 완료
+- `normalizers/` 최소 PoC 골격 작성 완료
+- 입력 정규화 PoC fixture 5종 통과
+- 정규화 결과와 HWPX 렌더러 입력 JSON 매핑 범위 문서화 완료
+- HWPX payload mapper PoC fixture 5종 통과
+- HWPX payload validation PoC fixture 5종 통과
 
 ## 확인 대상
 
@@ -32,6 +38,23 @@
 - `checklists/input_normalization_test_cases_checklist.md`
 - `docs/64_hwpx_report_normalized_input_examples.md`
 - `checklists/hwpx_report_normalized_input_examples_checklist.md`
+- `docs/65_input_normalization_minimal_poc_scope.md`
+- `checklists/input_normalization_minimal_poc_scope_checklist.md`
+- `docs/66_input_normalization_poc_result.md`
+- `checklists/input_normalization_poc_result_checklist.md`
+- `docs/67_normalized_to_hwpx_payload_mapping_scope.md`
+- `checklists/normalized_to_hwpx_payload_mapping_scope_checklist.md`
+- `docs/68_hwpx_payload_mapper_poc_result.md`
+- `checklists/hwpx_payload_mapper_poc_result_checklist.md`
+- `docs/69_hwpx_payload_validation_poc_result.md`
+- `checklists/hwpx_payload_validation_poc_result_checklist.md`
+- `normalizers/README.md`
+- `normalizers/input_normalizer_poc.py`
+- `normalizers/security_filter_poc.py`
+- `normalizers/hwpx_payload_mapper_poc.py`
+- `normalizers/validate_hwpx_payload_poc.py`
+- `normalizers/fixtures/`
+- `renderers/hwpx_renderer/validation.py`
 - `docs/58_external_hwpx_placeholder_conversion_runbook.md`
 - `checklists/external_hwpx_placeholder_conversion_checklist.md`
 - `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`
@@ -43,12 +66,12 @@
 
 ## 확인 항목
 
-1. 입력 정규화 로직을 문서 기준으로만 둘지 코드 PoC로 만들지
-2. 코드 PoC를 만든다면 대상 범위를 HWPX 보고서 4종으로 제한할지
-3. 테스트 fixture를 문서 예시에서 분리해 JSON 파일로 둘지
-4. 보안 필터를 정규화 로직 안에 둘지 별도 단계로 둘지
-5. blocked/needs_security_review 케이스를 코드 테스트에 포함할지
-6. 실제 원문이나 실제 식별값 없이 구현할 수 있는지
+1. mapper payload를 기존 HWPX 렌더러에 직접 넘길지
+2. dry-run에서 실제 HWPX 파일을 생성할지, validation까지만 할지
+3. `needs_more_input` payload도 HWPX 생성 대상으로 둘지
+4. `needs_security_review`와 `blocked`는 계속 미생성/미렌더링으로 둘지
+5. output HWPX와 summary JSON이 Git 제외 상태인지
+6. 실제 원문이나 실제 식별값 없이 dry-run할 수 있는지
 
 ## 작업 제한
 
@@ -61,13 +84,14 @@
 
 ## 완료 조건
 
-- 입력 정규화 최소 구현 범위 문서화
-- 코드 PoC 여부 판단
-- fixture 위치와 Git 포함 여부 판단
-- 보안 필터와 정규화 로직의 경계 판단
+- HWPX 렌더러 연결 dry-run 범위 문서화
+- 실제 HWPX 생성 여부 판단
+- `needs_more_input` payload 렌더링 허용 여부 판단
+- 미렌더링 라우팅 기준 재확인
+- output 산출물 Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 입력 정규화 로직을 곧바로 크게 구현하지 말고, HWPX 보고서 4종에 한정한 최소 PoC 범위를 먼저 문서로 확정하는 것입니다.
+현재 추천은 실제 HWPX 파일 생성으로 바로 연결하지 말고, dry-run 범위를 먼저 문서화한 뒤 허용된 케이스만 별도 테스트하는 것입니다.
