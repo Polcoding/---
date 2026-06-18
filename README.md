@@ -160,6 +160,8 @@ Instructions 복사
 - `docs/48_git_push_timing_and_summary.md`: GitHub Desktop push 타이밍과 summary 기준
 - `docs/49_result_report_hwpx_template_preparation.md`: 결과보고서 HWPX 최소 템플릿 준비
 - `docs/50_result_report_hwpx_render_test_result.md`: 결과보고서 HWPX 렌더링 테스트 결과
+- `docs/51_review_report_hwpx_template_preparation.md`: 검토보고서 HWPX 최소 템플릿 준비
+- `docs/52_review_report_hwpx_render_test_result.md`: 검토보고서 HWPX 렌더링 테스트 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
