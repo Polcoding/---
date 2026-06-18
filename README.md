@@ -166,6 +166,7 @@ Instructions 복사
 - `docs/54_hwpx_common_placeholder_design.md`: HWPX 공통 placeholder 설계
 - `docs/55_project_plan_hwpx_template_preparation.md`: 추진계획서 HWPX 최소 템플릿 준비
 - `docs/56_project_plan_hwpx_render_test_result.md`: 추진계획서 HWPX 렌더링 테스트 결과
+- `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`: HWPX 보고서 4종 완료 상태 및 안전 리허설
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -212,7 +213,7 @@ Instructions 복사
 ## 다음 단계
 
 1. GitHub Desktop에서 현재 작업 묶음을 검수 후 push합니다.
-2. `renderers/hwpx_renderer/output/sample_project_plan_poc.hwpx`를 한컴에서 열어 문단 겹침, 줄간격, 번호체계, 개조식 표시를 수동 검수합니다.
-3. 수동 검수 결과를 `docs/56_project_plan_hwpx_render_test_result.md`에 반영합니다.
-4. 실제 기관 양식 원본을 투입하기 전 `docs/53_real_hwpx_template_intake_safety_procedure.md`와 `checklists/real_hwpx_template_intake_checklist.md`를 확인합니다.
+2. `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`를 기준으로 HWPX 보고서 4종 완료 상태를 확인합니다.
+3. 실제 기관 양식 원본을 투입하기 전 `docs/53_real_hwpx_template_intake_safety_procedure.md`와 `checklists/real_hwpx_template_intake_checklist.md`를 다시 확인합니다.
+4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿으로만 검토합니다.
 5. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 검토합니다.

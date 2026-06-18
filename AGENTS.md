@@ -20,6 +20,7 @@
 - XLSX, Markdown, Email, HWPX 로컬 PoC 렌더러 작성
 - 원페이지 보고서 HWPX 로컬 placeholder 템플릿 치환 테스트
 - 결과보고서와 검토보고서 HWPX 로컬 placeholder 템플릿 치환 테스트
+- 핵심 HWPX 보고서 4종 로컬 placeholder 치환 및 수동 검수 완료
 - 실제 HWPX 양식 투입 전 안전 절차와 공통 placeholder 설계 정리
 
 ## 1. 최우선 원칙
@@ -474,6 +475,7 @@ Codex는 작업 완료 후 다음 형식으로 보고합니다.
 - XLSX, Markdown, Email, HWPX 로컬 PoC 렌더러 있음
 - 원페이지 보고서 HWPX placeholder 치환 성공 기록 있음
 - 결과보고서와 검토보고서 HWPX 로컬 placeholder 치환 검수 기록 있음
+- 원페이지 보고서, 추진계획서, 결과보고서, 검토보고서 4종 수동 검수 완료 기록 있음
 - 실제 HWPX 양식 투입 전 안전 절차와 공통 placeholder 설계 문서 있음
 - 모든 예시는 placeholder 기반
 - 실제 원문, 실제 개인정보, 실제 내부 운영정보 없음
