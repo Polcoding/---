@@ -11,11 +11,11 @@
 - `examples/json/sample_project_plan.json` 존재 확인
 - `renderers/hwpx_renderer/render_hwpx_poc.py`의 `SAMPLES`에 `sample_project_plan.json` 등록 확인
 - 템플릿 후보 `templates/hwpx/placeholder_project_plan.hwpx` 인식 확인
-- 현재 로컬 템플릿 파일은 없음
-- 템플릿이 없을 때 `template_required`로 안전 중단 확인
+- 로컬 placeholder 템플릿 생성 완료
+- 템플릿 준비 후 `project_plan` 렌더링 성공 확인
 - `templates/hwpx/*.hwpx`는 Git 제외 확인
 - `renderers/hwpx_renderer/output/*.hwpx`, `*.json`, `*.md`는 Git 제외 확인
-- 현재 세션에서 `renderers/hwpx_renderer/output/` 폴더 쓰기 권한 거부 확인
+- 일반 샌드박스 권한에서는 ignored 템플릿/output 폴더 쓰기가 거부될 수 있어 승인 권한으로 렌더러 실행 확인
 
 ## 지원 placeholder
 
@@ -129,9 +129,9 @@
 
 ## 로컬 실행 전 확인
 
-현재 세션에서는 `renderers/hwpx_renderer/output/` 폴더에 새 파일을 쓰는 작업이 거부되었습니다.
+현재 세션에서는 일반 샌드박스 권한으로 `renderers/hwpx_renderer/output/` 폴더에 새 파일을 쓰는 작업이 거부되었습니다.
 
-추진계획서 템플릿을 준비한 뒤 렌더링을 다시 실행하기 전에 다음을 확인합니다.
+렌더링을 다시 실행하기 전에 다음을 확인합니다.
 
 - 한컴에서 기존 output HWPX 파일을 모두 닫았는지
 - output 폴더나 파일이 읽기 전용 또는 보호 상태가 아닌지
@@ -142,4 +142,4 @@
 
 `project_plan`은 코드상 템플릿 후보와 주요 placeholder를 이미 지원합니다.
 
-현재 필요한 작업은 한컴에서 로컬 placeholder 템플릿을 직접 준비한 뒤 실제 치환과 수동 열람 검수를 진행하는 것입니다.
+현재 필요한 작업은 생성된 output HWPX를 한컴에서 열어 수동 열람 검수를 진행하는 것입니다.
