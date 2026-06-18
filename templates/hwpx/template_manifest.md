@@ -4,7 +4,9 @@
 
 이 문서는 향후 HWPX placeholder 템플릿 파일을 관리하기 위한 manifest 초안입니다.
 
-현재 단계에서는 실제 HWPX 파일을 등록하지 않습니다.
+현재 단계에서는 실제 HWPX 파일을 Git에 등록하지 않습니다.
+
+로컬 placeholder HWPX 템플릿은 검증에 사용할 수 있지만, `.gitignore`로 제외된 로컬 파일이므로 이 manifest에는 실제 파일명 대신 문서 유형과 정책만 기록합니다.
 
 ## 템플릿 목록
 
@@ -12,16 +14,17 @@
 |---|---|---|---|---|
 | hwpx_official_letter_basic | 일반 공문 | [확인 필요] | 설계 중 | 실제 파일 없음 |
 | hwpx_survey_request_letter | 현황조사 지시 공문 | [확인 필요] | 설계 중 | 실제 파일 없음 |
-| hwpx_project_plan_basic | 추진계획서 | [확인 필요] | 설계 중 | 실제 파일 없음 |
-| hwpx_result_report_basic | 결과보고서 | [확인 필요] | 설계 중 | 실제 파일 없음 |
-| hwpx_review_report_basic | 검토보고서 | [확인 필요] | 설계 중 | 실제 파일 없음 |
+| hwpx_one_page_report_basic | 원페이지 보고서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
+| hwpx_project_plan_basic | 추진계획서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
+| hwpx_result_report_basic | 결과보고서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
+| hwpx_review_report_basic | 검토보고서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
 
 ## manifest 작성 원칙
 
-- 실제 파일명을 기록하지 않습니다.
+- 실제 기관 양식 파일명을 기록하지 않습니다.
 - 실제 기관 양식명을 기록하지 않습니다.
-- 실제 HWPX 파일이 준비되기 전까지 상태는 “설계 중”으로 둡니다.
-- 향후 테스트용 placeholder HWPX 템플릿이 생기면 별도 검수 후 등록합니다.
+- 로컬 placeholder HWPX 파일은 Git 제외 상태를 유지합니다.
+- 로컬 검증 완료 상태는 문서로 기록하되 실제 파일은 등록하지 않습니다.
 - 실제 기관 원본 양식은 등록하지 않습니다.
 
 ## 보관 금지

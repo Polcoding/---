@@ -167,6 +167,10 @@ Instructions 복사
 - `docs/55_project_plan_hwpx_template_preparation.md`: 추진계획서 HWPX 최소 템플릿 준비
 - `docs/56_project_plan_hwpx_render_test_result.md`: 추진계획서 HWPX 렌더링 테스트 결과
 - `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`: HWPX 보고서 4종 완료 상태 및 안전 리허설
+- `docs/58_external_hwpx_placeholder_conversion_runbook.md`: 저장소 밖 HWPX placeholder 변환 절차
+- `docs/59_phase1_completion_and_phase2_entry_criteria.md`: Phase 1 완료 기준 및 Phase 2 진입 조건
+- `docs/60_hwpx_report_input_requirements.md`: HWPX 보고서 4종 입력 요구사항
+- `docs/61_input_normalization_schema.md`: 입력 정규화 스키마 초안
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -195,6 +199,9 @@ Instructions 복사
 - `checklists/report_sample_json_validation_checklist.md`: 보고서 샘플 JSON 검수 체크리스트
 - `checklists/one_page_report_hwpx_template_checklist.md`: 원페이지 보고서 HWPX 템플릿 검수 체크리스트
 - `checklists/real_hwpx_template_intake_checklist.md`: 실제 HWPX 양식 투입 전 체크리스트
+- `checklists/external_hwpx_placeholder_conversion_checklist.md`: 저장소 밖 HWPX placeholder 변환 체크리스트
+- `checklists/hwpx_report_input_requirements_checklist.md`: HWPX 보고서 입력 요구사항 체크리스트
+- `checklists/input_normalization_schema_checklist.md`: 입력 정규화 스키마 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -213,7 +220,7 @@ Instructions 복사
 ## 다음 단계
 
 1. GitHub Desktop에서 현재 작업 묶음을 검수 후 push합니다.
-2. `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`를 기준으로 HWPX 보고서 4종 완료 상태를 확인합니다.
-3. 실제 기관 양식 원본을 투입하기 전 `docs/53_real_hwpx_template_intake_safety_procedure.md`와 `checklists/real_hwpx_template_intake_checklist.md`를 다시 확인합니다.
-4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿으로만 검토합니다.
-5. 충분한 검증 후에만 입력 정규화, 보안 필터, API 연동 설계를 검토합니다.
+2. `docs/59_phase1_completion_and_phase2_entry_criteria.md`를 기준으로 Phase 1 완료 상태와 Phase 2 진입 조건을 확인합니다.
+3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
+4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
+5. API/Make.com/Email 자동화 전에 보안 필터 설계를 먼저 확정합니다.

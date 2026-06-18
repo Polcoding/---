@@ -2,7 +2,7 @@
 
 ## 목표
 
-실제 기관 양식 원본을 저장소에 넣지 않고, 저장소 밖 로컬 복사본을 placeholder 템플릿 후보로 바꾸는 절차를 소규모로 점검합니다.
+Phase 2 보안 필터 요구사항을 작성합니다.
 
 ## 현재 완료 상태
 
@@ -11,23 +11,35 @@
 - `result_report`: 로컬 placeholder 치환 및 수동 검수 완료
 - `review_report`: 로컬 placeholder 치환 및 수동 검수 완료
 - HWPX 보고서 4종 완료 상태 및 안전 리허설 문서화 완료
+- 저장소 밖 HWPX placeholder 변환 절차 문서화 완료
+- Phase 1 완료 기준 및 Phase 2 진입 조건 문서화 완료
+- HWPX 보고서 4종 입력 요구사항 문서화 완료
+- 입력 정규화 스키마 초안 문서화 완료
 
 ## 확인 대상
 
+- `docs/59_phase1_completion_and_phase2_entry_criteria.md`
+- `docs/60_hwpx_report_input_requirements.md`
+- `checklists/hwpx_report_input_requirements_checklist.md`
+- `docs/61_input_normalization_schema.md`
+- `checklists/input_normalization_schema_checklist.md`
+- `docs/58_external_hwpx_placeholder_conversion_runbook.md`
+- `checklists/external_hwpx_placeholder_conversion_checklist.md`
 - `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`
-- `docs/53_real_hwpx_template_intake_safety_procedure.md`
-- `checklists/real_hwpx_template_intake_checklist.md`
-- `templates/hwpx/local_template_policy.md`
+- `docs/18_ai_output_json_schema.md`
+- `examples/json/sample_one_page_report.json`
+- `examples/json/sample_project_plan.json`
+- `examples/json/sample_result_report.json`
+- `examples/json/sample_review_report.json`
 
 ## 확인 항목
 
-1. 실제 원본을 저장소에 추가하지 않는지
-2. 저장소 밖 로컬 복사본만 작업 대상으로 삼는지
-3. 실제 내용, 기관명, 문서번호, 결재선, 직인, 로고를 제거하는 절차가 명확한지
-4. placeholder 이름이 실제 대상을 추정하게 만들지 않는지
-5. 로컬 HWPX 템플릿이 Git 제외 상태인지
-6. output HWPX가 Git 제외 상태인지
-7. C/D등급 문서를 즉시 중단 대상으로 처리하는지
+1. `security_flags`를 어떻게 판정할지
+2. A/B/C/D 등급과 `risk_level`을 어떻게 연결할지
+3. 차단해야 할 패턴과 키워드는 무엇인지
+4. 안전한 설명 문맥과 실제값 의심 문맥을 어떻게 구분할지
+5. `blocked`, `needs_security_review`, `ready_for_draft` 기준을 어떻게 둘지
+6. 실제 원문이나 개인정보 없이 요구사항을 작성할 수 있는지
 
 ## 작업 제한
 
@@ -40,11 +52,13 @@
 
 ## 완료 조건
 
-- 저장소 밖 로컬 복사본 기반 절차 점검
+- 보안 필터 요구사항 작성
+- 차단 패턴과 키워드 기준 작성
+- A/B/C/D 등급과 `risk_level` 연결 기준 작성
+- 라우팅 결정 기준 작성
 - 실제 원본 미사용 확인
-- Git 제외 상태 재확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 실제 기관 양식 원본을 저장소에 넣지 않고, 사용자가 직접 저장소 밖에서 비식별 placeholder 복사본을 만드는 절차를 먼저 확정하는 것입니다.
+현재 추천은 보안 필터 요구사항을 문서로 먼저 확정하고, 이후 입력 정규화 테스트 케이스를 작성하는 것입니다.
