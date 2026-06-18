@@ -2,37 +2,33 @@
 
 ## 목표
 
-`project_plan` 렌더링 산출물을 한컴에서 열어 수동 열람 검수를 진행합니다.
+핵심 HWPX 보고서 4종의 로컬 placeholder 템플릿 검수 완료 상태를 정리하고, 실제 기관 양식 투입 전 안전 리허설을 진행합니다.
 
-## 확인할 로컬 파일
+## 현재 완료 상태
 
-- `renderers/hwpx_renderer/output/sample_project_plan_poc.hwpx`
-
-이 파일은 로컬 검증용 output HWPX이며 Git에 추가하지 않습니다.
-
-## 현재 자동 검수 결과
-
-- `templates/hwpx/placeholder_project_plan.hwpx` 생성 완료
-- 로컬 템플릿 Git 제외 확인
-- output HWPX Git 제외 확인
-- 렌더러 실행 결과: `rendered`
-- `remaining_placeholders`: `[]`
-- 기존 문서 유형 회귀 결과: 모두 `rendered`
+- `one_page_report`: 로컬 placeholder 치환 및 수동 검수 완료
+- `project_plan`: 로컬 placeholder 치환 및 수동 검수 완료
+- `result_report`: 로컬 placeholder 치환 및 수동 검수 완료
+- `review_report`: 로컬 placeholder 치환 및 수동 검수 완료
 
 ## 확인 대상
 
-- `renderers/hwpx_renderer/output/sample_project_plan_poc.hwpx`
+- `docs/46_one_page_report_hwpx_render_test_result.md`
+- `docs/50_result_report_hwpx_render_test_result.md`
+- `docs/52_review_report_hwpx_render_test_result.md`
 - `docs/56_project_plan_hwpx_render_test_result.md`
+- `docs/53_real_hwpx_template_intake_safety_procedure.md`
+- `checklists/real_hwpx_template_intake_checklist.md`
 
 ## 확인 항목
 
-1. output HWPX가 한컴에서 정상적으로 열리는지
-2. 제목과 1~10번 항목이 순서대로 표시되는지
-3. 각 치환 결과가 서로 다른 문단에 표시되는지
-4. 글자 겹침이 없는지
-5. 줄간격과 문단 간격이 지나치게 좁지 않은지
-6. `overview_table`, `schedule_table`, `budget_table` 치환 결과를 읽을 수 있는지
-7. 실제 기관 양식, 실제 원문, 실제 개인정보가 포함되지 않았는지
+1. HWPX 보고서 4종의 자동 치환 결과가 문서화되었는지
+2. HWPX 보고서 4종의 수동 열람 검수 결과가 문서화되었는지
+3. 로컬 HWPX 템플릿이 Git 제외 상태인지
+4. output HWPX가 Git 제외 상태인지
+5. 실제 기관 양식 원본을 저장소에 추가하지 않았는지
+6. 실제 문서 원문, 개인정보, 내부 운영정보를 추가하지 않았는지
+7. 실제 기관 양식 투입 전 안전 절차와 체크리스트가 충분한지
 
 ## 작업 제한
 
@@ -45,7 +41,11 @@
 
 ## 완료 조건
 
-- `project_plan` HWPX 수동 열람 결과 보고
-- 글자 겹침 여부 확인
-- 문단 간격과 번호체계 확인
-- 수동 열람 검수 결과 문서화
+- 핵심 HWPX 보고서 4종 완료 상태 요약
+- 실제 기관 양식 투입 전 안전 리허설 결과 문서화
+- Git 제외 상태 재확인
+- 다음 단계 진행 여부 판단
+
+## 다음 단계 후보
+
+현재 추천은 실제 기관 양식 원본을 바로 넣기보다, 원본 없는 안전 리허설을 먼저 진행하는 것입니다.

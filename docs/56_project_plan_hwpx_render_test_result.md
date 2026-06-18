@@ -73,19 +73,49 @@ HWPX 최소 PoC 렌더러 실행 결과는 다음과 같습니다.
 
 ## 수동 열람 검수
 
-아직 한컴 수동 열람 검수는 완료하지 않았습니다.
+1차 한컴 수동 열람에서 다음 문제가 확인되었습니다.
 
-다음 항목을 확인해야 합니다.
+- 1~10번 항목 순서는 정상
+- 항목 제목이 `?? ??` 형태로 표시됨
+- 3번 항목 내용 글자 겹침 심함
+- 7번 항목 내용 글자 겹침 일부 발생
 
-1. output HWPX가 정상적으로 열리는지
-2. 각 placeholder 치환 결과가 서로 다른 문단에 표시되는지
-3. 글자 겹침이 없는지
-4. 줄간격과 문단 간격이 지나치게 좁지 않은지
-5. 번호체계가 자연스러운지
-6. `overview_table`, `schedule_table`, `budget_table`의 텍스트 치환 결과가 읽을 수 있는지
+## 조치 결과
+
+다음 조치를 적용했습니다.
+
+- `templates/hwpx/placeholder_project_plan.hwpx`의 항목 제목을 정상 한글로 재생성
+- `project_plan` 전용 placeholder map 추가
+- `overview_table`, `schedule_table`, `budget_table`, `detailed_plan`은 표/목록 전체를 길게 펼치지 않고 검토용 한 줄 문구로 축약
+- `main_contents`, `expected_effects`, `review_items`도 다른 항목과 맞춰 앞의 `-` 없이 한 줄 문구로 통일
+- HWPX 렌더러 재실행
+
+재실행 후 output 내부 텍스트 기준으로 다음 사항을 확인했습니다.
+
+- 항목 제목 `?? ??` 제거
+- `3. 추진 개요` 치환값 축약
+- `7. 소요 예산` 치환값 축약
+- `4. 주요 내용`, `8. 기대 효과`, `9. 검토 사항` 내용란의 앞쪽 `-` 제거
+- `sample_project_plan.json`: `rendered`
+- `remaining_placeholders`: 0
+- 기존 문서 유형 회귀 결과: 모두 `rendered`, `remaining_placeholders` 0
+
+## 재검수 필요 항목
+
+한컴 재검수 결과 다음 항목이 확인되었습니다.
+
+- output HWPX 정상 열람
+- 항목 제목 정상 한글 표시
+- 3번 항목 글자 겹침 해소
+- 7번 항목 글자 겹침 해소
+- 4번, 8번, 9번 내용란 앞쪽 `-` 제거 확인
+- 전체 항목 배치 정상
+- 수동 열람 기준 추가 수정 필요 없음
 
 ## 결론
 
 `project_plan` HWPX 렌더러 지원은 자동 치환 기준으로 확인되었습니다.
 
-다음 단계는 `sample_project_plan_poc.hwpx`를 한컴에서 열어 수동 열람 검수를 진행하는 것입니다.
+수동 열람 기준에서도 제목 깨짐, 글자 겹침, 내용란 표기 불일치 문제가 해소되었습니다.
+
+원페이지 보고서, 추진계획서, 결과보고서, 검토보고서의 핵심 HWPX 보고서 4종은 로컬 placeholder 템플릿 기준으로 치환과 수동 검수가 완료되었습니다.

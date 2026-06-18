@@ -132,6 +132,8 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
     """Build allowed placeholder values from a sample JSON payload."""
     if data.get("document_type") == "one_page_report":
         return _build_one_page_report_placeholder_map(data)
+    if data.get("document_type") == "project_plan":
+        return _build_project_plan_placeholder_map(data)
     if data.get("document_type") == "result_report":
         return _build_result_report_placeholder_map(data)
     if data.get("document_type") == "review_report":
@@ -161,10 +163,19 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
         "{{human_review_required}}": _safe_string(data.get("human_review_required")),
         "{{background}}": _safe_string(document.get("background")),
         "{{purpose}}": _safe_string(document.get("purpose")),
-        "{{main_contents}}": _format_list(document.get("main_contents")),
+        "{{main_contents}}": _format_result_summary_field(
+            document.get("main_contents"),
+            "[주요 내용 확인 필요]",
+        ),
         "{{detailed_plan}}": _format_mapping_or_list(document.get("detailed_plan")),
-        "{{expected_effects}}": _format_list(document.get("expected_effects")),
-        "{{review_items}}": _format_list(document.get("review_items")),
+        "{{expected_effects}}": _format_result_summary_field(
+            document.get("expected_effects"),
+            "[기대효과 확인 필요]",
+        ),
+        "{{review_items}}": _format_result_summary_field(
+            document.get("review_items"),
+            "[검토사항 확인 필요]",
+        ),
         "{{future_plan}}": _safe_string(document.get("future_plan")),
     }
     placeholder_map.update(body_section_placeholders)
@@ -187,6 +198,54 @@ def _build_one_page_report_placeholder_map(data: dict) -> dict[str, str]:
         "{{action_items}}": _format_mapping_or_list(document.get("action_items")),
         "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
         "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{security_review}}": _format_security_review(security_review),
+        "{{draft_status}}": _safe_string(data.get("draft_status")),
+        "{{human_review_required}}": _safe_string(data.get("human_review_required")),
+    }
+
+    return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
+
+
+def _build_project_plan_placeholder_map(data: dict) -> dict[str, str]:
+    document = _first_document(data)
+    security_review = data.get("security_review", {})
+
+    placeholder_map = {
+        "{{title}}": _safe_string(document.get("title")),
+        "{{background}}": _safe_string(document.get("background")),
+        "{{purpose}}": _safe_string(document.get("purpose")),
+        "{{overview_table}}": _format_result_summary_field(
+            document.get("overview"),
+            "[사업명ㆍ추진기간ㆍ추진대상ㆍ추진방식ㆍ소요예산 확인 필요]",
+        ),
+        "{{main_contents}}": _format_result_summary_field(
+            document.get("main_contents"),
+            "[주요 내용 확인 필요]",
+        ),
+        "{{detailed_plan}}": _format_result_summary_field(
+            document.get("detailed_plan"),
+            "[단계별 세부 추진내용 확인 필요]",
+        ),
+        "{{schedule_table}}": _format_result_summary_field(
+            document.get("schedule"),
+            "[추진 단계ㆍ기간ㆍ세부 일정 확인 필요]",
+        ),
+        "{{budget_table}}": _format_result_summary_field(
+            document.get("budget"),
+            "[소요예산ㆍ예산 항목ㆍ산출 기준 확인 필요]",
+        ),
+        "{{expected_effects}}": _format_result_summary_field(
+            document.get("expected_effects"),
+            "[기대효과 확인 필요]",
+        ),
+        "{{review_items}}": _format_result_summary_field(
+            document.get("review_items"),
+            "[검토사항 확인 필요]",
+        ),
+        "{{future_plan}}": _safe_string(document.get("future_plan")),
+        "{{attachments}}": _format_attachments(document.get("attachments") or data.get("attachments")),
+        "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
         "{{security_review}}": _format_security_review(security_review),
         "{{draft_status}}": _safe_string(data.get("draft_status")),
         "{{human_review_required}}": _safe_string(data.get("human_review_required")),
