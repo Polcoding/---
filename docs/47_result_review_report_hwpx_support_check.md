@@ -1,5 +1,11 @@
 # 결과보고서ㆍ검토보고서 HWPX 렌더러 지원 확인
 
+## 현재 기준 안내
+
+이 문서는 결과보고서와 검토보고서 로컬 템플릿을 만들기 전 지원 여부를 확인한 기록입니다.
+
+현재는 `result_report`와 `review_report` 모두 로컬 placeholder HWPX 템플릿 치환과 한컴 수동 열람 검수가 완료되었습니다. 최신 결과는 `docs/50_result_report_hwpx_render_test_result.md`, `docs/52_review_report_hwpx_render_test_result.md`, `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`를 우선 확인합니다.
+
 ## 목적
 
 실제 기관 양식을 투입하기 전에 `result_report`와 `review_report` 샘플 JSON이 HWPX 렌더러에서 처리 가능한지 확인합니다.
@@ -64,8 +70,8 @@
 
 | 샘플 | placeholder map | 보안 검증 | 렌더링 결과 | 판정 |
 |---|---|---|---|---|
-| `sample_result_report.json` | 필수 placeholder 누락 없음 | 통과 | `template_required` | 템플릿 없음으로 안전 중단 |
-| `sample_review_report.json` | 필수 placeholder 누락 없음 | 통과 | `template_required` | 템플릿 없음으로 안전 중단 |
+| `sample_result_report.json` | 필수 placeholder 누락 없음 | 통과 | `rendered` | 로컬 placeholder 템플릿 치환 및 수동 검수 완료 |
+| `sample_review_report.json` | 필수 placeholder 누락 없음 | 통과 | `rendered` | 로컬 placeholder 템플릿 치환 및 수동 검수 완료 |
 
 기존 샘플 회귀 확인:
 
@@ -73,7 +79,7 @@
 |---|---|---|
 | `sample_one_page_report.json` | `rendered` | 통과 |
 | `sample_official_letter.json` | `rendered` | 통과 |
-| `sample_project_plan.json` | `template_required` | 템플릿 없음으로 안전 중단 |
+| `sample_project_plan.json` | `rendered` | 로컬 placeholder 템플릿 치환 및 수동 검수 완료 |
 
 ## Git 제외 확인
 
@@ -93,6 +99,6 @@
 
 ## 결론
 
-`result_report`와 `review_report`는 코드 수준에서 HWPX 렌더러 입력을 받을 준비가 되었습니다.
+`result_report`와 `review_report`는 코드 수준 지원 확인 이후 로컬 placeholder HWPX 템플릿 치환과 수동 열람 검수까지 완료되었습니다.
 
-다음 단계는 실제 기관 양식이 아닌 최소 placeholder HWPX 템플릿을 로컬에서 준비한 뒤, 각 문서 유형별 치환과 수동 열람 검수를 진행하는 것입니다.
+다음 단계는 실제 기관 양식이 아닌 외부 복사본 기반 placeholder 전환 절차와 Phase 2 입력 정규화ㆍ보안 필터 설계를 이어가는 것입니다.

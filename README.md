@@ -171,6 +171,9 @@ Instructions 복사
 - `docs/59_phase1_completion_and_phase2_entry_criteria.md`: Phase 1 완료 기준 및 Phase 2 진입 조건
 - `docs/60_hwpx_report_input_requirements.md`: HWPX 보고서 4종 입력 요구사항
 - `docs/61_input_normalization_schema.md`: 입력 정규화 스키마 초안
+- `docs/62_security_filter_requirements.md`: Phase 2 보안 필터 요구사항
+- `docs/63_input_normalization_test_cases.md`: 입력 정규화 테스트 케이스
+- `docs/64_hwpx_report_normalized_input_examples.md`: HWPX 보고서 4종 정규화 예시
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -202,6 +205,9 @@ Instructions 복사
 - `checklists/external_hwpx_placeholder_conversion_checklist.md`: 저장소 밖 HWPX placeholder 변환 체크리스트
 - `checklists/hwpx_report_input_requirements_checklist.md`: HWPX 보고서 입력 요구사항 체크리스트
 - `checklists/input_normalization_schema_checklist.md`: 입력 정규화 스키마 체크리스트
+- `checklists/security_filter_requirements_checklist.md`: 보안 필터 요구사항 체크리스트
+- `checklists/input_normalization_test_cases_checklist.md`: 입력 정규화 테스트 케이스 체크리스트
+- `checklists/hwpx_report_normalized_input_examples_checklist.md`: HWPX 보고서 정규화 예시 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -223,4 +229,5 @@ Instructions 복사
 2. `docs/59_phase1_completion_and_phase2_entry_criteria.md`를 기준으로 Phase 1 완료 상태와 Phase 2 진입 조건을 확인합니다.
 3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
 4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
-5. API/Make.com/Email 자동화 전에 보안 필터 설계를 먼저 확정합니다.
+5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
+6. 다음 작업은 입력 정규화 로직의 최소 구현 범위 결정입니다.

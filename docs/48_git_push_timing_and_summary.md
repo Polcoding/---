@@ -63,31 +63,32 @@ GitHub Desktop에서 commit/push하기 전에 다음을 확인합니다.
 이번 작업 묶음은 다음 summary를 권장합니다.
 
 ```text
-Add HWPX report renderer support checks
+Modernize Phase 1 and Phase 2 planning docs
 ```
 
 설명 예시:
 
 ```text
-- Add ChatGPT handoff and next-step task documents
-- Confirm one_page_report HWPX placeholder rendering
-- Add result_report and review_report HWPX placeholder map support
-- Document Git-excluded local HWPX/output handling
-- Refresh AGENTS and README to match current PoC state
+- Add external HWPX placeholder conversion runbook and checklist
+- Define Phase 1 completion and Phase 2 entry criteria
+- Add HWPX report input requirements and input normalization schema
+- Add Phase 2 security filter requirements and normalization test cases
+- Add normalized input examples for the four HWPX report types
+- Refresh early PoC docs and checklists to match current local renderer state
+- Keep local HWPX templates and output artifacts Git-excluded
 ```
 
 ## 다음 작업 후보
 
 이번 묶음을 push한 뒤 다음 중 하나를 선택합니다.
 
-1. `placeholder_result_report.hwpx` 최소 템플릿을 로컬로 준비하고 치환 테스트
-2. `placeholder_review_report.hwpx` 최소 템플릿을 로컬로 준비하고 치환 테스트
-3. 실제 기관 양식 투입 전 안전 절차와 체크리스트 보강
-4. HWPX 보고서 공통 placeholder 설계 정리
+1. 입력 정규화 최소 PoC 범위 결정
+2. 보안 필터와 정규화 로직 경계 결정
+3. 테스트 fixture 위치와 Git 포함 여부 결정
+4. 사용자가 준비되었을 때 외부 복사본 기반 placeholder 전환 리허설
 
 추천 순서:
 
-1. 결과보고서 최소 placeholder 템플릿
-2. 검토보고서 최소 placeholder 템플릿
-3. 실제 양식 투입 전 안전 절차
-
+1. 입력 정규화 최소 PoC 범위 결정
+2. 보안 필터와 정규화 로직 경계 결정
+3. 테스트 fixture 위치와 Git 포함 여부 결정

@@ -58,10 +58,10 @@
 |---|---|---|
 | `sample_one_page_report.json` | `rendered` | 통과 |
 | `sample_official_letter.json` | `rendered` | 통과 |
-| `sample_project_plan.json` | `template_required` | 정상 안전 중단 |
-| `sample_review_report.json` | `template_required` | 정상 안전 중단 |
+| `sample_project_plan.json` | 현재 기준 `rendered` | 통과 |
+| `sample_review_report.json` | 현재 기준 `rendered` | 통과 |
 
-`sample_project_plan.json`과 `sample_review_report.json`은 대응하는 로컬 HWPX 템플릿이 없으므로 HWPX 생성을 시도하지 않고 `template_required` 상태로 중단했습니다.
+작성 당시 추진계획서와 검토보고서 샘플은 대응 로컬 템플릿이 없어 안전 중단 상태였으나, 현재는 두 문서 유형 모두 로컬 placeholder 치환과 수동 검수가 완료되었습니다.
 
 ## 보안 검수
 
@@ -123,4 +123,4 @@
 
 `result_report` HWPX 렌더링은 로컬 placeholder 템플릿에서 성공했습니다.
 
-다음 단계에서는 이 작업 묶음을 GitHub Desktop으로 commit/push한 뒤, 검토보고서 최소 placeholder 템플릿 준비와 치환 테스트를 진행합니다.
+현재는 검토보고서와 추진계획서까지 포함해 HWPX 보고서 4종의 로컬 placeholder 치환과 수동 검수가 완료되었습니다.

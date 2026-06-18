@@ -1,5 +1,11 @@
 # 원페이지 보고서 HWPX 템플릿 전략
 
+## 현재 기준 안내
+
+이 문서는 원페이지 보고서 HWPX 템플릿을 준비하기 전 전략 문서입니다.
+
+현재는 `templates/hwpx/placeholder_one_page_report.hwpx` 로컬 템플릿을 사용한 치환과 한컴 수동 열람 검수가 완료되었습니다. 최신 결과는 `docs/46_one_page_report_hwpx_render_test_result.md`와 `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`를 우선 확인합니다.
+
 ## 목적
 
 이 문서는 HWPX 보고서 자동화의 최우선 대상인 원페이지 보고서를 placeholder 기반 HWPX 템플릿으로 생성하기 위한 전략을 정리합니다.

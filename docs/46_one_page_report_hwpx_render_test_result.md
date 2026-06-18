@@ -56,9 +56,9 @@
 |---|---|---|
 | `sample_one_page_report.json` | `rendered` | 통과 |
 | `sample_official_letter.json` | `rendered` | 통과 |
-| `sample_project_plan.json` | `template_required` | 정상 안전 중단 |
+| `sample_project_plan.json` | 현재 기준 `rendered` | 통과 |
 
-`sample_project_plan.json`은 `templates/hwpx/placeholder_project_plan.hwpx` 템플릿이 없으므로 HWPX 생성을 시도하지 않고 `template_required` 상태로 중단했습니다.
+작성 당시 추진계획서 샘플은 대응 템플릿이 없어 안전 중단 상태였으나, 현재는 `placeholder_project_plan.hwpx` 로컬 템플릿 준비와 수동 검수가 완료되었습니다.
 
 ## 보안 검수
 
@@ -135,8 +135,8 @@
 - 한컴에서 output HWPX를 다시 열어 `보고 개요` 영역의 겹침이 해소된 것을 확인했습니다.
 - 여백은 타이트하므로 실제 서식 안정화 단계에서는 해당 문단 간격을 조금 넓히는 것이 좋습니다.
 
-## Step 33 결론
+## 현재 결론
 
-Step 33 기준으로 `one_page_report` HWPX 렌더링은 로컬 placeholder 템플릿에서 성공했습니다.
+`one_page_report` HWPX 렌더링은 로컬 placeholder 템플릿에서 성공했습니다.
 
-다음 단계에서는 사람이 한컴에서 `renderers/hwpx_renderer/output/sample_one_page_report_poc.hwpx`를 열어 실제 표시 품질을 수동 검수하고, 필요한 경우 로컬 placeholder 템플릿의 문단 간격과 서식값을 조정합니다.
+한컴 수동 열람에서 보고 개요 영역의 겹침 문제까지 보정되어 현재 수동 검수 기준 통과입니다.

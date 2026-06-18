@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 보안 필터 요구사항을 작성합니다.
+입력 정규화 로직의 최소 구현 범위를 결정합니다.
 
 ## 현재 완료 상태
 
@@ -15,6 +15,9 @@ Phase 2 보안 필터 요구사항을 작성합니다.
 - Phase 1 완료 기준 및 Phase 2 진입 조건 문서화 완료
 - HWPX 보고서 4종 입력 요구사항 문서화 완료
 - 입력 정규화 스키마 초안 문서화 완료
+- Phase 2 보안 필터 요구사항 문서화 완료
+- 입력 정규화 테스트 케이스 문서화 완료
+- HWPX 보고서 4종별 정규화 예시 문서화 완료
 
 ## 확인 대상
 
@@ -23,6 +26,12 @@ Phase 2 보안 필터 요구사항을 작성합니다.
 - `checklists/hwpx_report_input_requirements_checklist.md`
 - `docs/61_input_normalization_schema.md`
 - `checklists/input_normalization_schema_checklist.md`
+- `docs/62_security_filter_requirements.md`
+- `checklists/security_filter_requirements_checklist.md`
+- `docs/63_input_normalization_test_cases.md`
+- `checklists/input_normalization_test_cases_checklist.md`
+- `docs/64_hwpx_report_normalized_input_examples.md`
+- `checklists/hwpx_report_normalized_input_examples_checklist.md`
 - `docs/58_external_hwpx_placeholder_conversion_runbook.md`
 - `checklists/external_hwpx_placeholder_conversion_checklist.md`
 - `docs/57_hwpx_report_4types_completion_and_safety_rehearsal.md`
@@ -34,12 +43,12 @@ Phase 2 보안 필터 요구사항을 작성합니다.
 
 ## 확인 항목
 
-1. `security_flags`를 어떻게 판정할지
-2. A/B/C/D 등급과 `risk_level`을 어떻게 연결할지
-3. 차단해야 할 패턴과 키워드는 무엇인지
-4. 안전한 설명 문맥과 실제값 의심 문맥을 어떻게 구분할지
-5. `blocked`, `needs_security_review`, `ready_for_draft` 기준을 어떻게 둘지
-6. 실제 원문이나 개인정보 없이 요구사항을 작성할 수 있는지
+1. 입력 정규화 로직을 문서 기준으로만 둘지 코드 PoC로 만들지
+2. 코드 PoC를 만든다면 대상 범위를 HWPX 보고서 4종으로 제한할지
+3. 테스트 fixture를 문서 예시에서 분리해 JSON 파일로 둘지
+4. 보안 필터를 정규화 로직 안에 둘지 별도 단계로 둘지
+5. blocked/needs_security_review 케이스를 코드 테스트에 포함할지
+6. 실제 원문이나 실제 식별값 없이 구현할 수 있는지
 
 ## 작업 제한
 
@@ -52,13 +61,13 @@ Phase 2 보안 필터 요구사항을 작성합니다.
 
 ## 완료 조건
 
-- 보안 필터 요구사항 작성
-- 차단 패턴과 키워드 기준 작성
-- A/B/C/D 등급과 `risk_level` 연결 기준 작성
-- 라우팅 결정 기준 작성
+- 입력 정규화 최소 구현 범위 문서화
+- 코드 PoC 여부 판단
+- fixture 위치와 Git 포함 여부 판단
+- 보안 필터와 정규화 로직의 경계 판단
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 보안 필터 요구사항을 문서로 먼저 확정하고, 이후 입력 정규화 테스트 케이스를 작성하는 것입니다.
+현재 추천은 입력 정규화 로직을 곧바로 크게 구현하지 말고, HWPX 보고서 4종에 한정한 최소 PoC 범위를 먼저 문서로 확정하는 것입니다.
