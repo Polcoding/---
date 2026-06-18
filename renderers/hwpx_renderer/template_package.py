@@ -48,6 +48,12 @@ ALLOWED_PLACEHOLDERS = {
     "{{human_review_required}}",
     "{{background}}",
     "{{purpose}}",
+    "{{report_summary}}",
+    "{{main_points}}",
+    "{{review_opinion}}",
+    "{{issues_or_considerations}}",
+    "{{next_steps}}",
+    "{{action_items}}",
     "{{main_contents}}",
     "{{detailed_plan}}",
     "{{expected_effects}}",
@@ -112,6 +118,9 @@ def find_placeholders_in_text(text: str) -> set[str]:
 
 def build_placeholder_map(data: dict) -> dict[str, str]:
     """Build allowed placeholder values from a sample JSON payload."""
+    if data.get("document_type") == "one_page_report":
+        return _build_one_page_report_placeholder_map(data)
+
     document = _first_document(data)
     security_review = data.get("security_review", {})
     body_section_placeholders = _build_body_section_placeholders(document.get("body_sections"))
@@ -143,6 +152,29 @@ def build_placeholder_map(data: dict) -> dict[str, str]:
         "{{future_plan}}": _safe_string(document.get("future_plan")),
     }
     placeholder_map.update(body_section_placeholders)
+
+    return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
+
+
+def _build_one_page_report_placeholder_map(data: dict) -> dict[str, str]:
+    document = _first_document(data)
+    security_review = data.get("security_review", {})
+
+    placeholder_map = {
+        "{{title}}": _safe_string(document.get("title")),
+        "{{report_summary}}": _format_mapping_or_list(document.get("report_summary")),
+        "{{background}}": _safe_string(document.get("background")),
+        "{{main_points}}": _format_list(document.get("main_points")),
+        "{{review_opinion}}": _safe_string(document.get("review_opinion")),
+        "{{issues_or_considerations}}": _format_list(document.get("issues_or_considerations")),
+        "{{next_steps}}": _format_list(document.get("next_steps")),
+        "{{action_items}}": _format_mapping_or_list(document.get("action_items")),
+        "{{missing_fields}}": _format_missing_fields(data.get("missing_fields")),
+        "{{checklist}}": _format_list(document.get("checklist") or data.get("checklist")),
+        "{{security_review}}": _format_security_review(security_review),
+        "{{draft_status}}": _safe_string(data.get("draft_status")),
+        "{{human_review_required}}": _safe_string(data.get("human_review_required")),
+    }
 
     return {key: placeholder_map.get(key, DEFAULT_PLACEHOLDER_VALUE) for key in sorted(ALLOWED_PLACEHOLDERS)}
 
@@ -362,7 +394,7 @@ def _format_security_review(security_review: Any) -> str:
 def _format_list(value: Any) -> str:
     if not isinstance(value, list) or not value:
         return DEFAULT_PLACEHOLDER_VALUE
-    return "\n".join(f"- {_safe_string(item)}" for item in value)
+    return "\n".join(f"- {_format_list_item(item)}" for item in value)
 
 
 def _format_mapping_or_list(value: Any) -> str:
@@ -371,12 +403,20 @@ def _format_mapping_or_list(value: Any) -> str:
     if isinstance(value, list):
         if not value:
             return DEFAULT_PLACEHOLDER_VALUE
-        return "\n".join(f"- {_safe_string(item)}" for item in value)
+        return "\n".join(f"- {_format_list_item(item)}" for item in value)
     if isinstance(value, dict):
         if not value:
             return DEFAULT_PLACEHOLDER_VALUE
         return "\n".join(f"- {key}: {_safe_string(item)}" for key, item in value.items())
     return _safe_string(value)
+
+
+def _format_list_item(item: Any) -> str:
+    if isinstance(item, dict):
+        if not item:
+            return DEFAULT_PLACEHOLDER_VALUE
+        return " / ".join(f"{key}: {_safe_string(value)}" for key, value in item.items())
+    return _safe_string(item)
 
 
 def _to_json_text(value: Any) -> str:

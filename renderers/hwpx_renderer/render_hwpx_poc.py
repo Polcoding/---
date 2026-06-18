@@ -25,6 +25,11 @@ TEMPLATE_REQUIRED_REPORT = "template_required_report.md"
 
 SAMPLES = [
     {
+        "input": "sample_one_page_report.json",
+        "template": "placeholder_one_page_report.hwpx",
+        "output": "sample_one_page_report_poc.hwpx",
+    },
+    {
         "input": "sample_official_letter.json",
         "template": "placeholder_official_letter.hwpx",
         "output": "sample_official_letter_poc.hwpx",

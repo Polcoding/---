@@ -147,6 +147,8 @@ Instructions 복사
 - `docs/40_hwpx_institution_style_values_review.md`: HWPX 기관 표준 서식값 확인 기준
 - `docs/42_channel_style_policy.md`: 채널별 문체 정책
 - `docs/43_report_template_automation_priority.md`: HWPX 보고서 템플릿 자동화 우선순위
+- `docs/44_report_sample_json_set.md`: HWPX 보고서용 샘플 JSON 세트
+- `docs/45_one_page_report_hwpx_template_strategy.md`: 원페이지 보고서 HWPX 템플릿 전략
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -172,6 +174,8 @@ Instructions 복사
 - `checklists/hwpx_test_template_safety_checklist.md`: HWPX 테스트 템플릿 안전 체크리스트
 - `checklists/hwpx_rendered_output_manual_review_checklist.md`: HWPX 렌더링 결과 수동 검수 체크리스트
 - `checklists/hwpx_institution_style_value_collection_checklist.md`: HWPX 기관 표준 서식값 수집 체크리스트
+- `checklists/report_sample_json_validation_checklist.md`: 보고서 샘플 JSON 검수 체크리스트
+- `checklists/one_page_report_hwpx_template_checklist.md`: 원페이지 보고서 HWPX 템플릿 검수 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내

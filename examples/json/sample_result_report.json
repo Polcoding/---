@@ -1,0 +1,132 @@
+{
+  "request_id": "[요청 ID placeholder]",
+  "input_summary": "[비식별 결과보고서 작성 요청]",
+  "task_type": "draft_document",
+  "document_type": "result_report",
+  "output_targets": ["hwpx", "markdown"],
+  "security_review": {
+    "risk_level": "low",
+    "contains_personal_info": false,
+    "contains_sensitive_info": false,
+    "contains_internal_info": false,
+    "blocked_items": [],
+    "allowed_processing": true,
+    "required_review": ["human_review"],
+    "notes": "[placeholder 기반 결과보고서 샘플]"
+  },
+  "missing_fields": [
+    {
+      "field_name": "기존 추진계획서 참조",
+      "reason": "계획 대비 결과 구조 연결 필요",
+      "required_for": "linked_plan_reference",
+      "suggested_placeholder": "[기존 추진계획서 참조 확인 필요]"
+    },
+    {
+      "field_name": "실적 수치",
+      "reason": "실적 수치 임의 생성 금지",
+      "required_for": "actual_results",
+      "suggested_placeholder": "[실적 수치 확인 필요]"
+    },
+    {
+      "field_name": "예산 집행액",
+      "reason": "예산 집행액 임의 생성 금지",
+      "required_for": "comparison_to_plan",
+      "suggested_placeholder": "[예산 집행액 확인 필요]"
+    },
+    {
+      "field_name": "참여 인원",
+      "reason": "참여 인원 임의 생성 금지",
+      "required_for": "actual_results",
+      "suggested_placeholder": "[참여 인원 확인 필요]"
+    }
+  ],
+  "assumptions": [],
+  "draft_status": "draft",
+  "human_review_required": true,
+  "documents": [
+    {
+      "title": "[사업명 확인 필요] 결과보고",
+      "linked_plan_reference": {
+        "project_plan_id": "[계획서 ID placeholder]",
+        "project_plan_title": "[기존 추진계획서 제목 확인 필요]",
+        "link_basis": "[사용자 제공 정보 기준]",
+        "source_original_included": false
+      },
+      "overview": {
+        "project_name": "[사업명 확인 필요]",
+        "period": "[추진기간 확인 필요]",
+        "target": "[추진대상 확인 필요]",
+        "department": "[담당부서 확인 필요]"
+      },
+      "planned_items": [
+        {
+          "plan_item": "[계획서 주요 항목 확인 필요]",
+          "planned_detail": "[계획 내용 확인 필요]"
+        }
+      ],
+      "actual_results": [
+        {
+          "result_item": "[추진결과 확인 필요]",
+          "result_value": "[실적 수치 확인 필요]",
+          "participants": "[참여 인원 확인 필요]",
+          "budget_execution": "[예산 집행액 확인 필요]"
+        }
+      ],
+      "comparison_to_plan": [
+        {
+          "plan_item": "[계획서 주요 항목 확인 필요]",
+          "result_item": "[결과보고서 대응 항목 확인 필요]",
+          "status": "[이행 여부 확인 필요]",
+          "notes": "[계획 대비 결과 확인 필요]"
+        }
+      ],
+      "main_outcomes": [
+        "[주요성과 확인 필요]"
+      ],
+      "issues": [
+        "[문제점 확인 필요]"
+      ],
+      "improvements": [
+        "[개선사항 확인 필요]"
+      ],
+      "future_plan": "[향후계획 확인 필요]",
+      "attachments": [],
+      "checklist": [
+        "기존 계획서와 대응 구조 확인",
+        "실적 수치 임의 생성 여부 확인",
+        "예산 집행액 임의 생성 여부 확인",
+        "성과 과장 표현 여부 확인",
+        "사람 최종 검토"
+      ]
+    }
+  ],
+  "attachments": [],
+  "email_draft": null,
+  "checklist": [
+    "result_report 필수 항목 포함 여부 확인",
+    "계획 대비 결과 대응 구조 확인",
+    "실제 계획서 원문 포함 여부 확인",
+    "실제 수치 임의 생성 여부 확인"
+  ],
+  "renderer_hints": {
+    "target_format": "hwpx",
+    "template_id": "hwpx_result_report_basic",
+    "style_profile": "[결과보고서 서식 프로필 확인 필요]",
+    "table_template": "[결과보고서 표 템플릿 확인 필요]",
+    "placeholder_map": {
+      "{{title}}": "documents[0].title",
+      "{{linked_plan_reference}}": "documents[0].linked_plan_reference",
+      "{{overview_table}}": "documents[0].overview",
+      "{{planned_items}}": "documents[0].planned_items",
+      "{{actual_results}}": "documents[0].actual_results",
+      "{{comparison_to_plan}}": "documents[0].comparison_to_plan",
+      "{{main_outcomes}}": "documents[0].main_outcomes",
+      "{{issues}}": "documents[0].issues",
+      "{{improvements}}": "documents[0].improvements",
+      "{{future_plan}}": "documents[0].future_plan"
+    },
+    "requires_xlsx": false,
+    "requires_hwpx": true,
+    "requires_manual_review": true
+  }
+}

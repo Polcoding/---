@@ -1,0 +1,111 @@
+{
+  "request_id": "[요청 ID placeholder]",
+  "input_summary": "[비식별 원페이지 보고서 작성 요청]",
+  "task_type": "draft_document",
+  "document_type": "one_page_report",
+  "output_targets": ["hwpx", "markdown"],
+  "security_review": {
+    "risk_level": "low",
+    "contains_personal_info": false,
+    "contains_sensitive_info": false,
+    "contains_internal_info": false,
+    "blocked_items": [],
+    "allowed_processing": true,
+    "required_review": ["human_review"],
+    "notes": "[placeholder 기반 원페이지 보고서 샘플]"
+  },
+  "missing_fields": [
+    {
+      "field_name": "보고일자",
+      "reason": "보고서 상단 정보 확인 필요",
+      "required_for": "report_summary",
+      "suggested_placeholder": "[보고일자 확인 필요]"
+    },
+    {
+      "field_name": "담당부서",
+      "reason": "보고 주체 확인 필요",
+      "required_for": "report_summary",
+      "suggested_placeholder": "[담당부서 확인 필요]"
+    },
+    {
+      "field_name": "검토자",
+      "reason": "검토 절차 확인 필요",
+      "required_for": "review_opinion",
+      "suggested_placeholder": "[검토자 확인 필요]"
+    },
+    {
+      "field_name": "관련 근거",
+      "reason": "보고 배경과 근거 확인 필요",
+      "required_for": "background",
+      "suggested_placeholder": "[관련 근거 확인 필요]"
+    }
+  ],
+  "assumptions": [],
+  "draft_status": "draft",
+  "human_review_required": true,
+  "documents": [
+    {
+      "title": "[보고 제목 확인 필요]",
+      "report_summary": {
+        "report_date": "[보고일자 확인 필요]",
+        "department": "[담당부서 확인 필요]",
+        "reviewer": "[검토자 확인 필요]",
+        "purpose": "[보고 목적 확인 필요]"
+      },
+      "background": "[업무 발생 배경 및 관련 근거 확인 필요]",
+      "main_points": [
+        "[주요 내용 1 확인 필요]",
+        "[주요 내용 2 확인 필요]"
+      ],
+      "review_opinion": "[검토 의견 확인 필요]",
+      "issues_or_considerations": [
+        "[고려사항 확인 필요]",
+        "[위험요소 또는 검토 필요사항 확인 필요]"
+      ],
+      "next_steps": [
+        "[향후 조치 1 확인 필요]",
+        "[향후 조치 2 확인 필요]"
+      ],
+      "action_items": [
+        {
+          "item": "[조치 필요사항 확인 필요]",
+          "owner": "[담당부서 확인 필요]",
+          "due_date": "[처리기한 확인 필요]"
+        }
+      ],
+      "attachments": [],
+      "checklist": [
+        "개조식 보고서체 적용 여부 확인",
+        "실제 개인정보 제외 여부 확인",
+        "예산ㆍ일정ㆍ수량 임의 생성 여부 확인",
+        "사람 최종 검토"
+      ]
+    }
+  ],
+  "attachments": [],
+  "email_draft": null,
+  "checklist": [
+    "원페이지 보고서 필수 항목 포함 여부 확인",
+    "확인 필요 항목 분리 여부 확인",
+    "실제 원문 또는 실제 식별정보 포함 여부 확인"
+  ],
+  "renderer_hints": {
+    "target_format": "hwpx",
+    "template_id": "hwpx_one_page_report_basic",
+    "style_profile": "[원페이지 보고서 서식 프로필 확인 필요]",
+    "table_template": "[원페이지 보고서 표 템플릿 확인 필요]",
+    "placeholder_map": {
+      "{{title}}": "documents[0].title",
+      "{{report_summary}}": "documents[0].report_summary",
+      "{{background}}": "documents[0].background",
+      "{{main_points}}": "documents[0].main_points",
+      "{{review_opinion}}": "documents[0].review_opinion",
+      "{{issues_or_considerations}}": "documents[0].issues_or_considerations",
+      "{{next_steps}}": "documents[0].next_steps",
+      "{{action_items}}": "documents[0].action_items"
+    },
+    "requires_xlsx": false,
+    "requires_hwpx": true,
+    "requires_manual_review": true
+  }
+}
