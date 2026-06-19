@@ -2,7 +2,7 @@
 
 ## 목표
 
-`placeholder_confirmed_values` 도입 여부를 검토합니다.
+placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙을 정리합니다.
 
 ## 현재 완료 상태
 
@@ -49,6 +49,7 @@
 - HWPX 보고서 4종별 사용자 입력 템플릿 문서화 완료
 - `normalizers/` fixture 확장 후보 검토 완료
 - `missing_fields` 생성 규칙 개선 여부 검토 완료
+- `placeholder_confirmed_values` 도입 여부 검토 완료
 
 ## 확인 대상
 
@@ -110,6 +111,8 @@
 - `checklists/normalizers_fixture_expansion_review_checklist.md`
 - `docs/86_missing_fields_rule_improvement_review.md`
 - `checklists/missing_fields_rule_improvement_review_checklist.md`
+- `docs/87_placeholder_confirmed_values_design_review.md`
+- `checklists/placeholder_confirmed_values_design_review_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -131,10 +134,10 @@
 
 ## 확인 항목
 
-1. `placeholder_confirmed_values`가 필요한지
-2. 이 값이 실제값이 아니라 placeholder 유지 의도임을 표현할 수 있는지
-3. `known_values`와 역할이 분리되는지
-4. 도입 시 `missing_fields`에서 제외할 수 있는 조건이 안전한지
+1. placeholder 형식으로 인정할 문자열 기준이 명확한지
+2. 실제값 의심 패턴과 충돌하면 보안 필터가 우선되는지
+3. 금액, 날짜, 연락처, 문서번호 형식이 placeholder로 위장되지 않는지
+4. `placeholder_confirmed_values`에 넣을 수 있는 값과 넣을 수 없는 값이 구분되는지
 5. 기존 fixture 6종 회귀 테스트가 깨지지 않는지
 6. 실제 원문이나 실제 승인정보 없이 진행되는지
 
@@ -149,13 +152,13 @@
 
 ## 완료 조건
 
-- `placeholder_confirmed_values` 도입 필요 여부 문서화
-- `known_values`와의 구분 기준 정리
-- 도입할 경우 fixture schema 최소 범위 정리
+- placeholder 형식 판정 기준 문서화
+- 실제값 의심 패턴 충돌 처리 규칙 문서화
+- 보안 필터 우선 원칙 정리
 - HWPX 4종 우선 흐름 유지
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `missing_fields` 규칙을 바로 바꾸기 전에 `placeholder_confirmed_values`라는 안전한 placeholder 확인값 구조를 도입할지 검토하는 것입니다.
+현재 추천은 `placeholder_confirmed_values`를 코드에 넣기 전에 placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙을 정리하는 것입니다.
