@@ -2,7 +2,7 @@
 
 ## 목표
 
-HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
+입력 정규화와 보안 필터 회귀 테스트 묶음을 정리합니다.
 
 ## 현재 완료 상태
 
@@ -42,6 +42,7 @@ HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
 - approved review_report `remaining_placeholders` 0 확인
 - approved review_report 한컴 수동 검수 완료
 - HWPX 4종 mapped 렌더링 한컴 수동 검수 완료
+- HWPX 4종 mapped 렌더링 완료 상태 통합 문서화 완료
 
 ## 확인 대상
 
@@ -89,6 +90,8 @@ HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
 - `checklists/approved_review_report_dry_run_result_checklist.md`
 - `docs/79_mapped_review_report_hwpx_render_result.md`
 - `checklists/mapped_review_report_hwpx_render_result_checklist.md`
+- `docs/80_mapped_hwpx_4types_completion_summary.md`
+- `checklists/mapped_hwpx_4types_completion_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -110,12 +113,13 @@ HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
 
 ## 확인 항목
 
-1. HWPX 4종 mapped 렌더링 결과를 한 문서에서 추적할 수 있는지
-2. 각 output HWPX의 `remaining_placeholders`가 0인지
-3. 사용자 한컴 수동 검수 결과가 문서에 반영되었는지
-4. `review_report` 보안 승인 조건이 별도 정책으로 남아 있는지
-5. output HWPX가 Git 제외 상태인지
-6. 실제 원문이나 실제 승인정보 없이 진행되었는지
+1. 입력 정규화 fixture 6종을 한 번에 재검증할 수 있는지
+2. 보안 필터 라우팅 결과가 문서화된 기대값과 일치하는지
+3. `review_report` 승인/미승인 경로가 모두 회귀 테스트에 포함되는지
+4. blocked fixture가 계속 payload를 생성하지 않는지
+5. HWPX payload validation과 dry-run이 같은 fixture 묶음으로 이어지는지
+6. output summary가 Git 제외 상태인지
+7. 실제 원문이나 실제 승인정보 없이 진행되는지
 
 ## 작업 제한
 
@@ -128,12 +132,13 @@ HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
 
 ## 완료 조건
 
-- HWPX 4종 mapped 렌더링 완료 상태 문서화
-- HWPX 4종 수동 검수 결과 요약
-- output 산출물 Git 제외 확인
+- 입력 정규화 회귀 테스트 범위 문서화
+- 보안 필터 라우팅 기대값 문서화
+- validation/dry-run 회귀 실행 순서 정리
+- output summary Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `one_page_report`, `project_plan`, `result_report`, `review_report` mapped HWPX 렌더링 완료 상태를 통합 문서와 체크리스트로 정리하는 것입니다.
+현재 추천은 `normalizers/`의 정규화, 보안 필터, payload mapper, validation, dry-run, mapped render 실행 순서를 회귀 테스트 묶음으로 정리하는 것입니다.
