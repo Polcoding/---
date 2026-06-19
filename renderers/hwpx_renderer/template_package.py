@@ -565,6 +565,8 @@ def _format_security_review(security_review: Any) -> str:
 def _format_list(value: Any) -> str:
     if not isinstance(value, list) or not value:
         return DEFAULT_PLACEHOLDER_VALUE
+    if len(value) == 1 and _is_placeholder_only_item(value[0]):
+        return _safe_string(value[0])
     return "\n".join(f"- {_format_list_item(item)}" for item in value)
 
 
@@ -574,6 +576,8 @@ def _format_mapping_or_list(value: Any) -> str:
     if isinstance(value, list):
         if not value:
             return DEFAULT_PLACEHOLDER_VALUE
+        if len(value) == 1 and _is_placeholder_only_item(value[0]):
+            return _safe_string(value[0])
         return "\n".join(f"- {_format_list_item(item)}" for item in value)
     if isinstance(value, dict):
         if not value:
@@ -606,6 +610,13 @@ def _format_list_item(item: Any) -> str:
             return DEFAULT_PLACEHOLDER_VALUE
         return " / ".join(f"{key}: {_safe_string(value)}" for key, value in item.items())
     return _safe_string(item)
+
+
+def _is_placeholder_only_item(item: Any) -> bool:
+    if not isinstance(item, str):
+        return False
+    stripped = item.strip()
+    return stripped.startswith("[") and stripped.endswith("]")
 
 
 def _to_json_text(value: Any) -> str:
