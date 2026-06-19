@@ -218,6 +218,7 @@ Instructions 복사
 - `docs/95_placeholder_confirmed_values_readonly_metadata_schema.md`: placeholder_confirmed_values read-only metadata schema
 - `docs/96_placeholder_confirmed_values_metadata_retention_decision.md`: placeholder_confirmed_values metadata 유지 결정
 - `docs/97_phase2_minimal_poc_checkpoint.md`: Phase 2 최소 PoC checkpoint
+- `docs/98_phase2_manual_rehearsal_runbook.md`: Phase 2 수동 리허설 runbook
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -285,6 +286,7 @@ Instructions 복사
 - `checklists/placeholder_confirmed_values_readonly_metadata_schema_checklist.md`: placeholder_confirmed_values read-only metadata schema 체크리스트
 - `checklists/placeholder_confirmed_values_metadata_retention_decision_checklist.md`: placeholder_confirmed_values metadata 유지 결정 체크리스트
 - `checklists/phase2_minimal_poc_checkpoint_checklist.md`: Phase 2 최소 PoC checkpoint 체크리스트
+- `checklists/phase2_manual_rehearsal_runbook_checklist.md`: Phase 2 수동 리허설 runbook 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -303,8 +305,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 최소 PoC 수동 리허설 절차를 정리합니다.
-2. 사용자 입력부터 HWPX output 확인까지 반복 실행 순서를 문서화합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 수동 리허설을 1회 실행하고 결과를 기록합니다.
+2. 사용자가 한컴에서 HWPX output 4종을 확인할 지점을 `[사용자 확인 필요]`로 분리합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.

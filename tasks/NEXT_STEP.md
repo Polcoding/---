@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 최소 PoC 수동 리허설 절차를 정리합니다.
+Phase 2 수동 리허설 runbook을 기준으로 1회 실행 결과를 기록합니다.
 
 ## 현재 완료 상태
 
@@ -12,14 +12,12 @@ Phase 2 최소 PoC 수동 리허설 절차를 정리합니다.
 - `placeholder_confirmed_values` helper와 fixture 검증 완료
 - metadata는 코드에 연결하지 않고 문서 기준으로 유지하기로 결정
 - Phase 2 최소 PoC checkpoint 문서화 완료
+- Phase 2 수동 리허설 runbook 문서화 완료
 
 ## 확인 대상
 
-- `docs/82_phase2_minimal_operation_flow.md`
-- `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
-- `docs/84_hwpx_report_user_input_templates.md`
-- `docs/97_phase2_minimal_poc_checkpoint.md`
-- `checklists/phase2_minimal_poc_checkpoint_checklist.md`
+- `docs/98_phase2_manual_rehearsal_runbook.md`
+- `checklists/phase2_manual_rehearsal_runbook_checklist.md`
 - `normalizers/README.md`
 - `normalizers/`
 - `templates/hwpx/local_template_policy.md`
@@ -28,13 +26,13 @@ Phase 2 최소 PoC 수동 리허설 절차를 정리합니다.
 
 ## 검토 항목
 
-1. 사용자가 입력 전 확인해야 할 사항
-2. Codex가 실행할 normalizers 명령 순서
-3. HWPX output 생성 전 확인할 사항
-4. HWPX output 생성 후 사용자가 한컴에서 확인할 사항
-5. GitHub Desktop Changes에서 확인할 사항
-6. `normalizers/output/` 및 `renderers/hwpx_renderer/output/` 쓰기 권한 또는 파일 잠금 확인 절차
-7. 문제가 생겼을 때 중단하고 되돌아갈 기준
+1. runbook 명령 순서대로 normalizers 검증 실행
+2. HWPX output 4종 생성 여부 확인
+3. `normalizers/output/` 및 `renderers/hwpx_renderer/output/` Git 제외 확인
+4. GitHub Desktop Changes에 output 또는 로컬 HWPX 템플릿이 보이지 않는지 확인
+5. 사용자가 한컴에서 HWPX 4종을 열어 글자 겹침, placeholder 잔여, bullet 표기, 민감정보 여부 확인
+6. 이상 발생 시 파일명, 항목 번호, 증상을 기록
+7. 결과를 별도 문서와 체크리스트로 남길지 판단
 
 ## 작업 제한
 
@@ -50,14 +48,14 @@ Phase 2 최소 PoC 수동 리허설 절차를 정리합니다.
 
 ## 완료 조건
 
-- Phase 2 수동 리허설 절차 문서화
-- 사용자 확인 필요 지점 표시
-- Codex 실행 명령 순서 정리
-- Git 제외 확인 절차 정리
-- output 폴더 쓰기 권한과 산출물 잠금 확인 절차 정리
-- 문제 발생 시 중단 기준 정리
+- runbook 기준 normalizers 검증 실행
+- HWPX output 생성 또는 안전 중단 상태 보고
+- `[사용자 확인 필요]` HWPX 4종 열람 항목 제시
+- Git 제외 확인 결과 보고
+- output 폴더 쓰기 권한 또는 산출물 잠금 문제 여부 보고
+- 보안 검수 통과 여부 보고
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 수동 리허설 절차를 문서화한 뒤, 사용자가 실제로 한 번 따라 할 수 있는 runbook 형태로 정리하는 것입니다.
+현재 추천은 runbook을 기준으로 실제 수동 리허설을 1회 실행하고, 사용자의 한컴 확인 결과를 받아 결과 문서로 정리하는 것입니다.
