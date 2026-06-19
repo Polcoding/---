@@ -109,4 +109,6 @@ normalizers/output/placeholder_confirmed_values_metadata_preview.json
 
 `placeholder_confirmed_values_review`는 현재 문서 기준 schema 후보로 유지합니다.
 
-다음 단계는 `placeholder_confirmed_values` 흐름을 더 진행하기보다, Phase 2 최소 PoC의 전체 상태를 다시 묶어 어느 지점까지 구현하고 어디부터 보류할지 정리하는 것입니다.
+후속 작업에서 Phase 2 최소 PoC의 전체 상태를 `docs/97_phase2_minimal_poc_checkpoint.md`에 정리했습니다.
+
+다음 단계는 코드를 더 확장하기보다, Phase 2 최소 PoC 수동 리허설 절차를 정리하는 것입니다.
