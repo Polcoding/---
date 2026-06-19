@@ -111,7 +111,7 @@ helper는 placeholder 형식 판정 보조 도구입니다.
 
 현재 단계에서는 normalizer 연결을 보류합니다.
 
-먼저 read-only metadata 설계 후보만 별도 문서로 검토합니다.
+후속 작업에서 read-only metadata schema 후보를 `docs/95_placeholder_confirmed_values_readonly_metadata_schema.md`에 정리했습니다.
 
 ## 보안 검수
 
@@ -127,4 +127,4 @@ helper는 placeholder 형식 판정 보조 도구입니다.
 
 `placeholder_confirmed_values` helper 결과는 아직 normalizer 흐름에 연결하지 않습니다.
 
-다음 단계는 연결 전 검토용으로 read-only metadata schema 후보를 문서화하는 것입니다.
+다음 단계는 metadata를 코드에 연결하지 않고 문서 기준으로 유지할지 또는 dry-run preview 전용 출력으로만 둘지 검토하는 것입니다.

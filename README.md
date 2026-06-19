@@ -215,6 +215,7 @@ Instructions 복사
 - `docs/92_placeholder_confirmed_values_fixture_schema_review.md`: placeholder_confirmed_values fixture schema 검토
 - `docs/93_placeholder_confirmed_values_file_fixture_result.md`: placeholder_confirmed_values 파일 기반 fixture 분리 결과
 - `docs/94_placeholder_confirmed_values_normalizer_connection_policy.md`: placeholder_confirmed_values normalizer 연결 정책
+- `docs/95_placeholder_confirmed_values_readonly_metadata_schema.md`: placeholder_confirmed_values read-only metadata schema
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -279,6 +280,7 @@ Instructions 복사
 - `checklists/placeholder_confirmed_values_fixture_schema_review_checklist.md`: placeholder_confirmed_values fixture schema 검토 체크리스트
 - `checklists/placeholder_confirmed_values_file_fixture_result_checklist.md`: placeholder_confirmed_values 파일 기반 fixture 분리 체크리스트
 - `checklists/placeholder_confirmed_values_normalizer_connection_policy_checklist.md`: placeholder_confirmed_values normalizer 연결 정책 체크리스트
+- `checklists/placeholder_confirmed_values_readonly_metadata_schema_checklist.md`: placeholder_confirmed_values read-only metadata schema 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -297,8 +299,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 read-only metadata schema 후보를 문서화합니다.
-2. helper 결과는 아직 normalizer 흐름에 연결하지 않습니다.
-3. 기존 fixture 6종에는 아직 `placeholder_confirmed_values`를 섞지 않습니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 read-only metadata를 코드에 연결하지 않고 문서 기준으로 유지할지 검토합니다.
+2. dry-run preview 전용 출력이 필요한지 별도 검토합니다.
+3. helper 결과는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
