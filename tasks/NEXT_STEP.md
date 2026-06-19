@@ -2,7 +2,7 @@
 
 ## 목표
 
-`normalizers/` fixture 확장 후보를 검토합니다.
+`missing_fields` 생성 규칙 개선 여부를 검토합니다.
 
 ## 현재 완료 상태
 
@@ -47,6 +47,7 @@
 - Phase 2 최소 운영 흐름 문서화 완료
 - 사용자 입력 체크리스트와 운영 전 수동 점검표 문서화 완료
 - HWPX 보고서 4종별 사용자 입력 템플릿 문서화 완료
+- `normalizers/` fixture 확장 후보 검토 완료
 
 ## 확인 대상
 
@@ -104,6 +105,8 @@
 - `checklists/phase2_user_input_and_manual_operation_checklist.md`
 - `docs/84_hwpx_report_user_input_templates.md`
 - `checklists/hwpx_report_user_input_templates_checklist.md`
+- `docs/85_normalizers_fixture_expansion_review.md`
+- `checklists/normalizers_fixture_expansion_review_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -125,11 +128,11 @@
 
 ## 확인 항목
 
-1. 기존 fixture 6종으로 충분한지
-2. 사용자 입력 템플릿 기반 추가 fixture가 필요한지
-3. 추가 fixture가 실제값 없이 placeholder만 사용하는지
-4. `review_report` 승인/미승인 경로를 더 보강할 필요가 있는지
-5. fixture 추가 없이 문서만으로 충분한 항목은 무엇인지
+1. 현재 `make_missing_fields`가 문서 유형별 고정 누락값만 만드는지
+2. fixture 입력에서 placeholder-confirmed 값을 표현할 구조가 필요한지
+3. project_plan/result_report의 `ready_for_draft` 경로가 필요한지
+4. 개선 없이 현재 6종 fixture 유지가 더 안전한지
+5. 개선 시 기존 회귀 테스트가 깨지지 않는지
 6. 실제 원문이나 실제 승인정보 없이 진행되는지
 
 ## 작업 제한
@@ -143,13 +146,13 @@
 
 ## 완료 조건
 
-- fixture 확장 후보 문서화
-- 추가할 fixture와 보류할 fixture 구분
-- fixture 추가 시 보안 조건 정리
+- `missing_fields` 생성 규칙 개선 필요 여부 문서화
+- 개선할 경우 최소 범위 정의
+- 개선하지 않을 경우 현재 정책 유지 사유 정리
 - HWPX 4종 우선 흐름 유지
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `docs/84_hwpx_report_user_input_templates.md`를 기준으로 `normalizers/` fixture 확장 후보를 검토하는 것입니다.
+현재 추천은 fixture 확장 전에 `normalizers/input_normalizer_poc.py`의 `missing_fields` 생성 규칙을 개선할지 검토하는 것입니다.

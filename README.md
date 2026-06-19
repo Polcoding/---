@@ -195,6 +195,7 @@ Instructions 복사
 - `docs/82_phase2_minimal_operation_flow.md`: Phase 2 최소 운영 흐름
 - `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`: Phase 2 사용자 입력 및 수동 운영 점검표
 - `docs/84_hwpx_report_user_input_templates.md`: HWPX 보고서 4종 사용자 입력 템플릿
+- `docs/85_normalizers_fixture_expansion_review.md`: normalizers fixture 확장 후보 검토
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -249,6 +250,7 @@ Instructions 복사
 - `checklists/phase2_minimal_operation_flow_checklist.md`: Phase 2 최소 운영 흐름 체크리스트
 - `checklists/phase2_user_input_and_manual_operation_checklist.md`: Phase 2 사용자 입력 및 수동 운영 체크리스트
 - `checklists/hwpx_report_user_input_templates_checklist.md`: HWPX 보고서 사용자 입력 템플릿 체크리스트
+- `checklists/normalizers_fixture_expansion_review_checklist.md`: normalizers fixture 확장 후보 검토 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -272,4 +274,4 @@ Instructions 복사
 3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
 4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
 5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
-6. 다음 작업은 `normalizers/` fixture 확장 후보 검토입니다.
+6. 다음 작업은 `missing_fields` 생성 규칙 개선 여부 검토입니다.
