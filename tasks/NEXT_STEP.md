@@ -2,36 +2,45 @@
 
 ## 목표
 
-`placeholder_confirmed_values_review` metadata를 코드에 연결하지 않고 문서 기준으로 유지할지, 또는 dry-run preview 전용 출력으로만 둘지 검토합니다.
+Phase 2 최소 PoC 전체 상태를 다시 묶어 구현 계속 진행 범위와 보류 범위를 구분합니다.
 
 ## 현재 완료 상태
 
-- `placeholder_confirmed_values` read-only helper 최소 구현 완료
-- helper 전용 safe/invalid fixture 파일 분리 완료
-- helper fixture 검증 통과
-- existing routing fixture 6종 회귀 테스트 통과
-- normalizer 연결 허용 조건과 금지 조건 문서화 완료
+- HWPX 보고서 4종 placeholder 기반 렌더링 및 수동 검수 완료
+- 입력 정규화 최소 PoC 작성 완료
+- 보안 필터 최소 PoC 작성 완료
+- HWPX payload mapper, validation, renderer dry-run PoC 작성 완료
+- mapped HWPX 보고서 4종 렌더링 완료
+- `placeholder_confirmed_values` read-only helper 구현 완료
+- helper 전용 fixture 분리 완료
 - read-only metadata schema 후보 문서화 완료
-- 현재 단계에서는 helper 결과를 normalizer 흐름에 연결하지 않기로 결정
+- metadata는 코드에 연결하지 않고 문서 기준으로 유지하기로 결정
 
 ## 확인 대상
 
+- `docs/59_phase1_completion_and_phase2_entry_criteria.md`
+- `docs/80_mapped_hwpx_4types_completion_summary.md`
+- `docs/81_normalizers_regression_test_suite.md`
+- `docs/82_phase2_minimal_operation_flow.md`
+- `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
+- `docs/84_hwpx_report_user_input_templates.md`
+- `docs/91_placeholder_confirmed_values_helper_result.md`
+- `docs/92_placeholder_confirmed_values_fixture_schema_review.md`
+- `docs/93_placeholder_confirmed_values_file_fixture_result.md`
 - `docs/94_placeholder_confirmed_values_normalizer_connection_policy.md`
 - `docs/95_placeholder_confirmed_values_readonly_metadata_schema.md`
-- `checklists/placeholder_confirmed_values_readonly_metadata_schema_checklist.md`
-- `normalizers/placeholder_confirmed_values.py`
-- `normalizers/validate_placeholder_confirmed_values_poc.py`
-- `normalizers/input_normalizer_poc.py`
-- `normalizers/hwpx_renderer_dry_run_poc.py`
+- `docs/96_placeholder_confirmed_values_metadata_retention_decision.md`
+- `normalizers/`
+- `tasks/NEXT_STEP.md`
 
 ## 검토 항목
 
-1. metadata를 문서 기준으로만 유지할지
-2. dry-run preview 전용 summary에만 metadata 후보를 출력할지
-3. dry-run preview 출력이 기존 `normalization_summary.json`과 섞이지 않아야 하는지
-4. preview를 추가하더라도 `missing_fields`, routing, payload를 바꾸지 않는지
-5. preview용 output도 Git 제외 상태를 유지하는지
-6. 코드 구현보다 문서 기준 유지가 더 안전한지
+1. Phase 2 최소 PoC에서 완료된 구현 범위
+2. 문서 기준으로만 유지할 범위
+3. 아직 코드 연결하지 않을 범위
+4. HWPX 보고서 4종 우선 흐름 유지 여부
+5. 다음에 실제로 구현할 가치가 있는 최소 단위
+6. 운영 자동화, API, Make.com, Email 자동화를 계속 보류할지
 
 ## 작업 제한
 
@@ -44,16 +53,17 @@
 - `missing_fields` 자동 제외 금지
 - routing 결과 변경 금지
 - HWPX payload 반영 금지
-- 기존 fixture 6종 회귀 경로 변경 금지
 
 ## 완료 조건
 
-- metadata 문서 기준 유지 여부 판단
-- dry-run preview 전용 출력 여부 판단
-- 기존 6종 회귀 기준 유지
-- 보안 필터 우선 원칙 유지
+- Phase 2 최소 PoC 전체 상태 요약
+- 계속 진행할 구현 범위 정리
+- 보류할 범위 정리
+- 다음 추천 구현 단위 제안
+- 기존 회귀 테스트 통과
+- 보안 검수 통과
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 metadata를 아직 코드에 연결하지 않고 문서 기준으로 유지하는 것입니다. dry-run preview 전용 출력은 필요성이 더 명확해진 뒤 검토합니다.
+현재 추천은 Phase 2 최소 PoC를 한 번 묶어 중간 완료 지점으로 정리한 뒤, 다음 구현을 계속할지 문서/운영 절차 정리로 전환할지 판단하는 것입니다.

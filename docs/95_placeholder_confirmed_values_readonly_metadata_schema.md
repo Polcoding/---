@@ -179,4 +179,8 @@ invalid finding은 검토용 metadata로만 남깁니다.
 
 `placeholder_confirmed_values_review`는 read-only top-level metadata 후보로 둡니다.
 
-다음 단계는 이 metadata를 코드에 연결하지 않고, 문서 기준으로만 유지할지 또는 별도 dry-run preview에만 출력할지 검토하는 것입니다.
+후속 작업에서 이 metadata는 코드에 연결하지 않고 문서 기준 schema 후보로 유지하기로 결정했습니다.
+
+dry-run preview 전용 출력도 현재는 만들지 않습니다.
+
+다음 단계는 Phase 2 최소 PoC의 전체 상태를 다시 묶어 구현 계속 진행 범위와 보류 범위를 구분하는 것입니다.
