@@ -51,7 +51,7 @@
 - Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태입니다.
 - 현재는 Phase 2 최소 PoC 단계입니다.
 - Phase 2는 API, Make.com, Email 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계입니다.
-- 다음 구현 후보는 `placeholder_confirmed_values` read-only 판정 helper입니다.
+- 다음 검토 후보는 `placeholder_confirmed_values` fixture schema 확장 여부입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -211,6 +211,7 @@ Instructions 복사
 - `docs/88_placeholder_pattern_collision_rules.md`: placeholder 형식 판정 및 실제값 충돌 규칙
 - `docs/89_placeholder_confirmed_values_code_adoption_decision.md`: placeholder_confirmed_values 코드 도입 여부 재검토
 - `docs/90_project_reorganization_after_superpowers.md`: Superpowers 재적용 후 프로젝트 재정비 요약
+- `docs/91_placeholder_confirmed_values_helper_result.md`: placeholder_confirmed_values read-only helper 구현 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -271,6 +272,7 @@ Instructions 복사
 - `checklists/placeholder_pattern_collision_rules_checklist.md`: placeholder 형식 및 충돌 규칙 체크리스트
 - `checklists/placeholder_confirmed_values_code_adoption_decision_checklist.md`: placeholder_confirmed_values 코드 도입 여부 체크리스트
 - `checklists/project_reorganization_after_superpowers_checklist.md`: 프로젝트 재정비 검수 체크리스트
+- `checklists/placeholder_confirmed_values_helper_result_checklist.md`: placeholder_confirmed_values helper 구현 결과 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -289,8 +291,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 `placeholder_confirmed_values` read-only 판정 helper를 최소 범위로 구현합니다.
-2. 기존 fixture와 회귀 테스트에서 routing, `missing_fields`, HWPX 렌더링 결과가 바뀌지 않는지 확인합니다.
-3. helper 검증 결과를 문서와 체크리스트에 기록합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 `placeholder_confirmed_values` fixture schema 확장 여부를 검토합니다.
+2. helper 판정 결과를 `missing_fields`에 반영할지 여부는 아직 보류하고 별도 판단합니다.
+3. 기존 fixture와 회귀 테스트에서 routing, `missing_fields`, HWPX 렌더링 결과가 바뀌지 않는지 계속 확인합니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.

@@ -150,4 +150,6 @@ placeholder 형식 판정은 단독으로 사용하지 않습니다.
 
 항상 실제값 의심 패턴 검사와 함께 적용하며, 충돌 시 보안 필터가 우선합니다.
 
-다음 단계는 이 기준을 바탕으로 `placeholder_confirmed_values`를 코드에 도입할지 다시 판단하는 것입니다.
+이 기준은 이후 read-only helper 구현에 반영되었습니다.
+
+다음 단계는 helper 판정 결과를 기준으로 fixture schema 확장 여부를 검토하는 것입니다.

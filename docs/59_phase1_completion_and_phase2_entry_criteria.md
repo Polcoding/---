@@ -98,11 +98,11 @@ Phase 2 진입 조건은 이미 충족한 것으로 봅니다.
 
 현재 추천 순서는 다음과 같습니다.
 
-1. `placeholder_confirmed_values` read-only 판정 helper 최소 구현
-2. 기존 fixture 회귀 테스트
-3. `missing_fields`, routing, HWPX payload, dry-run 결과 미변경 확인
-4. helper 판정 결과를 다음 문서와 체크리스트에 기록
-5. fixture schema 확장 여부 별도 검토
+1. `placeholder_confirmed_values` fixture schema 확장 여부 검토
+2. 신규 fixture를 추가할 경우 helper 전용 검증으로 둘지 판단
+3. 기존 fixture 회귀 테스트 유지
+4. `missing_fields`, routing, HWPX payload, dry-run 결과 미변경 확인
+5. helper 판정 결과를 실제 `missing_fields`에 반영할지 여부는 계속 별도 검토
 
 ## 아직 시작하지 않을 것
 
@@ -119,4 +119,4 @@ Phase 2 진입 조건은 이미 충족한 것으로 봅니다.
 
 현재 저장소는 Phase 1의 핵심 목표를 완료했습니다.
 
-현재 다음 단계는 운영 자동화가 아니라 Phase 2 최소 PoC 보강입니다. 즉, `placeholder_confirmed_values`를 안전하게 판정하는 read-only helper부터 추가하고 기존 결과가 흔들리지 않는지 확인해야 합니다.
+현재 다음 단계는 운영 자동화가 아니라 Phase 2 최소 PoC 보강입니다. 즉, 추가된 read-only helper를 기준으로 fixture schema 확장 여부를 검토하되 기존 결과가 흔들리지 않는지 확인해야 합니다.

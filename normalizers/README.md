@@ -40,6 +40,7 @@ python .\normalizers\hwpx_payload_mapper_poc.py
 python .\normalizers\validate_hwpx_payload_poc.py
 python .\normalizers\hwpx_renderer_dry_run_poc.py
 python .\normalizers\render_mapped_hwpx_poc.py
+python .\normalizers\validate_placeholder_confirmed_values_poc.py
 ```
 
 실행 결과는 `normalizers/output/`에 생성됩니다.
@@ -47,6 +48,8 @@ python .\normalizers\render_mapped_hwpx_poc.py
 `normalizers/output/` 산출물은 Git에 포함하지 않습니다.
 
 회귀 테스트 기준은 `docs/81_normalizers_regression_test_suite.md`와 `checklists/normalizers_regression_test_suite_checklist.md`를 따릅니다.
+
+`placeholder_confirmed_values` helper는 read-only 검증용입니다. 현재 단계에서는 `missing_fields`, routing, HWPX payload 결과에 반영하지 않습니다.
 
 ## 보안 원칙
 

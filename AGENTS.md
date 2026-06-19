@@ -166,7 +166,7 @@
 - Phase 2는 운영 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 사람 검토 흐름을 안정화하는 단계입니다.
 - `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
-- 다음 구현은 `placeholder_confirmed_values` read-only 판정 helper처럼 기존 routing과 `missing_fields` 결과를 흔들지 않는 최소 범위부터 검토합니다.
+- 다음 구현 또는 문서화는 기존 routing과 `missing_fields` 결과를 흔들지 않는 최소 범위부터 검토합니다.
 
 ## Codex 작업 방식 보강
 

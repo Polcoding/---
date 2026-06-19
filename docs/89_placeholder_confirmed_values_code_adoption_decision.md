@@ -69,9 +69,11 @@ helper와 fixture 검증이 안정화된 뒤 다음을 결정합니다.
 
 ## 현재 단계의 결정
 
-현재 단계에서는 코드 변경을 하지 않습니다.
+이 문서 작성 시점에는 코드 변경을 하지 않았습니다.
 
-다음 단계에서 최소 구현으로 판정 helper만 추가할지 검토합니다.
+이후 `docs/91_placeholder_confirmed_values_helper_result.md` 기준으로 read-only 판정 helper를 최소 구현했습니다.
+
+현재 helper는 `missing_fields` 생성 결과와 routing 결과에 연결하지 않았습니다.
 
 ## 코드 도입 시 최소 범위
 
@@ -106,4 +108,6 @@ helper와 fixture 검증이 안정화된 뒤 다음을 결정합니다.
 
 `placeholder_confirmed_values`는 코드 도입 후보로 유지합니다.
 
-하지만 현재 단계에서는 문서 기준을 유지하고, 다음 단계에서 `missing_fields`를 바꾸지 않는 read-only 판정 helper 추가 여부를 검토합니다.
+현재는 `missing_fields`를 바꾸지 않는 read-only 판정 helper만 추가한 상태입니다.
+
+다음 단계에서는 helper 판정 결과를 기준으로 fixture schema 확장 여부를 별도 검토합니다.
