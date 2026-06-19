@@ -1,0 +1,38 @@
+{
+  "fixture_group": "placeholder_confirmed_values_invalid",
+  "cases": [
+    {
+      "case_id": "plain_text_value",
+      "values": {
+        "schedule": "추진 일정 확인 필요"
+      },
+      "expected_invalid_count": 1
+    },
+    {
+      "case_id": "empty_placeholder",
+      "values": {
+        "budget": "[]"
+      },
+      "expected_invalid_count": 2
+    },
+    {
+      "case_id": "actual_value_marker",
+      "values": {
+        "budget": "[실제 금액 입력됨]"
+      },
+      "expected_invalid_count": 2
+    },
+    {
+      "case_id": "not_mapping",
+      "values": [
+        "[확인 필요]"
+      ],
+      "expected_invalid_count": 1
+    },
+    {
+      "case_id": "unsafe_plain_text_single_value",
+      "single_value": "확인 필요",
+      "expected_single_value_result": false
+    }
+  ]
+}

@@ -51,6 +51,8 @@ python .\normalizers\validate_placeholder_confirmed_values_poc.py
 
 `placeholder_confirmed_values` helper는 read-only 검증용입니다. 현재 단계에서는 `missing_fields`, routing, HWPX payload 결과에 반영하지 않습니다.
 
+helper 전용 fixture는 `normalizers/fixtures/placeholder_confirmed_values/` 하위 폴더에 둡니다. 이 fixture는 기존 routing fixture 6종과 분리해서 검증합니다.
+
 ## 보안 원칙
 
 - fixture는 placeholder 기반만 사용합니다.

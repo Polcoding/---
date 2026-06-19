@@ -1,0 +1,20 @@
+{
+  "fixture_group": "placeholder_confirmed_values_safe",
+  "cases": [
+    {
+      "case_id": "safe_placeholder_values",
+      "values": {
+        "schedule": "[추진 일정 확인 필요]",
+        "budget": "[예산 확인 필요]",
+        "results_or_metrics": "[실적 수치 확인 필요]",
+        "background": "[비식별 배경 요약]"
+      },
+      "expected_invalid_count": 0
+    },
+    {
+      "case_id": "safe_single_value",
+      "single_value": "[확인 필요]",
+      "expected_single_value_result": true
+    }
+  ]
+}

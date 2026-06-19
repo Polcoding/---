@@ -133,16 +133,16 @@
 - HWPX payload에 `placeholder_confirmed_values` 반영
 - API, Make.com, Email 자동화 연동
 
-## 다음 단계 후보
+## 후속 처리 결과
 
-다음 단계에서는 helper 전용 검증 케이스를 fixture 파일 기반으로 분리할지 검토할 수 있습니다.
+후속 작업에서 helper 전용 검증 케이스를 fixture 파일 기반으로 분리했습니다.
 
-후보:
+분리 위치:
 
-- `normalizers/fixtures/placeholder_confirmed_values_safe.json`
-- `normalizers/fixtures/placeholder_confirmed_values_invalid.json`
+- `normalizers/fixtures/placeholder_confirmed_values/placeholder_confirmed_values_safe.json`
+- `normalizers/fixtures/placeholder_confirmed_values/placeholder_confirmed_values_invalid.json`
 
-다만 이 fixture를 기존 routing 회귀 테스트에 섞을지는 별도 판단해야 합니다.
+이 fixture는 기존 routing 회귀 테스트에 섞지 않습니다.
 
 ## 보안 검수
 
@@ -160,4 +160,4 @@
 
 하지만 현재 단계에서는 기존 fixture 6종에 적용하지 않고, helper 전용 검증으로 분리해 유지합니다.
 
-다음 작업은 helper 전용 검증 케이스를 파일 기반 fixture로 분리할지 여부를 검토하는 것입니다.
+다음 작업은 helper 결과를 normalizer 흐름에 연결할지 여부를 판단하기 전에, 연결 허용 조건과 금지 조건을 별도 문서로 정리하는 것입니다.

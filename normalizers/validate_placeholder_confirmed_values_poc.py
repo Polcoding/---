@@ -13,53 +13,40 @@ from placeholder_confirmed_values import (
 
 
 BASE_DIR = Path(__file__).resolve().parent
+HELPER_FIXTURE_DIR = BASE_DIR / "fixtures" / "placeholder_confirmed_values"
 OUTPUT_DIR = BASE_DIR / "output"
 
-HELPER_CASES: list[dict[str, Any]] = [
-    {
-        "case_id": "safe_placeholder_values",
-        "values": {
-            "schedule": "[추진 일정 확인 필요]",
-            "budget": "[예산 확인 필요]",
-            "results_or_metrics": "[실적 수치 확인 필요]",
-            "background": "[비식별 배경 요약]",
-        },
-        "expected_invalid_count": 0,
-    },
-    {
-        "case_id": "plain_text_value",
-        "values": {
-            "schedule": "추진 일정 확인 필요",
-        },
-        "expected_invalid_count": 1,
-    },
-    {
-        "case_id": "empty_placeholder",
-        "values": {
-            "budget": "[]",
-        },
-        "expected_invalid_count": 2,
-    },
-    {
-        "case_id": "actual_value_marker",
-        "values": {
-            "budget": "[실제 금액 입력됨]",
-        },
-        "expected_invalid_count": 2,
-    },
-    {
-        "case_id": "not_mapping",
-        "values": ["[확인 필요]"],
-        "expected_invalid_count": 1,
-    },
-]
+
+def load_helper_cases() -> list[dict[str, Any]]:
+    cases: list[dict[str, Any]] = []
+    for path in sorted(HELPER_FIXTURE_DIR.glob("*.json")):
+        with path.open("r", encoding="utf-8") as file:
+            fixture = json.load(file)
+        for case in fixture.get("cases", []):
+            loaded_case = dict(case)
+            loaded_case["fixture"] = path.name
+            cases.append(loaded_case)
+    return cases
 
 
 def validate_case(case: dict[str, Any]) -> dict[str, Any]:
+    if "single_value" in case:
+        actual_result = is_placeholder_confirmed_value(case["single_value"])
+        expected_result = case["expected_single_value_result"]
+        return {
+            "fixture": case.get("fixture"),
+            "case_id": case["case_id"],
+            "actual_result": actual_result,
+            "expected_result": expected_result,
+            "passed": actual_result == expected_result,
+            "findings": [],
+        }
+
     findings = find_invalid_placeholder_confirmed_values(case["values"])
     expected_invalid_count = case["expected_invalid_count"]
     passed = len(findings) == expected_invalid_count
     return {
+        "fixture": case.get("fixture"),
         "case_id": case["case_id"],
         "invalid_count": len(findings),
         "expected_invalid_count": expected_invalid_count,
@@ -69,25 +56,25 @@ def validate_case(case: dict[str, Any]) -> dict[str, Any]:
 
 
 def main() -> None:
-    results = [validate_case(case) for case in HELPER_CASES]
-    direct_checks = {
-        "safe_single_value": is_placeholder_confirmed_value("[확인 필요]"),
-        "unsafe_plain_text": is_placeholder_confirmed_value("확인 필요"),
-    }
-    all_passed = all(result["passed"] for result in results) and direct_checks == {
-        "safe_single_value": True,
-        "unsafe_plain_text": False,
-    }
+    cases = load_helper_cases()
+    results = [validate_case(case) for case in cases]
+    all_passed = bool(results) and all(result["passed"] for result in results)
 
     print("placeholder_confirmed_values helper 검증 결과")
     for result in results:
-        print(
-            f"- {result['case_id']}: "
-            f"invalid {result['invalid_count']} / "
-            f"expected {result['expected_invalid_count']} / "
-            f"{'passed' if result['passed'] else 'failed'}"
-        )
-    print(f"- direct_checks: {'passed' if all_passed else 'failed'}")
+        if "invalid_count" in result:
+            print(
+                f"- {result['fixture']} / {result['case_id']}: "
+                f"invalid {result['invalid_count']} / "
+                f"expected {result['expected_invalid_count']} / "
+                f"{'passed' if result['passed'] else 'failed'}"
+            )
+        else:
+            print(
+                f"- {result['fixture']} / {result['case_id']}: "
+                f"{result['actual_result']} / expected {result['expected_result']} / "
+                f"{'passed' if result['passed'] else 'failed'}"
+            )
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "placeholder_confirmed_values_summary.json"
@@ -97,7 +84,6 @@ def main() -> None:
                 {
                     "all_passed": all_passed,
                     "results": results,
-                    "direct_checks": direct_checks,
                 },
                 ensure_ascii=False,
                 indent=2,
