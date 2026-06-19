@@ -199,6 +199,7 @@ Instructions 복사
 - `docs/86_missing_fields_rule_improvement_review.md`: missing_fields 생성 규칙 개선 검토
 - `docs/87_placeholder_confirmed_values_design_review.md`: placeholder_confirmed_values 도입 검토
 - `docs/88_placeholder_pattern_collision_rules.md`: placeholder 형식 판정 및 실제값 충돌 규칙
+- `docs/89_placeholder_confirmed_values_code_adoption_decision.md`: placeholder_confirmed_values 코드 도입 여부 재검토
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -257,6 +258,7 @@ Instructions 복사
 - `checklists/missing_fields_rule_improvement_review_checklist.md`: missing_fields 생성 규칙 개선 검토 체크리스트
 - `checklists/placeholder_confirmed_values_design_review_checklist.md`: placeholder_confirmed_values 도입 검토 체크리스트
 - `checklists/placeholder_pattern_collision_rules_checklist.md`: placeholder 형식 및 충돌 규칙 체크리스트
+- `checklists/placeholder_confirmed_values_code_adoption_decision_checklist.md`: placeholder_confirmed_values 코드 도입 여부 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -280,4 +282,4 @@ Instructions 복사
 3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
 4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
 5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
-6. 다음 작업은 `placeholder_confirmed_values` 코드 도입 여부 재검토입니다.
+6. 다음 작업은 `placeholder_confirmed_values` read-only 판정 helper 최소 구현 범위 정리입니다.
