@@ -186,6 +186,7 @@ Instructions 복사
 - `docs/73_hwpx_render_connection_decision.md`: 실제 HWPX 렌더링 연결 여부 결정
 - `docs/74_mapped_one_page_hwpx_render_result.md`: mapped one_page_report HWPX 렌더링 결과
 - `docs/75_mapped_project_plan_hwpx_render_result.md`: mapped project_plan HWPX 렌더링 결과
+- `docs/76_mapped_result_report_hwpx_render_result.md`: mapped result_report HWPX 렌더링 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -231,6 +232,7 @@ Instructions 복사
 - `checklists/hwpx_render_connection_decision_checklist.md`: 실제 HWPX 렌더링 연결 여부 체크리스트
 - `checklists/mapped_one_page_hwpx_render_result_checklist.md`: mapped one_page_report HWPX 렌더링 결과 체크리스트
 - `checklists/mapped_project_plan_hwpx_render_result_checklist.md`: mapped project_plan HWPX 렌더링 결과 체크리스트
+- `checklists/mapped_result_report_hwpx_render_result_checklist.md`: mapped result_report HWPX 렌더링 결과 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -254,4 +256,4 @@ Instructions 복사
 3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
 4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
 5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
-6. 다음 작업은 사용자가 mapped project_plan HWPX output을 한컴에서 수동 검수하는 것입니다.
+6. 다음 작업은 사용자가 mapped result_report HWPX output을 한컴에서 수동 검수하는 것입니다.

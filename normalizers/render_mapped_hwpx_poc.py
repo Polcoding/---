@@ -42,6 +42,12 @@ TARGETS = [
         "output": "mapped_missing_project_plan_poc.hwpx",
         "allowed_routing": {"needs_more_input"},
     },
+    {
+        "fixture": "missing_result_report_request.json",
+        "template": "placeholder_result_report.hwpx",
+        "output": "mapped_missing_result_report_poc.hwpx",
+        "allowed_routing": {"needs_more_input"},
+    },
 ]
 
 

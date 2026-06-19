@@ -2,7 +2,7 @@
 
 ## 목표
 
-사용자가 mapped project_plan HWPX output을 한컴에서 수동 검수합니다.
+사용자가 mapped result_report HWPX output을 한컴에서 수동 검수합니다.
 
 ## 현재 완료 상태
 
@@ -33,6 +33,8 @@
 - `remaining_placeholders` 0 확인
 - mapped project_plan HWPX 1건 렌더링 완료
 - mapped project_plan `remaining_placeholders` 0 확인
+- mapped result_report HWPX 1건 렌더링 완료
+- mapped result_report `remaining_placeholders` 0 확인
 
 ## 확인 대상
 
@@ -71,6 +73,9 @@
 - `docs/75_mapped_project_plan_hwpx_render_result.md`
 - `checklists/mapped_project_plan_hwpx_render_result_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_missing_project_plan_poc.hwpx`
+- `docs/76_mapped_result_report_hwpx_render_result.md`
+- `checklists/mapped_result_report_hwpx_render_result_checklist.md`
+- `renderers/hwpx_renderer/output/mapped_missing_result_report_poc.hwpx`
 - `normalizers/README.md`
 - `normalizers/input_normalizer_poc.py`
 - `normalizers/security_filter_poc.py`
@@ -93,7 +98,7 @@
 1. output HWPX가 한컴에서 열리는지
 2. 글자 겹침이 없는지
 3. 1~10번 항목 제목이 정상 표시되는지
-4. 줄바꿈과 문단 간격이 적절한지
+4. 추진개요, 계획 항목, 추진 결과, 계획 대비 결과가 적절히 표시되는지
 5. 내용 앞 `-` 표기가 항목 간 일관적인지
 6. 남은 `{{placeholder}}`가 없는지
 
@@ -112,11 +117,11 @@
 - 글자 겹침 여부 확인
 - 항목 제목 표시 확인
 - 내용 앞 `-` 표기 일관성 확인
-- 다음 문서 유형 확장 여부 판단
+- mapped review_report 처리 정책 결정
 - output 산출물 Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `renderers/hwpx_renderer/output/mapped_missing_project_plan_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped payload 기반 렌더링을 `result_report`로 확장하는 것입니다.
+현재 추천은 `renderers/hwpx_renderer/output/mapped_missing_result_report_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped review_report는 기본 보안 검토 라우팅을 유지할지 별도로 결정하는 것입니다.
