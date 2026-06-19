@@ -2,7 +2,7 @@
 
 ## 목표
 
-HWPX 렌더러 연결 dry-run 범위를 결정합니다.
+사용자가 mapped one_page_report HWPX output을 한컴에서 수동 검수합니다.
 
 ## 현재 완료 상태
 
@@ -24,6 +24,13 @@ HWPX 렌더러 연결 dry-run 범위를 결정합니다.
 - 정규화 결과와 HWPX 렌더러 입력 JSON 매핑 범위 문서화 완료
 - HWPX payload mapper PoC fixture 5종 통과
 - HWPX payload validation PoC fixture 5종 통과
+- HWPX 렌더러 연결 dry-run 범위 문서화 완료
+- HWPX 렌더러 연결 dry-run PoC 스크립트 작성 완료
+- HWPX 렌더러 연결 dry-run PoC fixture 5종 통과
+- dry-run 결과 보관 정책 문서화 완료
+- 실제 HWPX 렌더링 연결 여부 문서화 완료
+- mapped one_page_report HWPX 1건 렌더링 완료
+- `remaining_placeholders` 0 확인
 
 ## 확인 대상
 
@@ -48,11 +55,23 @@ HWPX 렌더러 연결 dry-run 범위를 결정합니다.
 - `checklists/hwpx_payload_mapper_poc_result_checklist.md`
 - `docs/69_hwpx_payload_validation_poc_result.md`
 - `checklists/hwpx_payload_validation_poc_result_checklist.md`
+- `docs/70_hwpx_renderer_dry_run_scope.md`
+- `checklists/hwpx_renderer_dry_run_scope_checklist.md`
+- `docs/71_hwpx_renderer_dry_run_result.md`
+- `checklists/hwpx_renderer_dry_run_result_checklist.md`
+- `docs/72_dry_run_artifact_retention_policy.md`
+- `checklists/dry_run_artifact_retention_policy_checklist.md`
+- `docs/73_hwpx_render_connection_decision.md`
+- `checklists/hwpx_render_connection_decision_checklist.md`
+- `docs/74_mapped_one_page_hwpx_render_result.md`
+- `checklists/mapped_one_page_hwpx_render_result_checklist.md`
+- `renderers/hwpx_renderer/output/mapped_safe_one_page_report_poc.hwpx`
 - `normalizers/README.md`
 - `normalizers/input_normalizer_poc.py`
 - `normalizers/security_filter_poc.py`
 - `normalizers/hwpx_payload_mapper_poc.py`
 - `normalizers/validate_hwpx_payload_poc.py`
+- `normalizers/hwpx_renderer_dry_run_poc.py`
 - `normalizers/fixtures/`
 - `renderers/hwpx_renderer/validation.py`
 - `docs/58_external_hwpx_placeholder_conversion_runbook.md`
@@ -66,12 +85,12 @@ HWPX 렌더러 연결 dry-run 범위를 결정합니다.
 
 ## 확인 항목
 
-1. mapper payload를 기존 HWPX 렌더러에 직접 넘길지
-2. dry-run에서 실제 HWPX 파일을 생성할지, validation까지만 할지
-3. `needs_more_input` payload도 HWPX 생성 대상으로 둘지
-4. `needs_security_review`와 `blocked`는 계속 미생성/미렌더링으로 둘지
-5. output HWPX와 summary JSON이 Git 제외 상태인지
-6. 실제 원문이나 실제 식별값 없이 dry-run할 수 있는지
+1. output HWPX가 한컴에서 열리는지
+2. 글자 겹침이 없는지
+3. 줄바꿈과 문단 간격이 적절한지
+4. 제목과 항목 배치가 의도대로 보이는지
+5. `[확인 필요]` 표시가 과도하거나 어색하지 않은지
+6. 남은 `{{placeholder}}`가 없는지
 
 ## 작업 제한
 
@@ -84,14 +103,14 @@ HWPX 렌더러 연결 dry-run 범위를 결정합니다.
 
 ## 완료 조건
 
-- HWPX 렌더러 연결 dry-run 범위 문서화
-- 실제 HWPX 생성 여부 판단
-- `needs_more_input` payload 렌더링 허용 여부 판단
-- 미렌더링 라우팅 기준 재확인
+- 사용자 한컴 수동 열람 검수
+- 글자 겹침 여부 확인
+- 문단 배치 확인
+- 다음 문서 유형 확장 여부 판단
 - output 산출물 Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 실제 HWPX 파일 생성으로 바로 연결하지 말고, dry-run 범위를 먼저 문서화한 뒤 허용된 케이스만 별도 테스트하는 것입니다.
+현재 추천은 `renderers/hwpx_renderer/output/mapped_safe_one_page_report_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped payload 기반 렌더링을 `project_plan` 또는 `result_report`로 확장하는 것입니다.

@@ -38,6 +38,8 @@
 python .\normalizers\input_normalizer_poc.py
 python .\normalizers\hwpx_payload_mapper_poc.py
 python .\normalizers\validate_hwpx_payload_poc.py
+python .\normalizers\hwpx_renderer_dry_run_poc.py
+python .\normalizers\render_mapped_hwpx_poc.py
 ```
 
 실행 결과는 `normalizers/output/`에 생성됩니다.
