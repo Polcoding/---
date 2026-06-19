@@ -46,6 +46,8 @@ python .\normalizers\render_mapped_hwpx_poc.py
 
 `normalizers/output/` 산출물은 Git에 포함하지 않습니다.
 
+회귀 테스트 기준은 `docs/81_normalizers_regression_test_suite.md`와 `checklists/normalizers_regression_test_suite_checklist.md`를 따릅니다.
+
 ## 보안 원칙
 
 - fixture는 placeholder 기반만 사용합니다.
