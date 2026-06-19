@@ -105,4 +105,6 @@ helper 전용 검증 케이스를 파일 기반 fixture로 분리했습니다.
 
 기존 routing fixture 6종과 helper fixture는 분리되어 있으며, 기존 회귀 테스트 결과는 유지되었습니다.
 
-다음 단계는 helper 결과를 normalizer 흐름에 연결할지 여부를 판단하기 전에, 연결 허용 조건과 금지 조건을 별도 문서로 정리하는 것입니다.
+후속 작업에서 helper 결과를 normalizer 흐름에 연결하기 전의 허용 조건과 금지 조건을 `docs/94_placeholder_confirmed_values_normalizer_connection_policy.md`에 정리했습니다.
+
+다음 단계는 read-only metadata schema 후보를 문서화하는 것입니다.
