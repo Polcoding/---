@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 최소 운영 흐름을 정리합니다.
+사용자 입력 체크리스트와 운영 전 수동 점검표를 정리합니다.
 
 ## 현재 완료 상태
 
@@ -44,6 +44,7 @@ Phase 2 최소 운영 흐름을 정리합니다.
 - HWPX 4종 mapped 렌더링 한컴 수동 검수 완료
 - HWPX 4종 mapped 렌더링 완료 상태 통합 문서화 완료
 - normalizers 회귀 테스트 묶음 문서화 완료
+- Phase 2 최소 운영 흐름 문서화 완료
 
 ## 확인 대상
 
@@ -95,6 +96,8 @@ Phase 2 최소 운영 흐름을 정리합니다.
 - `checklists/mapped_hwpx_4types_completion_checklist.md`
 - `docs/81_normalizers_regression_test_suite.md`
 - `checklists/normalizers_regression_test_suite_checklist.md`
+- `docs/82_phase2_minimal_operation_flow.md`
+- `checklists/phase2_minimal_operation_flow_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -116,10 +119,10 @@ Phase 2 최소 운영 흐름을 정리합니다.
 
 ## 확인 항목
 
-1. Phase 2 최소 운영 흐름이 입력부터 사용자 검토까지 이어지는지
-2. 입력 정규화, 보안 필터, payload mapper, HWPX 렌더러의 책임 경계가 명확한지
-3. 사람이 검토해야 하는 지점이 명확히 표시되는지
-4. `review_report` 보안 승인 조건이 운영 흐름에 반영되는지
+1. 사용자가 입력 전에 확인할 항목이 명확한지
+2. 실제 원문, 개인정보, 기관정보 제외 기준이 입력 체크리스트에 반영되는지
+3. HWPX output 생성 전 수동 점검 항목이 명확한지
+4. HWPX output 생성 후 한컴 수동 검수 항목이 명확한지
 5. output HWPX와 summary JSON이 Git 제외 상태로 유지되는지
 6. 실제 원문이나 실제 승인정보 없이 진행되는지
 
@@ -134,8 +137,8 @@ Phase 2 최소 운영 흐름을 정리합니다.
 
 ## 완료 조건
 
-- Phase 2 최소 운영 흐름 문서화
-- 사람 검토 지점 문서화
+- 사용자 입력 체크리스트 문서화
+- 운영 전 수동 점검표 문서화
 - HWPX 4종 우선 흐름 유지
 - output summary Git 제외 확인
 - 실제 원본 미사용 확인
@@ -143,4 +146,4 @@ Phase 2 최소 운영 흐름을 정리합니다.
 
 ## 다음 단계 후보
 
-현재 추천은 입력 정규화부터 HWPX output 생성 후 사용자 검토까지의 Phase 2 최소 운영 흐름을 문서화하는 것입니다.
+현재 추천은 Phase 2 최소 운영 흐름에 맞춰 사용자 입력 전 체크리스트와 HWPX output 생성 전후 수동 점검표를 정리하는 것입니다.
