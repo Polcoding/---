@@ -1,6 +1,6 @@
-"""Render one mapped normalizer payload into HWPX.
+"""Render selected mapped normalizer payloads into HWPX.
 
-This script only renders the ready_for_draft one_page_report fixture.
+This script only renders explicitly allowed mapped fixtures.
 It uses local placeholder templates and writes ignored output artifacts.
 """
 
@@ -29,31 +29,47 @@ from template_package import (  # noqa: E402
 from validation import validate_for_hwpx_rendering  # noqa: E402
 
 
-FIXTURE_NAME = "safe_one_page_report_request.json"
-TEMPLATE_NAME = "placeholder_one_page_report.hwpx"
-OUTPUT_NAME = "mapped_safe_one_page_report_poc.hwpx"
+TARGETS = [
+    {
+        "fixture": "safe_one_page_report_request.json",
+        "template": "placeholder_one_page_report.hwpx",
+        "output": "mapped_safe_one_page_report_poc.hwpx",
+        "allowed_routing": {"ready_for_draft"},
+    },
+    {
+        "fixture": "missing_project_plan_request.json",
+        "template": "placeholder_project_plan.hwpx",
+        "output": "mapped_missing_project_plan_poc.hwpx",
+        "allowed_routing": {"needs_more_input"},
+    },
+]
 
 
-def render_mapped_fixture() -> dict[str, Any]:
-    fixture_path = FIXTURE_DIR / FIXTURE_NAME
+def render_mapped_fixture(target: dict[str, Any]) -> dict[str, Any]:
+    fixture_name = target["fixture"]
+    template_name = target["template"]
+    output_name = target["output"]
+    allowed_routing = target["allowed_routing"]
+
+    fixture_path = FIXTURE_DIR / fixture_name
     fixture = load_json(fixture_path)
     normalized = normalize_request(fixture)
     routing_status = normalized["routing_decision"]["status"]
 
     result: dict[str, Any] = {
-        "fixture": FIXTURE_NAME,
+        "fixture": fixture_name,
         "routing_status": routing_status,
-        "template": str((TEMPLATE_DIR / TEMPLATE_NAME).relative_to(REPO_ROOT)),
-        "output": str((HWPX_OUTPUT_DIR / OUTPUT_NAME).relative_to(REPO_ROOT)),
+        "template": str((TEMPLATE_DIR / template_name).relative_to(REPO_ROOT)),
+        "output": str((HWPX_OUTPUT_DIR / output_name).relative_to(REPO_ROOT)),
         "status": "pending",
         "reasons": [],
     }
 
-    if routing_status != "ready_for_draft":
+    if routing_status not in allowed_routing:
         result.update(
             {
-                "status": "skipped_not_ready_for_draft",
-                "reasons": [f"routing_status가 ready_for_draft가 아닙니다: {routing_status}"],
+                "status": "skipped_not_allowed_routing",
+                "reasons": [f"허용 routing이 아닙니다: {routing_status}"],
             }
         )
         return result
@@ -68,12 +84,12 @@ def render_mapped_fixture() -> dict[str, Any]:
         result.update({"status": "validation_failed", "reasons": reasons})
         return result
 
-    template_path = TEMPLATE_DIR / TEMPLATE_NAME
+    template_path = TEMPLATE_DIR / template_name
     if not is_hwpx_template_available(template_path):
         result.update(
             {
                 "status": "template_required",
-                "reasons": ["placeholder_one_page_report.hwpx 로컬 템플릿 필요"],
+                "reasons": [f"{template_name} 로컬 템플릿 필요"],
             }
         )
         return result
@@ -81,7 +97,7 @@ def render_mapped_fixture() -> dict[str, Any]:
     placeholder_map = build_placeholder_map(payload)
     render_result = replace_placeholders_in_hwpx(
         template_path,
-        HWPX_OUTPUT_DIR / OUTPUT_NAME,
+        HWPX_OUTPUT_DIR / output_name,
         placeholder_map,
     )
     result.update(render_result)
@@ -89,19 +105,20 @@ def render_mapped_fixture() -> dict[str, Any]:
 
 
 def main() -> None:
-    result = render_mapped_fixture()
+    results = [render_mapped_fixture(target) for target in TARGETS]
     print("Mapped HWPX render PoC 실행 결과")
-    print(f"- {result['fixture']}: {result['status']}")
-    if result.get("output_path"):
-        print(f"  output_path: {result['output_path']}")
-    for reason in result.get("reasons", []):
-        print(f"  - {reason}")
+    for result in results:
+        print(f"- {result['fixture']}: {result['status']}")
+        if result.get("output_path"):
+            print(f"  output_path: {result['output_path']}")
+        for reason in result.get("reasons", []):
+            print(f"  - {reason}")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     summary_path = OUTPUT_DIR / "mapped_hwpx_render_summary.json"
     try:
         summary_path.write_text(
-            json.dumps({"result": result}, ensure_ascii=False, indent=2),
+            json.dumps({"results": results}, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
         print(f"summary_output: {summary_path}")

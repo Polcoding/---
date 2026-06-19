@@ -2,7 +2,7 @@
 
 ## 목표
 
-사용자가 mapped one_page_report HWPX output을 한컴에서 수동 검수합니다.
+사용자가 mapped project_plan HWPX output을 한컴에서 수동 검수합니다.
 
 ## 현재 완료 상태
 
@@ -31,6 +31,8 @@
 - 실제 HWPX 렌더링 연결 여부 문서화 완료
 - mapped one_page_report HWPX 1건 렌더링 완료
 - `remaining_placeholders` 0 확인
+- mapped project_plan HWPX 1건 렌더링 완료
+- mapped project_plan `remaining_placeholders` 0 확인
 
 ## 확인 대상
 
@@ -66,6 +68,9 @@
 - `docs/74_mapped_one_page_hwpx_render_result.md`
 - `checklists/mapped_one_page_hwpx_render_result_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_safe_one_page_report_poc.hwpx`
+- `docs/75_mapped_project_plan_hwpx_render_result.md`
+- `checklists/mapped_project_plan_hwpx_render_result_checklist.md`
+- `renderers/hwpx_renderer/output/mapped_missing_project_plan_poc.hwpx`
 - `normalizers/README.md`
 - `normalizers/input_normalizer_poc.py`
 - `normalizers/security_filter_poc.py`
@@ -87,9 +92,9 @@
 
 1. output HWPX가 한컴에서 열리는지
 2. 글자 겹침이 없는지
-3. 줄바꿈과 문단 간격이 적절한지
-4. 제목과 항목 배치가 의도대로 보이는지
-5. `[확인 필요]` 표시가 과도하거나 어색하지 않은지
+3. 1~10번 항목 제목이 정상 표시되는지
+4. 줄바꿈과 문단 간격이 적절한지
+5. 내용 앞 `-` 표기가 항목 간 일관적인지
 6. 남은 `{{placeholder}}`가 없는지
 
 ## 작업 제한
@@ -105,7 +110,8 @@
 
 - 사용자 한컴 수동 열람 검수
 - 글자 겹침 여부 확인
-- 문단 배치 확인
+- 항목 제목 표시 확인
+- 내용 앞 `-` 표기 일관성 확인
 - 다음 문서 유형 확장 여부 판단
 - output 산출물 Git 제외 확인
 - 실제 원본 미사용 확인
@@ -113,4 +119,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 `renderers/hwpx_renderer/output/mapped_safe_one_page_report_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped payload 기반 렌더링을 `project_plan` 또는 `result_report`로 확장하는 것입니다.
+현재 추천은 `renderers/hwpx_renderer/output/mapped_missing_project_plan_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped payload 기반 렌더링을 `result_report`로 확장하는 것입니다.
