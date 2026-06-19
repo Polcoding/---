@@ -305,7 +305,7 @@ def _build_review_report_placeholder_map(data: dict) -> dict[str, str]:
         "{{review_scope}}": _safe_string(document.get("review_scope")),
         "{{review_items}}": _format_mapping_or_list(document.get("review_items")),
         "{{review_opinion}}": _safe_string(document.get("review_opinion")),
-        "{{risks}}": _format_list(document.get("risks")),
+        "{{risks}}": _format_placeholder_list_without_bullets(document.get("risks")),
         "{{required_reviews}}": _format_list(document.get("required_reviews")),
         "{{next_actions}}": _format_list(document.get("next_actions")),
         "{{attachments}}": _format_attachments(document.get("attachments") or data.get("attachments")),
@@ -568,6 +568,14 @@ def _format_list(value: Any) -> str:
     if len(value) == 1 and _is_placeholder_only_item(value[0]):
         return _safe_string(value[0])
     return "\n".join(f"- {_format_list_item(item)}" for item in value)
+
+
+def _format_placeholder_list_without_bullets(value: Any) -> str:
+    if not isinstance(value, list) or not value:
+        return DEFAULT_PLACEHOLDER_VALUE
+    if all(_is_placeholder_only_item(item) for item in value):
+        return "\n".join(_safe_string(item) for item in value)
+    return _format_list(value)
 
 
 def _format_mapping_or_list(value: Any) -> str:

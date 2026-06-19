@@ -2,7 +2,7 @@
 
 ## 목표
 
-사용자가 mapped result_report HWPX output을 한컴에서 수동 검수합니다.
+HWPX 4종 mapped 렌더링 완료 상태를 통합 문서로 정리합니다.
 
 ## 현재 완료 상태
 
@@ -35,6 +35,13 @@
 - mapped project_plan `remaining_placeholders` 0 확인
 - mapped result_report HWPX 1건 렌더링 완료
 - mapped result_report `remaining_placeholders` 0 확인
+- mapped review_report 렌더링 정책 문서화 완료
+- approved review_report fixture 추가 완료
+- approved review_report validation 및 dry-run 통과
+- approved review_report HWPX 1건 렌더링 완료
+- approved review_report `remaining_placeholders` 0 확인
+- approved review_report 한컴 수동 검수 완료
+- HWPX 4종 mapped 렌더링 한컴 수동 검수 완료
 
 ## 확인 대상
 
@@ -76,6 +83,14 @@
 - `docs/76_mapped_result_report_hwpx_render_result.md`
 - `checklists/mapped_result_report_hwpx_render_result_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_missing_result_report_poc.hwpx`
+- `docs/77_mapped_review_report_render_policy.md`
+- `checklists/mapped_review_report_render_policy_checklist.md`
+- `docs/78_approved_review_report_dry_run_result.md`
+- `checklists/approved_review_report_dry_run_result_checklist.md`
+- `docs/79_mapped_review_report_hwpx_render_result.md`
+- `checklists/mapped_review_report_hwpx_render_result_checklist.md`
+- `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
+- `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
 - `normalizers/input_normalizer_poc.py`
 - `normalizers/security_filter_poc.py`
@@ -95,12 +110,12 @@
 
 ## 확인 항목
 
-1. output HWPX가 한컴에서 열리는지
-2. 글자 겹침이 없는지
-3. 1~10번 항목 제목이 정상 표시되는지
-4. 추진개요, 계획 항목, 추진 결과, 계획 대비 결과가 적절히 표시되는지
-5. 내용 앞 `-` 표기가 항목 간 일관적인지
-6. 남은 `{{placeholder}}`가 없는지
+1. HWPX 4종 mapped 렌더링 결과를 한 문서에서 추적할 수 있는지
+2. 각 output HWPX의 `remaining_placeholders`가 0인지
+3. 사용자 한컴 수동 검수 결과가 문서에 반영되었는지
+4. `review_report` 보안 승인 조건이 별도 정책으로 남아 있는지
+5. output HWPX가 Git 제외 상태인지
+6. 실제 원문이나 실제 승인정보 없이 진행되었는지
 
 ## 작업 제한
 
@@ -113,15 +128,12 @@
 
 ## 완료 조건
 
-- 사용자 한컴 수동 열람 검수
-- 글자 겹침 여부 확인
-- 항목 제목 표시 확인
-- 내용 앞 `-` 표기 일관성 확인
-- mapped review_report 처리 정책 결정
+- HWPX 4종 mapped 렌더링 완료 상태 문서화
+- HWPX 4종 수동 검수 결과 요약
 - output 산출물 Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `renderers/hwpx_renderer/output/mapped_missing_result_report_poc.hwpx`를 한컴에서 열어보고, 이상이 없으면 mapped review_report는 기본 보안 검토 라우팅을 유지할지 별도로 결정하는 것입니다.
+현재 추천은 `one_page_report`, `project_plan`, `result_report`, `review_report` mapped HWPX 렌더링 완료 상태를 통합 문서와 체크리스트로 정리하는 것입니다.

@@ -49,6 +49,13 @@ def decide_routing(normalized: dict[str, Any], blocked_reasons: list[str]) -> di
     flags = normalized.get("security_flags") or {}
     document_type = normalized.get("candidate_document_type")
     missing_fields = normalized.get("missing_fields") or []
+    security_gate = normalized.get("security_gate") or {}
+    placeholder_rendering_approved = (
+        isinstance(security_gate, dict)
+        and security_gate.get("human_security_review_completed") is True
+        and security_gate.get("approved_for_placeholder_rendering") is True
+        and security_gate.get("review_basis") == "[비식별 보안 검토 완료]"
+    )
 
     if flags.get("block_reason"):
         blocked_reasons.append(flags["block_reason"])
@@ -61,6 +68,13 @@ def decide_routing(normalized: dict[str, Any], blocked_reasons: list[str]) -> di
             "status": "blocked",
             "reason": "; ".join(list(dict.fromkeys(blocked_reasons))),
             "next_action": "ask_user_to_remove_real_values",
+        }
+
+    if document_type == "review_report" and placeholder_rendering_approved:
+        return {
+            "status": "ready_for_draft",
+            "reason": "placeholder 렌더링용 보안 검토 완료",
+            "next_action": "draft_with_missing_fields",
         }
 
     if flags.get("requires_security_review") or document_type == "review_report":

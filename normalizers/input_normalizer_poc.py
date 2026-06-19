@@ -150,6 +150,17 @@ def make_initial_security_flags(request_text: str) -> dict[str, Any]:
     }
 
 
+def has_placeholder_security_gate(fixture: dict[str, Any]) -> bool:
+    security_gate = fixture.get("security_gate")
+    if not isinstance(security_gate, dict):
+        return False
+    return (
+        security_gate.get("human_security_review_completed") is True
+        and security_gate.get("approved_for_placeholder_rendering") is True
+        and security_gate.get("review_basis") == "[비식별 보안 검토 완료]"
+    )
+
+
 def normalize_request(fixture: dict[str, Any]) -> dict[str, Any]:
     request_text = fixture.get("request_text", "")
     document_type = detect_document_type(request_text)
@@ -172,6 +183,8 @@ def normalize_request(fixture: dict[str, Any]) -> dict[str, Any]:
         },
         "human_review_required": True,
     }
+    if has_placeholder_security_gate(fixture):
+        normalized["security_gate"] = fixture["security_gate"]
     return apply_security_filter(normalized)
 
 

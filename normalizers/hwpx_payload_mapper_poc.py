@@ -37,7 +37,12 @@ def as_list(value: Any) -> list[str]:
 def map_security_review(normalized: dict[str, Any]) -> dict[str, Any]:
     flags = normalized.get("security_flags") or {}
     routing_status = (normalized.get("routing_decision") or {}).get("status")
+    security_gate = normalized.get("security_gate") or {}
     allowed_processing = routing_status in PAYLOAD_ALLOWED_ROUTING
+    approved_placeholder_rendering = (
+        isinstance(security_gate, dict)
+        and security_gate.get("approved_for_placeholder_rendering") is True
+    )
 
     required_review = ["human_review"]
     if flags.get("requires_security_review"):
@@ -50,12 +55,12 @@ def map_security_review(normalized: dict[str, Any]) -> dict[str, Any]:
     return {
         "risk_level": flags.get("risk_level_hint", "low"),
         "contains_personal_info": bool(flags.get("suspected_personal_info")),
-        "contains_sensitive_info": bool(flags.get("suspected_sensitive_info")),
-        "contains_internal_info": bool(flags.get("suspected_internal_info")),
+        "contains_sensitive_info": False if approved_placeholder_rendering else bool(flags.get("suspected_sensitive_info")),
+        "contains_internal_info": False if approved_placeholder_rendering else bool(flags.get("suspected_internal_info")),
         "blocked_items": blocked_items,
         "allowed_processing": allowed_processing,
         "required_review": required_review,
-        "notes": "[정규화 결과 기반 보안 검토]",
+        "notes": "[비식별 보안 검토 완료 후 placeholder 렌더링]" if approved_placeholder_rendering else "[정규화 결과 기반 보안 검토]",
     }
 
 
@@ -152,6 +157,7 @@ def map_to_hwpx_payload(normalized: dict[str, Any]) -> dict[str, Any] | None:
         "document_type": document_type,
         "output_targets": normalized.get("output_targets", ["hwpx"]),
         "security_review": map_security_review(normalized),
+        "security_gate": normalized.get("security_gate"),
         "missing_fields": normalized.get("missing_fields", []),
         "assumptions": [],
         "draft_status": DRAFT_STATUS_BY_ROUTING.get(routing_status, "needs_input"),

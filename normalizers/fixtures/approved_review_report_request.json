@@ -1,0 +1,11 @@
+{
+  "fixture_id": "[fixture_approved_review_report]",
+  "request_text": "[비식별 사안] 검토보고서를 작성합니다. 개인정보, 법무, 계약 검토 필요 항목은 확정 판단 없이 유지합니다. [비식별 보안 검토 완료] 상태이며 placeholder 렌더링만 허용합니다.",
+  "security_gate": {
+    "human_security_review_completed": true,
+    "review_basis": "[비식별 보안 검토 완료]",
+    "approved_for_placeholder_rendering": true
+  },
+  "expected_document_type": "review_report",
+  "expected_routing_status": "ready_for_draft"
+}

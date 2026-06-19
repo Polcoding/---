@@ -48,6 +48,12 @@ TARGETS = [
         "output": "mapped_missing_result_report_poc.hwpx",
         "allowed_routing": {"needs_more_input"},
     },
+    {
+        "fixture": "approved_review_report_request.json",
+        "template": "placeholder_review_report.hwpx",
+        "output": "mapped_approved_review_report_poc.hwpx",
+        "allowed_routing": {"ready_for_draft"},
+    },
 ]
 
 
