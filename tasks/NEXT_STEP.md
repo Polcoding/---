@@ -2,7 +2,7 @@
 
 ## 목표
 
-문서 유형별 사용자 입력 템플릿을 정리합니다.
+`normalizers/` fixture 확장 후보를 검토합니다.
 
 ## 현재 완료 상태
 
@@ -46,6 +46,7 @@
 - normalizers 회귀 테스트 묶음 문서화 완료
 - Phase 2 최소 운영 흐름 문서화 완료
 - 사용자 입력 체크리스트와 운영 전 수동 점검표 문서화 완료
+- HWPX 보고서 4종별 사용자 입력 템플릿 문서화 완료
 
 ## 확인 대상
 
@@ -101,6 +102,8 @@
 - `checklists/phase2_minimal_operation_flow_checklist.md`
 - `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
 - `checklists/phase2_user_input_and_manual_operation_checklist.md`
+- `docs/84_hwpx_report_user_input_templates.md`
+- `checklists/hwpx_report_user_input_templates_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -122,11 +125,12 @@
 
 ## 확인 항목
 
-1. HWPX 보고서 4종별 사용자 입력 템플릿이 있는지
-2. 각 템플릿이 실제값 대신 placeholder와 `[확인 필요]`를 사용하도록 되어 있는지
-3. `review_report` 템플릿에 보안 검토 조건이 반영되는지
-4. 자동 발송, 결재, 계약, 예산 집행 금지 문구가 유지되는지
-5. 실제 원문이나 실제 승인정보 없이 진행되는지
+1. 기존 fixture 6종으로 충분한지
+2. 사용자 입력 템플릿 기반 추가 fixture가 필요한지
+3. 추가 fixture가 실제값 없이 placeholder만 사용하는지
+4. `review_report` 승인/미승인 경로를 더 보강할 필요가 있는지
+5. fixture 추가 없이 문서만으로 충분한 항목은 무엇인지
+6. 실제 원문이나 실제 승인정보 없이 진행되는지
 
 ## 작업 제한
 
@@ -139,13 +143,13 @@
 
 ## 완료 조건
 
-- HWPX 보고서 4종별 입력 템플릿 문서화
-- placeholder 기반 입력 예시 정리
-- 금지 입력 예시 정리
+- fixture 확장 후보 문서화
+- 추가할 fixture와 보류할 fixture 구분
+- fixture 추가 시 보안 조건 정리
 - HWPX 4종 우선 흐름 유지
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `one_page_report`, `project_plan`, `result_report`, `review_report`별 사용자 입력 템플릿을 placeholder 기반으로 정리하는 것입니다.
+현재 추천은 `docs/84_hwpx_report_user_input_templates.md`를 기준으로 `normalizers/` fixture 확장 후보를 검토하는 것입니다.
