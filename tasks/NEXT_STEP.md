@@ -2,7 +2,7 @@
 
 ## 목표
 
-placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙을 정리합니다.
+`placeholder_confirmed_values` 코드 도입 여부를 재검토합니다.
 
 ## 현재 완료 상태
 
@@ -50,6 +50,7 @@ placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙
 - `normalizers/` fixture 확장 후보 검토 완료
 - `missing_fields` 생성 규칙 개선 여부 검토 완료
 - `placeholder_confirmed_values` 도입 여부 검토 완료
+- placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙 문서화 완료
 
 ## 확인 대상
 
@@ -113,6 +114,8 @@ placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙
 - `checklists/missing_fields_rule_improvement_review_checklist.md`
 - `docs/87_placeholder_confirmed_values_design_review.md`
 - `checklists/placeholder_confirmed_values_design_review_checklist.md`
+- `docs/88_placeholder_pattern_collision_rules.md`
+- `checklists/placeholder_pattern_collision_rules_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -134,10 +137,10 @@ placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙
 
 ## 확인 항목
 
-1. placeholder 형식으로 인정할 문자열 기준이 명확한지
-2. 실제값 의심 패턴과 충돌하면 보안 필터가 우선되는지
-3. 금액, 날짜, 연락처, 문서번호 형식이 placeholder로 위장되지 않는지
-4. `placeholder_confirmed_values`에 넣을 수 있는 값과 넣을 수 없는 값이 구분되는지
+1. 문서 기준만으로 충분한지, 코드 도입이 필요한지
+2. 도입한다면 placeholder 판정 함수를 어디에 둘지
+3. 도입한다면 `missing_fields` 생성 규칙을 어느 범위까지 바꿀지
+4. 신규 fixture를 추가할지
 5. 기존 fixture 6종 회귀 테스트가 깨지지 않는지
 6. 실제 원문이나 실제 승인정보 없이 진행되는지
 
@@ -152,13 +155,13 @@ placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙
 
 ## 완료 조건
 
-- placeholder 형식 판정 기준 문서화
-- 실제값 의심 패턴 충돌 처리 규칙 문서화
-- 보안 필터 우선 원칙 정리
+- 코드 도입 여부 판단
+- 도입 시 최소 구현 범위 정의
+- 미도입 시 문서 기준 유지 사유 정리
 - HWPX 4종 우선 흐름 유지
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 `placeholder_confirmed_values`를 코드에 넣기 전에 placeholder 형식 판정 기준과 실제값 의심 패턴 충돌 처리 규칙을 정리하는 것입니다.
+현재 추천은 `docs/87`과 `docs/88` 기준으로 `placeholder_confirmed_values`를 코드에 도입할지 재검토하는 것입니다.
