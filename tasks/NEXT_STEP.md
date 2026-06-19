@@ -2,7 +2,7 @@
 
 ## 목표
 
-사용자 입력 체크리스트와 운영 전 수동 점검표를 정리합니다.
+문서 유형별 사용자 입력 템플릿을 정리합니다.
 
 ## 현재 완료 상태
 
@@ -45,6 +45,7 @@
 - HWPX 4종 mapped 렌더링 완료 상태 통합 문서화 완료
 - normalizers 회귀 테스트 묶음 문서화 완료
 - Phase 2 최소 운영 흐름 문서화 완료
+- 사용자 입력 체크리스트와 운영 전 수동 점검표 문서화 완료
 
 ## 확인 대상
 
@@ -98,6 +99,8 @@
 - `checklists/normalizers_regression_test_suite_checklist.md`
 - `docs/82_phase2_minimal_operation_flow.md`
 - `checklists/phase2_minimal_operation_flow_checklist.md`
+- `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
+- `checklists/phase2_user_input_and_manual_operation_checklist.md`
 - `renderers/hwpx_renderer/output/mapped_approved_review_report_poc.hwpx`
 - `normalizers/fixtures/approved_review_report_request.json`
 - `normalizers/README.md`
@@ -119,12 +122,11 @@
 
 ## 확인 항목
 
-1. 사용자가 입력 전에 확인할 항목이 명확한지
-2. 실제 원문, 개인정보, 기관정보 제외 기준이 입력 체크리스트에 반영되는지
-3. HWPX output 생성 전 수동 점검 항목이 명확한지
-4. HWPX output 생성 후 한컴 수동 검수 항목이 명확한지
-5. output HWPX와 summary JSON이 Git 제외 상태로 유지되는지
-6. 실제 원문이나 실제 승인정보 없이 진행되는지
+1. HWPX 보고서 4종별 사용자 입력 템플릿이 있는지
+2. 각 템플릿이 실제값 대신 placeholder와 `[확인 필요]`를 사용하도록 되어 있는지
+3. `review_report` 템플릿에 보안 검토 조건이 반영되는지
+4. 자동 발송, 결재, 계약, 예산 집행 금지 문구가 유지되는지
+5. 실제 원문이나 실제 승인정보 없이 진행되는지
 
 ## 작업 제한
 
@@ -137,13 +139,13 @@
 
 ## 완료 조건
 
-- 사용자 입력 체크리스트 문서화
-- 운영 전 수동 점검표 문서화
+- HWPX 보고서 4종별 입력 템플릿 문서화
+- placeholder 기반 입력 예시 정리
+- 금지 입력 예시 정리
 - HWPX 4종 우선 흐름 유지
-- output summary Git 제외 확인
 - 실제 원본 미사용 확인
 - 다음 단계 진행 여부 판단
 
 ## 다음 단계 후보
 
-현재 추천은 Phase 2 최소 운영 흐름에 맞춰 사용자 입력 전 체크리스트와 HWPX output 생성 전후 수동 점검표를 정리하는 것입니다.
+현재 추천은 `one_page_report`, `project_plan`, `result_report`, `review_report`별 사용자 입력 템플릿을 placeholder 기반으로 정리하는 것입니다.
