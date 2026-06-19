@@ -1,18 +1,18 @@
-# 공공기관 행정문서 AI 자동화 시스템 1단계
+# 공공기관 행정문서 AI 자동화 시스템
 
 ## 프로젝트 한 줄 정의
 
-비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 1단계 준비 저장소입니다.
+비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 Phase 1 완료 및 Phase 2 최소 PoC 준비 저장소입니다.
 
 ## 이번 저장소의 목적
 
-이 저장소는 실제 업무 자동화 운영물이 아닙니다. 안전한 Custom GPT 테스트판, placeholder 기반 샘플 JSON, 로컬 PoC 렌더러, 테스트 결과 문서, 보안 기준을 정리합니다.
+이 저장소는 실제 업무 자동화 운영물이 아닙니다. 안전한 Custom GPT 테스트판, placeholder 기반 샘플 JSON, 로컬 PoC 렌더러, 입력 정규화 PoC, 테스트 결과 문서, 보안 기준을 정리합니다.
 
 핵심 메시지는 다음과 같습니다.
 
 > 이 프로젝트는 AI가 공문을 마음대로 작성하는 시스템이 아니라, 비식별 업무 지시를 받아 공공기관 행정문서 초안을 만들고 사람이 최종 승인하는 시스템입니다.
 
-## 1단계에서 하는 일
+## 현재 저장소에서 하는 일
 
 - Custom GPT에 붙여넣을 Instructions v0.1 작성
 - GPT 이름, 설명, 대화 시작 문구 정리
@@ -22,6 +22,9 @@
 - 테스트 결과 평가표 작성
 - placeholder 기반 HWPX/XLSX/Markdown/Email 로컬 PoC 렌더러 검증
 - HWPX 보고서 템플릿 자동화 우선순위 검증
+- HWPX 보고서 4종 placeholder 템플릿 치환 및 한컴 수동 검수
+- 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, renderer dry-run 최소 PoC 검증
+- Phase 2 최소 운영 흐름과 사용자 입력 템플릿 정리
 - 향후 Make.com 또는 OpenAI API 연동 전 점검할 항목 정리
 
 ## 현재 자동화 우선순위
@@ -42,6 +45,13 @@
 결과보고서는 가능한 경우 기존 추진계획서의 추진개요, 세부계획, 일정, 예산, 기대효과 항목과 대응되도록 정리합니다.
 
 협조 요청 메일은 공문체가 아니라 정중한 실무 메일체로 작성하며, 실제 자동 발송이 아니라 사람이 검토하는 초안으로만 관리합니다.
+
+## 현재 진행 위치
+
+- Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태입니다.
+- 현재는 Phase 2 최소 PoC 단계입니다.
+- Phase 2는 API, Make.com, Email 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계입니다.
+- 다음 구현 후보는 `placeholder_confirmed_values` read-only 판정 helper입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -65,7 +75,7 @@
 → 사람 승인 후 실무 적용
 ```
 
-현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러만 다룹니다.
+현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러, 입력 정규화 PoC, dry-run 검증만 다룹니다.
 
 ## 폴더 구조
 
@@ -200,6 +210,7 @@ Instructions 복사
 - `docs/87_placeholder_confirmed_values_design_review.md`: placeholder_confirmed_values 도입 검토
 - `docs/88_placeholder_pattern_collision_rules.md`: placeholder 형식 판정 및 실제값 충돌 규칙
 - `docs/89_placeholder_confirmed_values_code_adoption_decision.md`: placeholder_confirmed_values 코드 도입 여부 재검토
+- `docs/90_project_reorganization_after_superpowers.md`: Superpowers 재적용 후 프로젝트 재정비 요약
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -259,6 +270,7 @@ Instructions 복사
 - `checklists/placeholder_confirmed_values_design_review_checklist.md`: placeholder_confirmed_values 도입 검토 체크리스트
 - `checklists/placeholder_pattern_collision_rules_checklist.md`: placeholder 형식 및 충돌 규칙 체크리스트
 - `checklists/placeholder_confirmed_values_code_adoption_decision_checklist.md`: placeholder_confirmed_values 코드 도입 여부 체크리스트
+- `checklists/project_reorganization_after_superpowers_checklist.md`: 프로젝트 재정비 검수 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -277,9 +289,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. GitHub Desktop에서 현재 작업 묶음을 검수 후 push합니다.
-2. `docs/59_phase1_completion_and_phase2_entry_criteria.md`를 기준으로 Phase 1 완료 상태와 Phase 2 진입 조건을 확인합니다.
-3. `docs/61_input_normalization_schema.md`를 기준으로 입력 정규화 스키마를 검토합니다.
-4. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
-5. `docs/62_security_filter_requirements.md`를 기준으로 보안 필터 요구사항을 확인합니다.
-6. 다음 작업은 `placeholder_confirmed_values` read-only 판정 helper 최소 구현 범위 정리입니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 `placeholder_confirmed_values` read-only 판정 helper를 최소 범위로 구현합니다.
+2. 기존 fixture와 회귀 테스트에서 routing, `missing_fields`, HWPX 렌더링 결과가 바뀌지 않는지 확인합니다.
+3. helper 검증 결과를 문서와 체크리스트에 기록합니다.
+4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
+5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.

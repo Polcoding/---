@@ -22,6 +22,12 @@
 - 결과보고서와 검토보고서 HWPX 로컬 placeholder 템플릿 치환 테스트
 - 핵심 HWPX 보고서 4종 로컬 placeholder 치환 및 수동 검수 완료
 - 실제 HWPX 양식 투입 전 안전 절차와 공통 placeholder 설계 정리
+- Phase 1 완료 기준과 Phase 2 진입 조건 정리
+- HWPX 보고서 4종 입력 정규화 최소 PoC 작성
+- 보안 필터, HWPX payload mapper, payload validation, renderer dry-run PoC 작성
+- mapped HWPX 보고서 4종 렌더링과 한컴 수동 검수 완료
+- Phase 2 최소 운영 흐름, 사용자 입력 템플릿, 수동 운영 점검표 정리
+- `placeholder_confirmed_values` 설계, 충돌 규칙, 코드 도입 여부 재검토
 
 ## 1. 최우선 원칙
 
@@ -153,6 +159,23 @@
 - HWPX 보고서 템플릿 자동화가 안정화되기 전에는 실제 이메일 자동화, Make.com 연동, API 자동 호출을 서두르지 않습니다.
 - 자동화보다 안전한 초안 생성, 템플릿 치환, 사람 검토 흐름이 우선입니다.
 
+## 현재 진행 기준
+
+- Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태로 봅니다.
+- 현재 작업 축은 Phase 2 최소 PoC입니다.
+- Phase 2는 운영 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 사람 검토 흐름을 안정화하는 단계입니다.
+- `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
+- mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
+- 다음 구현은 `placeholder_confirmed_values` read-only 판정 helper처럼 기존 routing과 `missing_fields` 결과를 흔들지 않는 최소 범위부터 검토합니다.
+
+## Codex 작업 방식 보강
+
+- 설치된 작업 보조 skill은 계획 수립, 검증, 코드 리뷰 관점 보강에 활용할 수 있습니다.
+- 단, 이 저장소에서는 `AGENTS.md`, `README.md`, 최신 `docs/`, `tasks/NEXT_STEP.md`의 실제 상태를 최우선 사실로 취급합니다.
+- skill 권장 방식이 이 저장소의 보안 원칙, 실제 원문 금지, 로컬 HWPX Git 제외 원칙과 충돌하면 저장소 규칙을 우선합니다.
+- 작업 전에는 관련 문서와 실제 파일 상태를 먼저 확인하고, 확인 결과와 문서가 다르면 수정 전에 차이를 보고합니다.
+- 작업 완료 전에는 보안 검수, output 및 로컬 HWPX Git 제외 여부, 다음 단계 가능 여부를 함께 확인합니다.
+
 ## 2. 현재 프로젝트 범위
 
 현재까지의 주요 범위:
@@ -168,6 +191,11 @@
 - XLSX 조사표 템플릿 PoC 설계
 - HWPX 공문 템플릿 PoC 설계
 - 템플릿 렌더러 요구사항 설계
+- HWPX 보고서 4종 placeholder 렌더링 및 수동 검수
+- 입력 정규화, 보안 필터, HWPX payload mapper, payload validation 최소 PoC
+- HWPX renderer dry-run 및 mapped HWPX output 검증
+- Phase 2 최소 운영 흐름과 사용자 입력 템플릿 정리
+- `placeholder_confirmed_values` read-only helper 도입 전 설계 검토
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동
