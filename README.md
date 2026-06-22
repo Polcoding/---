@@ -51,7 +51,7 @@
 - Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태입니다.
 - 현재는 Phase 2 최소 PoC 단계입니다.
 - Phase 2는 API, Make.com, Email 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계입니다.
-- 다음 검토 후보는 `placeholder_confirmed_values` fixture schema 확장 여부입니다.
+- 다음 작업 후보는 Phase 2 반복 운영 로그 템플릿 정리입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -220,6 +220,7 @@ Instructions 복사
 - `docs/97_phase2_minimal_poc_checkpoint.md`: Phase 2 최소 PoC checkpoint
 - `docs/98_phase2_manual_rehearsal_runbook.md`: Phase 2 수동 리허설 runbook
 - `docs/99_phase2_manual_rehearsal_result.md`: Phase 2 수동 리허설 실행 결과
+- `docs/100_phase2_repeat_operation_criteria.md`: Phase 2 반복 운영 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -289,6 +290,7 @@ Instructions 복사
 - `checklists/phase2_minimal_poc_checkpoint_checklist.md`: Phase 2 최소 PoC checkpoint 체크리스트
 - `checklists/phase2_manual_rehearsal_runbook_checklist.md`: Phase 2 수동 리허설 runbook 체크리스트
 - `checklists/phase2_manual_rehearsal_result_checklist.md`: Phase 2 수동 리허설 실행 결과 체크리스트
+- `checklists/phase2_repeat_operation_criteria_checklist.md`: Phase 2 반복 운영 기준 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -307,8 +309,8 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 최소 PoC의 반복 운영 기준을 정리합니다.
-2. 다음 최소 개선 후보를 정하되, API/Make.com/Email 자동화와 실제 기관 양식 원본 사용은 계속 보류합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 반복 운영 로그 템플릿을 정리합니다.
+2. 반복 실행 시 명령, output, 한컴 확인 결과, 이상 항목을 기록할 형식을 준비합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.

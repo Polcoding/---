@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 최소 PoC의 반복 운영 기준과 다음 최소 개선 후보를 정리합니다.
+Phase 2 반복 운영 로그 템플릿을 정리합니다.
 
 ## 현재 완료 상태
 
@@ -15,9 +15,12 @@ Phase 2 최소 PoC의 반복 운영 기준과 다음 최소 개선 후보를 정
 - Phase 2 수동 리허설 runbook 문서화 완료
 - Phase 2 수동 리허설 Codex 실행 결과 기록 완료
 - HWPX 4종 사용자 한컴 수동 검수 올클리어
+- Phase 2 반복 운영 기준 문서화 완료
 
 ## 확인 대상
 
+- `docs/100_phase2_repeat_operation_criteria.md`
+- `checklists/phase2_repeat_operation_criteria_checklist.md`
 - `docs/98_phase2_manual_rehearsal_runbook.md`
 - `checklists/phase2_manual_rehearsal_runbook_checklist.md`
 - `docs/99_phase2_manual_rehearsal_result.md`
@@ -32,13 +35,13 @@ Phase 2 최소 PoC의 반복 운영 기준과 다음 최소 개선 후보를 정
 
 ## 검토 항목
 
-1. Phase 2 최소 PoC를 반복 실행할 때 매번 확인할 기준
-2. 사용자가 직접 확인해야 하는 항목과 Codex가 자동 확인할 항목 구분
-3. HWPX output 4종을 언제 다시 생성할지 기준
-4. GitHub Desktop push 전 확인 기준
-5. 다음 최소 개선 후보 우선순위
-6. 계속 보류할 범위
-7. `placeholder_confirmed_values`를 아직 연결하지 않을지 재확인
+1. 반복 실행 날짜와 목적 기록 형식
+2. 실행한 normalizers 명령 기록 형식
+3. HWPX output 4종 생성 여부 기록 형식
+4. 사용자 한컴 확인 결과 기록 형식
+5. 이상 발생 시 파일명, 항목 번호, 증상 기록 형식
+6. Git 제외 확인 결과 기록 형식
+7. 보안 검수 결과 기록 형식
 
 ## 작업 제한
 
@@ -54,14 +57,14 @@ Phase 2 최소 PoC의 반복 운영 기준과 다음 최소 개선 후보를 정
 
 ## 완료 조건
 
-- 반복 운영 기준 문서화
-- 사용자 확인 항목과 Codex 확인 항목 구분
-- 다음 최소 개선 후보 제안
-- 계속 보류할 범위 재확인
-- Git 제외 상태 재확인
-- 보안 검수 결과 재확인
+- 반복 운영 로그 템플릿 문서화
+- 실행 명령 기록 항목 정리
+- HWPX output 확인 항목 정리
+- 사용자 한컴 검수 결과 기록 항목 정리
+- 이상 발생 시 기록 형식 정리
+- Git 제외 및 보안 검수 항목 포함
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 Phase 2 최소 PoC 리허설 완료 상태를 기준으로 반복 운영 기준을 먼저 정리하고, 그 다음에 `placeholder_confirmed_values` 연결 여부나 fixture 확장 여부를 다시 판단하는 것입니다.
+현재 추천은 반복 운영 기준에 맞춰 실행 로그 템플릿을 만들고, 이후 fixture 확장 후보를 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
