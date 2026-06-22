@@ -112,4 +112,8 @@
 
 현재는 `missing_fields` 생성 규칙을 코드로 개선하지 않고, 고정 누락값 정책을 유지합니다.
 
-다음 단계는 `placeholder_confirmed_values` 도입 여부를 별도 설계로 검토하는 것입니다.
+이 문서 작성 시점의 다음 단계는 `placeholder_confirmed_values` 도입 여부를 별도 설계로 검토하는 것이었습니다.
+
+후속 작업에서 `placeholder_confirmed_values`는 read-only helper, helper fixture, metadata 후보까지 정리되었고, `missing_fields`, routing, HWPX payload에는 연결하지 않기로 결정했습니다.
+
+최신 재검토 결과는 `docs/103_missing_fields_rule_decision_after_helper.md`를 기준으로 관리합니다.

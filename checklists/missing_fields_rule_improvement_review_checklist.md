@@ -39,4 +39,5 @@
 | 완료 | 항목 |
 |---|---|
 | [x] | 현재는 고정 missing_fields 정책을 유지할 수 있는가 |
-| [ ] | `placeholder_confirmed_values` 도입 여부를 검토할 수 있는가 |
+| [x] | `placeholder_confirmed_values` 도입 여부를 검토할 수 있는가 |
+| [x] | 최신 재검토 결과를 별도 문서로 연결했는가 |
