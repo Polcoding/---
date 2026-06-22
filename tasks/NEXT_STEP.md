@@ -2,7 +2,7 @@
 
 ## 목표
 
-외부 연동 필요성과 보류 기준을 문서 기준으로 검토합니다.
+로그와 감사 추적 기준을 문서 기준으로 구체화합니다.
 
 ## 현재 완료 상태
 
@@ -41,9 +41,12 @@
 - Phase 3 사용자 수동 preview 기준 구체화 완료
 - Phase 3 상태별 중단 기준 반복 운영 문서 반영 완료
 - Phase 3 운영 문서 묶음 통합 점검 완료
+- Phase 3 외부 연동 필요성과 보류 기준 검토 완료
 
 ## 확인 대상
 
+- `docs/115_phase3_external_integration_hold_criteria.md`
+- `checklists/phase3_external_integration_hold_criteria_checklist.md`
 - `docs/114_phase3_operating_docs_integrated_review.md`
 - `checklists/phase3_operating_docs_integrated_review_checklist.md`
 - `docs/113_phase3_state_stop_repeat_docs_reflection.md`
@@ -75,10 +78,10 @@
 
 ## 검토 항목
 
-1. API, Make.com, Email 연동을 계속 보류해야 하는 기준이 충분한지 확인
-2. 외부 연동 검토 전 필요한 보안 게이트가 모두 문서화되어 있는지 확인
-3. 실제 원문 차단, 사용자 preview, 반복 로그, 감사 추적 기준이 충분한지 확인
-4. 외부 연동이 필요하더라도 어떤 조건 전에는 구현하지 않아야 하는지 정리
+1. 반복 운영 로그와 외부 연동 로그가 어떤 항목을 공유해야 하는지 확인
+2. 로그에 남겨도 되는 placeholder 기반 메타데이터와 금지 항목을 구분
+3. 실제 원문, 개인정보, 기관정보, 문서번호를 로그에 남기지 않는 기준 구체화
+4. 사용자 승인, 중단 상태, 오류 상태를 어떤 형식으로 기록할지 정리
 5. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
 6. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
 7. 필요한 경우 README, AGENTS, NEXT_STEP을 최소 범위로 갱신
@@ -99,8 +102,8 @@
 
 ## 완료 조건
 
-- 외부 연동 필요성 및 보류 기준 판단
-- 실제 연동 구현 금지 범위 재확인
+- 로그와 감사 추적 기준 구체화 필요 여부 판단
+- 저장 허용 항목과 저장 금지 항목 구분
 - 필요한 경우 관련 문서 또는 체크리스트 최소 범위 갱신
 - 계속 보류할 범위 재확인
 - README 최신화 필요 여부 판단
@@ -111,4 +114,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 외부 연동 필요성과 보류 기준을 문서 기준으로 검토하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
+현재 추천은 코드 변경 없이 로그와 감사 추적 기준을 문서 기준으로 구체화하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
