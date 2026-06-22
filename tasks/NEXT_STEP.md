@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 수동 리허설 runbook을 기준으로 1회 실행 결과를 기록합니다.
+Phase 2 최소 PoC의 반복 운영 기준과 다음 최소 개선 후보를 정리합니다.
 
 ## 현재 완료 상태
 
@@ -13,11 +13,17 @@ Phase 2 수동 리허설 runbook을 기준으로 1회 실행 결과를 기록합
 - metadata는 코드에 연결하지 않고 문서 기준으로 유지하기로 결정
 - Phase 2 최소 PoC checkpoint 문서화 완료
 - Phase 2 수동 리허설 runbook 문서화 완료
+- Phase 2 수동 리허설 Codex 실행 결과 기록 완료
+- HWPX 4종 사용자 한컴 수동 검수 올클리어
 
 ## 확인 대상
 
 - `docs/98_phase2_manual_rehearsal_runbook.md`
 - `checklists/phase2_manual_rehearsal_runbook_checklist.md`
+- `docs/99_phase2_manual_rehearsal_result.md`
+- `checklists/phase2_manual_rehearsal_result_checklist.md`
+- `docs/97_phase2_minimal_poc_checkpoint.md`
+- `docs/82_phase2_minimal_operation_flow.md`
 - `normalizers/README.md`
 - `normalizers/`
 - `templates/hwpx/local_template_policy.md`
@@ -26,13 +32,13 @@ Phase 2 수동 리허설 runbook을 기준으로 1회 실행 결과를 기록합
 
 ## 검토 항목
 
-1. runbook 명령 순서대로 normalizers 검증 실행
-2. HWPX output 4종 생성 여부 확인
-3. `normalizers/output/` 및 `renderers/hwpx_renderer/output/` Git 제외 확인
-4. GitHub Desktop Changes에 output 또는 로컬 HWPX 템플릿이 보이지 않는지 확인
-5. 사용자가 한컴에서 HWPX 4종을 열어 글자 겹침, placeholder 잔여, bullet 표기, 민감정보 여부 확인
-6. 이상 발생 시 파일명, 항목 번호, 증상을 기록
-7. 결과를 별도 문서와 체크리스트로 남길지 판단
+1. Phase 2 최소 PoC를 반복 실행할 때 매번 확인할 기준
+2. 사용자가 직접 확인해야 하는 항목과 Codex가 자동 확인할 항목 구분
+3. HWPX output 4종을 언제 다시 생성할지 기준
+4. GitHub Desktop push 전 확인 기준
+5. 다음 최소 개선 후보 우선순위
+6. 계속 보류할 범위
+7. `placeholder_confirmed_values`를 아직 연결하지 않을지 재확인
 
 ## 작업 제한
 
@@ -48,14 +54,14 @@ Phase 2 수동 리허설 runbook을 기준으로 1회 실행 결과를 기록합
 
 ## 완료 조건
 
-- runbook 기준 normalizers 검증 실행
-- HWPX output 생성 또는 안전 중단 상태 보고
-- `[사용자 확인 필요]` HWPX 4종 열람 항목 제시
-- Git 제외 확인 결과 보고
-- output 폴더 쓰기 권한 또는 산출물 잠금 문제 여부 보고
-- 보안 검수 통과 여부 보고
+- 반복 운영 기준 문서화
+- 사용자 확인 항목과 Codex 확인 항목 구분
+- 다음 최소 개선 후보 제안
+- 계속 보류할 범위 재확인
+- Git 제외 상태 재확인
+- 보안 검수 결과 재확인
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 runbook을 기준으로 실제 수동 리허설을 1회 실행하고, 사용자의 한컴 확인 결과를 받아 결과 문서로 정리하는 것입니다.
+현재 추천은 Phase 2 최소 PoC 리허설 완료 상태를 기준으로 반복 운영 기준을 먼저 정리하고, 그 다음에 `placeholder_confirmed_values` 연결 여부나 fixture 확장 여부를 다시 판단하는 것입니다.
