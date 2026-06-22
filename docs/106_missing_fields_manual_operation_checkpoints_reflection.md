@@ -84,6 +84,8 @@ Phase 2 사용자 입력 및 수동 운영 점검표에 `missing_fields` 표시 
 - `missing_fields` 자동 제외 금지 원칙이 유지되는지
 - 코드 변경 없이 문서 기준만으로 충분한지
 
+후속 작업에서 통합 점검 결과는 `docs/107_missing_fields_phase2_docs_integrated_review.md`에 정리했습니다.
+
 ## 보안 검수
 
 - 실제 개인정보 추가 없음
