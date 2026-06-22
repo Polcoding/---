@@ -2,7 +2,7 @@
 
 ## 목표
 
-사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검합니다.
+외부 전송 없는 no-send dry-run 기준을 문서로 점검합니다.
 
 ## 현재 완료 상태
 
@@ -45,9 +45,12 @@
 - Phase 3 로그와 감사 추적 기준 구체화 완료
 - Phase 3 테스트 계정과 테스트 데이터 기준 구체화 완료
 - Phase 3 실제 원문 차단과 비식별 입력 확인 절차 구체화 완료
+- Phase 3 사용자 preview와 사람 승인 지점 통합 기준 구체화 완료
 
 ## 확인 대상
 
+- `docs/119_phase3_user_preview_and_human_approval_integration.md`
+- `checklists/phase3_user_preview_and_human_approval_integration_checklist.md`
 - `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`
 - `checklists/phase3_source_blocking_and_deidentified_input_checklist.md`
 - `docs/117_phase3_test_account_and_test_data_criteria.md`
@@ -58,42 +61,24 @@
 - `checklists/phase3_external_integration_hold_criteria_checklist.md`
 - `docs/114_phase3_operating_docs_integrated_review.md`
 - `checklists/phase3_operating_docs_integrated_review_checklist.md`
-- `docs/113_phase3_state_stop_repeat_docs_reflection.md`
-- `checklists/phase3_state_stop_repeat_docs_reflection_checklist.md`
 - `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
 - `checklists/phase3_external_hwpx_manual_preview_checklist.md`
-- `docs/111_phase3_entry_safety_gate.md`
-- `checklists/phase3_entry_safety_gate_checklist.md`
-- `docs/100_phase2_repeat_operation_criteria.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
-- `docs/110_phase2_closeout_and_phase3_entry_decision.md`
-- `checklists/phase2_closeout_and_phase3_entry_decision_checklist.md`
-- `docs/53_real_hwpx_template_intake_safety_procedure.md`
-- `docs/58_external_hwpx_placeholder_conversion_runbook.md`
 - `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
-- `checklists/phase2_user_input_and_manual_operation_checklist.md`
-- `docs/109_normalizers_regression_recheck_result.md`
-- `checklists/normalizers_regression_recheck_result_checklist.md`
-- `docs/108_phase2_operating_docs_final_review.md`
-- `checklists/phase2_operating_docs_final_review_checklist.md`
-- `docs/97_phase2_minimal_poc_checkpoint.md`
-- `docs/81_normalizers_regression_test_suite.md`
-- `checklists/normalizers_regression_test_suite_checklist.md`
-- `docs/107_missing_fields_phase2_docs_integrated_review.md`
-- `checklists/missing_fields_phase2_docs_integrated_review_checklist.md`
-- `docs/59_phase1_completion_and_phase2_entry_criteria.md`
+- `checklists/before_automation_checklist.md`
 - `README.md`
 - `AGENTS.md`
 
 ## 검토 항목
 
-1. HWPX preview, 외부 전송 전 preview, Email 초안 preview의 사람 확인 지점을 구분
-2. 승인 상태가 실제 결재, 발송, 계약, 예산 집행 승인이 아님을 반복 표시
-3. 외부 전송 전 최종 보류 조건을 어느 문서와 로그에 기록할지 정리
-4. 사용자 확인이 필요한 항목을 `[사용자 확인 필요]`로 눈에 띄게 표시
-5. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
-6. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
-7. 필요한 경우 README, AGENTS, NEXT_STEP을 최소 범위로 갱신
+1. no-send dry-run에서 실제 외부 전송 없이 확인할 상태값과 로그 항목 구분
+2. 실제 API 호출, Make.com 실행, Email 발송, 실제 계정 연결, 실제 수신자 지정, 실제 첨부가 모두 제외되는지 확인
+3. `외부 전송 여부 = 전송하지 않음`을 반복 운영 로그와 감사 기준에 어떻게 남길지 정리
+4. `needs_security_review`, `blocked`, `template_required`, preview 미완료, 승인 상태 불명확 시 no-send dry-run도 중단 또는 보류되는지 확인
+5. no-send dry-run이 실제 연동 준비 완료나 실제 발송 승인으로 오인되지 않도록 표시
+6. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
+7. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
+8. 필요한 경우 README, AGENTS, NEXT_STEP을 최소 범위로 갱신
 
 ## 작업 제한
 
@@ -108,12 +93,14 @@
 - HWPX payload 반영 금지
 - `placeholder_confirmed_values` normalizer 연결 금지
 - HWPX output 재생성 금지
+- 실제 계정, 실제 수신자, 실제 첨부, 실제 API 요청 생성 금지
 
 ## 완료 조건
 
-- 사용자 preview와 사람 승인 지점 통합 점검 필요 여부 판단
-- preview 종류별 사람 확인 지점 구분
-- 승인 상태와 실제 업무 승인의 경계 정리
+- no-send dry-run 기준 문서화 필요 여부 판단
+- 실제 외부 전송 없이 확인 가능한 항목과 확인 불가 항목 구분
+- `전송하지 않음` 상태 기록 기준 정리
+- no-send dry-run 중단ㆍ보류 조건 정리
 - 필요한 경우 관련 문서 또는 체크리스트 최소 범위 갱신
 - 계속 보류할 범위 재확인
 - README 최신화 필요 여부 판단
@@ -124,4 +111,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
+현재 추천은 코드 변경 없이 외부 전송 없는 no-send dry-run 기준을 문서로 점검하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.

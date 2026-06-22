@@ -18,7 +18,7 @@
 | 8 | 이메일 자동화 검토 | 초안 회신 중심 자동화만 별도 승인 후 검토 |
 | 9 | 로그와 감사 추적 | 처리 이력, 승인 이력, 오류 이력 관리 |
 
-현재 Phase 3 기준에서는 API 연결, Make.com 연동, 이메일 자동화 구현을 시작하지 않습니다. 외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`를 기준으로 검토하며, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에 문서 기준으로 정리했습니다. 다음 우선순위는 사용자 preview와 사람 승인 지점 통합 점검입니다.
+현재 Phase 3 기준에서는 API 연결, Make.com 연동, 이메일 자동화 구현을 시작하지 않습니다. 외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`를 기준으로 검토하며, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에, 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119_phase3_user_preview_and_human_approval_integration.md`에 문서 기준으로 정리했습니다. 다음 우선순위는 외부 전송 없는 no-send dry-run 기준 점검입니다.
 
 ## 구성요소
 

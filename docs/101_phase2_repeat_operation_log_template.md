@@ -101,6 +101,24 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 | [ ] | `[확인 필요]`가 실제값처럼 오인되지 않음 | [확인 필요] |
 | [ ] | 실제 개인정보, 기관정보, 문서번호 없음 | [확인 필요] |
 
+## 외부 전송 전 preview 및 승인 상태 확인
+
+외부 전송은 현재 기본값 `전송하지 않음`입니다. 아래 항목은 실제 API, Make.com, Email 발송을 실행하기 위한 승인 기록이 아니라 외부 전송 보류 여부를 확인하기 위한 검토 기록입니다.
+
+| 확인 | 항목 | 결과 |
+|---|---|---|
+| [ ] | HWPX preview 상태 | [통과 / 보류 / 실패 / 사용자 확인 필요] |
+| [ ] | 외부 전송 전 preview 상태 | [통과 / 보류 / 실패 / 사용자 확인 필요] |
+| [ ] | Email 초안 preview 상태 | [통과 / 보류 / 실패 / 사용자 확인 필요] |
+| [ ] | 승인 상태 의미 확인 | 실제 결재, 발송, 계약, 예산 집행 승인이 아님 |
+| [ ] | 외부 전송 여부 | 전송하지 않음 |
+| [ ] | 최종 보류 조건 확인 | [확인 필요] |
+| [ ] | 실제 계정 연결 없음 | [확인 필요] |
+| [ ] | 실제 수신자, 참조자, 첨부 자동 지정 없음 | [확인 필요] |
+| [ ] | 실제 원문, 개인정보, 기관정보, 문서번호 없음 | [확인 필요] |
+
+최종 보류 조건이나 승인 상태를 기록할 때 실제 원문, 실제 파일명, 실제 기관명, 실제 담당자명, 실제 수신자 정보는 남기지 않습니다.
+
 ## 이상 발생 기록
 
 | 파일명 | 항목 번호 | 증상 | 처리 상태 |
@@ -158,6 +176,9 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 - HWPX output에 `remaining_placeholders` 잔여
 - `missing_fields`를 실제값처럼 확정하거나 자동 제외
 - 한컴에서 글자 겹침 또는 항목 누락 발생
+- 외부 전송 전 preview 또는 승인 상태가 `[사용자 확인 필요]`로 남아 있음
+- 승인 상태를 실제 결재, 발송, 계약, 예산 집행 승인으로 오인할 가능성이 있음
+- 실제 수신자, 참조자, 첨부 파일이 자동 지정됨
 - 한컴에서 output 잠금 또는 쓰기 권한 오류가 반복됨
 - GitHub Desktop Changes에 HWPX output 또는 로컬 템플릿 표시
 - output 폴더 쓰기 권한 오류 반복
@@ -168,6 +189,6 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 
 Phase 3 운영 문서 묶음 통합 점검은 `docs/114_phase3_operating_docs_integrated_review.md`에 반영했습니다.
 
-외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에 반영했습니다.
+외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에, 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119_phase3_user_preview_and_human_approval_integration.md`에 반영했습니다.
 
-다음 단계는 실제 연동 구현이 아니라, 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+다음 단계는 실제 연동 구현이 아니라, 외부 전송 없는 no-send dry-run 기준을 문서로 점검하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
