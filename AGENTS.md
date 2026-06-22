@@ -27,7 +27,11 @@
 - 보안 필터, HWPX payload mapper, payload validation, renderer dry-run PoC 작성
 - mapped HWPX 보고서 4종 렌더링과 한컴 수동 검수 완료
 - Phase 2 최소 운영 흐름, 사용자 입력 템플릿, 수동 운영 점검표 정리
-- `placeholder_confirmed_values` 설계, 충돌 규칙, 코드 도입 여부 재검토
+- Phase 2 수동 리허설 runbook, 실행 결과, 반복 운영 기준, 반복 운영 로그 템플릿 정리
+- `placeholder_confirmed_values` 설계, 충돌 규칙, read-only helper, fixture, metadata 유지 결정
+- `placeholder_confirmed_values` normalizer 연결 보류 정책 정리
+- `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
+- Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
 
 ## 1. 최우선 원칙
 
@@ -166,7 +170,9 @@
 - Phase 2는 운영 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 사람 검토 흐름을 안정화하는 단계입니다.
 - `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
-- 다음 구현 또는 문서화는 기존 routing과 `missing_fields` 결과를 흔들지 않는 최소 범위부터 검토합니다.
+- Phase 2 운영 문서 묶음은 최종 정리 단계까지 도달한 상태입니다.
+- 다음 검증은 기존 routing과 `missing_fields` 결과를 흔들지 않는 normalizers 회귀 테스트 묶음부터 검토합니다.
+- Phase 3 진입 조건 문서화는 normalizers 회귀 검증 이후 후보로 둡니다.
 
 ## Codex 작업 방식 보강
 
@@ -195,7 +201,11 @@
 - 입력 정규화, 보안 필터, HWPX payload mapper, payload validation 최소 PoC
 - HWPX renderer dry-run 및 mapped HWPX output 검증
 - Phase 2 최소 운영 흐름과 사용자 입력 템플릿 정리
-- `placeholder_confirmed_values` read-only helper 도입 전 설계 검토
+- Phase 2 수동 리허설 runbook, 실행 결과, 반복 운영 기준, 반복 운영 로그 템플릿 정리
+- `placeholder_confirmed_values` read-only helper, fixture schema, metadata 유지 결정
+- `placeholder_confirmed_values` normalizer 연결 보류 정책 정리
+- `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
+- Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동
