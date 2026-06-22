@@ -8,6 +8,8 @@
 
 ## 핵심 원칙
 
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 따릅니다.
+
 - 실제 기관 양식 원본은 이 저장소에 복사하지 않습니다.
 - 실제 기관 양식 원본은 외부 AI, Custom GPT Knowledge, API 입력으로 사용하지 않습니다.
 - 저장소 밖 로컬 작업 폴더에서만 복사본을 다룹니다.
@@ -128,3 +130,4 @@ placeholder_candidate_[document_type].hwpx
 - placeholder 이름이 중립적임
 - 로컬 HWPX 템플릿과 output HWPX가 Git 제외 상태임
 - 다음 단계에서 사용자가 저장소 밖에서 안전하게 복사본을 만들 수 있음
+- 반복 작업 전 Git 제외 상태 검증 기준은 local template policy 후속 점검에서 확인함

@@ -128,4 +128,6 @@ HWPX 보고서 4종 style profile은 실제 서식값을 확인하기 전까지 
 
 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에 후속 반영했습니다.
 
-다음 단계는 실제 HWPX output 재생성이 아니라, 저장소 밖 실제 양식 후보를 다룰 때의 수동 절차와 보류 조건을 문서로 정리하는 것입니다.
+저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에 후속 반영했습니다.
+
+다음 단계는 실제 HWPX output 재생성이 아니라, local template policy와 Git 제외 상태 반복 검증 기준을 문서로 정리하는 것입니다.

@@ -1,5 +1,7 @@
 # 실제 HWPX 양식 투입 전 체크리스트
 
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다.
+
 ## 원본 분류
 
 - [ ] 실제 양식 원본을 Git에 추가하지 않았는가
@@ -47,3 +49,4 @@
 - [ ] GitHub Desktop Changes에서 추적 대상 파일을 검토했는가
 - [ ] 검수 결과를 문서화했는가
 - [ ] 다음 단계 진행 전 사용자가 로컬 열람 결과를 확인했는가
+- [ ] 보류 조건이 있으면 local template 또는 output 검증으로 넘어가지 않았는가

@@ -67,5 +67,7 @@
 
 | 완료 | 항목 |
 |---|---|
-| [x] | 다음 작업이 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검인가 |
+| [x] | HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검이 후속 반영되었는가 |
+| [x] | 저장소 밖 실제 양식 후보 수동 절차와 보류 조건이 후속 반영되었는가 |
+| [x] | 다음 작업이 local template policy와 Git 제외 상태 반복 검증 기준 정리인가 |
 | [x] | 실제 양식 투입과 외부 연동 구현을 다음 단계로 두지 않았는가 |

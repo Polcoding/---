@@ -1,6 +1,6 @@
 # HWPX 렌더링 결과 수동 검수 체크리스트
 
-최신 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`를 따릅니다.
+최신 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`를 따릅니다. 저장소 밖 실제 양식 후보를 다루는 경우 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`의 보류 조건도 함께 확인합니다.
 
 ## 수동 preview gap log 기록 전 확인
 
@@ -51,6 +51,7 @@
 - [ ] 결과보고서: 계획 대비 결과, 실적, 예산 placeholder 표시가 실제값처럼 보이지 않는가
 - [ ] 검토보고서: 보안 검토 조건과 위험요소, 후속조치 항목이 구분되는가
 - [ ] 발견한 gap은 `docs/127` 기준으로 기록했는가
+- [ ] 실제 양식 후보 관련 gap이면 `docs/128`의 보류 조건을 함께 적용했는가
 
 ## 문단별 placeholder 검수
 

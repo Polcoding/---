@@ -16,10 +16,16 @@
 
 ## 실제 원본 처리 원칙
 
+저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md` 기준을 함께 따릅니다.
+
 - 실제 기관 양식 원본은 저장소 밖 로컬 작업 폴더에서만 다룹니다.
 - 원본은 직접 수정하지 않고 복사본에서 실제 내용과 식별 요소를 제거합니다.
 - 비식별 placeholder 후보가 되더라도 기본적으로 Git에 추가하지 않습니다.
 - GitHub Desktop Changes에 HWP/HWPX 파일이 나타나면 작업을 중단하고 제외 상태를 다시 확인합니다.
+
+## 반복 검증 필요성
+
+로컬 placeholder 템플릿과 output 산출물은 반복 작업 중에도 Git 제외 상태를 다시 확인해야 합니다. 후속 기준에서는 `templates/hwpx/*.hwpx`, `templates/hwpx/*.hwp`, renderer output, normalizer output이 GitHub Desktop Changes에 나타나지 않는지 확인하는 순서를 별도로 정리합니다.
 
 ## 서식값 수집 기록 원칙
 

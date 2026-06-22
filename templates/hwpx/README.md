@@ -44,4 +44,5 @@
 - 최근 점검: `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`
 - 최근 점검: `docs/126_style_profile_confirmation_value_collection_criteria.md`
 - 최근 점검: `docs/127_hwpx_manual_preview_gap_log_criteria.md`
-- 다음 점검: 저장소 밖 실제 양식 후보 수동 절차와 보류 조건 재정렬
+- 최근 점검: `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`
+- 다음 점검: local template policy와 Git 제외 상태 반복 검증 기준 정리
