@@ -32,6 +32,7 @@
 - `placeholder_confirmed_values` normalizer 연결 보류 정책 정리
 - `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
 - Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
+- Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
 
 ## 1. 최우선 원칙
 
@@ -171,8 +172,8 @@
 - `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
 - Phase 2 운영 문서 묶음은 최종 정리 단계까지 도달한 상태입니다.
-- 다음 검증은 기존 routing과 `missing_fields` 결과를 흔들지 않는 normalizers 회귀 테스트 묶음부터 검토합니다.
-- Phase 3 진입 조건 문서화는 normalizers 회귀 검증 이후 후보로 둡니다.
+- normalizers 회귀 테스트 묶음 재검증까지 완료된 상태입니다.
+- 다음 작업은 Phase 2 마무리 판단과 Phase 3 진입 조건 문서화 여부를 기존 routing과 `missing_fields` 결과를 흔들지 않는 범위에서 검토합니다.
 
 ## Codex 작업 방식 보강
 
@@ -206,6 +207,7 @@
 - `placeholder_confirmed_values` normalizer 연결 보류 정책 정리
 - `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
 - Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
+- Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동

@@ -52,7 +52,8 @@
 - 현재는 Phase 2 최소 PoC 마무리 검증 단계입니다.
 - Phase 2는 API, Make.com, Email 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계입니다.
 - Phase 2 운영 문서 묶음 최종 정리와 READMEㆍAGENTS 최신화 필요 여부 확인까지 완료했습니다.
-- 다음 작업 후보는 Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증입니다.
+- Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증을 완료했습니다.
+- 다음 작업 후보는 Phase 2 마무리 판단과 Phase 3 진입 조건 문서화 여부 결정입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -230,6 +231,7 @@ Instructions 복사
 - `docs/106_missing_fields_manual_operation_checkpoints_reflection.md`: missing_fields 수동 운영 점검표 반영 결과
 - `docs/107_missing_fields_phase2_docs_integrated_review.md`: missing_fields Phase 2 운영 문서 통합 점검
 - `docs/108_phase2_operating_docs_final_review.md`: Phase 2 운영 문서 최종 정리
+- `docs/109_normalizers_regression_recheck_result.md`: normalizers 회귀 테스트 재검증 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -308,6 +310,7 @@ Instructions 복사
 - `checklists/missing_fields_manual_operation_checkpoints_reflection_checklist.md`: missing_fields 수동 운영 점검표 반영 결과 체크리스트
 - `checklists/missing_fields_phase2_docs_integrated_review_checklist.md`: missing_fields Phase 2 운영 문서 통합 점검 체크리스트
 - `checklists/phase2_operating_docs_final_review_checklist.md`: Phase 2 운영 문서 최종 정리 체크리스트
+- `checklists/normalizers_regression_recheck_result_checklist.md`: normalizers 회귀 테스트 재검증 결과 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -326,7 +329,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 마무리 전 normalizers 회귀 테스트 묶음을 재검증합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 Phase 2 마무리 판단과 Phase 3 진입 조건 문서화 여부를 결정합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
