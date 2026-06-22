@@ -2,7 +2,7 @@
 
 ## 목표
 
-Phase 2 반복 운영 로그 템플릿을 정리합니다.
+fixture 확장 후보를 검토합니다.
 
 ## 현재 완료 상태
 
@@ -16,32 +16,30 @@ Phase 2 반복 운영 로그 템플릿을 정리합니다.
 - Phase 2 수동 리허설 Codex 실행 결과 기록 완료
 - HWPX 4종 사용자 한컴 수동 검수 올클리어
 - Phase 2 반복 운영 기준 문서화 완료
+- Phase 2 반복 운영 로그 템플릿 문서화 완료
 
 ## 확인 대상
 
+- `docs/101_phase2_repeat_operation_log_template.md`
+- `checklists/phase2_repeat_operation_log_template_checklist.md`
 - `docs/100_phase2_repeat_operation_criteria.md`
 - `checklists/phase2_repeat_operation_criteria_checklist.md`
-- `docs/98_phase2_manual_rehearsal_runbook.md`
-- `checklists/phase2_manual_rehearsal_runbook_checklist.md`
-- `docs/99_phase2_manual_rehearsal_result.md`
-- `checklists/phase2_manual_rehearsal_result_checklist.md`
-- `docs/97_phase2_minimal_poc_checkpoint.md`
-- `docs/82_phase2_minimal_operation_flow.md`
+- `docs/85_normalizers_fixture_expansion_review.md`
+- `checklists/normalizers_fixture_expansion_review_checklist.md`
+- `docs/63_input_normalization_test_cases.md`
+- `normalizers/fixtures/`
 - `normalizers/README.md`
 - `normalizers/`
-- `templates/hwpx/local_template_policy.md`
-- `renderers/hwpx_renderer/output/.gitignore`
-- `normalizers/output/.gitignore`
 
 ## 검토 항목
 
-1. 반복 실행 날짜와 목적 기록 형식
-2. 실행한 normalizers 명령 기록 형식
-3. HWPX output 4종 생성 여부 기록 형식
-4. 사용자 한컴 확인 결과 기록 형식
-5. 이상 발생 시 파일명, 항목 번호, 증상 기록 형식
-6. Git 제외 확인 결과 기록 형식
-7. 보안 검수 결과 기록 형식
+1. 기존 fixture 6종을 유지할지 확인
+2. fixture 확장이 실제로 필요한지 확인
+3. 추가한다면 어떤 문서 유형에 필요한지 확인
+4. 실제값 없이 placeholder만으로 작성 가능한지 확인
+5. 기존 routing 결과를 흔들지 않는지 확인
+6. `placeholder_confirmed_values` fixture와 일반 routing fixture를 계속 분리할지 확인
+7. 지금은 코드 추가 없이 문서 기준 후보만 정리할지 판단
 
 ## 작업 제한
 
@@ -57,14 +55,13 @@ Phase 2 반복 운영 로그 템플릿을 정리합니다.
 
 ## 완료 조건
 
-- 반복 운영 로그 템플릿 문서화
-- 실행 명령 기록 항목 정리
-- HWPX output 확인 항목 정리
-- 사용자 한컴 검수 결과 기록 항목 정리
-- 이상 발생 시 기록 형식 정리
-- Git 제외 및 보안 검수 항목 포함
+- fixture 확장 필요성 재검토
+- 추가 후보가 있으면 placeholder 기반으로만 정리
+- 기존 fixture 6종과 helper fixture 분리 유지 여부 보고
+- 코드 변경 여부 판단
+- 보안 검수 결과 재확인
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 반복 운영 기준에 맞춰 실행 로그 템플릿을 만들고, 이후 fixture 확장 후보를 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+현재 추천은 fixture 확장 후보를 문서 기준으로 재검토하고, 실제 코드/fixture 추가가 필요한지 판단하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
