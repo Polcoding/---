@@ -130,4 +130,4 @@ placeholder_candidate_[document_type].hwpx
 - placeholder 이름이 중립적임
 - 로컬 HWPX 템플릿과 output HWPX가 Git 제외 상태임
 - 다음 단계에서 사용자가 저장소 밖에서 안전하게 복사본을 만들 수 있음
-- 반복 작업 전 Git 제외 상태 검증 기준은 local template policy 후속 점검에서 확인함
+- 반복 작업 전 Git 제외 상태 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에서 확인함

@@ -25,7 +25,15 @@
 
 ## 반복 검증 필요성
 
-로컬 placeholder 템플릿과 output 산출물은 반복 작업 중에도 Git 제외 상태를 다시 확인해야 합니다. 후속 기준에서는 `templates/hwpx/*.hwpx`, `templates/hwpx/*.hwp`, renderer output, normalizer output이 GitHub Desktop Changes에 나타나지 않는지 확인하는 순서를 별도로 정리합니다.
+로컬 placeholder 템플릿과 output 산출물은 반복 작업 중에도 Git 제외 상태를 다시 확인해야 합니다. 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 따릅니다.
+
+현재 폴더별 ignore 역할:
+
+- `templates/hwpx/.gitignore`: `.hwpx`, `.hwp`, 임시 파일 제외
+- `renderers/hwpx_renderer/output/.gitignore`: renderer output 제외
+- `normalizers/output/.gitignore`: normalizer output 제외
+
+root `.gitignore`가 없더라도 위 폴더별 규칙으로 로컬 HWPX 템플릿과 output 산출물을 제외합니다. GitHub Desktop Changes에 HWP/HWPX/output 파일이 보이면 commit 또는 push하지 않습니다.
 
 ## 서식값 수집 기록 원칙
 

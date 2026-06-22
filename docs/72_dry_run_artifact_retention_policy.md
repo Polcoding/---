@@ -83,6 +83,8 @@ fixture 추가 금지 기준:
 
 ## 다음 단계
 
-다음 작업은 실제 HWPX 렌더링 연결 여부를 결정하는 것입니다.
+이 문서는 dry-run 결과 보관 정책을 정리한 당시 기준 문서입니다.
 
-다만 실제 HWPX 파일을 생성하는 단계는 사용자가 확인할 필요가 있는 작업이므로, 먼저 렌더링 연결 범위와 사용자 확인 지점을 문서로 정리합니다.
+최신 기준에서는 local template과 output Git 제외 반복 검증 기준을 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 정리했습니다.
+
+현재 다음 작업은 실제 HWPX 렌더링 연결이 아니라 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부 판단입니다.

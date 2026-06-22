@@ -81,8 +81,8 @@
 | 문서ㆍ정책ㆍ안전 기준 | 85~90% | 보안, 비식별, 금지 범위, 단계별 판단 문서가 충분히 쌓임 |
 | HWPX 보고서 로컬 PoC | 75~80% | 4종 placeholder 렌더링과 수동 검수 완료, 실제 양식 안정화 전 |
 | 입력 정규화ㆍ보안 필터 최소 PoC | 65~70% | fixture 기반 PoC와 회귀 기준 있음, 운영 연결은 보류 |
-| 문서 템플릿 안정화 | 55~65% | Phase 4 진입 판단, manifestㆍplaceholder 정합성, style profile 확인 기준, 수동 preview gap log 기준, 실제 양식 후보 수동 절차 점검 완료 |
-| 실제 기관 양식 전환 | 20~30% | 저장소 밖 절차와 보류 조건은 정리했으나 실제 양식 투입은 보류 |
+| 문서 템플릿 안정화 | 60~70% | Phase 4 진입 판단, manifestㆍplaceholder 정합성, style profile 확인 기준, 수동 preview gap log 기준, 실제 양식 후보 수동 절차, Git 제외 반복 검증 기준 점검 완료 |
+| 실제 기관 양식 전환 | 25~35% | 저장소 밖 절차, 보류 조건, Git 제외 반복 검증 기준은 정리했으나 실제 양식 투입은 보류 |
 | 외부 연동/API/Email 자동화 | 0~10% | 의도적으로 구현 보류 |
 
 전체 시스템 구축 관점에서는 약 55~60% 진행으로 봅니다.
@@ -98,14 +98,15 @@
 3. style profile의 `[확인 필요]` 값 유지 여부와 수집 체크리스트 정비 완료
 4. HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리 완료
 5. 저장소 밖 실제 양식 후보를 다룰 때의 수동 절차 재정렬 완료
-6. local template policy와 Git 제외 상태 반복 검증 기준 정리
-7. 실제 기관 양식 투입은 사용자와 별도 승인 후 저장소 밖에서만 수행
-8. API, Make.com, Email 자동화는 조직 보안 검토와 별도 승인 전까지 계속 보류
+6. local template policy와 Git 제외 상태 반복 검증 기준 정리 완료
+7. Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부 판단
+8. 실제 기관 양식 투입은 사용자와 별도 승인 후 저장소 밖에서만 수행
+9. API, Make.com, Email 자동화는 조직 보안 검토와 별도 승인 전까지 계속 보류
 
 예상 남은 반복 횟수:
 
-- 문서 템플릿 안정화까지만 보면 약 3~5회
-- 저장소 밖 실제 양식 후보 수동 리허설까지 보면 약 6~9회
+- 문서 템플릿 안정화까지만 보면 약 2~4회
+- 저장소 밖 실제 양식 후보 수동 리허설까지 보면 약 5~8회
 - 외부 연동 검토까지 포함하면 별도 보안 검토 후 추가 단계 필요
 
 ## 업데이트 판단 결론
@@ -137,4 +138,6 @@ HWPX 보고서 4종 수동 preview 서식 gap log 기준은 `docs/127_hwpx_manua
 
 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에 반영했습니다.
 
-다음 작업은 `tasks/NEXT_STEP.md` 기준으로 local template policy와 Git 제외 상태 반복 검증 기준을 문서로 정리하는 것입니다.
+local template policy와 Git 제외 상태 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 반영했습니다.
+
+다음 작업은 `tasks/NEXT_STEP.md` 기준으로 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부를 문서로 판단하는 것입니다.

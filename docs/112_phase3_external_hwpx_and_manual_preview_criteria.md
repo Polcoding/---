@@ -16,6 +16,7 @@ Phase 3 안전 게이트 이후 실제 HWPX 양식 복사본을 저장소 밖에
 - `docs/101_phase2_repeat_operation_log_template.md`
 - `docs/111_phase3_entry_safety_gate.md`
 - `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`
+- `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 
 ## 적용 범위
 
@@ -250,6 +251,7 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 9. 외부 전송 없는 no-send dry-run 기준은 `docs/120`에 반영 완료
 10. HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127`에 반영 완료
 11. 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128`에 반영 완료
+12. local template과 output Git 제외 반복 검증 기준은 `docs/129`에 반영 완료
 
 ## 보안 검수
 
@@ -265,4 +267,4 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 
 Phase 3에서는 실제 원본과 output을 Git에 남기지 않고, 저장소 밖 HWPX 취급과 사용자 수동 preview를 분리해 관리합니다.
 
-후속 Phase 4 문서 템플릿 안정화 기준은 `docs/123`~`docs/128`에 반영했습니다. 최신 다음 단계는 local template policy와 Git 제외 상태 반복 검증 기준 정리입니다.
+후속 Phase 4 문서 템플릿 안정화 기준은 `docs/123`~`docs/129`에 반영했습니다. 최신 다음 단계는 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부 판단입니다.

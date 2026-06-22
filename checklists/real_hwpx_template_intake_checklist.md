@@ -1,6 +1,6 @@
 # 실제 HWPX 양식 투입 전 체크리스트
 
-최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다.
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다. local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 따릅니다.
 
 ## 원본 분류
 
@@ -31,6 +31,8 @@
 
 - [ ] `templates/hwpx/`의 `.hwpx`, `.hwp` 파일이 GitHub Desktop Changes에 나타나지 않는가
 - [ ] `renderers/hwpx_renderer/output/` 산출물이 GitHub Desktop Changes에 나타나지 않는가
+- [ ] `normalizers/output/` 산출물이 GitHub Desktop Changes에 나타나지 않는가
+- [ ] 로컬 HWPX 템플릿과 output 산출물이 `!!` ignored 상태인지 확인했는가
 - [ ] 실제 HWPX 원본 또는 output 파일을 강제로 추가하지 않았는가
 - [ ] Git에 남는 것은 문서, 체크리스트, 코드, placeholder 샘플뿐인가
 

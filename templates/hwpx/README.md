@@ -45,4 +45,5 @@
 - 최근 점검: `docs/126_style_profile_confirmation_value_collection_criteria.md`
 - 최근 점검: `docs/127_hwpx_manual_preview_gap_log_criteria.md`
 - 최근 점검: `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`
-- 다음 점검: local template policy와 Git 제외 상태 반복 검증 기준 정리
+- 최근 점검: `docs/129_local_template_gitignore_repeat_verification_criteria.md`
+- 다음 점검: Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부 판단

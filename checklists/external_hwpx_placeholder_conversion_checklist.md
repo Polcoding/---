@@ -1,6 +1,6 @@
 # 저장소 밖 HWPX placeholder 변환 체크리스트
 
-최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다.
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다. local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 따릅니다.
 
 ## 작업 위치
 
@@ -41,6 +41,7 @@
 - [ ] `templates/hwpx/*.hwpx`가 GitHub Desktop Changes에 나타나지 않는가
 - [ ] `renderers/hwpx_renderer/output/*`가 GitHub Desktop Changes에 나타나지 않는가
 - [ ] `normalizers/output/*`와 임시 파일도 GitHub Desktop Changes에 나타나지 않는가
+- [ ] 로컬 HWPX 템플릿과 output 산출물이 `!!` ignored 상태인지 확인했는가
 
 ## 결과 기록
 
