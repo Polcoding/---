@@ -260,4 +260,4 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 
 Phase 3에서는 실제 원본과 output을 Git에 남기지 않고, 저장소 밖 HWPX 취급과 사용자 수동 preview를 분리해 관리합니다.
 
-다음 단계는 실제 연동 구현이 아니라, 외부 연동 구현 범위 승인 여부를 문서로 판단하는 것입니다.
+다음 단계는 실제 연동 구현이 아니라, 외부 연동 구현 보류 결정과 Phase 3 closeout 기준을 문서로 정리하는 것입니다.

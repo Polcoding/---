@@ -2,7 +2,7 @@
 
 ## 목표
 
-외부 연동 구현 범위 승인 여부를 문서로 판단합니다.
+외부 연동 구현 보류 결정과 Phase 3 closeout 기준을 문서로 정리합니다.
 
 ## 현재 완료 상태
 
@@ -47,9 +47,13 @@
 - Phase 3 실제 원문 차단과 비식별 입력 확인 절차 구체화 완료
 - Phase 3 사용자 preview와 사람 승인 지점 통합 기준 구체화 완료
 - Phase 3 외부 전송 없는 no-send dry-run 기준 구체화 완료
+- Phase 3 외부 연동 구현 범위 승인 판단 완료
+- 현재 저장소 기준 외부 연동 실제 구현은 승인하지 않고 보류하기로 결정
 
 ## 확인 대상
 
+- `docs/121_phase3_external_integration_scope_approval_judgment.md`
+- `checklists/phase3_external_integration_scope_approval_judgment_checklist.md`
 - `docs/120_phase3_no_send_dry_run_criteria.md`
 - `checklists/phase3_no_send_dry_run_criteria_checklist.md`
 - `docs/119_phase3_user_preview_and_human_approval_integration.md`
@@ -67,12 +71,12 @@
 
 ## 검토 항목
 
-1. 실제 구현 검토 단계로 넘어가기 위한 필수 조건이 문서상 충분한지 판단
-2. 현재 기준으로 승인 가능한 범위와 계속 보류해야 할 범위를 분리
-3. OpenAI API, Make.com, Email 중 어떤 것도 실제 구현 대상으로 자동 승격되지 않도록 확인
-4. 실제 계정, 실제 수신자, 실제 첨부, 실제 API 요청, 실제 HWPX 원본이 계속 제외되는지 확인
-5. no-send dry-run 통과가 실제 구현 승인으로 오인되지 않도록 표시
-6. 구현 범위 승인을 하더라도 별도 사용자 명시 승인 없이는 코드 변경하지 않는다고 정리
+1. Phase 3를 실제 구현 없이 문서 기준으로 어디에서 멈출지 정리
+2. 외부 연동 구현 보류 결정을 closeout 기준에 반영
+3. no-send dry-run과 구현 범위 판단이 실제 구현 승인으로 오인되지 않도록 표시
+4. 향후 실제 구현 요청 시 필요한 선행 승인 문서를 정리
+5. OpenAI API, Make.com, Email 중 어떤 것도 실제 구현 대상으로 자동 승격되지 않도록 확인
+6. 실제 계정, 실제 수신자, 실제 첨부, 실제 API 요청, 실제 HWPX 원본이 계속 제외되는지 확인
 7. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
 8. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
 9. 필요한 경우 README, AGENTS, NEXT_STEP을 최소 범위로 갱신
@@ -95,9 +99,9 @@
 
 ## 완료 조건
 
-- 외부 연동 구현 범위 승인 여부 문서화 필요 판단
-- 승인 가능한 범위와 계속 보류할 범위 구분
-- 실제 구현이 필요한 경우에도 별도 명시 승인 전까지 보류한다는 경계 정리
+- Phase 3 closeout 기준 문서화 필요 판단
+- 외부 연동 구현 보류 결정과 실제 구현 제외 범위 정리
+- 실제 구현이 필요한 경우에도 별도 명시 승인 전까지 보류한다는 경계 유지
 - 현재 단계에서 코드 변경이 필요한지 판단
 - 필요한 경우 관련 문서 또는 체크리스트 최소 범위 갱신
 - README 최신화 필요 여부 판단
@@ -107,4 +111,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 외부 연동 구현 범위 승인 여부를 문서로 판단하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
+현재 추천은 코드 변경 없이 외부 연동 구현 보류 결정과 Phase 3 closeout 기준을 문서로 정리하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
