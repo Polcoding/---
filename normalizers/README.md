@@ -30,7 +30,7 @@
 - Email 자동 발송
 - 실제 원문 파싱
 - 실제 HWPX 양식 처리
-- 기존 렌더러 직접 연결
+- 운영용 렌더러 직접 연결
 
 ## 실행
 
@@ -52,6 +52,8 @@ python .\normalizers\render_mapped_hwpx_poc.py
 `placeholder_confirmed_values` helper는 read-only 검증용입니다. 현재 단계에서는 `missing_fields`, routing, HWPX payload 결과에 반영하지 않습니다.
 
 helper 전용 fixture는 `normalizers/fixtures/placeholder_confirmed_values/` 하위 폴더에 둡니다. 이 fixture는 기존 routing fixture 6종과 분리해서 검증합니다.
+
+현재 최신 작업 축은 normalizer 기능 확장이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검입니다. normalizer, fixture, routing, HWPX payload 변경은 별도 명시 승인 전까지 보류합니다.
 
 ## 보안 원칙
 

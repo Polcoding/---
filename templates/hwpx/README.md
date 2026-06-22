@@ -2,16 +2,16 @@
 
 ## 목적
 
-이 폴더는 향후 HWPX 공문, 추진계획서, 결과보고서 템플릿 파일을 보관하기 위한 위치입니다.
+이 폴더는 HWPX 공문과 보고서 4종의 placeholder 템플릿 정책, manifest, style profile 기준을 관리하기 위한 위치입니다.
 
-현재 단계에서는 실제 HWPX 파일을 보관하지 않습니다.
+현재 단계에서는 실제 기관 HWPX 원본을 보관하지 않습니다. 로컬 placeholder HWPX 템플릿은 검증용으로 둘 수 있지만 Git 제외 상태를 유지해야 합니다.
 
 ## 보관 가능 파일
 
 향후 보관 가능한 파일 유형:
 
-- 비식별 공문 템플릿
-- placeholder 기반 HWPX 템플릿
+- 비식별 공문 템플릿 후보
+- placeholder 기반 HWPX 템플릿 후보
 - 실제 개인정보나 내부 운영정보가 없는 테스트용 템플릿
 - 문서번호, 기관명, 담당자명 등이 placeholder 처리된 템플릿
 
@@ -37,7 +37,8 @@
 
 ## 현재 상태
 
-- 현재 단계: 설계 단계
-- 실제 HWPX 파일: 없음
-- 렌더링 코드: 없음
-- 향후 Step에서 PoC 구현 여부 검토
+- 현재 단계: Phase 4 문서 템플릿 안정화 검토
+- 실제 기관 HWPX 원본: Git 추가 금지
+- 로컬 placeholder HWPX 템플릿: Git 제외 상태로만 검증 허용
+- 렌더링 코드: `renderers/hwpx_renderer/`의 placeholder 기반 로컬 PoC
+- 다음 점검: `template_manifest.md`, `local_template_policy.md`, `style_profile_manifest.md`, `docs/54_hwpx_common_placeholder_design.md` 정합성 확인

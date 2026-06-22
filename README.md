@@ -2,7 +2,7 @@
 
 ## 프로젝트 한 줄 정의
 
-비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 Phase 3 마무리 및 Phase 4 문서 템플릿 안정화 진입 판단 저장소입니다.
+비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 HWPX 보고서 우선 로컬 PoC 및 Phase 4 문서 템플릿 안정화 저장소입니다.
 
 ## 이번 저장소의 목적
 
@@ -25,7 +25,8 @@
 - HWPX 보고서 4종 placeholder 템플릿 치환 및 한컴 수동 검수
 - 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, renderer dry-run 최소 PoC 검증
 - Phase 2 최소 운영 흐름과 사용자 입력 템플릿 정리
-- 향후 Make.com 또는 OpenAI API 연동 전 점검할 항목 정리
+- Phase 3 외부 연동 보류 기준과 no-send dry-run 기준 정리
+- Phase 4 문서 템플릿 안정화 진입 판단과 구형 문서 업데이트 기준 정리
 
 ## 현재 자동화 우선순위
 
@@ -49,8 +50,7 @@
 ## 현재 진행 위치
 
 - Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태입니다.
-- 현재는 Phase 2 최소 PoC 마무리 판단 단계입니다.
-- Phase 2는 API, Make.com, Email 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계입니다.
+- Phase 2 최소 PoC는 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 한컴 수동 검토 흐름을 다듬는 단계로 문서 기준 마무리했습니다.
 - Phase 2 운영 문서 묶음 최종 정리와 READMEㆍAGENTS 최신화 필요 여부 확인까지 완료했습니다.
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증을 완료했습니다.
 - Phase 2 최소 PoC는 문서 기준 마무리 가능 상태로 판단했습니다.
@@ -67,9 +67,10 @@
 - Phase 3 외부 연동 구현 범위 승인 판단을 완료했습니다.
 - Phase 3 마무리 판단 및 Phase 4 진입 여부 결정을 완료했습니다.
 - Phase 4 문서 템플릿 안정화 진입 판단을 완료했습니다.
+- 프로젝트 방향 재확인과 구형 진입점 문서 업데이트 기준 정리를 완료했습니다.
 - 다음 작업 후보는 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
 
-## 1단계에서 하지 않는 일
+## 현재도 하지 않는 일
 
 - 실제 이메일 발송 자동화
 - Make.com, Gmail, Outlook, OpenAI API 실제 연동 코드 작성
@@ -91,7 +92,7 @@
 → 사람 승인 후 실무 적용
 ```
 
-현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러, 입력 정규화 PoC, dry-run 검증만 다룹니다.
+현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러, 입력 정규화 PoC, dry-run 검증, Phase 4 문서 템플릿 안정화 검토만 다룹니다.
 
 ## 폴더 구조
 
@@ -260,6 +261,7 @@ Instructions 복사
 - `docs/121_phase3_external_integration_scope_approval_judgment.md`: Phase 3 외부 연동 구현 범위 승인 판단
 - `docs/122_phase3_closeout_and_phase4_entry_decision.md`: Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
 - `docs/123_phase4_template_stabilization_entry_judgment.md`: Phase 4 문서 템플릿 안정화 진입 판단
+- `docs/124_project_direction_and_legacy_update_review.md`: 프로젝트 방향 재확인 및 구형 문서 업데이트 검토
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -353,6 +355,7 @@ Instructions 복사
 - `checklists/phase3_external_integration_scope_approval_judgment_checklist.md`: Phase 3 외부 연동 구현 범위 승인 판단 체크리스트
 - `checklists/phase3_closeout_and_phase4_entry_decision_checklist.md`: Phase 3 마무리 판단 및 Phase 4 진입 여부 결정 체크리스트
 - `checklists/phase4_template_stabilization_entry_judgment_checklist.md`: Phase 4 문서 템플릿 안정화 진입 판단 체크리스트
+- `checklists/project_direction_and_legacy_update_review_checklist.md`: 프로젝트 방향 재확인 및 구형 문서 업데이트 검토 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
