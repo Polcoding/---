@@ -125,3 +125,5 @@
 `placeholder_confirmed_values`는 계속 read-only helper와 문서 기준 metadata 후보로만 유지하고, `missing_fields`, routing, HWPX payload에는 연결하지 않습니다.
 
 다음 단계는 `missing_fields`를 사용자에게 더 명확하게 보여주는 표시 기준을 문서화하는 것입니다.
+
+후속 작업에서 사용자 확인 표시 기준은 `docs/104_missing_fields_user_display_guidance.md`에 정리했습니다.

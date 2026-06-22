@@ -2,7 +2,7 @@
 
 ## 목표
 
-`missing_fields` 사용자 확인 표시 기준을 문서화합니다.
+`missing_fields` 표시 기준을 Phase 2 반복 운영 로그 템플릿에 반영할지 검토합니다.
 
 ## 현재 완료 상태
 
@@ -22,34 +22,31 @@
 - `missing_fields` 생성 규칙 재검토 완료
 - 고정 missing_fields 정책 유지 결정
 - `placeholder_confirmed_values`를 `missing_fields`, routing, HWPX payload에 연결하지 않기로 재확인
+- `missing_fields` 사용자 확인 표시 기준 문서화 완료
+- HWPX 본문과 검토용 확인 목록 분리 기준 정리 완료
 
 ## 확인 대상
 
+- `docs/104_missing_fields_user_display_guidance.md`
+- `checklists/missing_fields_user_display_guidance_checklist.md`
 - `docs/103_missing_fields_rule_decision_after_helper.md`
 - `checklists/missing_fields_rule_decision_after_helper_checklist.md`
-- `docs/102_fixture_expansion_decision_after_repeat_run.md`
-- `checklists/fixture_expansion_decision_after_repeat_run_checklist.md`
-- `docs/86_missing_fields_rule_improvement_review.md`
-- `checklists/missing_fields_rule_improvement_review_checklist.md`
-- `docs/84_hwpx_report_user_input_templates.md`
-- `checklists/hwpx_report_user_input_templates_checklist.md`
 - `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
 - `checklists/phase2_user_input_and_manual_operation_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
 - `checklists/phase2_repeat_operation_log_template_checklist.md`
 - `docs/100_phase2_repeat_operation_criteria.md`
 - `checklists/phase2_repeat_operation_criteria_checklist.md`
-- `normalizers/README.md`
 
 ## 검토 항목
 
-1. `missing_fields` 항목을 사용자에게 표시하는 순서 정리
-2. `field_name`, `reason`, `required_for`, `suggested_placeholder` 표시 방식 정리
-3. HWPX 본문과 검토용 확인 목록 분리 기준 정리
-4. `[확인 필요]`와 placeholder-confirmed 값의 표시 표현 구분
-5. 실제값 입력 금지 안내 문구 정리
-6. 운영 로그에서 누락값 확인 결과를 적는 방식 정리
-7. 코드 변경 없이 문서 기준으로 충분한지 확인
+1. `docs/104`의 표시 기준을 `docs/101` 로그 템플릿에 직접 반영할 필요가 있는지 확인
+2. 반복 운영 로그에 `missing_fields 확인` 섹션을 추가할지 확인
+3. 사용자 한컴 검수 항목과 중복되는지 확인
+4. 실제값 기록 금지 원칙이 유지되는지 확인
+5. 코드 변경 없이 문서 템플릿만 수정하면 충분한지 확인
+6. 반영하지 않는 경우 보류 사유를 문서화
+7. 반영하는 경우 체크리스트와 README 링크를 함께 갱신
 
 ## 작업 제한
 
@@ -63,18 +60,18 @@
 - routing 결과 변경 금지
 - HWPX payload 반영 금지
 - `placeholder_confirmed_values` normalizer 연결 금지
+- HWPX output 재생성 금지
 
 ## 완료 조건
 
-- missing_fields 사용자 확인 표시 기준 문서화
-- HWPX 본문과 검토용 확인 목록 분리 기준 정리
-- placeholder-confirmed 값과 `[확인 필요]` 표시 표현 구분
-- 실제값 입력 금지 안내 문구 정리
-- 운영 로그 반영 방식 정리
+- 반복 운영 로그 템플릿 반영 필요성 판단
+- 반영 시 `missing_fields 확인` 섹션 정리
+- 보류 시 보류 사유 정리
+- 기존 사용자 한컴 검수 항목과 중복 여부 확인
 - 코드 변경 여부 판단
 - 보안 검수 결과 재확인
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 `missing_fields`를 사용자에게 어떻게 보여줄지 문서 기준으로 정리하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+현재 추천은 코드 변경 없이 `docs/104`의 표시 기준을 `docs/101` 반복 운영 로그 템플릿에 반영할지 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
