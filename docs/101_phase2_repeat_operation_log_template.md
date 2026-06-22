@@ -64,6 +64,18 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 | [ ] | `mapped_missing_result_report_poc.hwpx` | rendered / remaining 0 | [확인 필요] |
 | [ ] | `mapped_approved_review_report_poc.hwpx` | rendered / remaining 0 | [확인 필요] |
 
+## missing_fields 확인
+
+| 확인 | 항목 | 결과 |
+|---|---|---|
+| [ ] | 확인 필요 항목 개수 확인 | [확인 필요] |
+| [ ] | HWPX 본문과 검토용 확인 목록 분리 확인 | [확인 필요] |
+| [ ] | `[확인 필요]`가 실제값처럼 보이지 않음 | [확인 필요] |
+| [ ] | placeholder 유지 확인 대상 구분 | [확인 필요] |
+| [ ] | 실제값 입력 금지 안내 포함 | [확인 필요] |
+
+`missing_fields`는 검토용 목록이며, 본문 실제값으로 확정하지 않습니다.
+
 ## 사용자 한컴 검수
 
 | 확인 | 항목 | 결과 |
@@ -129,10 +141,13 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 - blocked fixture에서 payload 또는 HWPX output 생성
 - `needs_security_review` fixture에서 HWPX output 생성
 - HWPX output에 `{{placeholder}}` 잔여
+- `missing_fields`를 실제값처럼 확정하거나 자동 제외
 - 한컴에서 글자 겹침 또는 항목 누락 발생
 - GitHub Desktop Changes에 HWPX output 또는 로컬 템플릿 표시
 - output 폴더 쓰기 권한 오류 반복
 
 ## 다음 단계
 
-반복 운영 로그 템플릿을 사용한 뒤, 반복 기록이 쌓이면 fixture 확장 후보를 별도 검토합니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+반복 운영 로그 템플릿에 `missing_fields` 확인 섹션을 반영했습니다.
+
+다음 단계에서는 같은 표시 기준을 Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토합니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.

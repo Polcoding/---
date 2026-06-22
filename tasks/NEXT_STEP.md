@@ -2,7 +2,7 @@
 
 ## 목표
 
-`missing_fields` 표시 기준을 Phase 2 반복 운영 로그 템플릿에 반영할지 검토합니다.
+`missing_fields` 표시 기준을 Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토합니다.
 
 ## 현재 완료 상태
 
@@ -24,13 +24,15 @@
 - `placeholder_confirmed_values`를 `missing_fields`, routing, HWPX payload에 연결하지 않기로 재확인
 - `missing_fields` 사용자 확인 표시 기준 문서화 완료
 - HWPX 본문과 검토용 확인 목록 분리 기준 정리 완료
+- `missing_fields` 표시 기준을 Phase 2 반복 운영 로그 템플릿에 반영 완료
+- 반복 운영 로그에 `missing_fields 확인` 섹션 추가 완료
 
 ## 확인 대상
 
+- `docs/105_missing_fields_repeat_log_reflection_result.md`
+- `checklists/missing_fields_repeat_log_reflection_result_checklist.md`
 - `docs/104_missing_fields_user_display_guidance.md`
 - `checklists/missing_fields_user_display_guidance_checklist.md`
-- `docs/103_missing_fields_rule_decision_after_helper.md`
-- `checklists/missing_fields_rule_decision_after_helper_checklist.md`
 - `docs/83_phase2_user_input_and_manual_operation_checkpoints.md`
 - `checklists/phase2_user_input_and_manual_operation_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
@@ -40,12 +42,12 @@
 
 ## 검토 항목
 
-1. `docs/104`의 표시 기준을 `docs/101` 로그 템플릿에 직접 반영할 필요가 있는지 확인
-2. 반복 운영 로그에 `missing_fields 확인` 섹션을 추가할지 확인
-3. 사용자 한컴 검수 항목과 중복되는지 확인
-4. 실제값 기록 금지 원칙이 유지되는지 확인
-5. 코드 변경 없이 문서 템플릿만 수정하면 충분한지 확인
-6. 반영하지 않는 경우 보류 사유를 문서화
+1. `docs/104`의 표시 기준을 `docs/83` 점검표에 직접 반영할 필요가 있는지 확인
+2. HWPX output 생성 후 사용자 검수에 `missing_fields` 확인 항목을 추가할지 확인
+3. 입력 전 체크리스트에 누락값 표시 기준을 추가할지 확인
+4. 기존 `[확인 필요]` 확인 항목과 중복되는지 확인
+5. 실제값 기록 금지 원칙이 유지되는지 확인
+6. 코드 변경 없이 문서 점검표만 수정하면 충분한지 확인
 7. 반영하는 경우 체크리스트와 README 링크를 함께 갱신
 
 ## 작업 제한
@@ -64,14 +66,14 @@
 
 ## 완료 조건
 
-- 반복 운영 로그 템플릿 반영 필요성 판단
-- 반영 시 `missing_fields 확인` 섹션 정리
-- 보류 시 보류 사유 정리
-- 기존 사용자 한컴 검수 항목과 중복 여부 확인
+- 사용자 입력 및 수동 운영 점검표 반영 필요성 판단
+- 반영 시 `missing_fields` 확인 항목 정리
+- 기존 `[확인 필요]` 확인 항목과 중복 여부 확인
+- 입력 전 체크리스트 반영 여부 판단
 - 코드 변경 여부 판단
 - 보안 검수 결과 재확인
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 `docs/104`의 표시 기준을 `docs/101` 반복 운영 로그 템플릿에 반영할지 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+현재 추천은 코드 변경 없이 `docs/104`의 표시 기준을 `docs/83` Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
