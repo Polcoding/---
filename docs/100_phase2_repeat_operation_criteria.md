@@ -181,14 +181,15 @@ push 전 GitHub Desktop Changes에 보이면 안 되는 항목:
 | 6 | 테스트 계정과 테스트 데이터 기준 구체화 | `docs/117`에 반영 완료 |
 | 7 | 실제 원문 차단과 비식별 입력 확인 절차 | `docs/118`에 반영 완료 |
 | 8 | 사용자 preview와 사람 승인 지점 통합 기준 | `docs/119`에 반영 완료 |
-| 9 | 외부 전송 없는 no-send dry-run 기준 | 다음 단계에서 문서 기준 검토 |
-| 10 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
-| 11 | `placeholder_confirmed_values` routing 연결 | 보류 |
-| 12 | API, Make.com, Email 자동화 | 보류 |
+| 9 | 외부 전송 없는 no-send dry-run 기준 | `docs/120`에 반영 완료 |
+| 10 | 외부 연동 구현 범위 승인 여부 | 다음 단계에서 문서 기준 판단 |
+| 11 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
+| 12 | `placeholder_confirmed_values` routing 연결 | 보류 |
+| 13 | API, Make.com, Email 자동화 | 보류 |
 
 현재 추천 다음 작업:
 
-1. 실제 연동 구현 없이 외부 전송 없는 no-send dry-run 기준을 문서로 점검
+1. 실제 연동 구현 없이 외부 연동 구현 범위 승인 여부를 문서로 판단
 2. API, Make.com, Email 연동은 계속 후순위로 유지
 3. `placeholder_confirmed_values` routing 연결은 계속 보류
 4. 코드, fixture, HWPX payload, output 변경 없이 문서 기준만 확인

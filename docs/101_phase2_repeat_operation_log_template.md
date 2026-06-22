@@ -119,6 +119,23 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 
 최종 보류 조건이나 승인 상태를 기록할 때 실제 원문, 실제 파일명, 실제 기관명, 실제 담당자명, 실제 수신자 정보는 남기지 않습니다.
 
+## no-send dry-run 확인
+
+no-send dry-run은 실제 외부 전송을 하지 않고 상태값과 보류 조건만 확인하는 절차입니다.
+
+| 확인 | 항목 | 결과 |
+|---|---|---|
+| [ ] | no-send dry-run 상태 | [통과 / 보류 / 중단 / 확인 필요] |
+| [ ] | 외부 전송 여부 | 전송하지 않음 |
+| [ ] | 외부 요청 생성 여부 | 생성하지 않음 |
+| [ ] | 실제 계정 연결 여부 | 연결하지 않음 |
+| [ ] | 실제 수신자 지정 여부 | 지정하지 않음 |
+| [ ] | 실제 첨부 포함 여부 | 포함하지 않음 |
+| [ ] | 보류 사유 | [범주 확인 필요] |
+| [ ] | 다음 조치 | [사람 검토 / 비식별 재작성 / 문서 기준 보강 / 확인 필요] |
+
+no-send dry-run 통과는 실제 API 연동 준비 완료, Make.com 시나리오 승인, Email 발송 승인, 실제 업무 계정 연결 승인, 실제 결재ㆍ계약ㆍ예산 집행 승인이 아닙니다.
+
 ## 이상 발생 기록
 
 | 파일명 | 항목 번호 | 증상 | 처리 상태 |
@@ -179,6 +196,8 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 - 외부 전송 전 preview 또는 승인 상태가 `[사용자 확인 필요]`로 남아 있음
 - 승인 상태를 실제 결재, 발송, 계약, 예산 집행 승인으로 오인할 가능성이 있음
 - 실제 수신자, 참조자, 첨부 파일이 자동 지정됨
+- no-send dry-run에서 외부 요청, 실제 계정, 실제 수신자, 실제 첨부가 생성됨
+- no-send dry-run 통과를 실제 연동 준비 완료로 오인할 가능성이 있음
 - 한컴에서 output 잠금 또는 쓰기 권한 오류가 반복됨
 - GitHub Desktop Changes에 HWPX output 또는 로컬 템플릿 표시
 - output 폴더 쓰기 권한 오류 반복
@@ -189,6 +208,6 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 
 Phase 3 운영 문서 묶음 통합 점검은 `docs/114_phase3_operating_docs_integrated_review.md`에 반영했습니다.
 
-외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에, 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119_phase3_user_preview_and_human_approval_integration.md`에 반영했습니다.
+외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에, 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119_phase3_user_preview_and_human_approval_integration.md`에, no-send dry-run 기준은 `docs/120_phase3_no_send_dry_run_criteria.md`에 반영했습니다.
 
-다음 단계는 실제 연동 구현이 아니라, 외부 전송 없는 no-send dry-run 기준을 문서로 점검하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+다음 단계는 실제 연동 구현이 아니라, 외부 연동 구현 범위 승인 여부를 문서로 판단하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
