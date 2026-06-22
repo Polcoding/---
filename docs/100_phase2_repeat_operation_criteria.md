@@ -183,14 +183,15 @@ push 전 GitHub Desktop Changes에 보이면 안 되는 항목:
 | 8 | 사용자 preview와 사람 승인 지점 통합 기준 | `docs/119`에 반영 완료 |
 | 9 | 외부 전송 없는 no-send dry-run 기준 | `docs/120`에 반영 완료 |
 | 10 | 외부 연동 구현 범위 승인 판단 | `docs/121`에 반영 완료 |
-| 11 | 외부 연동 구현 보류 결정과 Phase 3 closeout 기준 | 다음 단계에서 문서 기준 정리 |
+| 11 | Phase 3 마무리 판단 및 Phase 4 진입 여부 | `docs/122`에 반영 완료 |
+| 12 | Phase 4 문서 템플릿 안정화 진입 여부 | 다음 단계에서 문서 기준 판단 |
 | 11 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
 | 12 | `placeholder_confirmed_values` routing 연결 | 보류 |
 | 13 | API, Make.com, Email 자동화 | 보류 |
 
 현재 추천 다음 작업:
 
-1. 실제 연동 구현 없이 외부 연동 구현 보류 결정과 Phase 3 closeout 기준을 문서로 정리
+1. 실제 연동 구현 없이 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단
 2. API, Make.com, Email 연동은 계속 후순위로 유지
 3. `placeholder_confirmed_values` routing 연결은 계속 보류
 4. 코드, fixture, HWPX payload, output 변경 없이 문서 기준만 확인

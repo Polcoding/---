@@ -45,6 +45,7 @@
 - Phase 3 사용자 preview와 사람 승인 지점 통합 기준 구체화
 - Phase 3 외부 전송 없는 no-send dry-run 기준 구체화
 - Phase 3 외부 연동 구현 범위 승인 판단
+- Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
 
 ## 1. 최우선 원칙
 
@@ -179,7 +180,7 @@
 ## 현재 진행 기준
 
 - Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태로 봅니다.
-- 현재 작업 축은 Phase 2 최소 PoC입니다.
+- 현재 작업 축은 Phase 3 문서 기준 마무리 이후 Phase 4 진입 여부 판단입니다.
 - Phase 2는 운영 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 사람 검토 흐름을 안정화하는 단계입니다.
 - `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
@@ -197,7 +198,8 @@
 - Phase 3 사용자 preview와 사람 승인 지점 통합 기준 구체화까지 완료된 상태입니다.
 - Phase 3 외부 전송 없는 no-send dry-run 기준 구체화까지 완료된 상태입니다.
 - Phase 3 외부 연동 구현 범위 승인 판단까지 완료된 상태입니다.
-- 다음 작업은 실제 연동 구현이 아니라 외부 연동 구현 보류 결정과 Phase 3 closeout 기준을 문서로 정리합니다.
+- Phase 3 마무리 판단 및 Phase 4 진입 여부 결정까지 완료된 상태입니다.
+- 다음 작업은 실제 구현이 아니라 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단합니다.
 
 ## Codex 작업 방식 보강
 
@@ -244,6 +246,7 @@
 - Phase 3 사용자 preview와 사람 승인 지점 통합 기준 구체화
 - Phase 3 외부 전송 없는 no-send dry-run 기준 구체화
 - Phase 3 외부 연동 구현 범위 승인 판단
+- Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동

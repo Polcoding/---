@@ -37,6 +37,7 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 | [ ] | 사용자 preview와 사람 승인 지점 통합 기준 확인 |
 | [ ] | 외부 전송 없는 no-send dry-run 기준 확인 |
 | [ ] | 외부 연동 구현 범위 승인 판단 확인 |
+| [ ] | Phase 3 마무리 판단 및 Phase 4 진입 여부 확인 |
 | [ ] | `needs_security_review` 외부 전송 금지 확인 |
 | [ ] | `blocked` 외부 전송 금지 확인 |
 | [ ] | 실제 업무 계정 연결 별도 승인 확인 |
@@ -53,5 +54,5 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 - 민감정보가 포함된 입력은 API 호출 전에 차단되어야 합니다.
 - 실제 업무 계정을 연결하기 전 별도 승인과 테스트 계정 검증이 필요합니다.
 - Make.com 또는 API 연동은 별도 설계 문서와 보안 검토 후 진행해야 합니다.
-- Phase 3 기준의 최신 판단은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`를 따릅니다.
-- 현재 다음 단계는 실제 연동 구현이 아니라 외부 연동 구현 보류 결정과 Phase 3 closeout 기준 정리입니다.
+- Phase 3 기준의 최신 판단은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`, `docs/122_phase3_closeout_and_phase4_entry_decision.md`를 따릅니다.
+- 현재 다음 단계는 실제 연동 구현이 아니라 Phase 4 문서 템플릿 안정화 진입 여부 판단입니다.
