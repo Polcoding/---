@@ -16,6 +16,7 @@
 - `docs/58_external_hwpx_placeholder_conversion_runbook.md`
 - `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
 - `docs/127_hwpx_manual_preview_gap_log_criteria.md`
+- `docs/133_hwpx_only_table_frame_decision.md`
 - `docs/72_dry_run_artifact_retention_policy.md`
 - `checklists/real_hwpx_template_intake_checklist.md`
 - `checklists/external_hwpx_placeholder_conversion_checklist.md`
@@ -167,6 +168,7 @@ GitHub Desktop에서 보이면 안 되는 항목:
 - 로컬 placeholder 파일명은 기존 검증용 중립 파일명만 기록합니다.
 - output 파일명은 placeholder 기반 검증 산출물로만 기록합니다.
 - 실제 HWPX 파일 내용, 화면 캡처, 원문 일부는 저장소 문서에 넣지 않습니다.
+- 표 관련 확인도 `table_scope: frame_only` 기준으로 표 틀만 기록하고 실제 표 데이터는 남기지 않습니다.
 - `!!` ignored 상태 확인은 허용하지만 실제 원본 경로나 내부 경로는 기록하지 않습니다.
 
 ## 코드 변경 판단
@@ -191,6 +193,7 @@ GitHub Desktop에서 보이면 안 되는 항목:
 - 실제 기관명, 업체명, 담당자명 추가 없음
 - 실제 문서번호, 민원번호, 사건번호 추가 없음
 - 실제 날짜, 예산, 실적 수치 추가 없음
+- 실제 표 데이터, 물품명, 수량, 금액, 대상 목록 추가 없음
 - 실제 공문 원문 또는 보고서 원문 추가 없음
 - 실제 HWPX 원본 파일 추가 없음
 - 실제 파일명, 내부 경로, 원본 양식명 추가 없음
@@ -206,4 +209,6 @@ Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_st
 
 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식은 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 반영했습니다.
 
-다음 단계는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
+HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정은 `docs/133_hwpx_only_table_frame_decision.md`에 반영했습니다.
+
+다음 단계는 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.

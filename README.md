@@ -32,6 +32,7 @@
 - Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 조건부 진입 판단
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리
 - 실제 양식 수동 리허설 전 사용자 준비 확인 완료 기록
+- HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정
 
 ## 현재 자동화 우선순위
 
@@ -51,6 +52,8 @@
 결과보고서는 가능한 경우 기존 추진계획서의 추진개요, 세부계획, 일정, 예산, 기대효과 항목과 대응되도록 정리합니다.
 
 협조 요청 메일은 공문체가 아니라 정중한 실무 메일체로 작성하며, 실제 자동 발송이 아니라 사람이 검토하는 초안으로만 관리합니다.
+
+HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상으로만 다룹니다. 표 내부 데이터, 수량, 금액, 대상 목록 자동화는 향후 Excel/한셀 연동 후보로 분리합니다.
 
 ## 현재 진행 위치
 
@@ -81,7 +84,8 @@
 - Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 조건부 진입 판단을 완료했습니다.
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리를 완료했습니다.
 - 사용자가 실제 원본ㆍ작업 복사본 저장소 밖 보관, 식별 요소 제거, GitHub Desktop Changes 이상 없음을 확인했습니다.
-- 다음 작업 후보는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
+- HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정을 완료했습니다.
+- 다음 작업 후보는 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -91,6 +95,7 @@
 - 실제 개인정보, 민감정보, 내부자료, 대외비 자료 사용
 - 결재, 계약, 업체 선정, 예산 집행, 법률 판단, 민원 처리 결론 자동화
 - 실제 기관 양식 원본 기반 문서 서식 렌더링 엔진 구현
+- HWPX 표 내부 실제 데이터 자동 입력 또는 Excel/한셀 자동 연동
 
 ## 전체 시스템 아키텍처 개요
 
@@ -105,7 +110,7 @@
 → 사람 승인 후 실무 적용
 ```
 
-현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러, 입력 정규화 PoC, dry-run 검증, Phase 4 문서 템플릿 안정화 검토만 다룹니다.
+현재 단계에서는 위 흐름 중 Custom GPT Instructions, 테스트 입력, 평가 기준, 보안 원칙, 개발 문서, placeholder 기반 로컬 PoC 렌더러, 입력 정규화 PoC, dry-run 검증, Phase 4 문서 템플릿 안정화 검토, HWPX 표 틀 중심 preview 기준만 다룹니다.
 
 ## 폴더 구조
 
@@ -283,6 +288,7 @@ Instructions 복사
 - `docs/130_phase4_template_stabilization_integrated_review.md`: Phase 4 문서 템플릿 안정화 통합 점검
 - `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`: 실제 양식 수동 리허설 사용자 확인 패킷
 - `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`: 실제 양식 수동 리허설 준비 확인 결과
+- `docs/133_hwpx_only_table_frame_decision.md`: HWPX 일원화와 표 틀 우선 결정
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -385,6 +391,7 @@ Instructions 복사
 - `checklists/phase4_template_stabilization_integrated_review_checklist.md`: Phase 4 문서 템플릿 안정화 통합 점검 체크리스트
 - `checklists/actual_hwpx_manual_rehearsal_user_confirmation_packet_checklist.md`: 실제 양식 수동 리허설 사용자 확인 패킷 체크리스트
 - `checklists/actual_hwpx_manual_rehearsal_readiness_confirmation_checklist.md`: 실제 양식 수동 리허설 준비 확인 결과 체크리스트
+- `checklists/hwpx_only_table_frame_decision_checklist.md`: HWPX 일원화와 표 틀 우선 결정 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -403,8 +410,9 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
+6. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.

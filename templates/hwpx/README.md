@@ -49,4 +49,5 @@
 - 최근 점검: `docs/130_phase4_template_stabilization_integrated_review.md`
 - 최근 점검: `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`
 - 최근 점검: `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
-- 다음 점검: 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록
+- 최근 점검: `docs/133_hwpx_only_table_frame_decision.md`
+- 다음 점검: 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록

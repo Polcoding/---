@@ -7,6 +7,7 @@
 | [x] | `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 확인했는가 |
 | [x] | `templates/hwpx/local_template_policy.md`를 확인했는가 |
 | [x] | `templates/hwpx/README.md`를 확인했는가 |
+| [x] | `docs/133_hwpx_only_table_frame_decision.md`를 확인했는가 |
 | [x] | `docs/72_dry_run_artifact_retention_policy.md`를 확인했는가 |
 | [x] | 실제 양식 후보, local template, renderer output, normalizer output의 역할을 구분했는가 |
 
@@ -60,6 +61,7 @@
 | [x] | HWPX payload 구조를 변경하지 않았는가 |
 | [x] | HWPX output을 재생성하지 않았는가 |
 | [x] | 실제 HWPX/HWP 파일을 Git에 추가하지 않았는가 |
+| [x] | HWPX 표 내부 실제 데이터 자동 입력 또는 Excel/한셀 자동 연동을 구현하지 않았는가 |
 | [x] | `.gitignore` 파일을 불필요하게 변경하지 않았는가 |
 
 ## 보안 검수
@@ -70,6 +72,7 @@
 | [x] | 실제 기관명, 업체명, 담당자명을 추가하지 않았는가 |
 | [x] | 실제 문서번호, 민원번호, 사건번호를 추가하지 않았는가 |
 | [x] | 실제 날짜, 예산, 실적 수치를 추가하지 않았는가 |
+| [x] | 실제 표 데이터, 물품명, 수량, 금액, 대상 목록을 추가하지 않았는가 |
 | [x] | 실제 공문 원문 또는 보고서 원문을 추가하지 않았는가 |
 | [x] | 실제 HWPX 원본 파일을 추가하지 않았는가 |
 | [x] | API 키, 토큰, 인증정보 예시값을 추가하지 않았는가 |
@@ -80,5 +83,6 @@
 |---|---|
 | [x] | Phase 4 문서 템플릿 안정화 통합 점검이 `docs/130`에 반영되었는가 |
 | [x] | 실제 양식 수동 리허설 사용자 확인 패킷이 `docs/131`에 반영되었는가 |
-| [x] | 다음 단계가 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록인가 |
+| [x] | HWPX 일원화와 표 틀 우선 결정이 `docs/133`에 반영되었는가 |
+| [x] | 다음 단계가 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록인가 |
 | [x] | 실제 양식 투입, output 재생성, 외부 연동 구현을 다음 단계로 두지 않았는가 |
