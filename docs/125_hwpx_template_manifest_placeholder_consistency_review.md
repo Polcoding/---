@@ -178,4 +178,6 @@ HWPX 보고서 4종의 template manifest와 공통 placeholder 설계는 문서 
 
 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트는 `docs/126_style_profile_confirmation_value_collection_criteria.md`에 후속 반영했습니다.
 
-다음 단계는 실제 양식 투입 전 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 정리하는 것입니다. 실제 기관 양식 원본, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
+HWPX 보고서 4종 수동 preview 서식 gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에 후속 반영했습니다.
+
+다음 단계는 실제 양식 투입 전 저장소 밖 실제 양식 후보 수동 절차와 보류 조건을 정리하는 것입니다. 실제 기관 양식 원본, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.

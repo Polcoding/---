@@ -27,3 +27,10 @@
 - 글꼴, 자간, 줄간격, 문단 간격, 표 서식 값이 확인되지 않았으면 `[확인 필요]`로 둡니다.
 - 확인된 값도 바로 renderer나 normalizer에 연결하지 않고, 사람 검토와 별도 승인 후 반영합니다.
 - 폰트 파일, HWP/HWPX 원본, 이미지 원본은 저장소에 추가하지 않습니다.
+
+## 수동 preview gap 기록 원칙
+
+- HWPX preview에서 발견한 gap은 `docs/127_hwpx_manual_preview_gap_log_criteria.md` 기준으로 기록합니다.
+- gap log에는 실제 원본 파일명, 실제 기관명, 실제 문서번호, 실제 본문을 남기지 않습니다.
+- 로컬 placeholder HWPX 템플릿과 output 산출물은 Git 제외 상태를 유지합니다.
+- gap이 발견되어도 실제 서식값을 임의 확정하지 않고, 사용자 재확인 또는 보류 상태로 둡니다.

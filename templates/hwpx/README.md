@@ -43,4 +43,5 @@
 - 렌더링 코드: `renderers/hwpx_renderer/`의 placeholder 기반 로컬 PoC
 - 최근 점검: `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`
 - 최근 점검: `docs/126_style_profile_confirmation_value_collection_criteria.md`
-- 다음 점검: HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리
+- 최근 점검: `docs/127_hwpx_manual_preview_gap_log_criteria.md`
+- 다음 점검: 저장소 밖 실제 양식 후보 수동 절차와 보류 조건 재정렬

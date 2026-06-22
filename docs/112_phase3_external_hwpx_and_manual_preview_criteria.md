@@ -183,6 +183,8 @@ placeholder 후보로 검토하기 전에 다음 요소를 제거합니다.
 
 이상 발생 시 실제 원문이나 실제 파일명을 기록하지 않습니다.
 
+최신 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`를 따릅니다.
+
 기록 가능한 정보:
 
 - placeholder 기반 output 파일명
@@ -245,6 +247,7 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 7. 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118`에 반영 완료
 8. 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119`에 반영 완료
 9. 외부 전송 없는 no-send dry-run 기준은 `docs/120`에 반영 완료
+10. HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127`에 반영 완료
 
 ## 보안 검수
 
@@ -260,4 +263,4 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 
 Phase 3에서는 실제 원본과 output을 Git에 남기지 않고, 저장소 밖 HWPX 취급과 사용자 수동 preview를 분리해 관리합니다.
 
-다음 단계는 실제 연동 구현이 아니라, Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다.
+후속 Phase 4 문서 템플릿 안정화 기준은 `docs/123`~`docs/127`에 반영했습니다. 최신 다음 단계는 저장소 밖 실제 양식 후보 수동 절차와 보류 조건 정리입니다.

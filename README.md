@@ -70,7 +70,8 @@
 - 프로젝트 방향 재확인과 구형 진입점 문서 업데이트 기준 정리를 완료했습니다.
 - HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검을 완료했습니다.
 - style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트 정리를 완료했습니다.
-- 다음 작업 후보는 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서로 정리하는 것입니다.
+- HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리를 완료했습니다.
+- 다음 작업 후보는 저장소 밖 실제 양식 후보 수동 절차와 보류 조건을 문서로 정리하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -266,6 +267,7 @@ Instructions 복사
 - `docs/124_project_direction_and_legacy_update_review.md`: 프로젝트 방향 재확인 및 구형 문서 업데이트 검토
 - `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`: HWPX template manifest와 공통 placeholder 정합성 점검
 - `docs/126_style_profile_confirmation_value_collection_criteria.md`: style profile 확인 필요 값 유지 기준과 서식값 수집 체크리스트 점검
+- `docs/127_hwpx_manual_preview_gap_log_criteria.md`: HWPX 보고서 4종 수동 preview 서식 gap log 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -362,6 +364,7 @@ Instructions 복사
 - `checklists/project_direction_and_legacy_update_review_checklist.md`: 프로젝트 방향 재확인 및 구형 문서 업데이트 검토 체크리스트
 - `checklists/hwpx_template_manifest_placeholder_consistency_checklist.md`: HWPX template manifest와 공통 placeholder 정합성 체크리스트
 - `checklists/style_profile_confirmation_value_collection_checklist.md`: style profile 확인 필요 값 유지와 서식값 수집 기준 체크리스트
+- `checklists/hwpx_manual_preview_gap_log_checklist.md`: HWPX 수동 preview 서식 gap log 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -380,7 +383,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서로 정리합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 실제 양식 후보 수동 절차와 보류 조건을 문서로 정리합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
