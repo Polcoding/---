@@ -48,4 +48,5 @@
 - 최근 점검: `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - 최근 점검: `docs/130_phase4_template_stabilization_integrated_review.md`
 - 최근 점검: `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`
-- 다음 점검: 실제 양식 수동 리허설 전 사용자 저장소 밖 준비 여부 확인
+- 최근 점검: `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
+- 다음 점검: 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록

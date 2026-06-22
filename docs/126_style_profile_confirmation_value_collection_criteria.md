@@ -136,4 +136,4 @@ Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_st
 
 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식은 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 후속 반영했습니다.
 
-다음 단계는 실제 HWPX output 재생성이 아니라, 사용자가 저장소 밖 준비 여부를 확인하는 것입니다.
+다음 단계는 실제 HWPX output 재생성이 아니라, 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.

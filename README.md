@@ -31,6 +31,7 @@
 - local template policy와 Git 제외 상태 반복 검증 기준 정리
 - Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 조건부 진입 판단
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리
+- 실제 양식 수동 리허설 전 사용자 준비 확인 완료 기록
 
 ## 현재 자동화 우선순위
 
@@ -79,7 +80,8 @@
 - local template policy와 Git 제외 상태 반복 검증 기준 정리를 완료했습니다.
 - Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 조건부 진입 판단을 완료했습니다.
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리를 완료했습니다.
-- 다음 작업 후보는 사용자가 저장소 밖 준비 여부를 확인하는 것입니다.
+- 사용자가 실제 원본ㆍ작업 복사본 저장소 밖 보관, 식별 요소 제거, GitHub Desktop Changes 이상 없음을 확인했습니다.
+- 다음 작업 후보는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -280,6 +282,7 @@ Instructions 복사
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`: local template policy와 Git 제외 상태 반복 검증 기준
 - `docs/130_phase4_template_stabilization_integrated_review.md`: Phase 4 문서 템플릿 안정화 통합 점검
 - `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`: 실제 양식 수동 리허설 사용자 확인 패킷
+- `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`: 실제 양식 수동 리허설 준비 확인 결과
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -381,6 +384,7 @@ Instructions 복사
 - `checklists/local_template_gitignore_repeat_verification_checklist.md`: local template policy와 Git 제외 상태 반복 검증 체크리스트
 - `checklists/phase4_template_stabilization_integrated_review_checklist.md`: Phase 4 문서 템플릿 안정화 통합 점검 체크리스트
 - `checklists/actual_hwpx_manual_rehearsal_user_confirmation_packet_checklist.md`: 실제 양식 수동 리허설 사용자 확인 패킷 체크리스트
+- `checklists/actual_hwpx_manual_rehearsal_readiness_confirmation_checklist.md`: 실제 양식 수동 리허설 준비 확인 결과 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -399,7 +403,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 실제 양식 수동 리허설 전 사용자 저장소 밖 준비 여부를 확인합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
