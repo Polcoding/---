@@ -146,4 +146,6 @@ root `.gitignore`는 현재 없지만, `templates/hwpx/.gitignore`, `renderers/h
 
 Phase 4 문서 템플릿 안정화 작업 묶음은 통합 점검 기준으로 정합합니다.
 
-실제 양식 수동 리허설은 조건부로 진입 가능합니다. 다만 다음 단계는 실제 원본 투입이나 output 재생성이 아니라, 사용자가 저장소 밖에서 확인해야 할 항목과 gap log 빈 양식을 더 눈에 보이게 정리하는 문서 작업으로 진행하는 것이 안전합니다.
+실제 양식 수동 리허설은 조건부로 진입 가능합니다. 사용자가 저장소 밖에서 확인해야 할 항목과 gap log 빈 양식은 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 정리했습니다.
+
+다음 단계는 실제 원본 투입이나 output 재생성이 아니라, 사용자가 저장소 밖 준비 여부를 확인하는 것입니다.

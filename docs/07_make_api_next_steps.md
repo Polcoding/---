@@ -4,7 +4,7 @@
 
 현재 단계는 안전한 테스트 기준을 만드는 단계입니다. API 연동을 먼저 구현하면 민감정보 입력, 자동 발송, 로그 저장, 권한 관리 문제가 충분히 정리되지 않은 상태에서 운영 위험이 커질 수 있습니다.
 
-Phase 3와 Phase 4 진입 판단의 최신 기준은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`, `docs/122_phase3_closeout_and_phase4_entry_decision.md`, `docs/123_phase4_template_stabilization_entry_judgment.md`, `docs/124_project_direction_and_legacy_update_review.md`, `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`, `docs/126_style_profile_confirmation_value_collection_criteria.md`, `docs/127_hwpx_manual_preview_gap_log_criteria.md`, `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`, `docs/129_local_template_gitignore_repeat_verification_criteria.md`, `docs/130_phase4_template_stabilization_integrated_review.md`를 따릅니다. 현재도 실제 OpenAI API 호출, Make.com 실제 시나리오, GmailㆍOutlookㆍSMTP 연동, 실제 이메일 자동 발송은 구현하지 않습니다.
+Phase 3와 Phase 4 진입 판단의 최신 기준은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`, `docs/122_phase3_closeout_and_phase4_entry_decision.md`, `docs/123_phase4_template_stabilization_entry_judgment.md`, `docs/124_project_direction_and_legacy_update_review.md`, `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`, `docs/126_style_profile_confirmation_value_collection_criteria.md`, `docs/127_hwpx_manual_preview_gap_log_criteria.md`, `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`, `docs/129_local_template_gitignore_repeat_verification_criteria.md`, `docs/130_phase4_template_stabilization_integrated_review.md`, `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`를 따릅니다. 현재도 실제 OpenAI API 호출, Make.com 실제 시나리오, GmailㆍOutlookㆍSMTP 연동, 실제 이메일 자동 발송은 구현하지 않습니다.
 
 ## 자동화 전 필요한 조건
 
@@ -78,4 +78,4 @@ API 사용 비용과 ChatGPT 구독은 별도일 수 있습니다. 실제 도입
 
 ## 현재 다음 단계
 
-현재 다음 단계는 실제 연동 구현이 아니라 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식을 문서로 정리하는 것입니다.
+현재 다음 단계는 실제 연동 구현이 아니라 사용자가 저장소 밖 준비 여부를 확인하는 것입니다.
