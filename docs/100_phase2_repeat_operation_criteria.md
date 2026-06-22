@@ -57,6 +57,24 @@ python .\normalizers\render_mapped_hwpx_poc.py
 - mapped HWPX 4종 `rendered`
 - mapped HWPX 4종 `remaining_placeholders` 0
 
+### 상태별 중단 기준
+
+Phase 3 안전 게이트 이후 반복 실행에서는 다음 상태를 매번 같은 방식으로 처리합니다.
+
+| 상태 또는 증상 | 반복 운영 처리 |
+|---|---|
+| `ready_for_draft` | placeholder 기반 HWPX 초안 생성 가능 |
+| `needs_more_input` | `[확인 필요]`와 `missing_fields`를 유지한 상태로 초안 생성 가능 |
+| `needs_security_review` | 사람 보안 검토 전 HWPX 렌더링 중단 |
+| `blocked` | 처리 중단, 실제값 제거 요청 |
+| `template_required` | 로컬 템플릿 준비 전 안전 중단, output 생성 시도하지 않음 |
+| validation 실패 | 렌더링 중단, payload 또는 placeholder map 확인 |
+| `remaining_placeholders` 있음 | 사용자 preview 중단, placeholder map 또는 템플릿 오탈자 확인 |
+| output 잠금 | 한컴에서 output 파일을 닫은 뒤 재시도 |
+| GitHub Desktop Changes에 HWPX 표시 | 작업 중단, `.gitignore`와 파일 위치 확인 |
+
+이 기준은 `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`의 Phase 3 preview 기준과 연결됩니다.
+
 ### 사용자 확인 항목
 
 사용자는 HWPX output을 한컴에서 열고 다음을 확인합니다.

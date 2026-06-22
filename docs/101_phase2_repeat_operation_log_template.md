@@ -55,6 +55,18 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 | [ ] | `python .\normalizers\hwpx_renderer_dry_run_poc.py` | blocked/security review 렌더 제외 | [확인 필요] |
 | [ ] | `python .\normalizers\render_mapped_hwpx_poc.py` | mapped HWPX 4종 rendered | [확인 필요] |
 
+## 상태별 중단 확인
+
+| 확인 | 상태 또는 증상 | 기준 | 결과 |
+|---|---|---|---|
+| [ ] | `needs_security_review` | 사람 보안 검토 전 HWPX 렌더링 중단 | [확인 필요] |
+| [ ] | `blocked` | 처리 중단, 실제값 제거 요청 | [확인 필요] |
+| [ ] | `template_required` | 로컬 템플릿 준비 전 안전 중단, output 생성 시도 없음 | [확인 필요] |
+| [ ] | validation 실패 | 렌더링 중단, payload 또는 placeholder map 확인 | [확인 필요] |
+| [ ] | `remaining_placeholders` 있음 | preview 중단, placeholder map 또는 템플릿 오탈자 확인 | [확인 필요] |
+| [ ] | output 잠금 | 한컴에서 output 파일을 닫은 뒤 재시도 | [확인 필요] |
+| [ ] | GitHub Desktop Changes에 HWPX 표시 | 작업 중단, `.gitignore`와 파일 위치 확인 | [확인 필요] |
+
 ## HWPX output 확인
 
 | 확인 | output | 기대 결과 | 실제 결과 |
@@ -140,14 +152,18 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 - 실제 문서번호, 민원번호, 접수번호, 사건번호 의심값 발견
 - blocked fixture에서 payload 또는 HWPX output 생성
 - `needs_security_review` fixture에서 HWPX output 생성
+- `template_required` 상태에서 output 생성 시도
+- payload validation 실패를 무시하고 HWPX 렌더링 진행
 - HWPX output에 `{{placeholder}}` 잔여
+- HWPX output에 `remaining_placeholders` 잔여
 - `missing_fields`를 실제값처럼 확정하거나 자동 제외
 - 한컴에서 글자 겹침 또는 항목 누락 발생
+- 한컴에서 output 잠금 또는 쓰기 권한 오류가 반복됨
 - GitHub Desktop Changes에 HWPX output 또는 로컬 템플릿 표시
 - output 폴더 쓰기 권한 오류 반복
 
 ## 다음 단계
 
-반복 운영 로그 템플릿에 `missing_fields` 확인 섹션을 반영했습니다.
+반복 운영 로그 템플릿에 `missing_fields` 확인 섹션과 상태별 중단 확인 섹션을 반영했습니다.
 
-다음 단계에서는 같은 표시 기준을 Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토합니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+다음 단계에서는 Phase 3 운영 문서 묶음에서 안전 게이트, 저장소 밖 HWPX 취급, 상태별 중단 기준이 서로 모순 없이 연결되는지 통합 점검합니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.

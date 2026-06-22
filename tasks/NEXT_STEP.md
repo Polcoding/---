@@ -2,7 +2,7 @@
 
 ## 목표
 
-상태별 중단 기준을 반복 운영 문서에 반영할지 검토합니다.
+Phase 3 운영 문서 묶음이 서로 모순 없이 연결되는지 통합 점검합니다.
 
 ## 현재 완료 상태
 
@@ -39,9 +39,12 @@
 - Phase 3 진입 조건 및 안전 게이트 문서화 완료
 - Phase 3 저장소 밖 HWPX 양식 취급 기준 구체화 완료
 - Phase 3 사용자 수동 preview 기준 구체화 완료
+- Phase 3 상태별 중단 기준 반복 운영 문서 반영 완료
 
 ## 확인 대상
 
+- `docs/113_phase3_state_stop_repeat_docs_reflection.md`
+- `checklists/phase3_state_stop_repeat_docs_reflection_checklist.md`
 - `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
 - `checklists/phase3_external_hwpx_manual_preview_checklist.md`
 - `docs/111_phase3_entry_safety_gate.md`
@@ -69,9 +72,9 @@
 
 ## 검토 항목
 
-1. `template_required`, `needs_security_review`, `blocked`, validation 실패, `remaining_placeholders` 잔여, output 잠금, Git Changes HWPX 표시 기준이 반복 운영 문서에 충분히 반영되어 있는지 확인
-2. `docs/100`, `docs/101`, `docs/83` 중 어디를 보강할지 판단
-3. 중복 문서 삭제 없이 역할별 반복 필요 여부 판단
+1. Phase 3 안전 게이트, 저장소 밖 HWPX 취급, 수동 preview, 상태별 중단 기준이 서로 같은 의미로 연결되는지 확인
+2. `docs/111`, `docs/112`, `docs/113`, `docs/100`, `docs/101` 사이에 다음 단계 후보나 현재 상태 표현이 충돌하지 않는지 확인
+3. `template_required`, `needs_security_review`, `blocked`, validation 실패, `remaining_placeholders` 잔여, output 잠금, Git Changes HWPX 표시 기준이 문서마다 모순 없이 표현되는지 확인
 4. 실제 원본 파일명, 실제 기관명, 실제 문서번호를 기록하지 않는 원칙을 재확인
 5. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
 6. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
@@ -93,8 +96,8 @@
 
 ## 완료 조건
 
-- 상태별 중단 기준의 반복 운영 문서 반영 필요 여부 판단
-- 보강 대상 문서 결정
+- Phase 3 운영 문서 묶음의 모순 여부 판단
+- 중복 문서 삭제 없이 역할별 반복 필요 여부 판단
 - 필요한 경우 관련 문서 또는 체크리스트 최소 범위 갱신
 - 계속 보류할 범위 재확인
 - README 최신화 필요 여부 판단
@@ -105,4 +108,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 상태별 중단 기준을 반복 운영 문서에 반영할지 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+현재 추천은 코드 변경 없이 Phase 3 운영 문서 묶음 통합 점검을 진행하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.

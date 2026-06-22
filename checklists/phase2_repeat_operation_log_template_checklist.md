@@ -23,6 +23,18 @@
 | [x] | HWPX renderer dry-run 명령을 포함했는가 |
 | [x] | mapped HWPX render 명령을 포함했는가 |
 
+## 상태별 중단 확인
+
+| 완료 | 항목 |
+|---|---|
+| [x] | `needs_security_review` 렌더링 중단 확인란을 포함했는가 |
+| [x] | `blocked` 처리 중단 확인란을 포함했는가 |
+| [x] | `template_required` 안전 중단 확인란을 포함했는가 |
+| [x] | validation 실패 시 렌더링 중단 확인란을 포함했는가 |
+| [x] | `remaining_placeholders` 잔여 시 preview 중단 확인란을 포함했는가 |
+| [x] | output 잠금 처리 확인란을 포함했는가 |
+| [x] | GitHub Desktop Changes에 HWPX 표시 시 중단 확인란을 포함했는가 |
+
 ## HWPX 및 사용자 검수 확인
 
 | 완료 | 항목 |

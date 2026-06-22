@@ -22,6 +22,18 @@
 | [x] | fixture 변경 시 재생성 기준을 명시했는가 |
 | [x] | 문서만 수정한 경우 재생성 생략 가능 기준을 명시했는가 |
 
+## 상태별 중단 기준
+
+| 완료 | 항목 |
+|---|---|
+| [x] | `needs_security_review` 렌더링 중단 기준을 포함했는가 |
+| [x] | `blocked` 처리 중단 기준을 포함했는가 |
+| [x] | `template_required` 안전 중단 기준을 포함했는가 |
+| [x] | validation 실패 시 렌더링 중단 기준을 포함했는가 |
+| [x] | `remaining_placeholders` 잔여 시 preview 중단 기준을 포함했는가 |
+| [x] | output 잠금 시 처리 기준을 포함했는가 |
+| [x] | GitHub Desktop Changes에 HWPX 표시 시 중단 기준을 포함했는가 |
+
 ## Git 제외 기준
 
 | 완료 | 항목 |
