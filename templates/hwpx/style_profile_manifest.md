@@ -6,6 +6,8 @@
 
 현재 단계에서는 실제 서식값을 확정하지 않습니다.
 
+최신 `[확인 필요]` 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`를 따릅니다.
+
 ## style profile 목록
 
 | style_profile_id | 문서유형 | 상태 | 비고 |
@@ -23,3 +25,15 @@
 - 실제 기관 HWPX 양식 원본을 보관하지 않습니다.
 - style_profile에는 확인된 서식값만 기록합니다.
 - 확인되지 않은 값은 [확인 필요]로 둡니다.
+
+## 상태 전환 원칙
+
+style profile 값은 다음 조건을 모두 만족하기 전까지 `확인 필요` 상태를 유지합니다.
+
+- 사람이 저장소 밖 로컬 환경에서 서식값을 직접 확인
+- 실제 기관명, 실제 문서번호, 실제 파일명, 실제 원문을 기록하지 않음
+- 폰트 파일, HWP/HWPX 원본, 이미지 원본을 저장소에 추가하지 않음
+- 확인값의 적용 대상 문서유형과 서식 항목이 명확함
+- 사용자가 반영 가능 여부를 별도로 승인
+
+이번 단계에서는 `normalizers/`, `renderers/`, fixture, routing, HWPX payload에 style profile 값을 연결하지 않습니다.

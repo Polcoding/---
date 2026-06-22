@@ -81,7 +81,7 @@
 | 문서ㆍ정책ㆍ안전 기준 | 85~90% | 보안, 비식별, 금지 범위, 단계별 판단 문서가 충분히 쌓임 |
 | HWPX 보고서 로컬 PoC | 75~80% | 4종 placeholder 렌더링과 수동 검수 완료, 실제 양식 안정화 전 |
 | 입력 정규화ㆍ보안 필터 최소 PoC | 65~70% | fixture 기반 PoC와 회귀 기준 있음, 운영 연결은 보류 |
-| 문서 템플릿 안정화 | 35~45% | Phase 4 진입 판단 완료, manifestㆍplaceholder 정합성 점검 전 |
+| 문서 템플릿 안정화 | 45~55% | Phase 4 진입 판단, manifestㆍplaceholder 정합성, style profile 확인 기준 점검 완료, 수동 preview gap 정리 전 |
 | 실제 기관 양식 전환 | 15~25% | 저장소 밖 절차 문서화는 있으나 실제 양식 투입은 보류 |
 | 외부 연동/API/Email 자동화 | 0~10% | 의도적으로 구현 보류 |
 
@@ -96,10 +96,11 @@
 1. HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검
 2. 입력 요구사항, 사용자 입력 템플릿, placeholder 설계 간 누락ㆍ중복 정리
 3. style profile의 `[확인 필요]` 값 유지 여부와 수집 체크리스트 정비
-4. 저장소 밖 실제 양식 후보를 다룰 때의 수동 절차 재정렬
-5. local template policy와 Git 제외 상태 반복 검증
-6. 실제 기관 양식 투입은 사용자와 별도 승인 후 저장소 밖에서만 수행
-7. API, Make.com, Email 자동화는 조직 보안 검토와 별도 승인 전까지 계속 보류
+4. HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리
+5. 저장소 밖 실제 양식 후보를 다룰 때의 수동 절차 재정렬
+6. local template policy와 Git 제외 상태 반복 검증
+7. 실제 기관 양식 투입은 사용자와 별도 승인 후 저장소 밖에서만 수행
+8. API, Make.com, Email 자동화는 조직 보안 검토와 별도 승인 전까지 계속 보류
 
 예상 남은 반복 횟수:
 
@@ -130,4 +131,6 @@
 
 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했습니다.
 
-다음 작업은 `tasks/NEXT_STEP.md` 기준으로 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리하는 것입니다.
+style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트는 `docs/126_style_profile_confirmation_value_collection_criteria.md`에 반영했습니다.
+
+다음 작업은 `tasks/NEXT_STEP.md` 기준으로 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서로 정리하는 것입니다.

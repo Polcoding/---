@@ -42,4 +42,5 @@
 - 로컬 placeholder HWPX 템플릿: Git 제외 상태로만 검증 허용
 - 렌더링 코드: `renderers/hwpx_renderer/`의 placeholder 기반 로컬 PoC
 - 최근 점검: `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`
-- 다음 점검: style profile의 `[확인 필요]` 값 유지 기준과 기관 표준 서식값 수집 체크리스트 정리
+- 최근 점검: `docs/126_style_profile_confirmation_value_collection_criteria.md`
+- 다음 점검: HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리

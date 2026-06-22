@@ -49,6 +49,7 @@
 - Phase 4 문서 템플릿 안정화 진입 판단
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토
 - HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검
+- style profile `[확인 필요]` 값 유지 기준과 서식값 수집 체크리스트 점검
 
 ## 1. 최우선 원칙
 
@@ -183,7 +184,7 @@
 ## 현재 진행 기준
 
 - Phase 1 문서화와 placeholder 기반 HWPX 보고서 4종 검증은 완료된 상태로 봅니다.
-- 현재 작업 축은 Phase 4 문서 템플릿 안정화 진입 판단 이후 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검입니다.
+- 현재 작업 축은 Phase 4 문서 템플릿 안정화 진입 판단 이후 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준 정리입니다.
 - Phase 2는 운영 자동화가 아니라 비식별 입력 정규화, 보안 필터, HWPX payload 매핑, dry-run, 사람 검토 흐름을 안정화하는 단계입니다.
 - `normalizers/` 코드는 placeholder fixture 기반 최소 PoC이며 운영 코드가 아닙니다.
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
@@ -205,7 +206,8 @@
 - Phase 4 문서 템플릿 안정화 진입 판단까지 완료된 상태입니다.
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토까지 완료된 상태입니다.
 - HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검까지 완료된 상태입니다.
-- 다음 작업은 실제 구현이 아니라 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리합니다.
+- style profile `[확인 필요]` 값 유지 기준과 서식값 수집 체크리스트 점검까지 완료된 상태입니다.
+- 다음 작업은 실제 구현이 아니라 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서로 정리합니다.
 
 ## 구형 문서 처리 원칙
 
@@ -263,6 +265,7 @@
 - Phase 4 문서 템플릿 안정화 진입 판단
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토
 - HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검
+- style profile `[확인 필요]` 값 유지 기준과 서식값 수집 체크리스트 점검
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동

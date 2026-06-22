@@ -133,9 +133,9 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 ## 다음 작업 후보
 
-후속 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했습니다.
+후속 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에 반영했습니다.
 
-다음 단계는 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리하는 것입니다.
+다음 단계는 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서로 정리하는 것입니다.
 
 검토 질문:
 
@@ -160,6 +160,6 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 Phase 4는 실제 구현이 아니라 HWPX 보고서 4종 문서 템플릿 안정화 검토로 제한하는 조건에서 진입 가능합니다.
 
-HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 후속 반영했습니다.
+HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 후속 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에 반영했습니다.
 
-다음 작업은 코드 변경 없이 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서 기준으로 정리하는 것입니다.
+다음 작업은 코드 변경 없이 HWPX 보고서 4종 수동 preview 서식 gap log와 점검 기준을 문서 기준으로 정리하는 것입니다.

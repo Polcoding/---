@@ -28,6 +28,8 @@
 | `result_report` | `hwpx_result_report_basic` | 결과보고서 | `style_result_report_basic` | 문서 기준 정합 |
 | `review_report` | `hwpx_review_report_basic` | 검토보고서 | `style_review_report_basic` | 보안 검토 조건 유지 |
 
+style profile의 실제 서식값은 `docs/126_style_profile_confirmation_value_collection_criteria.md` 기준을 통과하기 전까지 `[확인 필요]`로 유지합니다.
+
 ## manifest 작성 원칙
 
 - 실제 기관 양식 파일명을 기록하지 않습니다.
