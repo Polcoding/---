@@ -135,7 +135,7 @@ Phase 3 closeout 판단은 실제값 없이 다음처럼 기록합니다.
 | code_change_required | `아니오` |
 | output_generation | `없음` |
 | local_hwpx_git_status | `Git 제외 유지` |
-| next_action | `Phase 4 문서 템플릿 안정화 진입 여부 판단` |
+| next_action | `Phase 4 문서 템플릿 안정화 진입 판단 후 template manifest와 공통 placeholder 정합성 점검` |
 
 ## 코드 변경 판단
 
@@ -155,12 +155,14 @@ Phase 3 closeout 판단은 실제값 없이 다음처럼 기록합니다.
 
 ## 다음 작업 후보
 
-다음 단계는 실제 연동 구현이 아니라 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다.
+후속 판단은 `docs/123_phase4_template_stabilization_entry_judgment.md`에 반영했습니다.
+
+다음 단계는 실제 연동 구현이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
 
 검토 질문:
 
-- Phase 4를 HWPX 보고서 4종 문서 템플릿 안정화로 제한할 수 있는지
-- 실제 양식 원본 없이 placeholder와 manifest 기준만으로 점검 가능한지
+- template manifest의 문서 유형과 공통 placeholder가 충돌하지 않는지
+- 입력 요구사항과 사용자 입력 템플릿이 실제값 입력을 유도하지 않는지
 - 누락값, 공통 placeholder, style profile, local template policy가 서로 충돌하지 않는지
 - 다음 단계에서도 코드 변경 없이 문서 기준만 보강할 수 있는지
 
@@ -181,4 +183,6 @@ Phase 3 closeout 판단은 실제값 없이 다음처럼 기록합니다.
 
 Phase 3는 문서 기준으로 마무리 가능 상태입니다.
 
-외부 연동 구현은 승인하지 않고 보류하며, 다음 단계는 실제 구현이 아니라 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다.
+외부 연동 구현은 승인하지 않고 보류합니다.
+
+Phase 4 진입 판단은 `docs/123_phase4_template_stabilization_entry_judgment.md`에 후속 반영했으며, 다음 단계는 실제 구현이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.

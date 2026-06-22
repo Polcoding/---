@@ -2,7 +2,7 @@
 
 ## 프로젝트 한 줄 정의
 
-비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 Phase 1 완료 및 Phase 2 최소 PoC 마무리 판단 저장소입니다.
+비식별화된 업무 지시를 받아 공공기관 행정문서 초안을 만들고, 사람이 최종 검토ㆍ수정ㆍ승인하는 행정 비서형 AI 시스템의 Phase 3 마무리 및 Phase 4 문서 템플릿 안정화 진입 판단 저장소입니다.
 
 ## 이번 저장소의 목적
 
@@ -66,7 +66,8 @@
 - Phase 3 외부 전송 없는 no-send dry-run 기준 구체화를 완료했습니다.
 - Phase 3 외부 연동 구현 범위 승인 판단을 완료했습니다.
 - Phase 3 마무리 판단 및 Phase 4 진입 여부 결정을 완료했습니다.
-- 다음 작업 후보는 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다.
+- Phase 4 문서 템플릿 안정화 진입 판단을 완료했습니다.
+- 다음 작업 후보는 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -258,6 +259,7 @@ Instructions 복사
 - `docs/120_phase3_no_send_dry_run_criteria.md`: Phase 3 외부 전송 없는 no-send dry-run 기준
 - `docs/121_phase3_external_integration_scope_approval_judgment.md`: Phase 3 외부 연동 구현 범위 승인 판단
 - `docs/122_phase3_closeout_and_phase4_entry_decision.md`: Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
+- `docs/123_phase4_template_stabilization_entry_judgment.md`: Phase 4 문서 템플릿 안정화 진입 판단
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -350,6 +352,7 @@ Instructions 복사
 - `checklists/phase3_no_send_dry_run_criteria_checklist.md`: Phase 3 외부 전송 없는 no-send dry-run 기준 체크리스트
 - `checklists/phase3_external_integration_scope_approval_judgment_checklist.md`: Phase 3 외부 연동 구현 범위 승인 판단 체크리스트
 - `checklists/phase3_closeout_and_phase4_entry_decision_checklist.md`: Phase 3 마무리 판단 및 Phase 4 진입 여부 결정 체크리스트
+- `checklists/phase4_template_stabilization_entry_judgment_checklist.md`: Phase 4 문서 템플릿 안정화 진입 판단 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -368,7 +371,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
