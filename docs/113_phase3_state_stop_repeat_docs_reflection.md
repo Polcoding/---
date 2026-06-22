@@ -91,11 +91,11 @@
 - HWPX payload metadata 자동 반영
 - Email, API, Make.com 실제 연동
 
-## 다음 작업 후보
+## 후속 반영 상태
 
-다음 단계에서는 Phase 3 운영 문서 묶음이 서로 모순 없이 연결되는지 통합 점검합니다.
+Phase 3 운영 문서 묶음 통합 점검은 `docs/114_phase3_operating_docs_integrated_review.md`에 반영했습니다.
 
-확인 대상 후보:
+확인 대상:
 
 - `docs/111_phase3_entry_safety_gate.md`
 - `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
@@ -104,12 +104,14 @@
 - `docs/101_phase2_repeat_operation_log_template.md`
 - 관련 체크리스트
 
-검토 질문:
+통합 점검 질문:
 
 - Phase 3 안전 게이트와 반복 운영 기준이 같은 상태명을 같은 의미로 쓰는지
 - 사용자 수동 preview 기준과 반복 로그 항목이 서로 빠짐없이 연결되는지
 - Git 제외와 실제 원문 금지 기준이 문서마다 일관되는지
 - 코드 변경 없이 문서 기준만으로 충분한지
+
+다음 단계는 실제 연동 구현이 아니라, 외부 연동 필요성과 보류 기준을 문서 기준으로 별도 검토하는 것입니다.
 
 ## 보안 검수
 

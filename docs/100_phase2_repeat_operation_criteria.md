@@ -169,22 +169,23 @@ push 전 GitHub Desktop Changes에 보이면 안 되는 항목:
 
 ## 다음 최소 개선 후보
 
-현재 우선순위는 다음과 같습니다.
+이 절은 반복 운영 기준 작성 당시의 후속 후보를 최신 상태에 맞춰 정리한 것입니다.
 
-| 우선순위 | 후보 | 판단 |
+| 우선순위 | 후보 | 현재 판단 |
 |---|---|---|
-| 1 | Phase 2 반복 운영 로그 템플릿 | 추천 |
-| 2 | fixture 확장 후보 재검토 | 추천 가능 |
-| 3 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
-| 4 | `placeholder_confirmed_values` routing 연결 | 보류 |
-| 5 | API, Make.com, Email 자동화 | 보류 |
+| 1 | Phase 2 반복 운영 로그 템플릿 | `docs/101`에 반영 완료 |
+| 2 | Phase 3 상태별 중단 기준 반복 운영 문서 반영 | `docs/113`에 반영 완료 |
+| 3 | Phase 3 운영 문서 묶음 통합 점검 | `docs/114`에 반영 완료 |
+| 4 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
+| 5 | `placeholder_confirmed_values` routing 연결 | 보류 |
+| 6 | API, Make.com, Email 자동화 | 보류 |
 
-추천 다음 작업:
+현재 추천 다음 작업:
 
-1. 반복 운영 로그 템플릿 작성
-2. 반복 실행 시 어떤 명령을 실행했고 어떤 HWPX output을 확인했는지 기록
-3. 사용자가 한컴에서 확인한 결과를 짧게 남김
-4. 이상 발생 시 파일명, 항목 번호, 증상을 표준 형식으로 남김
+1. 실제 연동 구현 없이 외부 연동 필요성과 보류 기준을 문서 기준으로 검토
+2. API, Make.com, Email 연동은 계속 후순위로 유지
+3. `placeholder_confirmed_values` routing 연결은 계속 보류
+4. 코드, fixture, HWPX payload, output 변경 없이 문서 기준만 확인
 
 ## 완료 기준
 
