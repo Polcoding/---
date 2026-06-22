@@ -41,4 +41,5 @@
 - 실제 기관 HWPX 원본: Git 추가 금지
 - 로컬 placeholder HWPX 템플릿: Git 제외 상태로만 검증 허용
 - 렌더링 코드: `renderers/hwpx_renderer/`의 placeholder 기반 로컬 PoC
-- 다음 점검: `template_manifest.md`, `local_template_policy.md`, `style_profile_manifest.md`, `docs/54_hwpx_common_placeholder_design.md` 정합성 확인
+- 최근 점검: `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`
+- 다음 점검: style profile의 `[확인 필요]` 값 유지 기준과 기관 표준 서식값 수집 체크리스트 정리

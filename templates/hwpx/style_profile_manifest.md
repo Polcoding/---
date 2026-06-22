@@ -12,6 +12,7 @@
 |---|---|---|---|
 | style_official_letter_basic | 일반 공문 | 확인 필요 | 실제 값 미확정 |
 | style_survey_request_letter | 현황조사 지시 공문 | 확인 필요 | 실제 값 미확정 |
+| style_one_page_report_basic | 원페이지 보고서 | 확인 필요 | 실제 값 미확정 |
 | style_project_plan_basic | 추진계획서 | 확인 필요 | 실제 값 미확정 |
 | style_result_report_basic | 결과보고서 | 확인 필요 | 실제 값 미확정 |
 | style_review_report_basic | 검토보고서 | 확인 필요 | 실제 값 미확정 |

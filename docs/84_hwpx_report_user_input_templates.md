@@ -159,4 +159,6 @@ Phase 2 최소 운영 흐름에서 사용자가 HWPX 보고서 초안 생성을 
 
 ## 다음 단계
 
-다음 단계는 이 입력 템플릿을 기준으로 `normalizers/` fixture 확장 후보를 검토하는 것입니다.
+다음 단계는 이 입력 템플릿이 HWPX 보고서 4종 template manifest와 공통 placeholder 설계에 맞게 연결되는지 문서로 점검하는 것입니다.
+
+현재 기준에서는 `normalizers/` fixture 확장, routing 변경, HWPX payload 변경은 별도 명시 승인 전까지 보류합니다.

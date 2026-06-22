@@ -128,4 +128,6 @@
 
 ## 다음 작업 후보
 
-다음 작업은 `tasks/NEXT_STEP.md` 기준으로 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
+HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했습니다.
+
+다음 작업은 `tasks/NEXT_STEP.md` 기준으로 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리하는 것입니다.

@@ -97,6 +97,21 @@ AI는 내용과 구조를 만들고, HWPX 템플릿은 폰트, 자간, 줄간격
 | `{{required_reviews}}` | 필요 검토 |
 | `{{next_actions}}` | 후속조치 |
 
+## 입력 필드와 placeholder 매핑 원칙
+
+입력 요구사항 문서의 필드명과 HWPX placeholder 이름이 항상 1:1로 같지는 않습니다.
+
+특히 표나 요약 영역은 다음처럼 매핑합니다.
+
+| document_type | 입력 필드 | HWPX placeholder | 비고 |
+|---|---|---|---|
+| `project_plan` | `overview` | `{{overview_table}}` | 추진개요 표 또는 요약 영역 |
+| `project_plan` | `schedule` | `{{schedule_table}}` | 추진 일정 |
+| `project_plan` | `budget` | `{{budget_table}}` | 소요 예산 |
+| `result_report` | `overview` | `{{overview_table}}` | 추진 개요 |
+
+이 매핑은 문서 기준 설명이며, 확인되지 않은 값은 `[확인 필요]`로 유지합니다.
+
 ## 배열 필드 변환 원칙
 
 JSON 배열은 HWPX에 넣기 전에 개조식 문자열로 변환합니다.

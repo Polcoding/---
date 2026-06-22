@@ -135,6 +135,19 @@
 | 실제 원문 포함 | 외부 처리 중단 |
 | C/D등급 문서 | 렌더링 및 외부 AI 처리 중단 |
 
+## HWPX placeholder 매핑 주의
+
+일부 입력 필드는 HWPX 템플릿에서 표 또는 요약 영역 placeholder로 들어갑니다.
+
+| 문서 유형 | 입력 필드 | HWPX placeholder | 처리 기준 |
+|---|---|---|---|
+| `project_plan` | `overview` | `{{overview_table}}` | 긴 객체나 배열이면 확인 문구로 축약 |
+| `project_plan` | `schedule` | `{{schedule_table}}` | 일정 임의 생성 금지 |
+| `project_plan` | `budget` | `{{budget_table}}` | 예산 임의 생성 금지 |
+| `result_report` | `overview` | `{{overview_table}}` | 추진 개요 확인 필요 시 `[확인 필요]` |
+
+이 매핑은 `docs/54_hwpx_common_placeholder_design.md`와 `templates/hwpx/template_manifest.md`의 문서 기준 정합성 점검에 따릅니다.
+
 ## 입력 정규화로 넘길 항목
 
 Phase 2 입력 정규화 설계에서는 다음 항목을 구조화해야 합니다.

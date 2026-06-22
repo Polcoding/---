@@ -133,15 +133,15 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 ## 다음 작업 후보
 
-다음 단계는 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
+후속 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했습니다.
+
+다음 단계는 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리하는 것입니다.
 
 검토 질문:
 
-- template manifest의 문서 유형과 `docs/54`의 placeholder가 충돌하지 않는지
-- `docs/60`의 최소 입력 필드가 공통 placeholder와 문서별 placeholder에 빠짐없이 대응되는지
-- `docs/84`의 사용자 입력 템플릿이 실제값 입력을 유도하지 않는지
-- `style_profile_manifest`가 확인되지 않은 값을 임의 확정하지 않는지
-- local template policy가 실제 HWPX 원본 Git 제외 원칙을 충분히 유지하는지
+- style profile의 `[확인 필요]` 값을 실제값으로 오인하지 않도록 유지 기준을 정리할 수 있는지
+- style profile 수집 체크리스트가 실제 기관명, 실제 양식 원본, 실제 폰트 파일을 저장소에 남기지 않는지
+- 수집 대상과 보류 대상을 구분할 수 있는지
 
 ## 보안 검수
 
@@ -160,4 +160,6 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 Phase 4는 실제 구현이 아니라 HWPX 보고서 4종 문서 템플릿 안정화 검토로 제한하는 조건에서 진입 가능합니다.
 
-다음 작업은 코드 변경 없이 template manifest, 공통 placeholder, 입력 요구사항, 사용자 입력 템플릿, local template policy, style profile manifest의 정합성을 문서 기준으로 점검하는 것입니다.
+HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 후속 반영했습니다.
+
+다음 작업은 코드 변경 없이 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서 기준으로 정리하는 것입니다.

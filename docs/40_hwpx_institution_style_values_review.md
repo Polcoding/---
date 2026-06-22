@@ -47,6 +47,7 @@
 |---|---|---|---|
 | style_official_letter_basic | 일반 공문 | 제목, 본문, 붙임 | 확인 필요 |
 | style_survey_request_letter | 현황조사 지시 공문 | 공문 본문, 조사표 붙임 | 확인 필요 |
+| style_one_page_report_basic | 원페이지 보고서 | 제목, 보고 개요, 주요 내용, 검토 의견 | 확인 필요 |
 | style_project_plan_basic | 추진계획서 | 목차, 표, 일정, 예산 | 확인 필요 |
 | style_result_report_basic | 결과보고서 | 결과 표, 향후계획 | 확인 필요 |
 | style_review_report_basic | 검토보고서 | 검토의견, 위험요소 | 확인 필요 |

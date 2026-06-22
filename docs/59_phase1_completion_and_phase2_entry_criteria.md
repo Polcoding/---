@@ -27,7 +27,7 @@ Phase 1 준비 저장소 기준 진행도는 완료로 봅니다.
 
 이 문서는 Phase 1 완료 및 Phase 2 진입 판단 당시의 기준 문서입니다.
 
-최신 기준에서는 Phase 2 최소 PoC와 Phase 3 안전 게이트 문서화를 마무리했고, Phase 4 문서 템플릿 안정화 진입 판단까지 완료했습니다. 현재 최신 진행 상태는 `docs/124_project_direction_and_legacy_update_review.md`와 `tasks/NEXT_STEP.md`를 따릅니다.
+최신 기준에서는 Phase 2 최소 PoC와 Phase 3 안전 게이트 문서화를 마무리했고, Phase 4 문서 템플릿 안정화 진입 판단과 HWPX template manifestㆍ공통 placeholder 정합성 점검까지 완료했습니다. 현재 최신 진행 상태는 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`와 `tasks/NEXT_STEP.md`를 따릅니다.
 
 ## Phase 1 완료로 볼 수 있는 항목
 
@@ -123,4 +123,4 @@ Phase 2 진입 조건은 이미 충족한 것으로 봅니다.
 
 이 문서 작성 당시의 다음 단계는 운영 자동화가 아니라 Phase 2 최소 PoC 보강이었습니다.
 
-현재 최신 다음 단계는 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다. 실제 API, Make.com, Email 자동화와 실제 기관 HWPX 원본 투입은 계속 보류합니다.
+현재 최신 다음 단계는 style profile의 `[확인 필요]` 값 유지 기준과 기관 표준 서식값 수집 체크리스트를 문서로 정리하는 것입니다. 실제 API, Make.com, Email 자동화와 실제 기관 HWPX 원본 투입은 계속 보류합니다.

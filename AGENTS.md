@@ -48,6 +48,7 @@
 - Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
 - Phase 4 문서 템플릿 안정화 진입 판단
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토
+- HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검
 
 ## 1. 최우선 원칙
 
@@ -203,7 +204,8 @@
 - Phase 3 마무리 판단 및 Phase 4 진입 여부 결정까지 완료된 상태입니다.
 - Phase 4 문서 템플릿 안정화 진입 판단까지 완료된 상태입니다.
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토까지 완료된 상태입니다.
-- 다음 작업은 실제 구현이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검합니다.
+- HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검까지 완료된 상태입니다.
+- 다음 작업은 실제 구현이 아니라 style profile의 `[확인 필요]` 값 유지 기준과 수집 체크리스트를 문서로 정리합니다.
 
 ## 구형 문서 처리 원칙
 
@@ -260,6 +262,7 @@
 - Phase 3 마무리 판단 및 Phase 4 진입 여부 결정
 - Phase 4 문서 템플릿 안정화 진입 판단
 - 프로젝트 방향 재확인 및 구형 진입점 문서 업데이트 검토
+- HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동

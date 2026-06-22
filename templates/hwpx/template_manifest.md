@@ -19,6 +19,15 @@
 | hwpx_result_report_basic | 결과보고서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
 | hwpx_review_report_basic | 검토보고서 | [로컬 placeholder 파일] | 로컬 검증 완료 | Git 등록 안 함 |
 
+## HWPX 보고서 4종 문서 유형 매핑
+
+| document_type | template_id | placeholder 그룹 | style_profile_id | 현재 판단 |
+|---|---|---|---|---|
+| `one_page_report` | `hwpx_one_page_report_basic` | 원페이지 보고서 | `style_one_page_report_basic` | 문서 기준 정합 |
+| `project_plan` | `hwpx_project_plan_basic` | 추진계획서 | `style_project_plan_basic` | 문서 기준 정합 |
+| `result_report` | `hwpx_result_report_basic` | 결과보고서 | `style_result_report_basic` | 문서 기준 정합 |
+| `review_report` | `hwpx_review_report_basic` | 검토보고서 | `style_review_report_basic` | 보안 검토 조건 유지 |
+
 ## manifest 작성 원칙
 
 - 실제 기관 양식 파일명을 기록하지 않습니다.
