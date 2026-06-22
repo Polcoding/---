@@ -2,7 +2,7 @@
 
 ## 목표
 
-`missing_fields` 표시 기준을 Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토합니다.
+Phase 2 운영 문서 묶음에서 `missing_fields` 표시 기준이 중복 없이 정리되었는지 통합 점검합니다.
 
 ## 현재 완료 상태
 
@@ -26,9 +26,13 @@
 - HWPX 본문과 검토용 확인 목록 분리 기준 정리 완료
 - `missing_fields` 표시 기준을 Phase 2 반복 운영 로그 템플릿에 반영 완료
 - 반복 운영 로그에 `missing_fields 확인` 섹션 추가 완료
+- `missing_fields` 표시 기준을 Phase 2 사용자 입력 및 수동 운영 점검표에 반영 완료
+- 입력 전, HWPX 생성 전, HWPX 생성 후 수동 점검 기준 보강 완료
 
 ## 확인 대상
 
+- `docs/106_missing_fields_manual_operation_checkpoints_reflection.md`
+- `checklists/missing_fields_manual_operation_checkpoints_reflection_checklist.md`
 - `docs/105_missing_fields_repeat_log_reflection_result.md`
 - `checklists/missing_fields_repeat_log_reflection_result_checklist.md`
 - `docs/104_missing_fields_user_display_guidance.md`
@@ -42,13 +46,13 @@
 
 ## 검토 항목
 
-1. `docs/104`의 표시 기준을 `docs/83` 점검표에 직접 반영할 필요가 있는지 확인
-2. HWPX output 생성 후 사용자 검수에 `missing_fields` 확인 항목을 추가할지 확인
-3. 입력 전 체크리스트에 누락값 표시 기준을 추가할지 확인
-4. 기존 `[확인 필요]` 확인 항목과 중복되는지 확인
-5. 실제값 기록 금지 원칙이 유지되는지 확인
-6. 코드 변경 없이 문서 점검표만 수정하면 충분한지 확인
-7. 반영하는 경우 체크리스트와 README 링크를 함께 갱신
+1. `docs/83`, `docs/101`, `docs/104`, `docs/105`, `docs/106`의 역할이 분리되어 있는지 확인
+2. `missing_fields`가 본문 실제값이 아니라 검토용 목록이라는 기준이 일관적인지 확인
+3. `[확인 필요]`와 `missing_fields` 표현이 서로 모순되지 않는지 확인
+4. `missing_fields` 자동 제외 금지 원칙이 모든 관련 문서에서 유지되는지 확인
+5. 반복 운영 로그와 수동 운영 점검표의 확인 항목이 과하게 중복되지 않는지 확인
+6. 코드 변경 없이 문서 기준만으로 충분한지 확인
+7. 필요하면 통합 점검 결과 문서와 체크리스트를 추가
 
 ## 작업 제한
 
@@ -66,14 +70,14 @@
 
 ## 완료 조건
 
-- 사용자 입력 및 수동 운영 점검표 반영 필요성 판단
-- 반영 시 `missing_fields` 확인 항목 정리
-- 기존 `[확인 필요]` 확인 항목과 중복 여부 확인
-- 입력 전 체크리스트 반영 여부 판단
+- Phase 2 운영 문서 묶음 통합 점검 결과 정리
+- 문서별 역할 분리 여부 확인
+- `missing_fields` 표시 기준 모순 여부 확인
+- 중복이 과한 항목 보류 또는 유지 판단
 - 코드 변경 여부 판단
 - 보안 검수 결과 재확인
 - 다음 단계 진행 가능 여부 보고
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 `docs/104`의 표시 기준을 `docs/83` Phase 2 사용자 입력 및 수동 운영 점검표에 반영할지 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+현재 추천은 코드 변경 없이 Phase 2 운영 문서 묶음의 `missing_fields` 표시 기준을 통합 점검하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.

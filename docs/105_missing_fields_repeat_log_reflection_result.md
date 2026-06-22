@@ -87,6 +87,8 @@
 - 기존 `[확인 필요]` 확인 항목과 중복되지 않게 분리할 수 있는지
 - 코드 변경 없이 문서 기준만으로 충분한지
 
+후속 작업에서 Phase 2 사용자 입력 및 수동 운영 점검표 반영 결과는 `docs/106_missing_fields_manual_operation_checkpoints_reflection.md`에 정리했습니다.
+
 ## 보안 검수
 
 - 실제 개인정보 추가 없음
