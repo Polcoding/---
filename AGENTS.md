@@ -33,6 +33,7 @@
 - `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
 - Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
+- Phase 2 최소 PoC 마무리 판단 및 Phase 3 진입 조건 문서화 필요성 결정
 
 ## 1. 최우선 원칙
 
@@ -173,7 +174,8 @@
 - mapped HWPX output은 로컬 검증 산출물이며 실제 업무용 문서가 아닙니다.
 - Phase 2 운영 문서 묶음은 최종 정리 단계까지 도달한 상태입니다.
 - normalizers 회귀 테스트 묶음 재검증까지 완료된 상태입니다.
-- 다음 작업은 Phase 2 마무리 판단과 Phase 3 진입 조건 문서화 여부를 기존 routing과 `missing_fields` 결과를 흔들지 않는 범위에서 검토합니다.
+- Phase 2 최소 PoC는 문서 기준 마무리 가능 상태로 판단합니다.
+- 다음 작업은 Phase 3 진입 조건 및 안전 게이트 문서화를 기존 routing과 `missing_fields` 결과를 흔들지 않는 범위에서 검토합니다.
 
 ## Codex 작업 방식 보강
 
@@ -208,6 +210,7 @@
 - `missing_fields` 생성 규칙 고정, 사용자 표시 기준, 반복 운영 로그와 수동 점검표 반영
 - Phase 2 운영 문서 묶음 통합 점검 및 최종 정리
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
+- Phase 2 최소 PoC 마무리 판단 및 Phase 3 진입 조건 문서화 필요성 결정
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동
