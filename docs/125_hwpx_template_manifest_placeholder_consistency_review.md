@@ -184,4 +184,6 @@ HWPX 보고서 4종 수동 preview 서식 gap log 기준은 `docs/127_hwpx_manua
 
 local template policy와 Git 제외 상태 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 후속 반영했습니다.
 
-다음 단계는 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부를 문서로 판단하는 것입니다. 실제 기관 양식 원본, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
+Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_stabilization_integrated_review.md`에 후속 반영했습니다.
+
+다음 단계는 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식을 문서로 정리하는 것입니다. 실제 기관 양식 원본, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.

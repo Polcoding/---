@@ -202,4 +202,6 @@ GitHub Desktop에서 보이면 안 되는 항목:
 
 현재 저장소는 폴더별 `.gitignore` 기준으로 local HWPX template과 output 산출물을 Git에서 제외하고 있습니다.
 
-다음 단계는 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부를 문서로 판단하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
+Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_stabilization_integrated_review.md`에 반영했습니다.
+
+다음 단계는 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식을 문서로 정리하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.

@@ -133,9 +133,9 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 ## 다음 작업 후보
 
-후속 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에, HWPX 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에, local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 반영했습니다.
+후속 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에, HWPX 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에, local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 반영했습니다. Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_stabilization_integrated_review.md`에 반영했습니다.
 
-다음 단계는 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부를 문서로 판단하는 것입니다.
+다음 단계는 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식을 문서로 정리하는 것입니다.
 
 검토 질문:
 
@@ -160,6 +160,6 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 Phase 4는 실제 구현이 아니라 HWPX 보고서 4종 문서 템플릿 안정화 검토로 제한하는 조건에서 진입 가능합니다.
 
-HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 후속 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에, HWPX 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에, local template Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에 반영했습니다.
+HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`에 후속 반영했고, style profile 확인 필요 값 유지 기준은 `docs/126_style_profile_confirmation_value_collection_criteria.md`에, HWPX 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`에, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`에, local template Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에, Phase 4 통합 점검은 `docs/130_phase4_template_stabilization_integrated_review.md`에 반영했습니다.
 
-다음 작업은 코드 변경 없이 Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부를 문서 기준으로 판단하는 것입니다.
+다음 작업은 코드 변경 없이 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식을 문서 기준으로 정리하는 것입니다.

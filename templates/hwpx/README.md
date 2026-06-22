@@ -46,4 +46,5 @@
 - 최근 점검: `docs/127_hwpx_manual_preview_gap_log_criteria.md`
 - 최근 점검: `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`
 - 최근 점검: `docs/129_local_template_gitignore_repeat_verification_criteria.md`
-- 다음 점검: Phase 4 문서 템플릿 안정화 통합 점검과 실제 양식 수동 리허설 진입 여부 판단
+- 최근 점검: `docs/130_phase4_template_stabilization_integrated_review.md`
+- 다음 점검: 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리
