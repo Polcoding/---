@@ -178,13 +178,14 @@ push 전 GitHub Desktop Changes에 보이면 안 되는 항목:
 | 3 | Phase 3 운영 문서 묶음 통합 점검 | `docs/114`에 반영 완료 |
 | 4 | 외부 연동 필요성과 보류 기준 검토 | `docs/115`에 반영 완료 |
 | 5 | 로그와 감사 추적 기준 구체화 | `docs/116`에 반영 완료 |
-| 6 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
-| 7 | `placeholder_confirmed_values` routing 연결 | 보류 |
-| 8 | API, Make.com, Email 자동화 | 보류 |
+| 6 | 테스트 계정과 테스트 데이터 기준 구체화 | `docs/117`에 반영 완료 |
+| 7 | `placeholder_confirmed_values` dry-run preview 문서화 | 보류 후 검토 |
+| 8 | `placeholder_confirmed_values` routing 연결 | 보류 |
+| 9 | API, Make.com, Email 자동화 | 보류 |
 
 현재 추천 다음 작업:
 
-1. 실제 연동 구현 없이 테스트 계정과 테스트 데이터 기준을 문서 기준으로 검토
+1. 실제 연동 구현 없이 실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 검토
 2. API, Make.com, Email 연동은 계속 후순위로 유지
 3. `placeholder_confirmed_values` routing 연결은 계속 보류
 4. 코드, fixture, HWPX payload, output 변경 없이 문서 기준만 확인
