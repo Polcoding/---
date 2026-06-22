@@ -33,7 +33,8 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 | [ ] | 반복 운영 로그 기준 확인 |
 | [ ] | 감사 추적 기준 확인 |
 | [ ] | 테스트 계정과 테스트 데이터 기준 확인 |
-| [ ] | 실제 원문 차단과 비식별 입력 확인 절차 별도 문서화 |
+| [ ] | 실제 원문 차단과 비식별 입력 확인 절차 확인 |
+| [ ] | 사용자 preview와 사람 승인 지점 별도 문서화 |
 | [ ] | `needs_security_review` 외부 전송 금지 확인 |
 | [ ] | `blocked` 외부 전송 금지 확인 |
 | [ ] | 실제 업무 계정 연결 별도 승인 확인 |
@@ -50,5 +51,5 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 - 민감정보가 포함된 입력은 API 호출 전에 차단되어야 합니다.
 - 실제 업무 계정을 연결하기 전 별도 승인과 테스트 계정 검증이 필요합니다.
 - Make.com 또는 API 연동은 별도 설계 문서와 보안 검토 후 진행해야 합니다.
-- Phase 3 기준의 최신 판단은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`를 따릅니다.
-- 현재 다음 단계는 실제 연동 구현이 아니라 실제 원문 차단과 비식별 입력 확인 절차 문서화입니다.
+- Phase 3 기준의 최신 판단은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`를 따릅니다.
+- 현재 다음 단계는 실제 연동 구현이 아니라 사용자 preview와 사람 승인 지점 통합 점검입니다.

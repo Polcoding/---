@@ -2,7 +2,7 @@
 
 ## 목표
 
-실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 구체화합니다.
+사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검합니다.
 
 ## 현재 완료 상태
 
@@ -44,9 +44,12 @@
 - Phase 3 외부 연동 필요성과 보류 기준 검토 완료
 - Phase 3 로그와 감사 추적 기준 구체화 완료
 - Phase 3 테스트 계정과 테스트 데이터 기준 구체화 완료
+- Phase 3 실제 원문 차단과 비식별 입력 확인 절차 구체화 완료
 
 ## 확인 대상
 
+- `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`
+- `checklists/phase3_source_blocking_and_deidentified_input_checklist.md`
 - `docs/117_phase3_test_account_and_test_data_criteria.md`
 - `checklists/phase3_test_account_and_test_data_criteria_checklist.md`
 - `docs/116_phase3_log_and_audit_trace_criteria.md`
@@ -84,10 +87,10 @@
 
 ## 검토 항목
 
-1. 실제 원문이 입력에 섞였는지 확인하는 기준을 정리
-2. 비식별 입력이 A/B등급 후보인지 확인하는 절차를 구체화
-3. C/D등급 또는 애매한 입력을 보류하거나 차단하는 기준을 정리
-4. 외부 전송 전 사람이 확인해야 할 최소 항목을 문서 기준으로 정리
+1. HWPX preview, 외부 전송 전 preview, Email 초안 preview의 사람 확인 지점을 구분
+2. 승인 상태가 실제 결재, 발송, 계약, 예산 집행 승인이 아님을 반복 표시
+3. 외부 전송 전 최종 보류 조건을 어느 문서와 로그에 기록할지 정리
+4. 사용자 확인이 필요한 항목을 `[사용자 확인 필요]`로 눈에 띄게 표시
 5. 코드, fixture, routing, HWPX payload, output 변경이 필요 없는지 판단
 6. 필요한 경우 최소 범위 문서 또는 체크리스트만 보강
 7. 필요한 경우 README, AGENTS, NEXT_STEP을 최소 범위로 갱신
@@ -108,9 +111,9 @@
 
 ## 완료 조건
 
-- 실제 원문 차단과 비식별 입력 확인 절차 구체화 필요 여부 판단
-- 실제 원문 의심 입력의 중단 기준 정리
-- A/B/C/D 보안등급 확인 절차 정리
+- 사용자 preview와 사람 승인 지점 통합 점검 필요 여부 판단
+- preview 종류별 사람 확인 지점 구분
+- 승인 상태와 실제 업무 승인의 경계 정리
 - 필요한 경우 관련 문서 또는 체크리스트 최소 범위 갱신
 - 계속 보류할 범위 재확인
 - README 최신화 필요 여부 판단
@@ -121,4 +124,4 @@
 
 ## 다음 단계 후보
 
-현재 추천은 코드 변경 없이 실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 구체화하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.
+현재 추천은 코드 변경 없이 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검하는 것입니다. 실제 API, Make.com, Email 연동 구현은 계속 보류합니다.

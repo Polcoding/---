@@ -61,7 +61,8 @@
 - Phase 3 외부 연동 필요성과 보류 기준 검토를 완료했습니다.
 - Phase 3 로그와 감사 추적 기준 구체화를 완료했습니다.
 - Phase 3 테스트 계정과 테스트 데이터 기준 구체화를 완료했습니다.
-- 다음 작업 후보는 실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 구체화하는 것입니다.
+- Phase 3 실제 원문 차단과 비식별 입력 확인 절차 구체화를 완료했습니다.
+- 다음 작업 후보는 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검하는 것입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -248,6 +249,7 @@ Instructions 복사
 - `docs/115_phase3_external_integration_hold_criteria.md`: Phase 3 외부 연동 필요성과 보류 기준
 - `docs/116_phase3_log_and_audit_trace_criteria.md`: Phase 3 로그와 감사 추적 기준
 - `docs/117_phase3_test_account_and_test_data_criteria.md`: Phase 3 테스트 계정과 테스트 데이터 기준
+- `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`: Phase 3 실제 원문 차단과 비식별 입력 확인 절차
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -335,6 +337,7 @@ Instructions 복사
 - `checklists/phase3_external_integration_hold_criteria_checklist.md`: Phase 3 외부 연동 필요성과 보류 기준 체크리스트
 - `checklists/phase3_log_and_audit_trace_criteria_checklist.md`: Phase 3 로그와 감사 추적 기준 체크리스트
 - `checklists/phase3_test_account_and_test_data_criteria_checklist.md`: Phase 3 테스트 계정과 테스트 데이터 기준 체크리스트
+- `checklists/phase3_source_blocking_and_deidentified_input_checklist.md`: Phase 3 실제 원문 차단과 비식별 입력 확인 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -353,7 +356,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 구체화합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.

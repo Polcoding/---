@@ -168,6 +168,6 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 
 Phase 3 운영 문서 묶음 통합 점검은 `docs/114_phase3_operating_docs_integrated_review.md`에 반영했습니다.
 
-외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에 반영했습니다.
+외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에 반영했습니다.
 
-다음 단계는 실제 연동 구현이 아니라, 실제 원문 차단과 비식별 입력 확인 절차를 문서 기준으로 별도 검토하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+다음 단계는 실제 연동 구현이 아니라, 사용자 preview와 사람 승인 지점을 외부 전송 전 절차로 통합 점검하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
