@@ -35,6 +35,7 @@
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
 - Phase 2 최소 PoC 마무리 판단 및 Phase 3 진입 조건 문서화 필요성 결정
 - Phase 3 진입 조건 및 안전 게이트 문서화
+- Phase 3 저장소 밖 HWPX 취급 및 사용자 수동 preview 기준 구체화
 
 ## 1. 최우선 원칙
 
@@ -177,7 +178,8 @@
 - normalizers 회귀 테스트 묶음 재검증까지 완료된 상태입니다.
 - Phase 2 최소 PoC는 문서 기준 마무리 가능 상태로 판단합니다.
 - Phase 3 진입 조건 및 안전 게이트 문서화까지 완료된 상태입니다.
-- 다음 작업은 저장소 밖 HWPX 양식 취급 기준과 사용자 수동 preview 기준을 기존 routing과 `missing_fields` 결과를 흔들지 않는 범위에서 구체화합니다.
+- Phase 3 저장소 밖 HWPX 취급 및 사용자 수동 preview 기준 구체화까지 완료된 상태입니다.
+- 다음 작업은 상태별 중단 기준을 반복 운영 문서에 반영할지 기존 routing과 `missing_fields` 결과를 흔들지 않는 범위에서 검토합니다.
 
 ## Codex 작업 방식 보강
 
@@ -214,6 +216,7 @@
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증
 - Phase 2 최소 PoC 마무리 판단 및 Phase 3 진입 조건 문서화 필요성 결정
 - Phase 3 진입 조건 및 안전 게이트 문서화
+- Phase 3 저장소 밖 HWPX 취급 및 사용자 수동 preview 기준 구체화
 
 아직 구현하지 않는 범위:
 - OpenAI API 실제 연동

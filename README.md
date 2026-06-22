@@ -55,7 +55,8 @@
 - Phase 2 마무리 전 normalizers 회귀 테스트 묶음 재검증을 완료했습니다.
 - Phase 2 최소 PoC는 문서 기준 마무리 가능 상태로 판단했습니다.
 - Phase 3 진입 조건 및 안전 게이트 문서화를 완료했습니다.
-- 다음 작업 후보는 저장소 밖 HWPX 양식 취급 기준과 사용자 수동 preview 기준 구체화입니다.
+- Phase 3 저장소 밖 HWPX 양식 취급 기준과 사용자 수동 preview 기준 구체화를 완료했습니다.
+- 다음 작업 후보는 상태별 중단 기준을 반복 운영 문서에 반영할지 검토하는 것입니다.
 
 ## 1단계에서 하지 않는 일
 
@@ -236,6 +237,7 @@ Instructions 복사
 - `docs/109_normalizers_regression_recheck_result.md`: normalizers 회귀 테스트 재검증 결과
 - `docs/110_phase2_closeout_and_phase3_entry_decision.md`: Phase 2 마무리 판단 및 Phase 3 진입 조건 결정
 - `docs/111_phase3_entry_safety_gate.md`: Phase 3 진입 조건 및 안전 게이트
+- `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`: Phase 3 저장소 밖 HWPX 취급 및 수동 preview 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -317,6 +319,7 @@ Instructions 복사
 - `checklists/normalizers_regression_recheck_result_checklist.md`: normalizers 회귀 테스트 재검증 결과 체크리스트
 - `checklists/phase2_closeout_and_phase3_entry_decision_checklist.md`: Phase 2 마무리 판단 및 Phase 3 진입 조건 결정 체크리스트
 - `checklists/phase3_entry_safety_gate_checklist.md`: Phase 3 진입 조건 및 안전 게이트 체크리스트
+- `checklists/phase3_external_hwpx_manual_preview_checklist.md`: Phase 3 저장소 밖 HWPX 취급 및 수동 preview 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -335,7 +338,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 HWPX 양식 취급 기준과 사용자 수동 preview 기준을 구체화합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 상태별 중단 기준을 반복 운영 문서에 반영할지 검토합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
