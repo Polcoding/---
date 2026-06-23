@@ -23,7 +23,7 @@
 
 - 실제 기관 HWPX/HWP 양식 기반 자동 렌더링
 - 실제 업무 문서 원문 기반 초안 생성
-- 실제 업무용 HWPX output commit 또는 배포
+- 실제 업무용 HWPX output Git 추가 또는 배포
 - 실제 Excel/한셀 표 데이터 자동 작성
 - Email/API/Make.com/Gmail/Outlook 실제 연동
 - 실제 자동 발송, 결재, 계약, 업체 선정, 예산 집행

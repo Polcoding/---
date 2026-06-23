@@ -202,7 +202,7 @@ Codex 결과를 받은 뒤에는 아래 기준으로 봅니다.
 [사용자 확인 필요]
 - 확인 필요 항목이 실제값처럼 확정되지 않았는가
 - 한컴 열람이 필요한 경우 글자 겹침, 항목 순서, 줄바꿈, 여백을 확인했는가
-- GitHub Desktop Changes에 실제 HWPX 원본 또는 output이 보이지 않는가
+- GitHub Desktop Changes에 실제 HWPX 원본 또는 Git 추적 대상 output 파일이 보이지 않는가
 
 [Codex 처리 가능]
 - missing_fields 검토 목록 분리

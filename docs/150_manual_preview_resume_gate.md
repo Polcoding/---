@@ -63,7 +63,7 @@
 `[보류]`
 
 - 실제 원본 파일 Git 추가
-- 실제 업무용 HWPX output commit
+- 실제 업무용 HWPX output Git 추가
 - 실제 표 데이터 자동 작성
 - 실제 외부 발송 또는 연동
 

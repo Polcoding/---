@@ -34,6 +34,7 @@
 - `README.md`: 다음 단계 첫 항목을 `docs/152_project_result_artifact_map.md` 확인으로 조정
 - `CURRENT_STATUS.md`: 다음 추천 단계 첫 항목을 결과물 지도 확인으로 조정
 - `tasks/NEXT_STEP.md`: 다음 내부 점검 후보를 결과물 지도 review 이후 단계로 갱신
+- `docs/152_project_result_artifact_map.md`, `docs/154_user_visible_artifact_bundle_closeout.md`: 실제값 없는 보고서 4종 요청 예시인 `docs/141_user_rehearsal_prompt_examples.md`를 사용자 가시 산출물로 연결
 
 ## 확인 가능한 결과물 구분
 

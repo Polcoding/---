@@ -14,6 +14,7 @@
 | 현재 현황판 | `CURRENT_STATUS.md` | 진행률, 작동 경로, 아직 결과물이 아닌 것 정리 |
 | 빠른 시작 | `docs/143_user_quick_start.md` | 처음 볼 순서와 멈출 지점 |
 | A-to-Z 안내 | `docs/140_user_operation_atoz_guide.md` | 사용자가 할 일과 Codex가 처리할 일 구분 |
+| 요청 예시 | `docs/141_user_rehearsal_prompt_examples.md` | 실제값 없이 따라 할 수 있는 보고서 4종 요청 예시 |
 | 재개 게이트 | `docs/150_manual_preview_resume_gate.md` | 실제 HWPX 수동 preview 재개 조건 |
 
 ## 지금 확인 가능한 묶음
@@ -32,7 +33,7 @@
 
 - 실제 기관 HWPX/HWP 양식 기반 자동 렌더링
 - 실제 업무 문서 원문 기반 초안
-- 실제 업무용 HWPX output commit
+- 실제 업무용 HWPX output Git 추가
 - 실제 Excel/한셀 표 데이터 자동 작성
 - Email/API/Make.com/Gmail/Outlook 실제 연동
 - 실제 자동 발송, 결재, 계약, 업체 선정, 예산 집행

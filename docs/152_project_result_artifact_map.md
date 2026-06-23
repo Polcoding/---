@@ -11,7 +11,7 @@
 ```text
 [확인 가능] 문서/체크리스트/샘플 JSON/PoC 요약
 [사용자 확인 필요] 실제 HWPX 열람, 실제 양식 적합성, 기관 서식값
-[보류] 실제 원본 처리, 실제 업무용 HWPX output commit, Email/API/Make.com 연동
+[보류] 실제 원본 처리, 실제 업무용 HWPX output Git 추가, Email/API/Make.com 연동
 ```
 
 ## 먼저 볼 파일
@@ -21,6 +21,7 @@
 | 전체 현황 | `CURRENT_STATUS.md` | 현재 작동 경로, 진행률, 보류 항목 |
 | 빠른 시작 | `docs/143_user_quick_start.md` | 처음 열 파일과 멈출 지점 |
 | 사용자 A-to-Z | `docs/140_user_operation_atoz_guide.md` | 사용자가 직접 할 일과 Codex가 할 일 |
+| 요청 예시 | `docs/141_user_rehearsal_prompt_examples.md` | 실제값 없이 따라 할 수 있는 보고서 4종 요청 예시 |
 | 최소 demo 결과 | `docs/139_minimum_demo_run_result.md` | normalizer부터 renderer dry-run까지의 요약 |
 | 재개 게이트 | `docs/150_manual_preview_resume_gate.md` | 실제 HWPX preview를 다시 시작할 조건 |
 
@@ -29,6 +30,7 @@
 | 구분 | 파일 |
 |---|---|
 | 사용자 안내 통합 점검 | `docs/142_user_guidance_integrated_review.md` |
+| 문서 유형별 비식별 요청 예시 | `docs/141_user_rehearsal_prompt_examples.md` |
 | quick start 경계 | `docs/144_quick_start_rehearsal_boundary.md` |
 | 사용자 안내 closeout | `docs/145_user_guidance_closeout.md` |
 | 수동 preview 또는 리허설 유지 판단 | `docs/146_next_manual_preview_or_rehearsal_decision.md` |
@@ -87,7 +89,7 @@ output 요약 파일과 `renderers/hwpx_renderer/output/*.hwpx`는 로컬 검증
 현재 단계에서는 다음을 실행하지 않습니다.
 
 - 실제 기관 HWPX/HWP 원본 Git 추가
-- 실제 업무용 HWPX output commit
+- 실제 업무용 HWPX output Git 추가
 - 실제 업무 원문 처리
 - 실제 개인정보, 문서번호, 기관명, 담당자명 기록
 - 실제 표 데이터, 수량, 금액, 대상 목록 기록

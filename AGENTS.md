@@ -547,7 +547,7 @@ HWPX:
 - 실제 기관 HWPX 양식 원본을 저장소에 추가 금지
 - placeholder 기반 템플릿 설계만 허용
 - 문서번호, 기관명, 담당자명, 수신처는 placeholder로만 표현
-- 로컬 테스트 HWPX 템플릿과 output HWPX는 Git 제외 상태를 확인해야 합니다.
+- 로컬 테스트 HWPX 템플릿과 로컬 output HWPX는 Git 제외 상태를 확인해야 합니다.
 
 XLSX:
 - 현재 단계에서는 placeholder 기반 XLSX PoC 렌더러 검증을 허용합니다.

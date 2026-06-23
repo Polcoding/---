@@ -21,6 +21,7 @@
 - `docs/130_phase4_template_stabilization_integrated_review.md`
 - `docs/139_minimum_demo_run_result.md`
 - `docs/140_user_operation_atoz_guide.md`
+- `docs/141_user_rehearsal_prompt_examples.md`
 - `docs/142_user_guidance_integrated_review.md`
 - `docs/143_user_quick_start.md`
 - `docs/144_quick_start_rehearsal_boundary.md`
