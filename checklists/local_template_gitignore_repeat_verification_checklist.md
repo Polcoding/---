@@ -29,7 +29,7 @@
 |---|---|
 | [x] | 로컬 placeholder HWPX 템플릿 생성 또는 교체 후 확인하도록 정리했는가 |
 | [x] | renderer output 또는 normalizer output 생성 후 확인하도록 정리했는가 |
-| [x] | 한컴 수동 preview 후 gap log 기록 전 확인하도록 정리했는가 |
+| [x] | `docs/150_manual_preview_resume_gate.md` 조건 충족 후 한컴 수동 preview와 gap log 기록을 진행하도록 정리했는가 |
 | [x] | commit 또는 push 전 확인하도록 정리했는가 |
 | [x] | 작업 재개 또는 탭 전환 후 다시 확인하도록 정리했는가 |
 
@@ -90,4 +90,5 @@
 | [x] | 복사본 없음 보류 기록이 `docs/134`에 반영되었는가 |
 | [x] | 표 데이터 역할 분리 범위가 `docs/135`에 반영되었는가 |
 | [x] | 사용자 입력 템플릿의 표 데이터 후보 표시 기준이 후속 문서로 정리되었는가 |
+| [x] | 수동 preview 재개 전 `docs/150_manual_preview_resume_gate.md` 조건을 먼저 확인하도록 정리되었는가 |
 | [x] | 실제 양식 투입, output 재생성, 외부 연동 구현을 다음 단계로 두지 않았는가 |

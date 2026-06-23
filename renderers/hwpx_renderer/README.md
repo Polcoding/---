@@ -48,6 +48,8 @@
 
 output 산출물은 로컬 테스트 결과이며 Git 추적 대상에서 제외합니다.
 
+한컴에서 output 또는 로컬 placeholder HWPX를 여는 수동 preview는 `docs/150_manual_preview_resume_gate.md` 조건 충족 후에만 진행합니다. 이 renderer 안내는 실제 업무용 HWPX 생성 승인이나 실제 원본 투입 지시가 아닙니다.
+
 output/.gitignore 내용:
 
 ```text

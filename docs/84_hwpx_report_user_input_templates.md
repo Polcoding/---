@@ -16,7 +16,7 @@ Phase 2 최소 운영 흐름에서 사용자가 HWPX 보고서 초안 생성을 
 4. 모르는 값은 `[확인 필요]`로 둡니다.
 5. 표가 필요할 것 같으면 `[표 데이터 별도 확인 필요]`로 표시합니다.
 6. Codex는 입력값을 바탕으로 placeholder 초안과 확인 필요 목록을 정리합니다.
-7. 실제 HWPX 양식, 글자 겹침, 표 폭, 여백은 한컴에서 사람이 확인합니다.
+7. 실제 HWPX 양식, 글자 겹침, 표 폭, 여백은 `docs/150_manual_preview_resume_gate.md` 조건 충족 후 한컴에서 사람이 확인합니다.
 
 ## 역할 구분
 
@@ -32,7 +32,7 @@ Phase 2 최소 운영 흐름에서 사용자가 HWPX 보고서 초안 생성을 
 [사용자 확인 필요]
 - 만들 문서 유형
 - 보고 목적, 일정, 예산, 실적, 검토 범위처럼 사람이 판단해야 하는 값
-- 한컴에서 글자 겹침, 항목 순서, 줄바꿈, 표 폭, 여백 확인
+- `docs/150_manual_preview_resume_gate.md` 조건 충족 후 한컴에서 글자 겹침, 항목 순서, 줄바꿈, 표 폭, 여백 확인
 - 실제값을 넣을지 말지는 내부 검토 후 결정
 
 [Codex 처리 가능]
@@ -43,6 +43,7 @@ Phase 2 최소 운영 흐름에서 사용자가 HWPX 보고서 초안 생성을 
 
 [보류]
 - 실제 HWPX 원본 사용
+- `docs/150_manual_preview_resume_gate.md` 조건 충족 전 실제 HWPX 수동 preview
 - 실제 표 데이터, 수량, 금액, 대상 목록 자동 작성
 - 실제 Email/API/Make.com 연동
 - 실제 발송, 결재, 계약, 예산 집행 판단
@@ -296,3 +297,5 @@ Codex 처리 가능 항목:
 표 데이터 후보 표시 기준은 `docs/136_table_data_candidate_user_input_display_criteria.md`에 정리했습니다.
 
 현재 기준에서는 `normalizers/` fixture 확장, routing 변경, HWPX payload 변경은 별도 명시 승인 전까지 보류합니다.
+
+실제 HWPX 수동 preview는 이 사용자 입력 템플릿만으로 재개하지 않습니다. 저장소 밖 비식별 작업 복사본과 `docs/150_manual_preview_resume_gate.md` 조건이 모두 확인된 뒤 별도 검수 단계에서 진행합니다.

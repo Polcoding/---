@@ -62,4 +62,4 @@
 - 최근 점검: `docs/152_project_result_artifact_map.md`
 - 최근 점검: `docs/156_user_visible_artifact_security_and_git_check.md`
 - 최근 점검: `docs/157_current_status_progress_review.md`
-- 다음 점검: 최신 `tasks/NEXT_STEP.md`, `CURRENT_STATUS.md`, `docs/152_project_result_artifact_map.md` 기준 유지
+- 다음 점검: 최신 `tasks/NEXT_STEP.md`, `CURRENT_STATUS.md`, `docs/150_manual_preview_resume_gate.md`, `docs/152_project_result_artifact_map.md` 기준 유지
