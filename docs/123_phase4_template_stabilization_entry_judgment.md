@@ -137,7 +137,7 @@ Phase 4 문서 템플릿 안정화는 다음을 의미하지 않습니다.
 
 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식은 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 반영했습니다.
 
-다음 단계는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
+다음 단계는 비식별 작업 복사본 준비가 명시되기 전까지 문서 기반 검증 상태를 유지하는 것입니다. 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록은 `docs/150_manual_preview_resume_gate.md` 조건을 만족할 때만 재개합니다.
 
 검토 질문:
 
@@ -166,4 +166,4 @@ HWPX template manifest와 공통 placeholder 정합성 점검은 `docs/125_hwpx_
 
 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식은 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 반영했습니다.
 
-다음 작업은 코드 변경 없이 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
+다음 작업은 코드 변경 없이 문서 기반 검증 상태를 유지하고, 수동 preview 재개 조건을 확인하는 것입니다. 저장소 밖 한컴 preview 결과 기록은 비식별 작업 복사본 준비가 명시된 뒤에만 진행합니다.

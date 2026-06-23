@@ -236,4 +236,4 @@ Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_st
 
 HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정은 `docs/133_hwpx_only_table_frame_decision.md`에 반영했습니다.
 
-다음 단계는 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다.
+다음 단계는 비식별 작업 복사본 준비가 명시되기 전까지 문서 기반 검증 상태를 유지하는 것입니다. 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록은 `docs/150_manual_preview_resume_gate.md` 조건을 만족할 때만 재개합니다.
