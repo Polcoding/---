@@ -76,7 +76,7 @@ flowchart LR
 | local placeholder HWPX template 인식 | 작동 확인 | 보고서 4종 template_available `true` |
 | 실제값 placeholder 검증 helper | 작동 확인 | safe/invalid fixture 7건 기대 결과 통과 |
 
-## 방금 확인한 실행 결과
+## 최근 검증된 실행 결과
 
 | 명령 | 결과 | 증거 파일 |
 |---|---|---|

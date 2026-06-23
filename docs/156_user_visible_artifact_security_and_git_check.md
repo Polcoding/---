@@ -15,8 +15,14 @@
 - `tasks/NEXT_STEP.md`
 - `docs/00_project_overview.md`
 - `docs/00_chatgpt_handoff.md`
+- `docs/06_future_architecture.md`
 - `docs/48_git_push_timing_and_summary.md`
+- `docs/59_phase1_completion_and_phase2_entry_criteria.md`
+- `docs/72_dry_run_artifact_retention_policy.md`
 - `docs/81_normalizers_regression_test_suite.md`
+- `docs/90_project_reorganization_after_superpowers.md`
+- `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
+- `docs/124_project_direction_and_legacy_update_review.md`
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - `docs/130_phase4_template_stabilization_integrated_review.md`
 - `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`

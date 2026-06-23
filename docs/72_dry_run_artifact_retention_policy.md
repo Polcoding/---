@@ -87,4 +87,4 @@ fixture 추가 금지 기준:
 
 최신 기준에서는 local template과 output Git 제외 반복 검증 기준을 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에, Phase 4 문서 템플릿 안정화 통합 점검을 `docs/130_phase4_template_stabilization_integrated_review.md`에, 실제 양식 수동 리허설 사용자 확인 패킷을 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`에 정리했습니다.
 
-현재 다음 작업은 실제 HWPX 렌더링 연결이 아니라 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
+현재 다음 작업은 실제 HWPX 렌더링 연결이 아니라 문서 기반 검증 상태 유지와 수동 preview 재개 조건 확인입니다. 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록은 비식별 작업 복사본 준비가 명시된 뒤에만 진행합니다.

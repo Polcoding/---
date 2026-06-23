@@ -269,4 +269,4 @@ mapped_missing_result_report_poc.hwpx / 5번 / 내용 앞 기호 불일치 / 보
 
 Phase 3에서는 실제 원본과 output을 Git에 남기지 않고, 저장소 밖 HWPX 취급과 사용자 수동 preview를 분리해 관리합니다.
 
-후속 Phase 4 문서 템플릿 안정화 기준은 `docs/123`~`docs/132`에 반영했습니다. 최신 다음 단계는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다.
+후속 Phase 4 문서 템플릿 안정화 기준은 `docs/123`~`docs/132`에 반영했고, 비식별 HWPX 작업 복사본 없음 보류 기록은 `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`에 반영했습니다. 최신 다음 단계는 문서 기반 검증 상태 유지이며, 저장소 밖 한컴 preview 결과 기록은 `docs/150_manual_preview_resume_gate.md` 조건을 만족할 때만 재개합니다.

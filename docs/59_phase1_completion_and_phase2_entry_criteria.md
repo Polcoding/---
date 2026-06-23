@@ -27,7 +27,7 @@ Phase 1 준비 저장소 기준 진행도는 완료로 봅니다.
 
 이 문서는 Phase 1 완료 및 Phase 2 진입 판단 당시의 기준 문서입니다.
 
-최신 기준에서는 Phase 2 최소 PoC와 Phase 3 안전 게이트 문서화를 마무리했고, Phase 4 문서 템플릿 안정화 진입 판단, HWPX template manifestㆍ공통 placeholder 정합성 점검, style profile 확인 필요 값 유지 기준, HWPX 수동 preview gap log 기준, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건, local template Git 제외 반복 검증 기준, Phase 4 통합 점검, 실제 양식 수동 리허설 사용자 확인 패킷까지 완료했습니다. 현재 최신 진행 상태는 `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`와 `tasks/NEXT_STEP.md`를 따릅니다.
+최신 기준에서는 Phase 2 최소 PoC와 Phase 3 안전 게이트 문서화를 마무리했고, Phase 4 문서 템플릿 안정화 진입 판단, HWPX template manifestㆍ공통 placeholder 정합성 점검, style profile 확인 필요 값 유지 기준, HWPX 수동 preview gap log 기준, 저장소 밖 실제 양식 후보 수동 절차와 보류 조건, local template Git 제외 반복 검증 기준, Phase 4 통합 점검, 실제 양식 수동 리허설 사용자 확인 패킷까지 완료했습니다. 현재 최신 진행 상태는 `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`, `docs/150_manual_preview_resume_gate.md`, `tasks/NEXT_STEP.md`를 따릅니다.
 
 ## Phase 1 완료로 볼 수 있는 항목
 
@@ -123,4 +123,4 @@ Phase 2 진입 조건은 이미 충족한 것으로 봅니다.
 
 이 문서 작성 당시의 다음 단계는 운영 자동화가 아니라 Phase 2 최소 PoC 보강이었습니다.
 
-현재 최신 다음 단계는 저장소 밖 한컴 preview 결과를 실제값 없는 gap log로 기록하는 것입니다. 실제 API, Make.com, Email 자동화와 실제 기관 HWPX 원본 투입은 계속 보류합니다.
+현재 최신 다음 단계는 비식별 작업 복사본 준비가 명시되기 전까지 문서 기반 검증 상태를 유지하는 것입니다. 저장소 밖 한컴 preview 결과의 실제값 없는 gap log 기록은 `docs/150_manual_preview_resume_gate.md` 조건을 만족할 때만 재개하며, 실제 API, Make.com, Email 자동화와 실제 기관 HWPX 원본 투입은 계속 보류합니다.

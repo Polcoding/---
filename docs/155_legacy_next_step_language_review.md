@@ -10,7 +10,14 @@
 
 - `docs/00_project_overview.md`
 - `docs/00_chatgpt_handoff.md`
+- `docs/06_future_architecture.md`
 - `docs/48_git_push_timing_and_summary.md`
+- `docs/59_phase1_completion_and_phase2_entry_criteria.md`
+- `docs/72_dry_run_artifact_retention_policy.md`
+- `docs/90_project_reorganization_after_superpowers.md`
+- `docs/112_phase3_external_hwpx_and_manual_preview_criteria.md`
+- `docs/124_project_direction_and_legacy_update_review.md`
+- `docs/130_phase4_template_stabilization_integrated_review.md`
 - `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
 - `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`
@@ -34,6 +41,7 @@
 | `docs/00_chatgpt_handoff.md` | 현재 핵심 상태와 다음 단계 문구에 최신 사용자 안내 문서 묶음 반영 필요 |
 | `docs/48_git_push_timing_and_summary.md` | `tasks/NEXT_STEP.md` 우선 기준과 축소된 push 빈도 기준 명시 |
 | `docs/132`, `docs/134` | 과거 준비 확인 기록보다 후속 복사본 없음 보류 기록과 재개 게이트가 우선임을 명시 |
+| `docs/06`, `docs/59`, `docs/72`, `docs/90`, `docs/112`, `docs/124`, `docs/130` | "현재/최신 다음 단계"처럼 읽히는 문구를 문서 기반 검증 유지와 수동 preview 재개 게이트 기준으로 보정 |
 | `docs/146`~`docs/149` | 문서 기반 리허설 완료 이후 hold 유지 기준으로 다음 추천 문구 갱신 |
 | `docs/151`~`docs/154` | 이미 완료된 후속 문서를 다음 작업처럼 가리키던 표현을 현재 검증 유지 기준으로 갱신 |
 | `README.md` | 결과물 지도 우선 안내 반영 |
