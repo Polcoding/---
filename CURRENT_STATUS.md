@@ -123,6 +123,7 @@ flowchart LR
 - `docs/142_user_guidance_integrated_review.md`: 사용자 안내 3종 통합 점검
 - `docs/143_user_quick_start.md`: 사용자 quick start
 - `docs/144_quick_start_rehearsal_boundary.md`: 문서만으로 가능한 리허설과 HWPX 열람 필요 지점 분리
+- `docs/145_user_guidance_closeout.md`: 사용자 안내 묶음 closeout
 - `checklists/user_operation_atoz_rehearsal_checklist.md`: A-to-Z 안내 기준 사용자 리허설 체크리스트
 - `normalizers/output/*summary.json`: 최근 dry-run과 검증 요약
 - `examples/json/sample_*_report.json`: 보고서 4종 placeholder 샘플 JSON
@@ -166,4 +167,5 @@ flowchart LR
 3. `docs/140_user_operation_atoz_guide.md` 기준으로 사용자가 직접 확인할 지점을 봅니다.
 4. `checklists/user_operation_atoz_rehearsal_checklist.md` 기준으로 실제 HWPX 없이도 현재 단계 확인을 리허설합니다.
 5. `docs/141_user_rehearsal_prompt_examples.md` 기준으로 실제값 없는 요청 예시를 사용합니다.
-6. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
+6. `docs/145_user_guidance_closeout.md` 기준으로 사용자 안내 묶음의 push 가능 범위를 확인합니다.
+7. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
