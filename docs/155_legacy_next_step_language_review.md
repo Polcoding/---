@@ -11,6 +11,8 @@
 - `docs/00_project_overview.md`
 - `docs/00_chatgpt_handoff.md`
 - `docs/48_git_push_timing_and_summary.md`
+- `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
+- `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`
 - `docs/147_document_only_user_rehearsal_result.md`
 - `docs/148_document_only_rehearsal_closeout.md`
@@ -31,6 +33,7 @@
 | `docs/00_project_overview.md` | 현재 범위와 다음 단계 문구를 결과물 지도ㆍ사용자 가시 산출물ㆍ구형 문구 점검 기준으로 갱신 필요 |
 | `docs/00_chatgpt_handoff.md` | 현재 핵심 상태와 다음 단계 문구에 최신 사용자 안내 문서 묶음 반영 필요 |
 | `docs/48_git_push_timing_and_summary.md` | `tasks/NEXT_STEP.md` 우선 기준과 축소된 push 빈도 기준 명시 |
+| `docs/132`, `docs/134` | 과거 준비 확인 기록보다 후속 복사본 없음 보류 기록과 재개 게이트가 우선임을 명시 |
 | `docs/146`~`docs/149` | 문서 기반 리허설 완료 이후 hold 유지 기준으로 다음 추천 문구 갱신 |
 | `docs/151`~`docs/154` | 이미 완료된 후속 문서를 다음 작업처럼 가리키던 표현을 현재 검증 유지 기준으로 갱신 |
 | `README.md` | 결과물 지도 우선 안내 반영 |
@@ -43,6 +46,8 @@
 진입점 성격이 강한 `docs/00_project_overview.md`와 `docs/00_chatgpt_handoff.md`는 최신 기준으로 보강합니다.
 
 문서 기반 리허설, hold, 결과물 지도, 사용자 가시 산출물 closeout 문서의 "다음 추천" 문구도 이미 완료된 후속 작업을 다시 지시하지 않도록 갱신합니다.
+
+실제 양식 수동 리허설 준비 확인 기록과 후속 복사본 없음 보류 기록은 함께 읽힐 수 있으므로, 현재 판단은 `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`와 `docs/150_manual_preview_resume_gate.md`를 우선합니다.
 
 오래된 Phase별 결과 문서의 "다음 단계" 문구는 당시 판단 기록으로 유지합니다. 다만 최신 작업 순서는 항상 다음 파일을 우선합니다.
 

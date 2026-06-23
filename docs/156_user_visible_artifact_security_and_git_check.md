@@ -19,6 +19,8 @@
 - `docs/81_normalizers_regression_test_suite.md`
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - `docs/130_phase4_template_stabilization_integrated_review.md`
+- `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
+- `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
 - `docs/139_minimum_demo_run_result.md`
 - `docs/140_user_operation_atoz_guide.md`
 - `docs/141_user_rehearsal_prompt_examples.md`
