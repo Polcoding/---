@@ -2,7 +2,7 @@
 
 ## 목적
 
-`docs/70_hwpx_renderer_dry_run_scope.md`가 실제 HWPX 생성 없이 안전한 연결 검증 범위를 정했는지 확인합니다.
+`docs/70_hwpx_renderer_dry_run_scope.md`가 실제 업무용 HWPX 생성 없이 안전한 연결 검증 범위를 정했는지 확인합니다.
 
 ## 범위 확인
 

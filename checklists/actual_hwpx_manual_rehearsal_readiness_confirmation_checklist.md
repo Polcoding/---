@@ -14,7 +14,7 @@
 | 완료 | 항목 |
 |---|---|
 | [x] | 실제 HWPX/HWP 원본을 저장소에 추가하지 않았는가 |
-| [x] | 실제 HWPX output을 재생성하지 않았는가 |
+| [x] | 실제 업무용 HWPX output을 재생성하지 않았는가 |
 | [x] | renderer 코드를 변경하지 않았는가 |
 | [x] | normalizer 코드를 변경하지 않았는가 |
 | [x] | fixture JSON을 추가하거나 변경하지 않았는가 |

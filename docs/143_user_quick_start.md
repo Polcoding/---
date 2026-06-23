@@ -61,7 +61,7 @@
 - 실제 문서번호, 민원번호, 사건번호가 들어간 경우
 - 실제 표 데이터, 수량, 금액, 대상 목록을 입력하려는 경우
 - 실제 HWPX/HWP 원본이 GitHub Desktop Changes에 보이는 경우
-- output HWPX가 commit 대상처럼 보이는 경우
+- 로컬 output HWPX가 commit 대상처럼 보이는 경우
 - 보안 검토 없는 `review_report` 렌더링을 시도하는 경우
 
 ## 처음 요청 예시

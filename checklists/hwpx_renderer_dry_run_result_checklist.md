@@ -2,7 +2,7 @@
 
 ## 목적
 
-`docs/71_hwpx_renderer_dry_run_result.md`와 dry-run PoC가 실제 HWPX 생성 없이 안전하게 수행되었는지 확인합니다.
+`docs/71_hwpx_renderer_dry_run_result.md`와 dry-run PoC가 실제 업무용 HWPX 생성 없이 안전하게 수행되었는지 확인합니다.
 
 ## 실행 확인
 

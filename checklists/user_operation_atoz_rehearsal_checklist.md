@@ -67,9 +67,9 @@
 |---|---|---|
 | [ ] | `[사용자 확인 필요]` | 실제 HWPX 원본이 Changes에 보이지 않는가 |
 | [ ] | `[사용자 확인 필요]` | 로컬 HWPX 템플릿이 Changes에 보이지 않는가 |
-| [ ] | `[사용자 확인 필요]` | output HWPX가 Changes에 보이지 않는가 |
+| [ ] | `[사용자 확인 필요]` | 로컬 output HWPX가 Changes에 보이지 않는가 |
 | [ ] | `[Codex 처리 가능]` | `.gitignore`와 `git check-ignore`로 제외 상태를 확인할 수 있는가 |
-| [ ] | `[보류]` | output 파일을 commit 대상으로 처리하지 않는가 |
+| [ ] | `[보류]` | output 파일을 업무용 결과물 또는 commit 대상으로 처리하지 않는가 |
 
 ## 중단 기준
 
@@ -83,7 +83,7 @@
 | [ ] | `[사용자 확인 필요]` 항목을 Codex가 임의 작성하려고 함 |
 | [ ] | `[Codex 처리 가능]` 항목을 실제값 생성 권한처럼 처리함 |
 | [ ] | `[보류]` 항목을 자동화 실행 대상으로 처리함 |
-| [ ] | GitHub Desktop Changes에 실제 HWPX 원본 또는 output 파일이 표시됨 |
+| [ ] | GitHub Desktop Changes에 실제 HWPX 원본 또는 Git 추적 대상 output 파일이 표시됨 |
 
 ## 완료 판단
 

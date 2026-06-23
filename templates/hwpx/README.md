@@ -55,4 +55,11 @@
 - 최근 점검: `docs/136_table_data_candidate_user_input_display_criteria.md`
 - 최근 점검: `docs/137_report_sample_json_table_data_candidate_review.md`
 - 최근 점검: `docs/138_renderer_normalizer_table_data_candidate_scope_review.md`
-- 다음 점검: 최신 `docs/136`~`docs/138` 결정의 진입점 문서 연결 상태 확인
+- 최근 점검: `docs/139_minimum_demo_run_result.md`
+- 최근 점검: `docs/140_user_operation_atoz_guide.md`
+- 최근 점검: `docs/143_user_quick_start.md`
+- 최근 점검: `docs/150_manual_preview_resume_gate.md`
+- 최근 점검: `docs/152_project_result_artifact_map.md`
+- 최근 점검: `docs/156_user_visible_artifact_security_and_git_check.md`
+- 최근 점검: `docs/157_current_status_progress_review.md`
+- 다음 점검: 최신 `tasks/NEXT_STEP.md`, `CURRENT_STATUS.md`, `docs/152_project_result_artifact_map.md` 기준 유지

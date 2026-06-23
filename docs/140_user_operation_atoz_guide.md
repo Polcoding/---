@@ -149,7 +149,7 @@ Codex 결과는 초안과 검토 목록입니다. 확정 문서가 아닙니다.
 
 - GitHub Desktop Changes에 실제 HWPX 원본이 보이지 않는지 확인
 - 로컬 HWPX 템플릿이 Changes에 보이지 않는지 확인
-- output HWPX가 Changes에 보이지 않는지 확인
+- 로컬 output HWPX가 Changes에 보이지 않는지 확인
 
 `[Codex 처리 가능]`
 
@@ -160,7 +160,7 @@ Codex 결과는 초안과 검토 목록입니다. 확정 문서가 아닙니다.
 `[보류]`
 
 - 실제 HWPX 원본을 Git에 추가
-- output 파일을 결과물처럼 commit
+- output 파일을 업무용 결과물처럼 commit
 - 실제 업무 파일명을 저장소 문서에 기록
 
 ## G. 이상이 있으면
@@ -169,11 +169,11 @@ Codex 결과는 초안과 검토 목록입니다. 확정 문서가 아닙니다.
 
 - 실제 개인정보 또는 기관정보가 발견됨
 - 실제 문서번호, 민원번호, 사건번호 의심값이 발견됨
-- HWPX output에 글자 겹침, 항목 누락, placeholder 잔여가 있음
+- 한컴 열람 대상 HWPX에 글자 겹침, 항목 누락, placeholder 잔여가 있음
 - `[사용자 확인 필요]` 항목을 Codex가 임의 작성함
 - `[Codex 처리 가능]` 항목이 실제값 생성 권한처럼 처리됨
 - `[보류]` 항목이 자동화 실행 대상으로 처리됨
-- GitHub Desktop Changes에 실제 HWPX 원본 또는 output 파일이 표시됨
+- GitHub Desktop Changes에 실제 HWPX 원본 또는 Git 추적 대상 output 파일이 표시됨
 
 ## H. 지금 사용자가 직접 하지 않아도 되는 일
 

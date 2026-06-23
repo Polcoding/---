@@ -16,6 +16,10 @@ normalizers 회귀 테스트 기준은 `normalizers/README.md`와 `docs/109_norm
 
 README와 AGENTS의 현재 진행 위치 요약은 사용자 quick start, 문서 기반 hold, 결과물 지도, 보안ㆍGit 제외 검증, 현황판 진행률 점검까지 반영했습니다.
 
+사용자 안내 문서와 수동 preview 관련 체크리스트에서도 실제 업무용 HWPX output, 로컬 output HWPX, Git 추적 대상 output 표현을 구분하도록 정리하고 있습니다.
+
+HWPX 템플릿 폴더 안내와 로컬 템플릿 보관 정책도 최신 사용자 안내, 결과물 지도, 보안ㆍGit 제외 검증 기준에 맞춰 정리하고 있습니다.
+
 `docs/00_chatgpt_handoff.md`, `docs/00_project_overview.md`, `AGENTS.md`의 현재 작업 축 표현은 결과물 지도ㆍ구형 문구 점검 완료 이후의 최신 상태에 맞춰, 검증 상태 유지와 수동 preview 재개 조건 대기 단계로 정리했습니다.
 
 push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의 여러 소작업을 하나의 변경 묶음으로 모은 뒤 판단하는 방향으로 정리했습니다. 파일 또는 폴더 삭제처럼 되돌리기 어려운 작업 외에는 Codex가 계속 진행하고, commit/push는 한 번에 묶는 기준을 우선합니다.
@@ -104,6 +108,9 @@ push할 만한 기준점이 아직 없으면 최종 보고로 끊지 않고, 같
 - `docs/157_current_status_progress_review.md`
 - `checklists/manual_preview_resume_gate_checklist.md`
 - `checklists/local_template_gitignore_repeat_verification_checklist.md`
+- `templates/hwpx/README.md`
+- `templates/hwpx/local_template_policy.md`
+- `renderers/hwpx_renderer/README.md`
 - `docs/84_hwpx_report_user_input_templates.md`
 - `checklists/user_operation_atoz_rehearsal_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`

@@ -2,13 +2,13 @@
 
 ## 목적
 
-`docs/73_hwpx_render_connection_decision.md`가 실제 HWPX 생성 전 필요한 사용자 확인 지점과 중단 조건을 정했는지 확인합니다.
+`docs/73_hwpx_render_connection_decision.md`가 실제 업무용 HWPX 생성 전 필요한 사용자 확인 지점과 중단 조건을 정했는지 확인합니다.
 
 ## 연결 기준 확인
 
 | 완료 | 항목 |
 |---|---|
-| [x] | 실제 HWPX 생성은 자동 실행하지 않는다고 명시했는가 |
+| [x] | 실제 업무용 HWPX 생성은 자동 실행하지 않는다고 명시했는가 |
 | [x] | 첫 대상이 `ready_for_draft` 원페이지 보고서 1건으로 제한되었는가 |
 | [x] | `needs_more_input`은 보류로 두었는가 |
 | [x] | `needs_security_review`와 `blocked`는 렌더링 금지로 두었는가 |
@@ -18,7 +18,7 @@
 
 | 완료 | 항목 |
 |---|---|
-| [x] | output HWPX 경로가 정리되었는가 |
+| [x] | 로컬 output HWPX 경로가 정리되었는가 |
 | [x] | summary JSON 경로가 정리되었는가 |
 | [x] | output 산출물이 Git 제외 대상이어야 한다고 명시했는가 |
 

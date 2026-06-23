@@ -20,7 +20,9 @@
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - `docs/130_phase4_template_stabilization_integrated_review.md`
 - `docs/139_minimum_demo_run_result.md`
+- `docs/140_user_operation_atoz_guide.md`
 - `docs/142_user_guidance_integrated_review.md`
+- `docs/143_user_quick_start.md`
 - `docs/144_quick_start_rehearsal_boundary.md`
 - `docs/145_user_guidance_closeout.md`
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`
@@ -35,6 +37,7 @@
 - `docs/155_legacy_next_step_language_review.md`
 - `docs/157_current_status_progress_review.md`
 - `checklists/normalizers_regression_test_suite_checklist.md`
+- `checklists/user_operation_atoz_rehearsal_checklist.md`
 - `checklists/manual_preview_resume_gate_checklist.md`
 - `checklists/local_template_gitignore_repeat_verification_checklist.md`
 
