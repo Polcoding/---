@@ -320,6 +320,7 @@ Instructions 복사
 - `docs/145_user_guidance_closeout.md`: 사용자 안내 묶음 closeout
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`: 실제 HWPX 수동 preview 또는 문서 기반 리허설 유지 판단
 - `docs/147_document_only_user_rehearsal_result.md`: 실제 HWPX 없는 문서 기반 사용자 리허설 결과
+- `docs/148_document_only_rehearsal_closeout.md`: 문서 기반 리허설 closeout
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -457,5 +458,6 @@ Instructions 복사
 6. `docs/145_user_guidance_closeout.md`에서 사용자 안내 묶음의 push 가능 범위를 확인합니다.
 7. `docs/146_next_manual_preview_or_rehearsal_decision.md`에서 수동 preview 또는 리허설 유지 판단을 확인합니다.
 8. `docs/147_document_only_user_rehearsal_result.md`에서 실제 HWPX 없는 리허설 결과를 확인합니다.
-9. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
-10. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
+9. `docs/148_document_only_rehearsal_closeout.md`에서 문서 기반 리허설 묶음의 push 가능 범위를 확인합니다.
+10. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
+11. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
