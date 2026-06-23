@@ -309,6 +309,7 @@ Instructions 복사
 - `docs/136_table_data_candidate_user_input_display_criteria.md`: HWPX 보고서 사용자 입력 템플릿의 표 데이터 후보 표시 기준
 - `docs/137_report_sample_json_table_data_candidate_review.md`: 보고서 샘플 JSON 표 데이터 후보 표시 반영 검토
 - `docs/138_renderer_normalizer_table_data_candidate_scope_review.md`: renderer와 normalizer 안내 문서의 표 데이터 후보 오해 가능성 점검
+- `docs/139_minimum_demo_run_result.md`: 최소 demo 실행 결과 요약
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -435,7 +436,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `CURRENT_STATUS.md`를 기준으로 실제 작동 확인된 최소 PoC 경로를 먼저 봅니다.
-2. `tasks/NEXT_STEP.md`에 따라 최소 demo 경로와 검증 결과를 사용자가 보기 쉬운 형태로 고정합니다.
+1. `CURRENT_STATUS.md`와 `docs/139_minimum_demo_run_result.md`를 기준으로 현재 작동 확인된 최소 PoC 경로를 봅니다.
+2. 다음 작업은 demo 결과를 기준으로 사용자 입력 양식 또는 수동 확인 지점을 더 쉽게 정리하는 것입니다.
 3. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
 4. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.

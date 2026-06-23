@@ -19,6 +19,51 @@
 
 실제 HWPX 파일 생성, 실제 기관 양식 적용, 실제 이메일/API/Make.com 연동은 현재 단계의 결과물이 아닙니다.
 
+## 전체 프로젝트 진행 도식
+
+```mermaid
+flowchart LR
+    A["1. 기획ㆍ보안 원칙 정리<br/>완료"] --> B["2. 문서 유형ㆍ샘플 JSON 정리<br/>완료"]
+    B --> C["3. HWPX placeholder 렌더러 PoC<br/>보고서 4종 확인"]
+    C --> D["4. 입력 정규화ㆍ보안 필터<br/>작동 확인"]
+    D --> E["5. HWPX payload mapperㆍvalidation<br/>작동 확인"]
+    E --> F["6. renderer dry-run<br/>작동 확인"]
+    F --> G["7. 실제 양식 안정화<br/>부분 진행ㆍ수동 확인 필요"]
+    G --> H["8. 최소 demo 경로 고정<br/>다음 작업"]
+    H --> I["9. 실제 운영 연동<br/>보류"]
+```
+
+## 현재 체감 진행률
+
+진행률은 실제 운영 배포 기준이 아니라, 저장소 안에서 확인 가능한 PoC 구축 기준입니다.
+
+| 영역 | 상태 | 체감 진행률 | 설명 |
+|---|---|---:|---|
+| 프로젝트 목표ㆍ보안 원칙 | 거의 완료 | 90% | 초안 생성 범위, 금지 범위, 비식별 원칙 정리 |
+| 문서 유형ㆍ샘플 JSON | 거의 완료 | 85% | 보고서 4종 중심 샘플과 placeholder 구조 확보 |
+| HWPX placeholder 렌더러 | 상당 부분 완료 | 75% | 보고서 4종 placeholder 치환과 dry-run 경로 확인 |
+| 입력 정규화ㆍ보안 필터 | 작동 확인 | 75% | fixture 기반 routing, blocked, needs_security_review 확인 |
+| payload mapperㆍvalidation | 작동 확인 | 75% | HWPX renderer 입력 형태로 변환 및 검증 가능 |
+| 실제 HWPX 양식 안정화 | 진행 중 | 35% | local placeholder 템플릿은 있으나 실제 기관 양식 안정화는 수동 확인 필요 |
+| 표 데이터ㆍExcel/한셀 연동 | 후보 분리 | 15% | 지금은 표 틀만 보고, 실제 표 내부 데이터 자동화는 보류 |
+| Email/API/Make.com 연동 | 의도적 보류 | 10% | no-send 원칙 유지, 실제 발송/외부 연동 없음 |
+| 실제 운영 배포 | 미진입 | 0% | 사람 승인 전 자동 발송ㆍ결재ㆍ집행 없음 |
+
+## 한눈에 보는 현재 위치
+
+```text
+[완료]    기획/보안/문체/샘플 JSON
+[완료]    HWPX 보고서 4종 placeholder 기반 PoC
+[완료]    normalizer -> payload -> validation -> dry-run 확인
+[진행중]  사용자가 볼 수 있는 최소 demo 결과 정리
+[대기]    실제 양식 안정화와 한컴 수동 preview
+[보류]    Email/API/Make.com/실제 운영 연동
+```
+
+현재 전체 프로젝트는 로컬 PoC 기준으로는 약 65% 수준입니다.
+
+다만 실제 기관 양식 안정화, 실제 운영 화면, 외부 연동, 운영 로그까지 포함한 운영 시스템 기준으로 보면 약 30~35% 수준으로 보는 것이 안전합니다.
+
 ## 지금 실제로 되는 것
 
 | 구분 | 현재 상태 | 근거 |
@@ -72,6 +117,7 @@
 ## 지금 기준으로 볼 수 있는 결과물
 
 - `CURRENT_STATUS.md`: 현재 시스템 현황판
+- `docs/139_minimum_demo_run_result.md`: 최소 demo 실행 결과 요약
 - `normalizers/output/*summary.json`: 최근 dry-run과 검증 요약
 - `examples/json/sample_*_report.json`: 보고서 4종 placeholder 샘플 JSON
 - `normalizers/`: 입력 정규화, 보안 필터, payload mapper, dry-run PoC
@@ -92,11 +138,12 @@
 
 - 매번 push 단위 문서만 늘리지 않고, 실행 가능한 PoC 결과 또는 사용자 확인 가능한 산출물이 있을 때 묶어서 진행합니다.
 - `p` 또는 `P`는 push 완료 후 다음 추천 작업 진행 요청으로 해석합니다.
+- 앞으로 진행상황을 보고할 때는 전체 진행 도식과 단계별 진행률 요약을 함께 보여줍니다.
 - 사용자가 직접 확인해야 하는 항목은 `[사용자 확인 필요]`로 명확히 표시합니다.
 - 실제 HWPX 산출물, local template, output 파일은 Git에 올리지 않는 원칙을 유지합니다.
 
 ## 다음 추천 단계
 
-1. 이 현황판 기준으로 최소 demo 경로를 고정합니다.
-2. `normalizers/output/*summary.json`의 핵심 결과를 사람이 보기 쉬운 demo 결과 문서로 요약할지 결정합니다.
+1. `docs/139_minimum_demo_run_result.md` 기준으로 현재 demo 결과를 확인합니다.
+2. 다음에는 demo 결과를 기준으로 사용자 입력 양식 또는 수동 확인 지점을 더 쉽게 정리합니다.
 3. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
