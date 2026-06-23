@@ -46,7 +46,7 @@
 
 ## 주의
 
-output 산출물은 로컬 테스트 결과이며 Git 커밋 대상에서 제외합니다.
+output 산출물은 로컬 테스트 결과이며 Git 추적 대상에서 제외합니다.
 
 output/.gitignore 내용:
 

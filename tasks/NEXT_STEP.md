@@ -70,6 +70,10 @@ push할 만한 기준점이 아직 없으면 최종 보고로 끊지 않고, 같
 
 GitHub Desktop Changes 관련 사용자 안내에서는 실제 HWPX 원본, 로컬 output HWPX, Git 추적 대상 output 파일을 구분하도록 표현을 정리했습니다.
 
+최소 demo 결과, A-to-Z 안내, HWPX 로컬 템플릿 정책, HWPX renderer 안내에서도 output 보관 표현을 Git 추적 대상 기준으로 맞췄습니다.
+
+실제 양식 수동 리허설 준비 확인 기록과 이후 비식별 작업 복사본 없음 보류 기록이 모순처럼 읽히지 않도록, 현재 기준은 `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`와 `docs/150_manual_preview_resume_gate.md`를 우선하도록 정리했습니다.
+
 `README.md`와 `CURRENT_STATUS.md`도 이 문서와 체크리스트를 현재 사용자 안내 진입점으로 연결합니다.
 
 현재 공통 표시는 다음과 같습니다.

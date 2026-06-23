@@ -70,7 +70,7 @@ flowchart LR
 | `result_report` | `templates\hwpx\placeholder_result_report.hwpx` | `template_available: true` |
 | `review_report` | `templates\hwpx\placeholder_review_report.hwpx` | `template_available: true` |
 
-위 파일들은 local placeholder HWPX 템플릿입니다. Git 커밋 대상이 아니며, 실제 기관 양식 원본도 아닙니다.
+위 파일들은 local placeholder HWPX 템플릿입니다. Git 추적 대상이 아니며, 실제 기관 양식 원본도 아닙니다.
 
 ## 안전 동작 확인
 
@@ -98,4 +98,4 @@ flowchart LR
 
 현재 단계에서 사용자에게 보여줄 수 있는 결과물은 실제 업무용 HWPX 파일이 아니라, 비식별 fixture가 안전하게 정규화되고 HWPX payload 및 renderer dry-run까지 도달한다는 검증 요약입니다.
 
-다음 단계는 실제 업무용 HWPX 파일 생성보다, 이 demo 결과를 기준으로 어떤 사용자 입력 양식을 먼저 다듬을지 결정하는 것입니다.
+다음 단계는 실제 업무용 HWPX 파일 생성이 아니라, 현재 검증 상태를 유지하고 사용자가 저장소 밖 비식별 HWPX 작업 복사본 준비를 명시했을 때만 수동 preview 재개 조건을 확인하는 것입니다.

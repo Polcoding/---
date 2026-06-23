@@ -42,6 +42,9 @@
 - `checklists/user_operation_atoz_rehearsal_checklist.md`
 - `checklists/manual_preview_resume_gate_checklist.md`
 - `checklists/local_template_gitignore_repeat_verification_checklist.md`
+- `templates/hwpx/README.md`
+- `templates/hwpx/local_template_policy.md`
+- `renderers/hwpx_renderer/README.md`
 
 ## 검증 결과
 

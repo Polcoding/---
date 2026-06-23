@@ -33,7 +33,7 @@
 - `renderers/hwpx_renderer/output/.gitignore`: renderer output 제외
 - `normalizers/output/.gitignore`: normalizer output 제외
 
-root `.gitignore`가 없더라도 위 폴더별 규칙으로 로컬 HWPX 템플릿과 output 산출물을 제외합니다. GitHub Desktop Changes에 HWP/HWPX/output 파일이 보이면 commit 또는 push하지 않습니다.
+root `.gitignore`가 없더라도 위 폴더별 규칙으로 로컬 HWPX 템플릿과 output 산출물을 제외합니다. GitHub Desktop Changes에 HWP/HWPX 원본 또는 Git 추적 대상 output 파일이 보이면 commit 또는 push하지 않습니다.
 
 ## 서식값 수집 기록 원칙
 
