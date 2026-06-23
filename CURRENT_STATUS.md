@@ -28,8 +28,8 @@ flowchart LR
     C --> D["4. 입력 정규화ㆍ보안 필터<br/>작동 확인"]
     D --> E["5. HWPX payload mapperㆍvalidation<br/>작동 확인"]
     E --> F["6. renderer dry-run<br/>작동 확인"]
-    F --> G["7. 실제 양식 안정화<br/>부분 진행ㆍ수동 확인 필요"]
-    G --> H["8. 최소 demo 경로 고정<br/>다음 작업"]
+    F --> G["7. 사용자 가시 산출물 정리<br/>완료"]
+    G --> H["8. 실제 양식 안정화<br/>부분 진행ㆍ수동 확인 필요"]
     H --> I["9. 실제 운영 연동<br/>보류"]
 ```
 
@@ -55,7 +55,7 @@ flowchart LR
 [완료]    기획/보안/문체/샘플 JSON
 [완료]    HWPX 보고서 4종 placeholder 기반 PoC
 [완료]    normalizer -> payload -> validation -> dry-run 확인
-[진행중]  사용자가 볼 수 있는 최소 demo 결과 정리
+[완료]    사용자 가시 산출물 지도/closeout 정리
 [대기]    실제 양식 안정화와 한컴 수동 preview
 [보류]    Email/API/Make.com/실제 운영 연동
 ```
@@ -128,7 +128,16 @@ flowchart LR
 - `docs/147_document_only_user_rehearsal_result.md`: 실제 HWPX 없는 문서 기반 사용자 리허설 결과
 - `docs/148_document_only_rehearsal_closeout.md`: 문서 기반 리허설 closeout
 - `docs/149_document_only_rehearsal_hold_state.md`: 비식별 작업 복사본 준비 전 문서 기반 리허설 hold 상태
+- `docs/150_manual_preview_resume_gate.md`: 수동 preview 재개 조건 게이트
+- `docs/151_manual_preview_resume_gate_closeout.md`: 수동 preview 재개 게이트 검증 closeout
+- `docs/152_project_result_artifact_map.md`: 현재 확인 가능한 결과물 지도
+- `docs/153_project_result_artifact_map_review.md`: 결과물 지도와 주요 진입점 정합성 점검
+- `docs/154_user_visible_artifact_bundle_closeout.md`: 사용자가 바로 볼 수 있는 산출물 묶음 closeout
+- `docs/155_legacy_next_step_language_review.md`: 구형 다음 단계 문구 점검
+- `docs/156_user_visible_artifact_security_and_git_check.md`: 사용자 가시 산출물 묶음 보안ㆍGit 제외 검증
+- `docs/157_current_status_progress_review.md`: CURRENT_STATUS 진행률 점검
 - `checklists/user_operation_atoz_rehearsal_checklist.md`: A-to-Z 안내 기준 사용자 리허설 체크리스트
+- `checklists/manual_preview_resume_gate_checklist.md`: 수동 preview 재개 게이트 체크리스트
 - `normalizers/output/*summary.json`: 최근 dry-run과 검증 요약
 - `examples/json/sample_*_report.json`: 보고서 4종 placeholder 샘플 JSON
 - `normalizers/`: 입력 정규화, 보안 필터, payload mapper, dry-run PoC
@@ -161,19 +170,17 @@ flowchart LR
 - `p` 또는 `P`는 push 완료 후 다음 추천 작업 진행 요청으로 해석합니다.
 - 앞으로 진행상황을 보고할 때는 전체 진행 도식과 단계별 진행률 요약을 함께 보여줍니다.
 - 앞으로는 관련 추천 작업을 최대한 묶어서 진행하고, push 추천은 단계 완료나 의미 있는 검증 묶음이 생겼을 때만 제안합니다.
+- closeout 하나 또는 작은 문구 정리만으로는 push를 권하지 않고, 다음 추천 작업까지 묶어서 진행합니다.
 - 사용자가 직접 확인해야 하는 항목은 `[사용자 확인 필요]`로 명확히 표시합니다.
 - 실제 HWPX 산출물, local template, output 파일은 Git에 올리지 않는 원칙을 유지합니다.
 
 ## 다음 추천 단계
 
-1. `docs/143_user_quick_start.md` 기준으로 처음 볼 순서와 멈출 지점을 확인합니다.
-2. `docs/144_quick_start_rehearsal_boundary.md` 기준으로 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
-3. `docs/140_user_operation_atoz_guide.md` 기준으로 사용자가 직접 확인할 지점을 봅니다.
-4. `checklists/user_operation_atoz_rehearsal_checklist.md` 기준으로 실제 HWPX 없이도 현재 단계 확인을 리허설합니다.
-5. `docs/141_user_rehearsal_prompt_examples.md` 기준으로 실제값 없는 요청 예시를 사용합니다.
-6. `docs/145_user_guidance_closeout.md` 기준으로 사용자 안내 묶음의 push 가능 범위를 확인합니다.
-7. `docs/146_next_manual_preview_or_rehearsal_decision.md` 기준으로 수동 preview 또는 리허설 유지 판단을 확인합니다.
-8. `docs/147_document_only_user_rehearsal_result.md` 기준으로 실제 HWPX 없는 리허설 결과를 확인합니다.
-9. `docs/148_document_only_rehearsal_closeout.md` 기준으로 문서 기반 리허설 묶음의 push 가능 범위를 확인합니다.
-10. `docs/149_document_only_rehearsal_hold_state.md` 기준으로 hold 유지와 해제 조건을 확인합니다.
-11. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
+1. `docs/152_project_result_artifact_map.md` 기준으로 현재 확인 가능한 결과물과 보류 항목을 먼저 확인합니다.
+2. `docs/143_user_quick_start.md` 기준으로 처음 볼 순서와 멈출 지점을 확인합니다.
+3. `docs/144_quick_start_rehearsal_boundary.md` 기준으로 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
+4. `docs/140_user_operation_atoz_guide.md` 기준으로 사용자가 직접 확인할 지점을 봅니다.
+5. `checklists/user_operation_atoz_rehearsal_checklist.md` 기준으로 실제 HWPX 없이도 현재 단계 확인을 리허설합니다.
+6. `docs/141_user_rehearsal_prompt_examples.md` 기준으로 실제값 없는 요청 예시를 사용합니다.
+7. `docs/150_manual_preview_resume_gate.md` 기준으로 수동 preview 재개 조건을 확인합니다.
+8. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.

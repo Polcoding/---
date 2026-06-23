@@ -322,6 +322,14 @@ Instructions 복사
 - `docs/147_document_only_user_rehearsal_result.md`: 실제 HWPX 없는 문서 기반 사용자 리허설 결과
 - `docs/148_document_only_rehearsal_closeout.md`: 문서 기반 리허설 closeout
 - `docs/149_document_only_rehearsal_hold_state.md`: 비식별 작업 복사본 준비 전 문서 기반 리허설 hold 상태
+- `docs/150_manual_preview_resume_gate.md`: 수동 preview 재개 조건 게이트
+- `docs/151_manual_preview_resume_gate_closeout.md`: 수동 preview 재개 게이트 검증 closeout
+- `docs/152_project_result_artifact_map.md`: 현재 확인 가능한 결과물 지도
+- `docs/153_project_result_artifact_map_review.md`: 결과물 지도와 주요 진입점 정합성 점검
+- `docs/154_user_visible_artifact_bundle_closeout.md`: 사용자가 바로 볼 수 있는 산출물 묶음 closeout
+- `docs/155_legacy_next_step_language_review.md`: 구형 다음 단계 문구 점검
+- `docs/156_user_visible_artifact_security_and_git_check.md`: 사용자 가시 산출물 묶음 보안ㆍGit 제외 검증
+- `docs/157_current_status_progress_review.md`: CURRENT_STATUS 진행률 점검
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -401,6 +409,7 @@ Instructions 복사
 - `checklists/missing_fields_phase2_docs_integrated_review_checklist.md`: missing_fields Phase 2 운영 문서 통합 점검 체크리스트
 - `checklists/phase2_operating_docs_final_review_checklist.md`: Phase 2 운영 문서 최종 정리 체크리스트
 - `checklists/user_operation_atoz_rehearsal_checklist.md`: 사용자 운영 A-to-Z 리허설 체크리스트
+- `checklists/manual_preview_resume_gate_checklist.md`: 수동 preview 재개 게이트 체크리스트
 - `checklists/normalizers_regression_recheck_result_checklist.md`: normalizers 회귀 테스트 재검증 결과 체크리스트
 - `checklists/phase2_closeout_and_phase3_entry_decision_checklist.md`: Phase 2 마무리 판단 및 Phase 3 진입 조건 결정 체크리스트
 - `checklists/phase3_entry_safety_gate_checklist.md`: Phase 3 진입 조건 및 안전 게이트 체크리스트
@@ -451,15 +460,12 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `CURRENT_STATUS.md`와 `docs/139_minimum_demo_run_result.md`를 기준으로 현재 작동 확인된 최소 PoC 경로를 봅니다.
-2. `docs/143_user_quick_start.md`에서 처음 볼 순서와 멈출 지점을 확인합니다.
-3. `docs/144_quick_start_rehearsal_boundary.md`에서 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
-4. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
-5. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
-6. `docs/145_user_guidance_closeout.md`에서 사용자 안내 묶음의 push 가능 범위를 확인합니다.
-7. `docs/146_next_manual_preview_or_rehearsal_decision.md`에서 수동 preview 또는 리허설 유지 판단을 확인합니다.
-8. `docs/147_document_only_user_rehearsal_result.md`에서 실제 HWPX 없는 리허설 결과를 확인합니다.
-9. `docs/148_document_only_rehearsal_closeout.md`에서 문서 기반 리허설 묶음의 push 가능 범위를 확인합니다.
-10. `docs/149_document_only_rehearsal_hold_state.md`에서 수동 preview 보류와 hold 해제 조건을 확인합니다.
-11. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
-12. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
+1. `docs/152_project_result_artifact_map.md`에서 현재 확인 가능한 결과물, 사용자 확인 필요 지점, 보류 항목을 먼저 봅니다.
+2. `CURRENT_STATUS.md`와 `docs/139_minimum_demo_run_result.md`를 기준으로 현재 작동 확인된 최소 PoC 경로를 봅니다.
+3. `docs/143_user_quick_start.md`에서 처음 볼 순서와 멈출 지점을 확인합니다.
+4. `docs/144_quick_start_rehearsal_boundary.md`에서 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
+5. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
+6. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
+7. `docs/150_manual_preview_resume_gate.md`에서 수동 preview 재개 조건을 확인합니다.
+8. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
+9. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.

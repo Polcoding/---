@@ -46,49 +46,52 @@ GitHub Desktop에서 commit/push하기 전에 다음을 확인합니다.
 
 다음 경우에는 한 번 commit/push하는 것이 좋습니다.
 
-- 새로운 문서 단계가 끝났을 때
+- 여러 개의 관련 문서ㆍ체크리스트ㆍ진입점 갱신이 하나의 의미 있는 묶음으로 끝났을 때
 - 렌더러 코드 보강과 테스트 결과 문서가 함께 정리됐을 때
 - output과 로컬 템플릿이 Git 제외 상태임을 확인했을 때
 - 다음 작업으로 넘어가기 전에 되돌아갈 기준점이 필요할 때
+- 사용자가 직접 HWPX를 확인해야 하거나 주요 방향 전환이 필요한 지점에 도달했을 때
 
 다음 경우에는 아직 push하지 않습니다.
 
+- 단일 문서 closeout 또는 작은 문구 정리만 끝났을 때
+- 다음 추천 작업이 같은 문서 묶음 안에서 계속 이어질 때
+- 사용자가 명시적으로 push를 줄이라고 한 흐름에서 아직 여러 작업을 묶을 수 있을 때
 - 한컴 수동 열람 피드백을 반영하는 중일 때
 - 렌더러 테스트 결과가 `output_error` 등 환경 오류 상태로 남아 있을 때
 - 실제 HWP/HWPX 파일이 Changes에 보일 때
 - 문서에는 성공이라고 되어 있지만 실제 summary JSON이 다르게 나올 때
 
-## 현재 작업 묶음 권장 summary
+## 현재 push 빈도 원칙
 
-이번 작업 묶음은 다음 summary를 권장합니다.
+사용자가 push가 너무 잦다고 피드백한 뒤에는 closeout 하나마다 push를 권하지 않습니다.
+
+기본 원칙:
+
+- `p` 또는 `P`는 push 완료 후 다음 추천 작업 진행 요청으로 해석합니다.
+- `p` 이후에도 다음 작업이 작은 문서 보강이면 계속 이어서 진행합니다.
+- push 권장은 여러 관련 작업을 묶은 뒤, 검증 결과와 함께 한 번만 제안합니다.
+- 작은 문서 1개, 체크리스트 1개, 진입점 문구 일부 수정만으로는 push를 권하지 않습니다.
+- 실제 HWPX 열람, 주요 방향 전환, 코드 변경, 테스트 실행 결과 묶음, 보안상 기준점이 필요할 때 push를 권장합니다.
+
+## summary 작성 기준
+
+summary는 현재 실제 변경 묶음을 기준으로 짧게 작성합니다.
 
 ```text
-Modernize Phase 1 and Phase 2 planning docs
+docs: summarize changed scope briefly
 ```
 
 설명 예시:
 
 ```text
-- Add external HWPX placeholder conversion runbook and checklist
-- Define Phase 1 completion and Phase 2 entry criteria
-- Add HWPX report input requirements and input normalization schema
-- Add Phase 2 security filter requirements and normalization test cases
-- Add normalized input examples for the four HWPX report types
-- Refresh early PoC docs and checklists to match current local renderer state
+- Add or update related user guidance docs
+- Refresh README, CURRENT_STATUS, AGENTS, and NEXT_STEP only when they are true entry points
 - Keep local HWPX templates and output artifacts Git-excluded
 ```
 
 ## 다음 작업 후보
 
-이번 묶음을 push한 뒤 다음 중 하나를 선택합니다.
+현재 다음 작업은 `tasks/NEXT_STEP.md`를 우선합니다.
 
-1. 입력 정규화 최소 PoC 범위 결정
-2. 보안 필터와 정규화 로직 경계 결정
-3. 테스트 fixture 위치와 Git 포함 여부 결정
-4. 사용자가 준비되었을 때 외부 복사본 기반 placeholder 전환 리허설
-
-추천 순서:
-
-1. 입력 정규화 최소 PoC 범위 결정
-2. 보안 필터와 정규화 로직 경계 결정
-3. 테스트 fixture 위치와 Git 포함 여부 결정
+구형 후보가 이 문서에 남아 있더라도, 최신 작업 순서는 `CURRENT_STATUS.md`와 `tasks/NEXT_STEP.md` 기준으로 판단합니다.

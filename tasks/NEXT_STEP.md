@@ -4,6 +4,10 @@
 
 사용자 운영 A-to-Z 안내 문서, 리허설 체크리스트, 문서 유형별 비식별 요청 예시, 사용자 안내 3종 통합 점검 문서, 사용자 quick start, quick start 리허설 경계 문서, 사용자 안내 묶음 closeout 문서, 수동 preview 또는 리허설 유지 판단 문서, 문서 기반 사용자 리허설 결과 문서, 문서 기반 리허설 closeout 문서, 문서 기반 리허설 hold 상태 문서를 작성하고 주요 진입점 문서에 연결했습니다.
 
+사용자 피드백에 따라 push 권장 빈도는 줄입니다. 앞으로는 단일 closeout 또는 작은 문구 정리마다 push를 권하지 않고, 여러 관련 작업을 묶어서 검증한 뒤 push 여부를 판단합니다.
+
+수동 preview 재개 게이트와 체크리스트를 추가하고 closeout까지 정리해, 사용자가 나중에 비식별 작업 복사본을 준비했다고 명시했을 때만 수동 preview로 넘어가도록 정리했습니다.
+
 현재 사용자는 `docs/140_user_operation_atoz_guide.md`에서 직접 확인할 일, Codex가 처리할 일, 현재 보류할 일을 한 번에 볼 수 있습니다.
 
 `docs/143_user_quick_start.md`에서는 처음 열 파일, 가장 짧은 진행 순서, 바로 멈출 지점을 1페이지로 볼 수 있습니다.
@@ -19,6 +23,22 @@
 `docs/148_document_only_rehearsal_closeout.md`에서는 문서 기반 리허설 묶음이 push 가능한 산출물인지 확인할 수 있습니다.
 
 `docs/149_document_only_rehearsal_hold_state.md`에서는 비식별 작업 복사본 준비 전까지 수동 preview를 보류하고 문서 기반 리허설 상태를 유지하는 기준을 확인할 수 있습니다.
+
+`docs/150_manual_preview_resume_gate.md`와 `checklists/manual_preview_resume_gate_checklist.md`에서는 수동 preview 재개 조건을 확인할 수 있습니다.
+
+`docs/151_manual_preview_resume_gate_closeout.md`에서는 재개 게이트 검증 결과와 push 빈도 판단을 확인할 수 있습니다.
+
+`docs/152_project_result_artifact_map.md`에서는 현재 확인 가능한 결과물, 사용자 확인 필요 지점, 보류 항목을 한 번에 확인할 수 있습니다.
+
+`docs/153_project_result_artifact_map_review.md`에서는 결과물 지도와 주요 진입점 정합성 점검 결과를 확인할 수 있습니다.
+
+`docs/154_user_visible_artifact_bundle_closeout.md`에서는 사용자가 바로 볼 수 있는 산출물 묶음과 아직 결과물이 아닌 항목을 확인할 수 있습니다.
+
+`docs/155_legacy_next_step_language_review.md`에서는 구형 다음 단계 문구가 최신 진입점과 충돌하지 않는지 점검한 결과를 확인할 수 있습니다.
+
+`docs/156_user_visible_artifact_security_and_git_check.md`에서는 사용자 가시 산출물 묶음의 보안 검색, Git 제외 확인, 참조 파일 존재 여부 검증 결과를 확인할 수 있습니다.
+
+`docs/157_current_status_progress_review.md`에서는 현황판 진행률을 과장하지 않고 유지한 이유를 확인할 수 있습니다.
 
 `checklists/user_operation_atoz_rehearsal_checklist.md`에서는 실제 HWPX 없이도 현재 단계 확인을 체크박스로 리허설할 수 있습니다.
 
@@ -36,7 +56,7 @@
 
 ## 목표
 
-문서 기반 hold 상태를 보안 검수와 Git 제외 검증 후 push 단위로 확정합니다.
+새 문서 생성 없이 현재 변경 묶음의 검증 상태를 유지하고, 사용자 확인 필요 지점이나 실제 HWPX 수동 preview 지점이 생길 때만 멈춥니다.
 
 ## 확인 대상
 
@@ -50,6 +70,16 @@
 - `docs/147_document_only_user_rehearsal_result.md`
 - `docs/148_document_only_rehearsal_closeout.md`
 - `docs/149_document_only_rehearsal_hold_state.md`
+- `docs/48_git_push_timing_and_summary.md`
+- `docs/150_manual_preview_resume_gate.md`
+- `docs/151_manual_preview_resume_gate_closeout.md`
+- `docs/152_project_result_artifact_map.md`
+- `docs/153_project_result_artifact_map_review.md`
+- `docs/154_user_visible_artifact_bundle_closeout.md`
+- `docs/155_legacy_next_step_language_review.md`
+- `docs/156_user_visible_artifact_security_and_git_check.md`
+- `docs/157_current_status_progress_review.md`
+- `checklists/manual_preview_resume_gate_checklist.md`
 - `docs/84_hwpx_report_user_input_templates.md`
 - `checklists/user_operation_atoz_rehearsal_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
@@ -60,15 +90,15 @@
 
 ## 생성 후보
 
-- 필요 시 `docs/150_document_only_hold_closeout.md`
+- 필요 시 새 문서 생성 없이 검증 결과만 보고
 
 ## 확인 항목
 
-1. hold 상태가 실제 중단이 아니라 문서 기반 리허설 유지 상태로 보이는지
-2. HWPX 열람이 필요한 지점이 별도 사용자 확인 지점으로 남는지
-3. 비식별 작업 복사본이 없는 상태에서는 수동 preview를 보류하는지
-4. output과 local HWPX 파일의 Git 제외 상태가 유지되는지
-5. 이번 묶음이 push 가능한 문서 산출물인지 판단할 수 있는지
+1. 새 변경이 생기면 최종 보안 검색에 실제값 의심 패턴이 없는지
+2. local HWPX template과 output이 Git 제외 상태인지
+3. 실제 HWPX 수동 preview와 실제 운영 연동이 보류 항목으로 남는지
+4. 사용자가 직접 확인해야 하는 HWPX 파일이 생겼는지
+5. push가 필요한 의미 있는 묶음 또는 주요 방향 전환이 생겼는지
 
 ## 작업 제한
 
@@ -85,7 +115,7 @@
 
 ## 완료 조건
 
-- 문서 기반 hold closeout 후보 생성 또는 불필요 판단
+- 현재 변경 묶음 최종 검증 상태 유지
 - 기존 사용자 입력 안내 문서와 모순 없음
 - 실제 구현물과 보류 항목 분리 유지
 - output과 local HWPX 파일의 Git 제외 상태 유지 여부 확인
@@ -93,6 +123,6 @@
 
 ## 다음 단계 후보
 
-추천 방향은 검증 결과를 바탕으로 문서 기반 hold 상태를 push 단위로 확정하는 것입니다.
+추천 방향은 추가 문서 생성을 멈추고, push 필요 지점이나 사용자 HWPX 확인 지점이 생길 때까지 현재 기준을 유지하는 것입니다.
 
 이 작업은 문서 산출물 중심이며, 실제 HWPX 파일 생성이나 외부 연동은 포함하지 않습니다.
