@@ -43,9 +43,12 @@
 3. `checklists/user_operation_atoz_rehearsal_checklist.md`로 실제 HWPX 없이 리허설합니다.
 4. `docs/141_user_rehearsal_prompt_examples.md`에서 문서 유형별 요청 예시를 고릅니다.
 5. 실제값은 모두 `[확인 필요]` 또는 placeholder로 둡니다.
-6. HWPX 열람이 필요한 단계가 나오면 한컴에서 사람이 확인합니다.
+6. HWPX 열람이 필요한 단계가 나오면 `docs/150_manual_preview_resume_gate.md` 조건을 먼저 확인합니다.
+7. 재개 조건이 충족될 때만 한컴에서 사람이 파일 열람과 레이아웃을 확인합니다.
 
 ## 한컴에서 직접 확인할 때만 보는 것
+
+아래 항목은 저장소 밖 비식별 작업 복사본 준비와 수동 preview 재개 게이트가 충족된 뒤에만 확인합니다.
 
 - 파일 열림
 - 글자 겹침
