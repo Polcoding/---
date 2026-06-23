@@ -6,6 +6,8 @@
 
 사용자 피드백에 따라 push 권장 빈도는 줄입니다. 앞으로는 단일 closeout 또는 작은 문구 정리마다 push를 권하지 않고, 여러 관련 작업을 묶어서 검증한 뒤 push 여부를 판단합니다.
 
+Git 추적 대상에 남아 있던 Python 캐시 파일은 저장소 산출물이 아니므로 추적 해제하고, 루트 `.gitignore`에 `__pycache__/`와 `*.pyc` 제외 규칙을 추가한 상태입니다. 이 정리는 renderer나 normalizer 동작 변경이 아니라 Git 위생 정리입니다.
+
 수동 preview 재개 게이트와 체크리스트를 추가하고 closeout까지 정리해, 사용자가 나중에 비식별 작업 복사본을 준비했다고 명시했을 때만 수동 preview로 넘어가도록 정리했습니다.
 
 현재 사용자는 `docs/140_user_operation_atoz_guide.md`에서 직접 확인할 일, Codex가 처리할 일, 현재 보류할 일을 한 번에 볼 수 있습니다.
@@ -87,6 +89,7 @@
 - `CURRENT_STATUS.md`
 - `README.md`
 - `AGENTS.md`
+- `.gitignore`
 
 ## 생성 후보
 
@@ -96,9 +99,10 @@
 
 1. 새 변경이 생기면 최종 보안 검색에 실제값 의심 패턴이 없는지
 2. local HWPX template과 output이 Git 제외 상태인지
-3. 실제 HWPX 수동 preview와 실제 운영 연동이 보류 항목으로 남는지
-4. 사용자가 직접 확인해야 하는 HWPX 파일이 생겼는지
-5. push가 필요한 의미 있는 묶음 또는 주요 방향 전환이 생겼는지
+3. Python 캐시 파일이 Git 추적 대상에서 제외되었는지
+4. 실제 HWPX 수동 preview와 실제 운영 연동이 보류 항목으로 남는지
+5. 사용자가 직접 확인해야 하는 HWPX 파일이 생겼는지
+6. push가 필요한 의미 있는 묶음 또는 주요 방향 전환이 생겼는지
 
 ## 작업 제한
 
@@ -119,6 +123,7 @@
 - 기존 사용자 입력 안내 문서와 모순 없음
 - 실제 구현물과 보류 항목 분리 유지
 - output과 local HWPX 파일의 Git 제외 상태 유지 여부 확인
+- Python 캐시 파일의 Git 제외 상태 확인
 - 다음 추천 작업을 `tasks/NEXT_STEP.md`에 갱신
 
 ## 다음 단계 후보
