@@ -54,4 +54,5 @@
 - 최근 점검: `docs/135_hwp_report_and_hancell_table_data_scope.md`
 - 최근 점검: `docs/136_table_data_candidate_user_input_display_criteria.md`
 - 최근 점검: `docs/137_report_sample_json_table_data_candidate_review.md`
-- 다음 점검: 보고서 샘플 JSON 검수 기준과 오래된 샘플 안내 문구 최신화
+- 최근 점검: `docs/138_renderer_normalizer_table_data_candidate_scope_review.md`
+- 다음 점검: 최신 `docs/136`~`docs/138` 결정의 진입점 문서 연결 상태 확인

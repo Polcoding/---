@@ -19,6 +19,8 @@ dry-run에서는 실제 HWPX 파일을 생성하지 않습니다.
 - template 존재 여부 확인
 - 렌더링을 진행했다면 어떤 상태가 되었을지 요약
 
+표 데이터 후보는 dry-run payload 확장 대상이 아닙니다. `renderer_hints.table_template`은 서식 또는 표시 후보 힌트로만 봅니다.
+
 금지 범위:
 
 - `replace_placeholders_in_hwpx` 호출
@@ -26,6 +28,9 @@ dry-run에서는 실제 HWPX 파일을 생성하지 않습니다.
 - 실제 HWPX 템플릿 추가
 - 실제 기관 양식 사용
 - 기존 renderer output 덮어쓰기
+- 실제 표 데이터, 물품명, 수량, 금액, 대상 목록 생성
+- Excel/한셀 자동 연동 구현
+- `table_data_candidate` 새 필드나 HWPX payload 구조 확장
 
 ## 라우팅 기준
 

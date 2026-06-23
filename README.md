@@ -37,6 +37,7 @@
 - HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위 정리
 - HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리
 - 보고서 샘플 JSON 4종의 표 데이터 후보 직접 반영 보류 결정
+- renderer와 normalizer 안내 문서의 표 데이터 후보 오해 가능성 점검
 
 ## 현재 자동화 우선순위
 
@@ -93,7 +94,8 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위를 정리했습니다.
 - HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 실제값 없이 정리했습니다.
 - `examples/json` 보고서 샘플 4종에는 표 데이터 후보 필드를 직접 추가하지 않기로 정리했습니다.
-- 다음 작업 후보는 보고서 샘플 JSON 검수 기준과 오래된 샘플 안내 문구를 최신 상태로 점검하는 것입니다.
+- renderer와 normalizer 안내 문서가 표 데이터 후보를 실제 구현 지시처럼 오해하지 않도록 보강했습니다.
+- 다음 작업 후보는 최신 `docs/136`~`docs/138` 결정이 README, AGENTS, 템플릿, 렌더러 안내 문서에 빠짐없이 연결되어 있는지 점검하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -301,6 +303,7 @@ Instructions 복사
 - `docs/135_hwp_report_and_hancell_table_data_scope.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위
 - `docs/136_table_data_candidate_user_input_display_criteria.md`: HWPX 보고서 사용자 입력 템플릿의 표 데이터 후보 표시 기준
 - `docs/137_report_sample_json_table_data_candidate_review.md`: 보고서 샘플 JSON 표 데이터 후보 표시 반영 검토
+- `docs/138_renderer_normalizer_table_data_candidate_scope_review.md`: renderer와 normalizer 안내 문서의 표 데이터 후보 오해 가능성 점검
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -408,6 +411,7 @@ Instructions 복사
 - `checklists/hwp_report_and_hancell_table_data_scope_checklist.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 체크리스트
 - `checklists/table_data_candidate_user_input_display_checklist.md`: 표 데이터 후보 사용자 입력 표시 체크리스트
 - `checklists/report_sample_json_table_data_candidate_review_checklist.md`: 보고서 샘플 JSON 표 데이터 후보 반영 검토 체크리스트
+- `checklists/renderer_normalizer_table_data_candidate_scope_checklist.md`: renderer와 normalizer 표 데이터 후보 범위 점검 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -426,7 +430,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 보고서 샘플 JSON 검수 기준과 오래된 샘플 안내 문구를 최신 상태로 점검합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 최신 `docs/136`~`docs/138` 결정이 진입점 문서에 빠짐없이 연결되어 있는지 점검합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.

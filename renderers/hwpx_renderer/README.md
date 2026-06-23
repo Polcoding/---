@@ -12,6 +12,7 @@
 - 허용된 placeholder만 치환
 - 보안 검증 통과 시에만 렌더링
 - 템플릿이 없으면 렌더링 중단 및 보고
+- 보고서 4종 샘플의 placeholder 기반 치환 검증
 
 ## 현재 단계에서 하지 않는 것
 
@@ -19,6 +20,9 @@
 - 실제 발송용 HWPX 생성
 - 실제 공문 원문 처리
 - 실제 개인정보 처리
+- HWPX 표 내부 실제 데이터 자동 입력
+- Excel/한셀 자동 연동
+- `table_data_candidate` 필드나 HWPX payload 구조 확장
 - API 호출
 - 이메일 자동화
 - Make.com 자동화
@@ -26,8 +30,13 @@
 ## 입력
 
 - examples/json/sample_official_letter.json
+- examples/json/sample_one_page_report.json
 - examples/json/sample_project_plan.json
+- examples/json/sample_result_report.json
+- examples/json/sample_review_report.json
 - templates/hwpx/placeholder 템플릿 파일
+
+`renderer_hints.table_template`은 서식 또는 표시 후보 힌트입니다. 실제 표 데이터, 물품명, 수량, 금액, 대상 목록을 자동 입력하라는 의미가 아닙니다.
 
 ## 출력
 
