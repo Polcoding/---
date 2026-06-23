@@ -53,4 +53,5 @@
 - 최근 점검: `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
 - 최근 점검: `docs/135_hwp_report_and_hancell_table_data_scope.md`
 - 최근 점검: `docs/136_table_data_candidate_user_input_display_criteria.md`
-- 다음 점검: `examples/json` 보고서 샘플 4종의 표 데이터 후보 표시 기준 반영 필요 여부 검토
+- 최근 점검: `docs/137_report_sample_json_table_data_candidate_review.md`
+- 다음 점검: 보고서 샘플 JSON 검수 기준과 오래된 샘플 안내 문구 최신화

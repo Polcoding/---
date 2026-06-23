@@ -24,5 +24,12 @@
 ## 현재 상태
 
 - 현재 단계: 설계 및 검증 샘플 준비 단계
-- 실제 렌더러 코드: 없음
-- 실제 HWPX/XLSX 생성: 없음
+- 보고서 샘플 4종: HWPX placeholder 렌더러 검증용 샘플로 유지
+- 표 데이터 후보: `docs/137_report_sample_json_table_data_candidate_review.md` 기준으로 샘플 JSON 직접 수정 보류
+- 실제 HWPX/XLSX 업무 산출물 생성: 없음
+
+## 표 데이터 후보 기준
+
+`renderer_hints.table_template`은 서식 또는 표시 후보 힌트입니다.
+
+현재 단계에서는 샘플 JSON에 새 `table_data_candidate` 필드를 추가하지 않습니다. 실제 표 데이터, 물품명, 수량, 금액, 대상 목록도 기록하지 않습니다.

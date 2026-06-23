@@ -24,6 +24,7 @@
 - HWPX 보고서 자동화가 우선이며, Email은 이번 샘플 세트의 대상이 아닙니다.
 - 실제 HWP/HWPX 파일을 생성하지 않습니다.
 - API 호출, 이메일 자동화, Make.com 연동을 수행하지 않습니다.
+- 표 데이터 후보는 실제 표 데이터가 아니며, 현재 샘플 JSON 4종에 새 `table_data_candidate` 필드를 추가하지 않습니다.
 
 ## 샘플별 검증 초점
 
@@ -33,6 +34,14 @@
 | project_plan | 추진배경, 목적, 개요, 일정, 예산, 기대효과 구조 |
 | result_report | 기존 추진계획서와의 placeholder 연결, 계획 대비 결과, 성과, 문제점, 개선사항 구조 |
 | review_report | 검토배경, 검토범위, 검토의견, 위험요소, 필요 검토 항목 구조 |
+
+## 표 데이터 후보 반영 판단
+
+`docs/136_table_data_candidate_user_input_display_criteria.md` 기준을 검토한 결과, 현재 샘플 JSON 4종은 직접 수정하지 않습니다.
+
+기존 `renderer_hints.table_template`은 서식 또는 표시 후보 힌트로만 해석합니다. 실제 표 내부 데이터, 수량, 금액, 대상 목록을 샘플 JSON에 넣지 않습니다.
+
+검토 결과는 `docs/137_report_sample_json_table_data_candidate_review.md`에 정리했습니다.
 
 ## 결과보고서와 추진계획서 연결 원칙
 
@@ -52,4 +61,5 @@
 - [x] 모든 샘플이 placeholder 기반인가
 - [x] 실제 원문, 개인정보, 내부 운영정보가 없는가
 - [x] 실제 예산, 일정, 수량, 실적을 임의 생성하지 않았는가
+- [x] 표 데이터 후보 필드를 HWPX payload 확장처럼 추가하지 않았는가
 - [x] 구현 코드를 작성하지 않았는가
