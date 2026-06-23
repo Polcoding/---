@@ -19,6 +19,7 @@
 
 | 완료 | 항목 |
 |---|---|
+| [x] | `validate_placeholder_confirmed_values_poc.py`를 실행했는가 |
 | [x] | `input_normalizer_poc.py`를 실행했는가 |
 | [x] | `hwpx_payload_mapper_poc.py`를 실행했는가 |
 | [x] | `validate_hwpx_payload_poc.py`를 실행했는가 |
@@ -29,6 +30,8 @@
 
 | 완료 | 항목 |
 |---|---|
+| [x] | placeholder confirmed values helper safe/invalid fixture가 기대 결과와 일치하는가 |
+| [x] | helper 검증이 `missing_fields`, routing, HWPX payload 결과를 바꾸지 않는가 |
 | [x] | 입력 정규화 fixture 6종이 모두 `passed`인가 |
 | [x] | 승인 없는 `review_report`가 `needs_security_review`로 유지되는가 |
 | [x] | 승인된 `review_report`가 `ready_for_draft`로 라우팅되는가 |
@@ -46,6 +49,7 @@
 | [x] | `normalizers/output/*`가 Git 제외 대상인가 |
 | [x] | `renderers/hwpx_renderer/output/*.hwpx`가 Git 제외 대상인가 |
 | [x] | `templates/hwpx/*.hwpx`가 Git 제외 대상인가 |
+| [x] | Python cache가 Git 제외 대상인가 |
 
 ## 보안 검수
 
@@ -63,4 +67,4 @@
 | 완료 | 항목 |
 |---|---|
 | [x] | normalizers 회귀 테스트 묶음을 기준 문서로 사용할 수 있는가 |
-| [ ] | 다음 단계로 Phase 2 최소 운영 흐름을 정리할 수 있는가 |
+| [x] | Phase 2 최소 운영 흐름과 이후 안전 게이트 문서가 후속 문서로 정리되었는가 |

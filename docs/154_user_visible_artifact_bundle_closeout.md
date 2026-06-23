@@ -4,7 +4,7 @@
 
 현재 사용자가 실제로 열어볼 수 있는 산출물 묶음을 짧게 정리합니다.
 
-이 문서는 실제 업무 문서, 실제 HWPX output, 실제 기관 양식, 실제 외부 연동 결과가 아닙니다. 저장소 안에서 확인 가능한 문서ㆍ체크리스트ㆍplaceholder 샘플ㆍPoC 요약의 위치를 묶어 보는 closeout입니다.
+이 문서는 실제 업무 문서, 실제 업무용 HWPX output, 실제 기관 양식, 실제 외부 연동 결과가 아닙니다. 저장소 안에서 확인 가능한 문서ㆍ체크리스트ㆍplaceholder 샘플ㆍPoC 요약의 위치를 묶어 보는 closeout입니다.
 
 ## 바로 볼 산출물
 
@@ -20,7 +20,7 @@
 
 | 묶음 | 상태 |
 |---|---|
-| HWPX 보고서 4종 placeholder PoC | 저장소 문서와 dry-run 요약으로 확인 가능 |
+| HWPX 보고서 4종 placeholder PoC | 저장소 문서, dry-run 요약, ignored 로컬 PoC HWPX output으로 확인 가능 |
 | 입력 정규화ㆍ보안 필터ㆍpayload mapper | `normalizers/`와 output summary로 확인 가능 |
 | 사용자 운영 안내 | quick start, A-to-Z 안내, 리허설 체크리스트로 확인 가능 |
 | 수동 preview 보류 기준 | hold 문서, 재개 게이트, 체크리스트로 확인 가능 |
@@ -32,7 +32,7 @@
 
 - 실제 기관 HWPX/HWP 양식 기반 자동 렌더링
 - 실제 업무 문서 원문 기반 초안
-- 실제 HWPX output commit
+- 실제 업무용 HWPX output commit
 - 실제 Excel/한셀 표 데이터 자동 작성
 - Email/API/Make.com/Gmail/Outlook 실제 연동
 - 실제 자동 발송, 결재, 계약, 업체 선정, 예산 집행
@@ -50,10 +50,10 @@
 
 이번 closeout은 사용자 가시 산출물을 묶어 보는 문서입니다.
 
-사용자 피드백에 따라 작은 문서 단위로 즉시 push를 권하지 않습니다. 이후 관련 정합성 점검과 보안 검증까지 묶어서 push 여부를 판단합니다.
+사용자 피드백에 따라 작은 문서 단위로 멈추지 않습니다. 이후 관련 정합성 점검과 보안 검증까지 묶어서 commit/push 여부를 판단합니다.
 
 ## 다음 추천
 
 오래된 문서의 "다음 단계" 문구 점검은 `docs/155_legacy_next_step_language_review.md`에 정리했습니다.
 
-현재 추천은 사용자 가시 산출물 묶음을 유지하고, 작은 문서 단위 push 없이 다음 의미 있는 검증 묶음 또는 HWPX 수동 preview 재개 지점까지 이어서 진행하는 것입니다.
+현재 추천은 사용자 가시 산출물 묶음을 유지하고, 작은 문서 단위로 멈추지 않은 채 다음 의미 있는 검증 묶음 또는 HWPX 수동 preview 재개 지점까지 이어서 진행하는 것입니다.

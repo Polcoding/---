@@ -17,7 +17,7 @@
 -> HWPX renderer dry-run
 ```
 
-실제 HWPX 파일 생성, 실제 기관 양식 적용, 실제 이메일/API/Make.com 연동은 현재 단계의 결과물이 아닙니다.
+실제 업무용 HWPX 산출물 생성, 실제 기관 양식 적용, 실제 이메일/API/Make.com 연동은 현재 단계의 결과물이 아닙니다.
 
 ## 전체 프로젝트 진행 도식
 
@@ -85,6 +85,7 @@ flowchart LR
 | `python .\normalizers\hwpx_payload_mapper_poc.py` | 생성 4건, 안전 스킵 2건 통과 | `normalizers/output/hwpx_payload_mapping_summary.json` |
 | `python .\normalizers\validate_hwpx_payload_poc.py` | validation 4건, 안전 스킵 2건 통과 | `normalizers/output/hwpx_payload_validation_summary.json` |
 | `python .\normalizers\hwpx_renderer_dry_run_poc.py` | dry-run ready 2건, missing_fields 포함 ready 2건, 안전 스킵 2건 | `normalizers/output/hwpx_renderer_dry_run_summary.json` |
+| `python .\normalizers\render_mapped_hwpx_poc.py` | ignored 로컬 PoC HWPX 4건 렌더링 | `normalizers/output/mapped_hwpx_render_summary.json` |
 
 ## dry-run에서 확인된 문서 유형
 
@@ -109,7 +110,7 @@ flowchart LR
 - 실제 기관 HWPX/HWP 원본 기반 자동 렌더링
 - 실제 업무 문서 원문 기반 초안
 - 실제 개인정보, 문서번호, 기관명, 담당자명, 수신자명 포함 샘플
-- 실제 HWPX 산출물 생성 및 배포
+- 실제 업무용 HWPX 산출물 생성 및 배포
 - Email, API, Make.com, Gmail, Outlook 실제 연동
 - HWPX 표 내부 실제 데이터 자동 입력
 - Excel/한셀 파일 자동 생성 또는 연동
@@ -166,16 +167,16 @@ flowchart LR
 
 ## 앞으로의 작업 방식
 
-- 매번 push 단위 문서만 늘리지 않고, 실행 가능한 PoC 결과 또는 사용자 확인 가능한 산출물이 있을 때 묶어서 진행합니다.
+- 매번 commit/push용 문서만 늘리지 않고, 실행 가능한 PoC 결과 또는 사용자 확인 가능한 산출물이 있을 때 묶어서 진행합니다.
 - `p` 또는 `P`는 push 완료 후 다음 추천 작업 진행 요청으로 해석합니다.
 - 앞으로 진행상황을 보고할 때는 전체 진행 도식과 단계별 진행률 요약을 함께 보여줍니다.
-- 앞으로는 관련 추천 작업을 최대한 묶어서 진행하고, push 추천은 단계 완료나 의미 있는 검증 묶음이 생겼을 때만 제안합니다.
-- closeout 하나 또는 작은 문구 정리만으로는 push를 권하지 않고, 다음 추천 작업까지 묶어서 진행합니다.
+- 앞으로는 관련 추천 작업을 최대한 묶어서 진행하고, commit/push 판단은 단계 완료나 의미 있는 검증 묶음이 생겼을 때만 정리합니다.
+- closeout 하나 또는 작은 문구 정리만으로는 멈추지 않고, 다음 추천 작업까지 묶어서 진행합니다.
 - 5분 단위의 작은 확인이나 단일 문구 정리 때문에 매번 멈추지 않고, 같은 단계 안의 여러 소작업을 하나의 변경 묶음으로 모읍니다.
 - 파일 또는 폴더 삭제처럼 되돌리기 어려운 작업 외에는 Codex가 저장소 범위 안에서 계속 진행합니다.
 - commit/push는 여러 관련 수정과 검증을 모아 한 번에 처리하는 기준을 우선합니다.
 - 사용자가 직접 확인해야 하는 항목은 `[사용자 확인 필요]`로 명확히 표시합니다.
-- 실제 HWPX 산출물, local template, output 파일은 Git에 올리지 않는 원칙을 유지합니다.
+- 실제 업무용 HWPX 산출물, local template, output 파일은 Git에 올리지 않는 원칙을 유지합니다.
 
 ## 다음 추천 단계
 

@@ -2,7 +2,7 @@
 
 ## 목적
 
-`normalizers/`의 입력 정규화, 보안 필터, HWPX payload 매핑, validation, dry-run, mapped HWPX 렌더링을 같은 fixture 묶음으로 재검증합니다.
+`normalizers/`의 placeholder confirmed values helper, 입력 정규화, 보안 필터, HWPX payload 매핑, validation, dry-run, mapped HWPX 렌더링을 같은 fixture 묶음으로 재검증합니다.
 
 이 문서는 HWPX 보고서 4종 mapped 렌더링 완료 이후의 최소 회귀 테스트 기준입니다.
 
@@ -22,6 +22,7 @@
 Codex 번들 Python 또는 로컬 Python으로 아래 순서를 실행합니다.
 
 ```powershell
+python .\normalizers\validate_placeholder_confirmed_values_poc.py
 python .\normalizers\input_normalizer_poc.py
 python .\normalizers\hwpx_payload_mapper_poc.py
 python .\normalizers\validate_hwpx_payload_poc.py
@@ -30,6 +31,12 @@ python .\normalizers\render_mapped_hwpx_poc.py
 ```
 
 ## 기대 결과
+
+### validate_placeholder_confirmed_values_poc.py
+
+- helper 전용 safe/invalid fixture가 기대 결과와 일치
+- 실제값처럼 보이는 plain text, empty placeholder, actual value marker, non-mapping 사례 차단
+- helper는 read-only 검증용이며 `missing_fields`, routing, HWPX payload 결과를 바꾸지 않음
 
 ### input_normalizer_poc.py
 
@@ -82,6 +89,8 @@ python .\normalizers\render_mapped_hwpx_poc.py
 - `normalizers/output/*`
 - `renderers/hwpx_renderer/output/*.hwpx`
 - `templates/hwpx/*.hwpx`
+- `__pycache__/`
+- `*.pyc`
 
 summary JSON과 HWPX output은 로컬 검증용입니다.
 
@@ -96,6 +105,6 @@ summary JSON과 HWPX output은 로컬 검증용입니다.
 
 ## 결론
 
-현재 `normalizers/` 회귀 테스트 묶음은 fixture 6종을 기준으로 관리합니다.
+현재 `normalizers/` 회귀 테스트 묶음은 routing fixture 6종과 helper 전용 fixture를 기준으로 관리합니다.
 
 이 묶음이 통과하면 입력 정규화부터 mapped HWPX 렌더링 전제까지의 최소 PoC 흐름이 유지되는 것으로 봅니다.

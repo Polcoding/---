@@ -4,9 +4,13 @@
 
 사용자 운영 A-to-Z 안내 문서, 리허설 체크리스트, 문서 유형별 비식별 요청 예시, 사용자 안내 3종 통합 점검 문서, 사용자 quick start, quick start 리허설 경계 문서, 사용자 안내 묶음 closeout 문서, 수동 preview 또는 리허설 유지 판단 문서, 문서 기반 사용자 리허설 결과 문서, 문서 기반 리허설 closeout 문서, 문서 기반 리허설 hold 상태 문서를 작성하고 주요 진입점 문서에 연결했습니다.
 
-사용자 피드백에 따라 push 권장 빈도는 줄입니다. 앞으로는 단일 closeout 또는 작은 문구 정리마다 push를 권하지 않고, 여러 관련 작업을 묶어서 검증한 뒤 push 여부를 판단합니다.
+사용자 피드백에 따라 commit/push는 한 번에 묶습니다. 앞으로는 단일 closeout 또는 작은 문구 정리마다 멈추지 않고, 여러 관련 작업을 묶어서 검증한 뒤 commit/push 후보를 판단합니다.
 
 Git 추적 대상에 남아 있던 Python 캐시 파일은 저장소 산출물이 아니므로 추적 해제하고, 루트 `.gitignore`에 `__pycache__/`와 `*.pyc` 제외 규칙을 추가한 상태입니다. 이 정리는 renderer나 normalizer 동작 변경이 아니라 Git 위생 정리입니다.
+
+normalizers 회귀 테스트 기준은 `normalizers/README.md`와 `docs/109_normalizers_regression_recheck_result.md`에 맞춰 `validate_placeholder_confirmed_values_poc.py`를 실행 순서에 포함하도록 정리했습니다.
+
+현재 변경 묶음에서 normalizers 회귀 스크립트 6개를 재실행했고, mapped HWPX PoC output과 summary output은 Git 제외 상태로 유지되는지 확인했습니다.
 
 `docs/00_chatgpt_handoff.md`, `docs/00_project_overview.md`, `AGENTS.md`의 현재 작업 축 표현은 결과물 지도ㆍ구형 문구 점검 완료 이후의 최신 상태에 맞춰, 검증 상태 유지와 수동 preview 재개 조건 대기 단계로 정리했습니다.
 
@@ -79,6 +83,8 @@ push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의
 - `docs/148_document_only_rehearsal_closeout.md`
 - `docs/149_document_only_rehearsal_hold_state.md`
 - `docs/48_git_push_timing_and_summary.md`
+- `docs/81_normalizers_regression_test_suite.md`
+- `checklists/normalizers_regression_test_suite_checklist.md`
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - `docs/130_phase4_template_stabilization_integrated_review.md`
 - `docs/150_manual_preview_resume_gate.md`
@@ -117,7 +123,7 @@ push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의
 
 - 실제 기관 양식 사용 금지
 - 실제 기관 HWPX/HWP 원본 Git 추가 금지
-- 실제 HWPX output 재생성 금지
+- 실제 업무용 HWPX output 생성 금지
 - 실제 Excel/한셀 파일 생성 금지
 - 실제 표 데이터, 물품명, 수량, 금액, 대상 목록 기록 금지
 - 실제 문서 원문 사용 금지
@@ -139,4 +145,4 @@ push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의
 
 추천 방향은 불필요한 새 문서 생성을 늘리지 않되, 기존 문서 정합성 보강과 검증은 계속 진행하는 것입니다. 파일 또는 폴더 삭제, 실제 HWPX 수동 확인, 실제 원본ㆍ개인정보 노출 가능성이 생길 때만 사용자 확인 지점으로 분리합니다.
 
-이 작업은 문서 산출물 중심이며, 실제 HWPX 파일 생성이나 외부 연동은 포함하지 않습니다.
+이 작업은 문서 산출물 중심이며, 실제 업무용 HWPX 파일 생성이나 외부 연동은 포함하지 않습니다. 필요 시 로컬 PoC 렌더링은 ignored output 상태 검증과 함께만 수행합니다.
