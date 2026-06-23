@@ -119,11 +119,11 @@ flowchart LR
 
 - `CURRENT_STATUS.md`: 현재 시스템 현황판
 - `docs/139_minimum_demo_run_result.md`: 최소 demo 실행 결과 요약
-- `docs/140_user_operation_atoz_guide.md`: 사용자 운영 A-to-Z 안내
+- `docs/140_user_operation_atoz_guide.md`: 사용자 운영 A-to-Z 안내와 HWPX 열람 전 재개 게이트 확인 기준
 - `docs/141_user_rehearsal_prompt_examples.md`: 문서 유형별 비식별 요청 예시
 - `docs/142_user_guidance_integrated_review.md`: 사용자 안내 3종 통합 점검
-- `docs/143_user_quick_start.md`: 사용자 quick start
-- `docs/144_quick_start_rehearsal_boundary.md`: 문서만으로 가능한 리허설과 HWPX 열람 필요 지점 분리
+- `docs/143_user_quick_start.md`: 사용자 quick start와 HWPX 열람 전 재개 게이트 확인 순서
+- `docs/144_quick_start_rehearsal_boundary.md`: 문서만으로 가능한 리허설과 게이트 이후 HWPX 열람 필요 지점 분리
 - `docs/145_user_guidance_closeout.md`: 사용자 안내 묶음 closeout
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`: 수동 preview 또는 문서 기반 리허설 유지 판단
 - `docs/147_document_only_user_rehearsal_result.md`: 실제 HWPX 없는 문서 기반 사용자 리허설 결과
@@ -133,7 +133,7 @@ flowchart LR
 - `docs/151_manual_preview_resume_gate_closeout.md`: 수동 preview 재개 게이트 검증 closeout
 - `docs/152_project_result_artifact_map.md`: 현재 확인 가능한 결과물 지도
 - `docs/153_project_result_artifact_map_review.md`: 결과물 지도와 주요 진입점 정합성 점검
-- `docs/154_user_visible_artifact_bundle_closeout.md`: 사용자가 바로 볼 수 있는 산출물 묶음 closeout
+- `docs/154_user_visible_artifact_bundle_closeout.md`: 사용자가 바로 볼 수 있는 산출물 묶음과 재개 게이트 기준 closeout
 - `docs/155_legacy_next_step_language_review.md`: 구형 다음 단계 문구 점검
 - `docs/156_user_visible_artifact_security_and_git_check.md`: 사용자 가시 산출물 묶음 보안ㆍGit 제외 검증
 - `docs/157_current_status_progress_review.md`: CURRENT_STATUS 진행률 점검
@@ -183,9 +183,9 @@ flowchart LR
 
 1. `docs/152_project_result_artifact_map.md` 기준으로 현재 확인 가능한 결과물과 보류 항목을 먼저 확인합니다.
 2. `docs/143_user_quick_start.md` 기준으로 처음 볼 순서와 멈출 지점을 확인합니다.
-3. `docs/144_quick_start_rehearsal_boundary.md` 기준으로 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
+3. `docs/144_quick_start_rehearsal_boundary.md` 기준으로 문서만으로 가능한 확인과 재개 게이트 이후 HWPX 열람 필요 지점을 분리합니다.
 4. `docs/140_user_operation_atoz_guide.md` 기준으로 사용자가 직접 확인할 지점을 봅니다.
 5. `checklists/user_operation_atoz_rehearsal_checklist.md` 기준으로 실제 HWPX 없이도 현재 단계 확인을 리허설합니다.
 6. `docs/141_user_rehearsal_prompt_examples.md` 기준으로 실제값 없는 요청 예시를 사용합니다.
 7. `docs/150_manual_preview_resume_gate.md` 기준으로 수동 preview 재개 조건을 확인합니다.
-8. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
+8. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비되고 `docs/150_manual_preview_resume_gate.md` 조건이 충족될 때만 재개합니다.
