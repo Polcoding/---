@@ -193,7 +193,7 @@ Codex 결과는 초안과 검토 목록입니다. 확정 문서가 아닙니다.
 4. 실제값은 넣지 않고 `[확인 필요]` 또는 placeholder로 둡니다.
 5. Codex는 구조화, 누락값 목록, 보안 주의문구를 정리합니다.
 6. HWPX 파일을 열어봐야 하는 지점이면 사용자가 한컴에서 글자 겹침과 배치를 확인합니다.
-7. GitHub Desktop Changes에 HWPX 원본이나 output이 보이면 진행을 멈춥니다.
+7. GitHub Desktop Changes에 HWPX 원본이나 Git 추적 대상 output 파일이 보이면 진행을 멈춥니다.
 
 ## J. 완료 기준
 

@@ -68,6 +68,8 @@ push할 만한 기준점이 아직 없으면 최종 보고로 끊지 않고, 같
 
 결과물 지도와 사용자 가시 산출물 closeout에서도 `docs/141_user_rehearsal_prompt_examples.md`를 바로 볼 산출물로 연결했습니다.
 
+GitHub Desktop Changes 관련 사용자 안내에서는 실제 HWPX 원본, 로컬 output HWPX, Git 추적 대상 output 파일을 구분하도록 표현을 정리했습니다.
+
 `README.md`와 `CURRENT_STATUS.md`도 이 문서와 체크리스트를 현재 사용자 안내 진입점으로 연결합니다.
 
 현재 공통 표시는 다음과 같습니다.

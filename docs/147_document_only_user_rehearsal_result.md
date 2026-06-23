@@ -33,7 +33,7 @@
 - 보고서 4종 비식별 요청 예시 확인
 - 실제값을 넣지 않는 입력 방식 확인
 - HWPX 열람이 필요한 지점과 아닌 지점 구분
-- GitHub Desktop Changes에서 HWPX/output이 보이면 중단해야 함을 확인
+- GitHub Desktop Changes에서 HWPX 원본 또는 Git 추적 대상 output 파일이 보이면 중단해야 함을 확인
 
 ## 사용자 확인으로 남기는 항목
 

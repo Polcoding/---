@@ -36,7 +36,7 @@ GitHub Desktop에서 commit/push하기 전에 다음을 확인합니다.
 
 - 실제 개인정보, 실제 기관명, 실제 문서번호, 실제 공문 원문이 추가되지 않았는가
 - 실제 HWP/HWPX 기관 양식 원본이 Changes에 보이지 않는가
-- `renderers/*/output/` 산출물이 Changes에 보이지 않는가
+- `renderers/*/output/` 산출물이 Git 추적 대상으로 Changes에 보이지 않는가
 - 로컬 HWPX 템플릿이 `.gitignore`로 제외되는가
 - `__pycache__` 바이너리 변경이 작업에 포함되지 않는가
 - README 링크가 새 문서를 가리키는가

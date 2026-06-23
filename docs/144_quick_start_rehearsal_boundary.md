@@ -58,7 +58,7 @@
 2. 보고서 4종 비식별 요청 예시 확인
 3. 실제값을 넣으면 안 되는 항목 확인
 4. HWPX 열람이 필요한 지점과 아닌 지점 분리
-5. GitHub Desktop Changes에서 HWPX/output이 보이면 중단해야 함을 확인
+5. GitHub Desktop Changes에서 HWPX 원본 또는 Git 추적 대상 output 파일이 보이면 중단해야 함을 확인
 
 실제 HWPX 수동 preview는 사용자가 저장소 밖 비식별 작업 복사본을 준비하고, 한컴에서 열람 검수를 요청할 때 재개합니다.
 

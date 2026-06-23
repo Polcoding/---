@@ -2,7 +2,7 @@
 
 ## 목적
 
-`docs/150` 이후 사용자 가시 산출물 묶음과 주요 진입점 문서에 대해 보안 검색, 참조 파일 존재 여부, Git 제외 상태를 확인합니다.
+`docs/139` 이후 사용자 가시 산출물 묶음과 주요 진입점 문서에 대해 보안 검색, 참조 파일 존재 여부, Git 제외 상태를 확인합니다.
 
 이 문서는 실제 업무용 HWPX output 생성 기록이 아니며, 실제 업무 원문이나 실제 기관 양식을 다루지 않습니다.
 
@@ -36,6 +36,7 @@
 - `docs/153_project_result_artifact_map_review.md`
 - `docs/154_user_visible_artifact_bundle_closeout.md`
 - `docs/155_legacy_next_step_language_review.md`
+- `docs/156_user_visible_artifact_security_and_git_check.md`
 - `docs/157_current_status_progress_review.md`
 - `checklists/normalizers_regression_test_suite_checklist.md`
 - `checklists/user_operation_atoz_rehearsal_checklist.md`
@@ -75,7 +76,7 @@
 
 현재 변경은 문서와 체크리스트 중심입니다.
 
-Git status 기준 새로 보이는 HWPX/HWP 원본 또는 output 파일은 없습니다. 로컬 HWPX template, renderer output, normalizers output은 ignore 상태로 유지됩니다.
+Git status 기준 새로 보이는 HWPX/HWP 원본 또는 Git 추적 대상 output 파일은 없습니다. 로컬 HWPX template, renderer output, normalizers output은 ignore 상태로 유지됩니다.
 
 추가로 Python 캐시 파일은 저장소 산출물이 아니므로 Git 추적 대상에서 제외하고, 루트 `.gitignore`의 `__pycache__/`, `*.pyc` 규칙으로 재생성 시에도 추적되지 않도록 정리합니다.
 
