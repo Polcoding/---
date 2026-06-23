@@ -2,7 +2,7 @@
 
 ## 현재 상태
 
-사용자 운영 A-to-Z 안내 문서, 리허설 체크리스트, 문서 유형별 비식별 요청 예시, 사용자 안내 3종 통합 점검 문서, 사용자 quick start, quick start 리허설 경계 문서, 사용자 안내 묶음 closeout 문서를 작성하고 주요 진입점 문서에 연결했습니다.
+사용자 운영 A-to-Z 안내 문서, 리허설 체크리스트, 문서 유형별 비식별 요청 예시, 사용자 안내 3종 통합 점검 문서, 사용자 quick start, quick start 리허설 경계 문서, 사용자 안내 묶음 closeout 문서, 수동 preview 또는 리허설 유지 판단 문서, 문서 기반 사용자 리허설 결과 문서를 작성하고 주요 진입점 문서에 연결했습니다.
 
 현재 사용자는 `docs/140_user_operation_atoz_guide.md`에서 직접 확인할 일, Codex가 처리할 일, 현재 보류할 일을 한 번에 볼 수 있습니다.
 
@@ -11,6 +11,10 @@
 `docs/144_quick_start_rehearsal_boundary.md`에서는 문서만으로 가능한 확인과 HWPX 열람이 필요한 확인을 분리합니다.
 
 `docs/145_user_guidance_closeout.md`에서는 사용자 안내 묶음이 push 가능한 문서 산출물인지 판단할 수 있습니다.
+
+`docs/146_next_manual_preview_or_rehearsal_decision.md`에서는 현재는 실제 HWPX 수동 preview가 아니라 문서 기반 리허설 유지가 추천됨을 확인할 수 있습니다.
+
+`docs/147_document_only_user_rehearsal_result.md`에서는 실제 HWPX 없이 quick start와 체크리스트를 따라간 결과를 확인할 수 있습니다.
 
 `checklists/user_operation_atoz_rehearsal_checklist.md`에서는 실제 HWPX 없이도 현재 단계 확인을 체크박스로 리허설할 수 있습니다.
 
@@ -28,7 +32,7 @@
 
 ## 목표
 
-실제 HWPX 없이 사용자 리허설을 유지할지, 비식별 작업 복사본 준비 후 수동 preview로 넘어갈지 분리합니다.
+문서 기반 리허설 묶음을 보안 검수와 Git 제외 검증 후 push 단위로 확정합니다.
 
 ## 확인 대상
 
@@ -38,6 +42,8 @@
 - `docs/143_user_quick_start.md`
 - `docs/144_quick_start_rehearsal_boundary.md`
 - `docs/145_user_guidance_closeout.md`
+- `docs/146_next_manual_preview_or_rehearsal_decision.md`
+- `docs/147_document_only_user_rehearsal_result.md`
 - `docs/84_hwpx_report_user_input_templates.md`
 - `checklists/user_operation_atoz_rehearsal_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
@@ -48,15 +54,15 @@
 
 ## 생성 후보
 
-- 필요 시 `docs/146_next_manual_preview_or_rehearsal_decision.md`
+- 필요 시 `docs/148_document_only_rehearsal_closeout.md`
 
 ## 확인 항목
 
-1. 실제 HWPX 없이 가능한 사용자 리허설이 충분히 정리되어 있는지
+1. 문서 기반 리허설 결과가 실제 HWPX 열람 결과처럼 보이지 않는지
 2. HWPX 열람이 필요한 지점이 별도 사용자 확인 지점으로 남는지
 3. 비식별 작업 복사본이 없는 상태에서는 수동 preview를 보류하는지
 4. output과 local HWPX 파일의 Git 제외 상태가 유지되는지
-5. 다음 단계가 실제 구현이나 외부 연동으로 오해되지 않는지
+5. 이번 묶음이 push 가능한 문서 산출물인지 판단할 수 있는지
 
 ## 작업 제한
 
@@ -73,7 +79,7 @@
 
 ## 완료 조건
 
-- 다음 수동 preview 또는 리허설 유지 판단 문서 후보 생성 또는 불필요 판단
+- 문서 기반 리허설 closeout 후보 생성 또는 불필요 판단
 - 기존 사용자 입력 안내 문서와 모순 없음
 - 실제 구현물과 보류 항목 분리 유지
 - output과 local HWPX 파일의 Git 제외 상태 유지 여부 확인
@@ -81,6 +87,6 @@
 
 ## 다음 단계 후보
 
-추천 방향은 실제 HWPX 없이 사용자 리허설을 한 번 더 유지할지, 비식별 작업 복사본 준비 후 수동 preview로 넘어갈지 판단 문서를 만드는 것입니다.
+추천 방향은 검증 결과를 바탕으로 문서 기반 리허설 묶음을 push 단위로 확정하는 것입니다.
 
 이 작업은 문서 산출물 중심이며, 실제 HWPX 파일 생성이나 외부 연동은 포함하지 않습니다.
