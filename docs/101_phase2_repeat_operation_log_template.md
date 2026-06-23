@@ -12,6 +12,9 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 - 실제 HWPX 양식 원본 파일명이나 실제 내부 경로를 기록하지 않습니다.
 - HWPX output 파일은 Git에 추가하지 않습니다.
 - 확인되지 않은 값은 `[확인 필요]`로 둡니다.
+- 사용자가 직접 확인할 값은 `[사용자 확인 필요]`로 표시합니다.
+- Codex가 비식별 placeholder를 바탕으로 구조화할 수 있는 항목은 `[Codex 처리 가능]`으로 표시합니다.
+- 현재 단계에서 자동화하지 않는 항목은 `[보류]`로 표시합니다.
 - 이상이 있으면 파일명, 항목 번호, 증상만 기록합니다.
 - 실제 업무 적용 여부는 이 로그에서 확정하지 않습니다.
 
@@ -33,6 +36,16 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 | 실제 원문 사용 여부 | 사용하지 않음 |
 | 실제 개인정보 사용 여부 | 사용하지 않음 |
 | 실제 기관 양식 원본 사용 여부 | 사용하지 않음 |
+
+## 사용자 입력 역할 구분
+
+| 확인 | 표시 | 의미 | 결과 |
+|---|---|---|---|
+| [ ] | `[사용자 확인 필요]` | 사람이 직접 판단하거나 확인해야 하는 값 | [확인 필요] |
+| [ ] | `[Codex 처리 가능]` | 비식별 placeholder 입력으로 구조화 가능한 항목 | [확인 필요] |
+| [ ] | `[보류]` | 현재 단계에서 자동화하지 않는 항목 | [확인 필요] |
+
+이 표에는 실제 일정, 예산, 실적, 수량, 금액, 대상 목록을 기록하지 않습니다.
 
 ## 실행 전 확인
 
@@ -85,6 +98,9 @@ Phase 2 최소 PoC를 반복 실행할 때 실행 목적, 명령 결과, HWPX ou
 | [ ] | `[확인 필요]`가 실제값처럼 보이지 않음 | [확인 필요] |
 | [ ] | placeholder 유지 확인 대상 구분 | [확인 필요] |
 | [ ] | 실제값 입력 금지 안내 포함 | [확인 필요] |
+| [ ] | `[사용자 확인 필요]` 항목이 본문 실제값으로 확정되지 않음 | [확인 필요] |
+| [ ] | `[Codex 처리 가능]` 항목이 실제값 생성으로 오해되지 않음 | [확인 필요] |
+| [ ] | `[보류]` 항목이 실행 대상에서 제외됨 | [확인 필요] |
 
 `missing_fields`는 검토용 목록이며, 본문 실제값으로 확정하지 않습니다.
 
@@ -192,6 +208,9 @@ no-send dry-run 통과는 실제 API 연동 준비 완료, Make.com 시나리오
 - HWPX output에 `{{placeholder}}` 잔여
 - HWPX output에 `remaining_placeholders` 잔여
 - `missing_fields`를 실제값처럼 확정하거나 자동 제외
+- `[사용자 확인 필요]` 항목을 Codex가 임의 작성
+- `[Codex 처리 가능]` 항목을 실제값 생성 권한으로 오인
+- `[보류]` 항목을 자동화 실행 대상으로 처리
 - 한컴에서 글자 겹침 또는 항목 누락 발생
 - 외부 전송 전 preview 또는 승인 상태가 `[사용자 확인 필요]`로 남아 있음
 - 승인 상태를 실제 결재, 발송, 계약, 예산 집행 승인으로 오인할 가능성이 있음
@@ -204,10 +223,8 @@ no-send dry-run 통과는 실제 API 연동 준비 완료, Make.com 시나리오
 
 ## 다음 단계
 
-반복 운영 로그 템플릿에 `missing_fields` 확인 섹션과 상태별 중단 확인 섹션을 반영했습니다.
+반복 운영 로그 템플릿에는 `missing_fields` 확인 섹션, 상태별 중단 확인 섹션, 사용자 입력 역할 구분을 반영했습니다.
 
-Phase 3 운영 문서 묶음 통합 점검은 `docs/114_phase3_operating_docs_integrated_review.md`에 반영했습니다.
+현재 다음 단계는 실제 연동 구현이 아니라, 사용자 입력 안내 문서와 체크리스트에서 `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` 표시가 눈에 잘 보이는지 유지 점검하는 것입니다.
 
-외부 연동 필요성과 보류 기준은 `docs/115_phase3_external_integration_hold_criteria.md`에 반영했고, 로그와 감사 추적 기준은 `docs/116_phase3_log_and_audit_trace_criteria.md`에, 테스트 계정과 테스트 데이터 기준은 `docs/117_phase3_test_account_and_test_data_criteria.md`에, 실제 원문 차단과 비식별 입력 확인 절차는 `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`에, 사용자 preview와 사람 승인 지점 통합 기준은 `docs/119_phase3_user_preview_and_human_approval_integration.md`에, no-send dry-run 기준은 `docs/120_phase3_no_send_dry_run_criteria.md`에, 외부 연동 구현 범위 승인 판단은 `docs/121_phase3_external_integration_scope_approval_judgment.md`에, Phase 3 마무리 판단은 `docs/122_phase3_closeout_and_phase4_entry_decision.md`에 반영했습니다.
-
-다음 단계는 실제 연동 구현이 아니라, Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다. `placeholder_confirmed_values`의 routing 연결은 계속 보류합니다.
+`placeholder_confirmed_values`의 routing 연결, 실제 API/Make.com/Email 연동, 실제 HWPX 원본 투입은 계속 보류합니다.

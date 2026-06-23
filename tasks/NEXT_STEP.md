@@ -2,9 +2,15 @@
 
 ## 현재 상태
 
-`docs/139_minimum_demo_run_result.md` 기준으로 최소 demo 결과를 정리했고, `docs/84_hwpx_report_user_input_templates.md`에 사용자 입력 역할 구분을 보강했습니다.
+사용자 입력 역할 구분을 반복 운영 로그, missing_fields 표시 기준, 주요 진입점 문서에 연결했습니다.
 
-현재 사용자 입력 템플릿은 다음 세 표시를 사용합니다.
+`docs/00_project_overview.md`, `docs/00_chatgpt_handoff.md`, `CURRENT_STATUS.md`, `README.md`, `AGENTS.md`는 현재 기준으로 HWPX 보고서 우선 방향, 실제값 임의 생성 금지, 보류 항목 분리를 같은 방향으로 설명합니다.
+
+`docs/101_phase2_repeat_operation_log_template.md`, `docs/104_missing_fields_user_display_guidance.md`, 관련 체크리스트의 과거형 다음 단계 문구도 현재 사용자 안내 기준으로 정리했습니다.
+
+`docs/84_hwpx_report_user_input_templates.md`에는 사용자가 직접 확인할 부분 빠른 보기 블록을 추가했습니다.
+
+현재 공통 표시는 다음과 같습니다.
 
 - `[사용자 확인 필요]`: 사람이 직접 판단하거나 확인해야 하는 값
 - `[Codex 처리 가능]`: 비식별 placeholder 입력을 바탕으로 구조화 가능한 항목
@@ -12,24 +18,28 @@
 
 ## 목표
 
-사용자 입력 템플릿 기준을 수동 운영 체크리스트와 반복 운영 로그에 더 쉽게 연결합니다.
+사용자가 직접 해야 하는 일과 Codex가 처리할 일을 한 번에 볼 수 있는 A-to-Z 운영 안내 문서 후보를 정리합니다.
 
 ## 확인 대상
 
 - `docs/84_hwpx_report_user_input_templates.md`
-- `checklists/phase2_user_input_and_manual_operation_checklist.md`
 - `docs/101_phase2_repeat_operation_log_template.md`
 - `docs/104_missing_fields_user_display_guidance.md`
-- `docs/139_minimum_demo_run_result.md`
 - `CURRENT_STATUS.md`
+- `README.md`
+- `AGENTS.md`
+
+## 생성 후보
+
+- `docs/140_user_operation_atoz_guide.md`
 
 ## 확인 항목
 
-1. 사용자가 직접 확인해야 하는 항목이 수동 운영 체크리스트에서도 보이는지
-2. `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` 표시가 반복 운영 로그에도 반영될 필요가 있는지
-3. `missing_fields`가 본문 값이 아니라 검토용 목록임이 계속 유지되는지
-4. 실제 HWPX 파일 생성 없이도 사용자가 다음에 무엇을 확인해야 하는지 알 수 있는지
-5. 실제 표 데이터, 수량, 금액, 대상 목록을 요구하지 않는지
+1. 사용자가 직접 해야 하는 일을 `[사용자 확인 필요]`로 분리하는지
+2. Codex가 처리할 수 있는 일을 `[Codex 처리 가능]`으로 분리하는지
+3. 현재 단계에서 하지 않는 일을 `[보류]`로 분리하는지
+4. 실제 HWPX 파일, 실제 표 데이터, 실제 개인정보를 요구하지 않는지
+5. 한컴에서 사용자가 확인해야 하는 지점이 A-to-Z 순서로 보이는지
 
 ## 작업 제한
 
@@ -46,14 +56,14 @@
 
 ## 완료 조건
 
-- 사용자 입력 템플릿과 수동 운영 체크리스트가 같은 역할 구분을 사용함
-- 반복 운영 로그에 반영할지 여부가 정리됨
-- 실제 구현물과 보류 항목이 분리됨
+- 사용자용 A-to-Z 운영 안내 문서 후보 생성
+- 기존 사용자 입력 안내 문서와 모순 없음
+- 실제 구현물과 보류 항목 분리 유지
 - output과 local HWPX 파일의 Git 제외 상태 유지 여부 확인
-- 다음 단계 진행 가능 여부 보고
+- 다음 추천 작업을 `tasks/NEXT_STEP.md`에 갱신
 
 ## 다음 단계 후보
 
-추천 방향은 `docs/101_phase2_repeat_operation_log_template.md`에 사용자 입력 역할 구분을 반영할지 검토하는 것입니다.
+추천 방향은 `docs/140_user_operation_atoz_guide.md`를 만들고 README 또는 CURRENT_STATUS에서 찾을 수 있도록 연결하는 것입니다.
 
-반영하더라도 실제값을 넣는 로그가 아니라, `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` 상태를 기록하는 placeholder 기반 운영 로그로 유지합니다.
+이 작업은 문서 산출물 중심이며, 실제 HWPX 파일 생성이나 외부 연동은 포함하지 않습니다.
