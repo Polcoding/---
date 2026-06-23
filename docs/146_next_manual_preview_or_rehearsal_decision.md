@@ -78,13 +78,13 @@
 
 ## 다음 추천
 
-현재 추천은 실제 HWPX 수동 preview가 아니라 문서 기반 리허설 실행 기록을 남기는 것입니다.
+문서 기반 리허설 실행 기록은 `docs/147_document_only_user_rehearsal_result.md`에 이미 정리했습니다.
 
-후보 문서:
+현재 추천은 실제 HWPX 수동 preview를 재촉하지 않고, 아래 조건이 생길 때까지 문서 기반 hold 상태를 유지하는 것입니다.
 
-- `docs/147_document_only_user_rehearsal_result.md`
-
-이 문서는 사용자가 실제 HWPX 없이 quick start와 체크리스트를 따라갈 수 있는지 확인하는 결과 기록입니다.
+- 사용자가 저장소 밖 비식별 HWPX 작업 복사본 준비를 명시
+- GitHub Desktop Changes에 실제 HWPX 원본 또는 output이 보이지 않음
+- 사용자가 한컴에서 수동 열람 검수를 진행할 수 있음
 
 ## 보안 검수
 

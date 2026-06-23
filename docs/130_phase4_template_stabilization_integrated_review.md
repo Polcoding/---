@@ -122,7 +122,7 @@
 - `.gitignore`
 - API, Make.com, Email 연동 코드
 
-root `.gitignore`는 현재 없지만, `templates/hwpx/.gitignore`, `renderers/hwpx_renderer/output/.gitignore`, `normalizers/output/.gitignore` 기준으로 local HWPX template과 output 산출물 제외가 관리되고 있습니다. 따라서 이번 단계에서 `.gitignore`를 새로 만들 필요는 없습니다.
+root `.gitignore`는 Python cache 제외를 담당하고, `templates/hwpx/.gitignore`, `renderers/hwpx_renderer/output/.gitignore`, `normalizers/output/.gitignore` 기준으로 local HWPX template과 output 산출물 제외가 관리되고 있습니다. 따라서 이번 단계에서 HWPX/output 제외를 위한 `.gitignore` 추가 변경은 필요하지 않습니다.
 
 ## 사용자 확인 필요 지점
 

@@ -58,9 +58,9 @@
 
 ## 다음 추천
 
-다음 추천은 문서 기반 리허설 묶음을 push 가능한 단위로 확정하는 것입니다.
+문서 기반 리허설 묶음은 `docs/148_document_only_rehearsal_closeout.md`와 `docs/149_document_only_rehearsal_hold_state.md`에 이미 정리했습니다.
 
-push 이후에는 실제 HWPX 없이 계속 문서 기반 리허설을 유지하거나, 사용자가 비식별 작업 복사본을 준비했다고 명시했을 때 수동 preview 준비 문서로 넘어갑니다.
+현재 추천은 실제 HWPX 없이 문서 기반 리허설 상태를 유지하고, 사용자가 비식별 작업 복사본을 준비했다고 명시했을 때만 수동 preview 재개 게이트로 넘어가는 것입니다.
 
 ## 보안 검수
 

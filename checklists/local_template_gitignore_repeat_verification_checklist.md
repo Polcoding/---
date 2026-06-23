@@ -17,11 +17,11 @@
 
 | 완료 | 항목 |
 |---|---|
-| [x] | root `.gitignore`가 현재 없음을 확인했는가 |
+| [x] | root `.gitignore`가 `__pycache__/`, `*.pyc`를 제외하는가 |
 | [x] | `templates/hwpx/.gitignore`가 `.hwpx`, `.hwp`, 임시 파일을 제외하는가 |
 | [x] | `renderers/hwpx_renderer/output/.gitignore`가 output HWPX, JSON, MD를 제외하는가 |
 | [x] | `normalizers/output/.gitignore`가 output 전체를 제외하고 `.gitignore`, `.gitkeep`만 허용하는가 |
-| [x] | 현재 단계에서 `.gitignore` 변경이 필요 없다고 판단했는가 |
+| [x] | 현재 단계에서 HWPX/output ignore 규칙 추가 변경은 필요 없다고 판단했는가 |
 
 ## 반복 검증 시점 확인
 
@@ -38,8 +38,9 @@
 | 완료 | 항목 |
 |---|---|
 | [x] | `git status --short --untracked-files=all` 확인 기준을 정리했는가 |
-| [x] | `git status --ignored --short normalizers/output renderers/hwpx_renderer/output templates/hwpx` 확인 기준을 정리했는가 |
+| [x] | `git status --ignored --short normalizers/output renderers/hwpx_renderer/output templates/hwpx renderers/hwpx_renderer/__pycache__` 확인 기준을 정리했는가 |
 | [x] | 로컬 HWPX 템플릿과 output 산출물이 `!!` ignored로 보이면 정상이라고 정리했는가 |
+| [x] | Python cache가 재생성되어도 `!!` ignored로 보이면 정상이라고 정리했는가 |
 | [x] | 문서, 체크리스트, README, AGENTS, NEXT_STEP만 Changes에 보여야 한다고 정리했는가 |
 
 ## GitHub Desktop 확인
@@ -64,7 +65,7 @@
 | [x] | HWPX output을 재생성하지 않았는가 |
 | [x] | 실제 HWPX/HWP 파일을 Git에 추가하지 않았는가 |
 | [x] | HWPX 표 내부 실제 데이터 자동 입력 또는 Excel/한셀 자동 연동을 구현하지 않았는가 |
-| [x] | `.gitignore` 파일을 불필요하게 변경하지 않았는가 |
+| [x] | `.gitignore` 변경은 Python cache 추적 방지처럼 필요한 Git 위생 정리에 한정했는가 |
 
 ## 보안 검수
 

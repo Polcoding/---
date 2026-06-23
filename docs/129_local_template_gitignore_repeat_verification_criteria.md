@@ -25,13 +25,14 @@
 - `templates/hwpx/.gitignore`
 - `renderers/hwpx_renderer/output/.gitignore`
 - `normalizers/output/.gitignore`
+- `.gitignore`
 - `README.md`
 - `AGENTS.md`
 - `tasks/NEXT_STEP.md`
 
 ## 점검 결론
 
-현재 저장소에는 root `.gitignore`가 없고, 제외 규칙은 폴더별 `.gitignore`가 담당합니다.
+현재 저장소에는 Python cache 제외를 위한 root `.gitignore`가 있고, HWPX template과 output 제외 규칙은 폴더별 `.gitignore`가 담당합니다.
 
 현재 확인한 제외 구조:
 
@@ -40,9 +41,9 @@
 | `templates/hwpx/.gitignore` | `.hwpx`, `.hwp`, 임시 파일 제외 | 유지 |
 | `renderers/hwpx_renderer/output/.gitignore` | renderer output의 HWPX, JSON, MD 제외 | 유지 |
 | `normalizers/output/.gitignore` | normalizer output 전체 제외, `.gitignore`, `.gitkeep`만 허용 | 유지 |
-| root `.gitignore` | 현재 없음 | 이번 단계에서 새로 만들 필요 없음 |
+| root `.gitignore` | `__pycache__/`, `*.pyc` 제외 | 유지 |
 
-현재 규칙으로 로컬 placeholder HWPX 템플릿과 output 산출물은 Git 제외 상태를 유지하고 있습니다. 따라서 이번 단계에서는 `.gitignore` 파일을 변경하지 않고, 반복 검증 순서와 중단 조건만 문서화합니다.
+현재 규칙으로 로컬 placeholder HWPX 템플릿, output 산출물, Python cache는 Git 제외 상태를 유지하고 있습니다. 따라서 이번 단계에서는 HWPX/output ignore 규칙을 추가 변경하지 않고, 반복 검증 순서와 중단 조건을 유지합니다.
 
 ## Git 제외 대상 구분
 
@@ -95,12 +96,13 @@ git status --short --untracked-files=all
 권장 확인:
 
 ```powershell
-git status --ignored --short normalizers/output renderers/hwpx_renderer/output templates/hwpx
+git status --ignored --short normalizers/output renderers/hwpx_renderer/output templates/hwpx renderers/hwpx_renderer/__pycache__
 ```
 
 통과 기준:
 
 - 로컬 HWPX 템플릿과 output 산출물은 `!!` ignored로 표시됨
+- Python cache도 재생성되면 `!!` ignored로 표시됨
 - `.gitignore`, `.gitkeep`, README, manifest, policy 문서는 필요 시 tracked 상태로 남음
 
 ### 3. GitHub Desktop Changes 확인
@@ -139,15 +141,16 @@ GitHub Desktop에서 보이면 안 되는 항목:
 | `normalizers/output/*`가 Changes에 보임 | output 제외 상태 확인 |
 | 실제 원본 또는 비식별 작업 복사본이 저장소 안에 있음 | 저장소 밖 위치로 분리, 보안 검토 |
 | 실제 파일명, 실제 기관명, 실제 문서번호가 문서에 기록됨 | 문서 수정 전 commit 금지 |
-| root `.gitignore`가 없다는 이유로 HWPX 파일을 강제 추가하려 함 | 강제 추가 금지, 폴더별 ignore 기준 유지 |
+| root `.gitignore`와 폴더별 ignore 기준을 우회해 HWPX 파일을 강제 추가하려 함 | 강제 추가 금지, 폴더별 ignore 기준 유지 |
 | `git add -f`가 필요하다고 판단됨 | 사용자 명시 승인 전 중단 |
 
 ## `.gitignore` 변경 판단
 
-현재 단계에서는 `.gitignore` 변경이 필요하지 않습니다.
+현재 단계에서는 HWPX template과 output 제외를 위한 `.gitignore` 추가 변경이 필요하지 않습니다.
 
-변경하지 않는 이유:
+추가 변경하지 않는 이유:
 
+- root `.gitignore`가 `__pycache__/`, `*.pyc`를 제외합니다.
 - `templates/hwpx/.gitignore`가 `.hwpx`, `.hwp`, 임시 파일을 제외합니다.
 - `renderers/hwpx_renderer/output/.gitignore`가 renderer output 산출물을 제외합니다.
 - `normalizers/output/.gitignore`가 normalizer output 전체를 제외합니다.
@@ -184,7 +187,7 @@ GitHub Desktop에서 보이면 안 되는 항목:
 - HWPX payload mapper
 - HWPX renderer output
 - local HWPX template
-- `.gitignore`
+- HWPX/output ignore 규칙
 - API, Make.com, Email 연동 코드
 
 ## 보안 검수
@@ -203,7 +206,7 @@ GitHub Desktop에서 보이면 안 되는 항목:
 
 ## 결론
 
-현재 저장소는 폴더별 `.gitignore` 기준으로 local HWPX template과 output 산출물을 Git에서 제외하고 있습니다.
+현재 저장소는 root `.gitignore`와 폴더별 `.gitignore` 기준으로 Python cache, local HWPX template, output 산출물을 Git에서 제외하고 있습니다.
 
 Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_stabilization_integrated_review.md`에 반영했습니다.
 
@@ -211,4 +214,4 @@ Phase 4 문서 템플릿 안정화 통합 점검은 `docs/130_phase4_template_st
 
 HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정은 `docs/133_hwpx_only_table_frame_decision.md`에 반영했습니다.
 
-다음 단계는 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
+다음 단계는 비식별 작업 복사본 준비가 명시될 때만 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다. 실제 기관 HWPX 원본 투입, HWPX output 재생성, renderer 코드 변경, 외부 연동 구현은 계속 보류합니다.
