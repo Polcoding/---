@@ -101,7 +101,7 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - renderer와 normalizer 안내 문서가 표 데이터 후보를 실제 구현 지시처럼 오해하지 않도록 보강했습니다.
 - 현재 기준으로 실제 작동 확인된 최소 경로는 `CURRENT_STATUS.md`에 정리했습니다.
 - 사용자 입력 템플릿과 반복 운영 로그는 `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` 역할 구분을 사용합니다.
-- 다음 작업 후보는 `docs/84`, `docs/101`, `docs/104`와 관련 체크리스트에서 사용자 확인 지점이 눈에 잘 보이도록 정리하는 것입니다.
+- 사용자용 A-to-Z 운영 안내는 `docs/140_user_operation_atoz_guide.md`에 정리했습니다.
 
 ## 현재도 하지 않는 일
 
@@ -312,6 +312,8 @@ Instructions 복사
 - `docs/137_report_sample_json_table_data_candidate_review.md`: 보고서 샘플 JSON 표 데이터 후보 표시 반영 검토
 - `docs/138_renderer_normalizer_table_data_candidate_scope_review.md`: renderer와 normalizer 안내 문서의 표 데이터 후보 오해 가능성 점검
 - `docs/139_minimum_demo_run_result.md`: 최소 demo 실행 결과 요약
+- `docs/140_user_operation_atoz_guide.md`: 사용자가 직접 해야 하는 일과 Codex가 처리할 일을 구분한 A-to-Z 운영 안내
+- `docs/141_user_rehearsal_prompt_examples.md`: 실제값 없이 따라 할 수 있는 문서 유형별 비식별 요청 예시
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -390,6 +392,7 @@ Instructions 복사
 - `checklists/missing_fields_manual_operation_checkpoints_reflection_checklist.md`: missing_fields 수동 운영 점검표 반영 결과 체크리스트
 - `checklists/missing_fields_phase2_docs_integrated_review_checklist.md`: missing_fields Phase 2 운영 문서 통합 점검 체크리스트
 - `checklists/phase2_operating_docs_final_review_checklist.md`: Phase 2 운영 문서 최종 정리 체크리스트
+- `checklists/user_operation_atoz_rehearsal_checklist.md`: 사용자 운영 A-to-Z 리허설 체크리스트
 - `checklists/normalizers_regression_recheck_result_checklist.md`: normalizers 회귀 테스트 재검증 결과 체크리스트
 - `checklists/phase2_closeout_and_phase3_entry_decision_checklist.md`: Phase 2 마무리 판단 및 Phase 3 진입 조건 결정 체크리스트
 - `checklists/phase3_entry_safety_gate_checklist.md`: Phase 3 진입 조건 및 안전 게이트 체크리스트
@@ -441,6 +444,7 @@ Instructions 복사
 ## 다음 단계
 
 1. `CURRENT_STATUS.md`와 `docs/139_minimum_demo_run_result.md`를 기준으로 현재 작동 확인된 최소 PoC 경로를 봅니다.
-2. 사용자 입력 안내 문서와 체크리스트는 `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` 기준으로 분리합니다.
-3. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
-4. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
+2. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
+3. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
+4. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
+5. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
