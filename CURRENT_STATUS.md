@@ -127,6 +127,7 @@ flowchart LR
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`: 수동 preview 또는 문서 기반 리허설 유지 판단
 - `docs/147_document_only_user_rehearsal_result.md`: 실제 HWPX 없는 문서 기반 사용자 리허설 결과
 - `docs/148_document_only_rehearsal_closeout.md`: 문서 기반 리허설 closeout
+- `docs/149_document_only_rehearsal_hold_state.md`: 비식별 작업 복사본 준비 전 문서 기반 리허설 hold 상태
 - `checklists/user_operation_atoz_rehearsal_checklist.md`: A-to-Z 안내 기준 사용자 리허설 체크리스트
 - `normalizers/output/*summary.json`: 최근 dry-run과 검증 요약
 - `examples/json/sample_*_report.json`: 보고서 4종 placeholder 샘플 JSON
@@ -174,4 +175,5 @@ flowchart LR
 7. `docs/146_next_manual_preview_or_rehearsal_decision.md` 기준으로 수동 preview 또는 리허설 유지 판단을 확인합니다.
 8. `docs/147_document_only_user_rehearsal_result.md` 기준으로 실제 HWPX 없는 리허설 결과를 확인합니다.
 9. `docs/148_document_only_rehearsal_closeout.md` 기준으로 문서 기반 리허설 묶음의 push 가능 범위를 확인합니다.
-10. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
+10. `docs/149_document_only_rehearsal_hold_state.md` 기준으로 hold 유지와 해제 조건을 확인합니다.
+11. 실제 HWPX 수동 preview는 비식별 작업 복사본이 준비될 때만 재개합니다.
