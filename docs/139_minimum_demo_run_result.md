@@ -17,7 +17,7 @@
 -> HWPX renderer dry-run
 ```
 
-이 문서는 실제 HWPX 파일 생성 결과가 아닙니다. 실제 기관 양식, 실제 원문, 실제 개인정보, 실제 표 데이터, 실제 이메일/API/Make.com 연동은 포함하지 않습니다.
+이 문서는 실제 업무용 HWPX 파일 생성 결과가 아닙니다. 실제 기관 양식, 실제 원문, 실제 개인정보, 실제 표 데이터, 실제 이메일/API/Make.com 연동은 포함하지 않습니다.
 
 ## 전체 진행 도식
 
@@ -80,7 +80,7 @@ flowchart LR
 | 보안 검토 필요 | `needs_security_review`, payload 미생성 |
 | 필수값 미확정 | `needs_more_input`, missing_fields 유지 |
 | HWPX 렌더링 전 상태 확인 | `dry_run_ready` 또는 `dry_run_ready_with_missing_fields` |
-| 실제 HWPX output 생성 | 이번 demo 요약에서는 수행하지 않음 |
+| 실제 업무용 HWPX output 생성 | 이번 demo 요약에서는 수행하지 않음 |
 
 ## 사용자 확인 필요
 
@@ -96,6 +96,6 @@ flowchart LR
 
 최소 demo 경로는 저장소 내부 기준으로 확인 가능합니다.
 
-현재 단계에서 사용자에게 보여줄 수 있는 결과물은 실제 HWPX 파일이 아니라, 비식별 fixture가 안전하게 정규화되고 HWPX payload 및 renderer dry-run까지 도달한다는 검증 요약입니다.
+현재 단계에서 사용자에게 보여줄 수 있는 결과물은 실제 업무용 HWPX 파일이 아니라, 비식별 fixture가 안전하게 정규화되고 HWPX payload 및 renderer dry-run까지 도달한다는 검증 요약입니다.
 
-다음 단계는 실제 HWPX 파일 생성보다, 이 demo 결과를 기준으로 어떤 사용자 입력 양식을 먼저 다듬을지 결정하는 것입니다.
+다음 단계는 실제 업무용 HWPX 파일 생성보다, 이 demo 결과를 기준으로 어떤 사용자 입력 양식을 먼저 다듬을지 결정하는 것입니다.

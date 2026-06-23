@@ -19,6 +19,9 @@
 - `docs/81_normalizers_regression_test_suite.md`
 - `docs/129_local_template_gitignore_repeat_verification_criteria.md`
 - `docs/130_phase4_template_stabilization_integrated_review.md`
+- `docs/139_minimum_demo_run_result.md`
+- `docs/142_user_guidance_integrated_review.md`
+- `docs/144_quick_start_rehearsal_boundary.md`
 - `docs/145_user_guidance_closeout.md`
 - `docs/146_next_manual_preview_or_rehearsal_decision.md`
 - `docs/147_document_only_user_rehearsal_result.md`
@@ -47,7 +50,7 @@
 | HWPX output Git 제외 | `renderers/hwpx_renderer/output/*.hwpx` ignore 확인 |
 | normalizers output Git 제외 | `normalizers/output/*` ignore 확인 |
 | Python cache Git 제외 | `__pycache__/`, `*.pyc` ignore 확인 |
-| 작업 운영 기준 | 삭제ㆍ실제 HWPXㆍ실제 원본 위험 외에는 계속 진행, commit/push는 한 번에 묶음 |
+| 작업 운영 기준 | 삭제ㆍ실제 HWPXㆍ실제 원본 위험 외에는 계속 진행, push 기준점이 없으면 다음 추천 작업 계속 진행 |
 
 ## PoC 경로 재검증
 

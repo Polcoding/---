@@ -12,9 +12,15 @@ normalizers 회귀 테스트 기준은 `normalizers/README.md`와 `docs/109_norm
 
 현재 변경 묶음에서 normalizers 회귀 스크립트 6개를 재실행했고, mapped HWPX PoC output과 summary output은 Git 제외 상태로 유지되는지 확인했습니다.
 
+현재 사용자 진입점 문서에서는 실제 업무용 HWPX output과 ignored 로컬 PoC HWPX output이 혼동되지 않도록 표현을 정리했습니다.
+
+README와 AGENTS의 현재 진행 위치 요약은 사용자 quick start, 문서 기반 hold, 결과물 지도, 보안ㆍGit 제외 검증, 현황판 진행률 점검까지 반영했습니다.
+
 `docs/00_chatgpt_handoff.md`, `docs/00_project_overview.md`, `AGENTS.md`의 현재 작업 축 표현은 결과물 지도ㆍ구형 문구 점검 완료 이후의 최신 상태에 맞춰, 검증 상태 유지와 수동 preview 재개 조건 대기 단계로 정리했습니다.
 
 push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의 여러 소작업을 하나의 변경 묶음으로 모은 뒤 판단하는 방향으로 정리했습니다. 파일 또는 폴더 삭제처럼 되돌리기 어려운 작업 외에는 Codex가 계속 진행하고, commit/push는 한 번에 묶는 기준을 우선합니다.
+
+push할 만한 기준점이 아직 없으면 최종 보고로 끊지 않고, 같은 변경 묶음 안에서 다음 추천 작업을 계속 진행합니다.
 
 수동 preview 재개 게이트와 체크리스트를 추가하고 closeout까지 정리해, 사용자가 나중에 비식별 작업 복사본을 준비했다고 명시했을 때만 수동 preview로 넘어가도록 정리했습니다.
 
@@ -71,6 +77,7 @@ push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의
 ## 확인 대상
 
 - `docs/140_user_operation_atoz_guide.md`
+- `docs/139_minimum_demo_run_result.md`
 - `docs/00_chatgpt_handoff.md`
 - `docs/00_project_overview.md`
 - `docs/141_user_rehearsal_prompt_examples.md`
@@ -108,7 +115,7 @@ push 빈도 기준은 작은 확인마다 멈추지 않고, 같은 단계 안의
 
 ## 생성 후보
 
-- 필요 시 새 문서 생성 없이 검증 결과만 보고
+- 필요 시 새 문서 생성 없이 검증 결과만 누적하고 다음 추천 작업 계속 진행
 
 ## 확인 항목
 

@@ -11,7 +11,7 @@
 ```text
 [확인 가능] 문서/체크리스트/샘플 JSON/PoC 요약
 [사용자 확인 필요] 실제 HWPX 열람, 실제 양식 적합성, 기관 서식값
-[보류] 실제 원본 처리, 실제 HWPX output commit, Email/API/Make.com 연동
+[보류] 실제 원본 처리, 실제 업무용 HWPX output commit, Email/API/Make.com 연동
 ```
 
 ## 먼저 볼 파일
@@ -87,7 +87,7 @@ output 요약 파일과 `renderers/hwpx_renderer/output/*.hwpx`는 로컬 검증
 현재 단계에서는 다음을 실행하지 않습니다.
 
 - 실제 기관 HWPX/HWP 원본 Git 추가
-- 실제 HWPX output commit
+- 실제 업무용 HWPX output commit
 - 실제 업무 원문 처리
 - 실제 개인정보, 문서번호, 기관명, 담당자명 기록
 - 실제 표 데이터, 수량, 금액, 대상 목록 기록
