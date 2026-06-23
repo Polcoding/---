@@ -46,6 +46,8 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 | [ ] | 저장소 밖 실제 양식 후보 수동 절차와 보류 조건 확인 |
 | [ ] | local template과 output Git 제외 반복 검증 기준 확인 |
 | [ ] | HWPX 일원화와 표 틀 우선 결정 확인 |
+| [ ] | 비식별 HWPX 작업 복사본 없음에 따른 수동 리허설 보류 기준 확인 |
+| [ ] | HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 기준 확인 |
 | [ ] | 표 내부 데이터 자동화 또는 Excel/한셀 연동은 별도 승인 전 보류 확인 |
 | [ ] | `needs_security_review` 외부 전송 금지 확인 |
 | [ ] | `blocked` 외부 전송 금지 확인 |
@@ -63,5 +65,5 @@ Make.com 또는 OpenAI API 자동화 전 반드시 확인할 사항을 정리합
 - 민감정보가 포함된 입력은 API 호출 전에 차단되어야 합니다.
 - 실제 업무 계정을 연결하기 전 별도 승인과 테스트 계정 검증이 필요합니다.
 - Make.com 또는 API 연동은 별도 설계 문서와 보안 검토 후 진행해야 합니다.
-- Phase 3와 Phase 4 진입 판단의 최신 기준은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`, `docs/122_phase3_closeout_and_phase4_entry_decision.md`, `docs/123_phase4_template_stabilization_entry_judgment.md`, `docs/124_project_direction_and_legacy_update_review.md`, `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`, `docs/126_style_profile_confirmation_value_collection_criteria.md`, `docs/127_hwpx_manual_preview_gap_log_criteria.md`, `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`, `docs/129_local_template_gitignore_repeat_verification_criteria.md`, `docs/130_phase4_template_stabilization_integrated_review.md`, `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`, `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`, `docs/133_hwpx_only_table_frame_decision.md`를 따릅니다.
-- 현재 다음 단계는 실제 연동 구현이 아니라 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다.
+- Phase 3와 Phase 4 진입 판단의 최신 기준은 `docs/115_phase3_external_integration_hold_criteria.md`, `docs/116_phase3_log_and_audit_trace_criteria.md`, `docs/117_phase3_test_account_and_test_data_criteria.md`, `docs/118_phase3_source_blocking_and_deidentified_input_check_procedure.md`, `docs/119_phase3_user_preview_and_human_approval_integration.md`, `docs/120_phase3_no_send_dry_run_criteria.md`, `docs/121_phase3_external_integration_scope_approval_judgment.md`, `docs/122_phase3_closeout_and_phase4_entry_decision.md`, `docs/123_phase4_template_stabilization_entry_judgment.md`, `docs/124_project_direction_and_legacy_update_review.md`, `docs/125_hwpx_template_manifest_placeholder_consistency_review.md`, `docs/126_style_profile_confirmation_value_collection_criteria.md`, `docs/127_hwpx_manual_preview_gap_log_criteria.md`, `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`, `docs/129_local_template_gitignore_repeat_verification_criteria.md`, `docs/130_phase4_template_stabilization_integrated_review.md`, `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`, `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`, `docs/133_hwpx_only_table_frame_decision.md`, `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`, `docs/135_hwp_report_and_hancell_table_data_scope.md`를 따릅니다.
+- 현재 다음 단계는 실제 연동 구현이 아니라 HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 실제값 없이 정리하는 것입니다.

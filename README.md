@@ -33,6 +33,8 @@
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리
 - 실제 양식 수동 리허설 전 사용자 준비 확인 완료 기록
 - HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정
+- 비식별 HWPX 작업 복사본 없음에 따른 실제 양식 수동 리허설 보류 기록
+- HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위 정리
 
 ## 현재 자동화 우선순위
 
@@ -85,7 +87,9 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - 실제 양식 수동 리허설 사용자 확인 패킷과 gap log 빈 양식 정리를 완료했습니다.
 - 사용자가 실제 원본ㆍ작업 복사본 저장소 밖 보관, 식별 요소 제거, GitHub Desktop Changes 이상 없음을 확인했습니다.
 - HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정을 완료했습니다.
-- 다음 작업 후보는 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록하는 것입니다.
+- 비식별 HWPX 작업 복사본이 없어 실제 양식 수동 리허설은 보류로 기록했습니다.
+- HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위를 정리했습니다.
+- 다음 작업 후보는 HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 실제값 없이 정리하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -289,6 +293,8 @@ Instructions 복사
 - `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`: 실제 양식 수동 리허설 사용자 확인 패킷
 - `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`: 실제 양식 수동 리허설 준비 확인 결과
 - `docs/133_hwpx_only_table_frame_decision.md`: HWPX 일원화와 표 틀 우선 결정
+- `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`: 실제 양식 수동 리허설 복사본 없음 보류 기록
+- `docs/135_hwp_report_and_hancell_table_data_scope.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -392,6 +398,8 @@ Instructions 복사
 - `checklists/actual_hwpx_manual_rehearsal_user_confirmation_packet_checklist.md`: 실제 양식 수동 리허설 사용자 확인 패킷 체크리스트
 - `checklists/actual_hwpx_manual_rehearsal_readiness_confirmation_checklist.md`: 실제 양식 수동 리허설 준비 확인 결과 체크리스트
 - `checklists/hwpx_only_table_frame_decision_checklist.md`: HWPX 일원화와 표 틀 우선 결정 체크리스트
+- `checklists/actual_hwpx_manual_rehearsal_no_copy_hold_checklist.md`: 실제 양식 수동 리허설 복사본 없음 보류 체크리스트
+- `checklists/hwp_report_and_hancell_table_data_scope_checklist.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -410,9 +418,9 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 저장소 밖 한컴 preview 결과를 `table_scope: frame_only` 포함 실제값 없는 gap log로 기록합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 정리합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
-4. GitHub Desktop에서 변경 파일을 검수한 뒤 push합니다.
+4. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
 5. 실제 원본이 필요한 경우 저장소 밖에서 복사본을 만들고, 실제 내용과 식별 요소를 제거한 뒤 로컬 placeholder 템플릿 후보로만 검토합니다.
 6. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.

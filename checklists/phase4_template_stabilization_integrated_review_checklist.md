@@ -12,6 +12,8 @@
 | [x] | `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 확인했는가 |
 | [x] | `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 확인했는가 |
 | [x] | `docs/133_hwpx_only_table_frame_decision.md`를 확인했는가 |
+| [x] | `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`를 확인했는가 |
+| [x] | `docs/135_hwp_report_and_hancell_table_data_scope.md`를 확인했는가 |
 | [x] | HWPX template manifest, local template policy, style profile manifest를 확인했는가 |
 
 ## 통합 정합성 확인
@@ -26,6 +28,8 @@
 | [x] | 실제 원본, 작업 복사본, placeholder 후보, output, gap log의 역할이 분리되어 있는가 |
 | [x] | local template과 output Git 제외 반복 검증 기준이 연결되어 있는가 |
 | [x] | 표 데이터 자동화는 Excel/한셀 연동 후보로 분리하고 현재는 표 틀만 확인하도록 되어 있는가 |
+| [x] | 비식별 HWPX 작업 복사본이 없으면 실제 preview 결과를 보류하도록 되어 있는가 |
+| [x] | HWPX 본문과 Excel/한셀 표 데이터 후보의 역할이 분리되어 있는가 |
 
 ## 실제 양식 수동 리허설 진입 판단
 
@@ -76,6 +80,8 @@
 |---|---|
 | [x] | 실제 양식 수동 리허설 사용자 확인 패킷이 `docs/131`에 반영되었는가 |
 | [x] | HWPX 일원화와 표 틀 우선 결정이 `docs/133`에 반영되었는가 |
-| [x] | 다음 단계가 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록인가 |
+| [x] | 복사본 없음 보류 기록이 `docs/134`에 반영되었는가 |
+| [x] | 표 데이터 역할 분리 범위가 `docs/135`에 반영되었는가 |
+| [x] | 다음 단계가 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리인가 |
 | [x] | 실제 양식 수동 리허설은 사용자 저장소 밖 준비와 별도 확인 후 진행하도록 했는가 |
 | [x] | 실제 양식 투입, output 재생성, 외부 연동 구현을 다음 단계로 두지 않았는가 |

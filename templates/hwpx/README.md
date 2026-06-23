@@ -50,4 +50,6 @@
 - 최근 점검: `docs/131_actual_hwpx_manual_rehearsal_user_confirmation_packet.md`
 - 최근 점검: `docs/132_actual_hwpx_manual_rehearsal_readiness_confirmation.md`
 - 최근 점검: `docs/133_hwpx_only_table_frame_decision.md`
-- 다음 점검: 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록
+- 최근 점검: `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
+- 최근 점검: `docs/135_hwp_report_and_hancell_table_data_scope.md`
+- 다음 점검: HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리

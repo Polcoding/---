@@ -8,6 +8,8 @@
 | [x] | `templates/hwpx/local_template_policy.md`를 확인했는가 |
 | [x] | `templates/hwpx/README.md`를 확인했는가 |
 | [x] | `docs/133_hwpx_only_table_frame_decision.md`를 확인했는가 |
+| [x] | `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`를 확인했는가 |
+| [x] | `docs/135_hwp_report_and_hancell_table_data_scope.md`를 확인했는가 |
 | [x] | `docs/72_dry_run_artifact_retention_policy.md`를 확인했는가 |
 | [x] | 실제 양식 후보, local template, renderer output, normalizer output의 역할을 구분했는가 |
 
@@ -84,5 +86,7 @@
 | [x] | Phase 4 문서 템플릿 안정화 통합 점검이 `docs/130`에 반영되었는가 |
 | [x] | 실제 양식 수동 리허설 사용자 확인 패킷이 `docs/131`에 반영되었는가 |
 | [x] | HWPX 일원화와 표 틀 우선 결정이 `docs/133`에 반영되었는가 |
-| [x] | 다음 단계가 저장소 밖 한컴 preview 결과의 `table_scope: frame_only` 포함 실제값 없는 gap log 기록인가 |
+| [x] | 복사본 없음 보류 기록이 `docs/134`에 반영되었는가 |
+| [x] | 표 데이터 역할 분리 범위가 `docs/135`에 반영되었는가 |
+| [x] | 다음 단계가 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리인가 |
 | [x] | 실제 양식 투입, output 재생성, 외부 연동 구현을 다음 단계로 두지 않았는가 |
