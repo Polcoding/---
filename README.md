@@ -314,6 +314,9 @@ Instructions 복사
 - `docs/139_minimum_demo_run_result.md`: 최소 demo 실행 결과 요약
 - `docs/140_user_operation_atoz_guide.md`: 사용자가 직접 해야 하는 일과 Codex가 처리할 일을 구분한 A-to-Z 운영 안내
 - `docs/141_user_rehearsal_prompt_examples.md`: 실제값 없이 따라 할 수 있는 문서 유형별 비식별 요청 예시
+- `docs/142_user_guidance_integrated_review.md`: 사용자 안내 3종 통합 점검
+- `docs/143_user_quick_start.md`: 처음 볼 순서와 멈출 지점을 줄인 사용자 quick start
+- `docs/144_quick_start_rehearsal_boundary.md`: 문서만으로 가능한 확인과 HWPX 열람 필요 지점 분리
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -444,7 +447,9 @@ Instructions 복사
 ## 다음 단계
 
 1. `CURRENT_STATUS.md`와 `docs/139_minimum_demo_run_result.md`를 기준으로 현재 작동 확인된 최소 PoC 경로를 봅니다.
-2. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
-3. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
-4. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
-5. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
+2. `docs/143_user_quick_start.md`에서 처음 볼 순서와 멈출 지점을 확인합니다.
+3. `docs/144_quick_start_rehearsal_boundary.md`에서 문서만으로 가능한 확인과 HWPX 열람 필요 지점을 분리합니다.
+4. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
+5. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
+6. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
+7. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
