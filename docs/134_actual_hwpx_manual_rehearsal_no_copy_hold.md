@@ -112,4 +112,4 @@ observed_symptom:
 
 비식별 HWPX 작업 복사본이 없으므로 실제 양식 수동 리허설은 보류합니다.
 
-다음 작업은 실제 파일 preview가 아니라, 저장소 내부에서 HWPX 보고서 본문과 Excel/한셀 표 데이터 후보의 역할 분리를 실제값 없이 문서화하는 것입니다.
+후속 작업에서 HWPX 보고서 본문과 Excel/한셀 표 데이터 후보의 역할 분리는 `docs/135_hwp_report_and_hancell_table_data_scope.md`, 사용자 입력 템플릿의 표 데이터 후보 표시 기준은 `docs/136_table_data_candidate_user_input_display_criteria.md`에 정리했습니다.

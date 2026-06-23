@@ -17,6 +17,7 @@
 - 실제 개인정보, 내부 운영정보, 민원정보, 차량번호, 실제 문서번호를 입력하지 않습니다.
 - 입력값이 없으면 임의 생성하지 않습니다.
 - 예산, 일정, 실적, 담당자, 수량은 사용자가 제공하지 않으면 `[확인 필요]`로 둡니다.
+- 표 데이터 후보는 실제값 없이 `[표 데이터 별도 확인 필요]` 또는 `[확인 필요]`로 표시합니다.
 - AI는 초안 작성만 수행하며 실제 발송, 결재, 계약, 업체 선정, 예산 집행, 법률 판단은 수행하지 않습니다.
 - `security_review`, `missing_fields`, `draft_status`, `human_review_required`는 모든 문서 유형에서 유지합니다.
 
@@ -132,6 +133,7 @@
 | 메타 검토값 누락 | `missing_fields`에 기록 |
 | 보안 검토값 누락 | 렌더링 중단 권장 |
 | 예산, 일정, 실적, 담당자, 수량 누락 | 임의 생성 금지, `[확인 필요]` |
+| 표 데이터 후보 누락 | 실제값 없이 `[표 데이터 별도 확인 필요]` 또는 `[확인 필요]` |
 | 실제 원문 포함 | 외부 처리 중단 |
 | C/D등급 문서 | 렌더링 및 외부 AI 처리 중단 |
 
@@ -147,6 +149,21 @@
 | `result_report` | `overview` | `{{overview_table}}` | 추진 개요 확인 필요 시 `[확인 필요]` |
 
 이 매핑은 `docs/54_hwpx_common_placeholder_design.md`와 `templates/hwpx/template_manifest.md`의 문서 기준 정합성 점검에 따릅니다.
+
+## 표 데이터 후보와 HWPX placeholder 구분
+
+표 데이터 후보는 HWPX 본문 placeholder와 구분합니다.
+
+| 구분 | 처리 기준 |
+|---|---|
+| HWPX 본문 placeholder | 보고서 제목, 본문, 검토 의견, 향후 계획 등 읽히는 초안 구조 |
+| 표 데이터 후보 | 일정표, 예산표, 대상 목록, 실적 집계 등 향후 Excel/한셀 분리 검토 항목 |
+| 사용자 입력 표시 | `[표 데이터 별도 확인 필요]` 또는 `[확인 필요]` |
+| 현재 코드 반영 | 없음 |
+
+표 데이터 후보는 필수 입력 필드를 새로 추가하는 의미가 아닙니다. `missing_fields`, renderer, normalizer, fixture, routing, HWPX payload 구조를 바꾸지 않고 사용자 확인 항목으로만 다룹니다.
+
+세부 표시 기준은 `docs/136_table_data_candidate_user_input_display_criteria.md`를 따릅니다.
 
 ## 입력 정규화로 넘길 항목
 

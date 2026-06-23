@@ -35,6 +35,7 @@
 - HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정
 - 비식별 HWPX 작업 복사본 없음에 따른 실제 양식 수동 리허설 보류 기록
 - HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위 정리
+- HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리
 
 ## 현재 자동화 우선순위
 
@@ -89,7 +90,8 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - HWPX 일원화 유지와 표 데이터 Excel/한셀 연동 후보 분리 결정을 완료했습니다.
 - 비식별 HWPX 작업 복사본이 없어 실제 양식 수동 리허설은 보류로 기록했습니다.
 - HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위를 정리했습니다.
-- 다음 작업 후보는 HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 실제값 없이 정리하는 것입니다.
+- HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 실제값 없이 정리했습니다.
+- 다음 작업 후보는 `examples/json` 보고서 샘플 4종에 표 데이터 후보 표시 기준을 반영할 필요가 있는지 검토하는 것입니다.
 
 ## 현재도 하지 않는 일
 
@@ -295,6 +297,7 @@ Instructions 복사
 - `docs/133_hwpx_only_table_frame_decision.md`: HWPX 일원화와 표 틀 우선 결정
 - `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`: 실제 양식 수동 리허설 복사본 없음 보류 기록
 - `docs/135_hwp_report_and_hancell_table_data_scope.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 범위
+- `docs/136_table_data_candidate_user_input_display_criteria.md`: HWPX 보고서 사용자 입력 템플릿의 표 데이터 후보 표시 기준
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -400,6 +403,7 @@ Instructions 복사
 - `checklists/hwpx_only_table_frame_decision_checklist.md`: HWPX 일원화와 표 틀 우선 결정 체크리스트
 - `checklists/actual_hwpx_manual_rehearsal_no_copy_hold_checklist.md`: 실제 양식 수동 리허설 복사본 없음 보류 체크리스트
 - `checklists/hwp_report_and_hancell_table_data_scope_checklist.md`: HWPX 보고서와 Excel/한셀 표 데이터 역할 분리 체크리스트
+- `checklists/table_data_candidate_user_input_display_checklist.md`: 표 데이터 후보 사용자 입력 표시 체크리스트
 - `templates/`: 비식별 샘플, 문서 인벤토리, 문체 명세 작성 템플릿
 - `renderers/markdown_renderer/README.md`: Markdown 미리보기 렌더러 안내
 - `renderers/email_renderer/README.md`: Email 초안 렌더러 안내
@@ -418,7 +422,7 @@ Instructions 복사
 
 ## 다음 단계
 
-1. `tasks/NEXT_STEP.md`를 기준으로 HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준을 정리합니다.
+1. `tasks/NEXT_STEP.md`를 기준으로 `examples/json` 보고서 샘플 4종에 표 데이터 후보 표시 기준을 반영할 필요가 있는지 검토합니다.
 2. `missing_fields` 생성 규칙은 고정 정책으로 유지합니다.
 3. helper 결과와 metadata는 아직 normalizer 흐름에 연결하지 않습니다.
 4. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.

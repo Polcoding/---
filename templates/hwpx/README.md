@@ -52,4 +52,5 @@
 - 최근 점검: `docs/133_hwpx_only_table_frame_decision.md`
 - 최근 점검: `docs/134_actual_hwpx_manual_rehearsal_no_copy_hold.md`
 - 최근 점검: `docs/135_hwp_report_and_hancell_table_data_scope.md`
-- 다음 점검: HWPX 보고서 4종 사용자 입력 템플릿의 표 데이터 후보 표시 기준 정리
+- 최근 점검: `docs/136_table_data_candidate_user_input_display_criteria.md`
+- 다음 점검: `examples/json` 보고서 샘플 4종의 표 데이터 후보 표시 기준 반영 필요 여부 검토
