@@ -28,7 +28,8 @@
 | [ ] | `[Codex 처리 가능]` | preview 결과 기록 양식 준비 |
 | [ ] | `[Codex 처리 가능]` | 외부 skill 또는 `hwpx-cli`가 실제 원본 처리나 운영 의존성 도입으로 오해되지 않는지 확인 |
 | [ ] | `[Codex 처리 가능]` | 비식별 HWPX 후보를 구조 분석기 `--template ... --no-output`로 선확인 |
-| [ ] | `[Codex 처리 가능]` | 제공 샘플 HWPX 1/2 profile-aware output의 문단 증가와 표 수 유지 확인 |
+| [ ] | `[Codex 처리 가능]` | 구조 선확인에서 `summary_output_skipped_no_output_flag`와 구조 메타정보만 확인 |
+| [ ] | `[Codex 처리 가능]` | 제공 샘플 HWPX 1/2 profile-aware output의 문단 증가와 표 수 유지 여부는 기존 기록으로만 확인 |
 
 ## 계속 보류할 조건
 

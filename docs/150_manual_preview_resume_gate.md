@@ -79,6 +79,24 @@
 - 외부 HWPX 자동 채우기 자료가 구조 분석 참고용으로만 연결되는지 확인
 - 비식별 HWPX 후보에 대해 `hwpx_template_structure_analyzer_poc.py --template ... --no-output` 구조 선확인
 
+## 구조 선확인 절차
+
+사용자가 저장소 밖 비식별 HWPX 작업 복사본을 준비했다고 명시한 경우에도, 실제 preview나 output 생성보다 먼저 구조 선확인을 수행합니다.
+
+```powershell
+python .\normalizers\hwpx_template_structure_analyzer_poc.py --template "[비식별 HWPX 후보 경로]" --no-output
+```
+
+확인 범위는 콘솔에 표시되는 구조 메타정보로 제한합니다.
+
+- `scope`가 `structure_only_no_text_extraction`인지 확인
+- `summary_output_skipped_no_output_flag`가 표시되는지 확인
+- section, paragraph, table, placeholder 개수만 확인
+- 본문 텍스트, 실제 원문, 개인정보, 실제 표 데이터는 기록하지 않음
+- 구조 선확인 결과만으로 `수동 preview 준비 가능`으로 바꾸지 않음
+
+구조 선확인에서 실제값 포함 가능성, Git 추적 대상 HWPX/output, 외부 도구를 통한 실제 원문 처리 요구가 보이면 preview는 계속 보류합니다.
+
 `[보류]`
 
 - 실제 원본 파일 Git 추가
