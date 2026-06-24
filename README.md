@@ -6,6 +6,33 @@
 
 현재 실제로 작동 확인된 범위와 아직 결과물이 아닌 범위는 `CURRENT_STATUS.md`를 먼저 확인합니다.
 
+## Codex 작업 시작 전 토큰 가드
+
+새 작업을 시작할 때는 전체 `docs/` 또는 `checklists/`를 먼저 훑지 말고, 토큰 컨텍스트 가드를 먼저 확인합니다.
+
+```powershell
+.\scripts\show_context_guard.ps1
+```
+
+Windows 실행 정책 때문에 `.ps1` 직접 실행이 막히면 다음처럼 실행합니다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\show_context_guard.ps1
+```
+
+작업 유형이 분명하면 다음 중 하나를 사용합니다.
+
+```powershell
+.\scripts\show_context_guard.ps1 -TaskType docs
+.\scripts\show_context_guard.ps1 -TaskType hwpx-policy
+.\scripts\show_context_guard.ps1 -TaskType normalizer
+.\scripts\show_context_guard.ps1 -TaskType renderer
+.\scripts\show_context_guard.ps1 -TaskType security
+.\scripts\show_context_guard.ps1 -TaskType review
+```
+
+가드는 파일 접근을 막는 장치가 아닙니다. 최신 진입점부터 작게 읽고, 보안ㆍHWPXㆍ실제 원본 가능성이 있으면 즉시 사용자 확인 또는 컨텍스트 확장으로 전환하기 위한 안내입니다.
+
 ## 이번 저장소의 목적
 
 이 저장소는 실제 업무 자동화 운영물이 아닙니다. 안전한 Custom GPT 테스트판, placeholder 기반 샘플 JSON, 로컬 PoC 렌더러, 입력 정규화 PoC, 테스트 결과 문서, 보안 기준을 정리합니다.

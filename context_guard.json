@@ -1,0 +1,136 @@
+{
+  "project": "public-document-automation",
+  "last_reviewed": "2026-06-24",
+  "default_entry_files": [
+    "README.md",
+    "AGENTS.md",
+    "CURRENT_STATUS.md",
+    "tasks/NEXT_STEP.md",
+    "docs/token_context_map.md"
+  ],
+  "default_exclude_globs": [
+    "docs/**",
+    "checklists/**",
+    "renderers/**/output/**",
+    "normalizers/output/**",
+    "templates/**/*.hwp",
+    "templates/**/*.hwpx",
+    "**/*.hwp",
+    "**/*.hwpx",
+    "**/__pycache__/**",
+    "**/*.pyc"
+  ],
+  "always_confirm_before": [
+    "real HWPX preview or Hancom manual viewing",
+    "opening source documents",
+    "using real institution forms",
+    "processing possible personal or internal data",
+    "deleting files or folders",
+    "external integration",
+    "email sending",
+    "Make.com or operational API connection",
+    "real work HWPX or XLSX output generation"
+  ],
+  "expand_when_global": [
+    "current entry documents conflict with older phase documents",
+    "security, de-identification, or original-document handling changes",
+    "HWPX hold or manual preview criteria changes",
+    "placeholder, output, or local template policy changes",
+    "README, AGENTS, CURRENT_STATUS, or NEXT_STEP changes"
+  ],
+  "task_profiles": {
+    "default": {
+      "entry_files": [],
+      "inspect_commands": [
+        "git status --short",
+        "git diff --stat"
+      ],
+      "expand_when": []
+    },
+    "docs": {
+      "entry_files": [],
+      "inspect_commands": [
+        "git status --short",
+        "git diff --stat",
+        "rg -n \"현재|다음 단계|보류|수동 preview|HWPX\" README.md CURRENT_STATUS.md tasks/NEXT_STEP.md"
+      ],
+      "expand_when": [
+        "README link changes",
+        "CURRENT_STATUS progress wording changes",
+        "new document or checklist is created"
+      ]
+    },
+    "hwpx-policy": {
+      "entry_files": [
+        "docs/150_manual_preview_resume_gate.md",
+        "checklists/manual_preview_resume_gate_checklist.md",
+        "templates/hwpx/local_template_policy.md",
+        "renderers/hwpx_renderer/README.md"
+      ],
+      "inspect_commands": [
+        "rg -n \"수동 preview|재개 게이트|local template|output|Git 제외\" docs/150_manual_preview_resume_gate.md checklists/manual_preview_resume_gate_checklist.md templates/hwpx/local_template_policy.md renderers/hwpx_renderer/README.md"
+      ],
+      "expand_when": [
+        "manual preview resume criteria changes",
+        "local HWPX template policy changes",
+        "placeholder or style profile policy changes"
+      ]
+    },
+    "normalizer": {
+      "entry_files": [
+        "normalizers/README.md",
+        "docs/109_normalizers_regression_recheck_result.md",
+        "checklists/normalizers_regression_test_suite_checklist.md"
+      ],
+      "inspect_commands": [
+        "rg --files normalizers | rg \"\\.py$|README\\.md$\""
+      ],
+      "expand_when": [
+        "placeholder policy changes",
+        "security filter behavior changes",
+        "fixture schema changes"
+      ]
+    },
+    "renderer": {
+      "entry_files": [
+        "renderers/README.md",
+        "renderers/hwpx_renderer/README.md",
+        "templates/hwpx/local_template_policy.md"
+      ],
+      "inspect_commands": [
+        "rg --files renderers templates/hwpx | rg \"README\\.md$|\\.py$|\\.gitignore$\""
+      ],
+      "expand_when": [
+        "output retention policy changes",
+        "HWPX template handling changes",
+        "actual work output risk appears"
+      ]
+    },
+    "security": {
+      "entry_files": [
+        "docs/02_security_policy.md",
+        "docs/03_deidentification_rules.md"
+      ],
+      "inspect_commands": [
+        "rg -n \"개인정보|민감정보|원문|Knowledge|외부 AI|실제\" AGENTS.md docs/02_security_policy.md docs/03_deidentification_rules.md"
+      ],
+      "expand_when": [
+        "real-value pattern appears",
+        "Custom GPT Knowledge wording changes",
+        "external AI input wording changes"
+      ]
+    },
+    "review": {
+      "entry_files": [],
+      "inspect_commands": [
+        "git diff --stat",
+        "git diff --name-only"
+      ],
+      "expand_when": [
+        "security or HWPX hold policy changes",
+        "entry documents conflict",
+        "changed file has no direct checklist or test"
+      ]
+    }
+  }
+}
