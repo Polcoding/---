@@ -57,6 +57,7 @@
 | `docs/132`, `docs/134` | 과거 준비 확인 기록보다 후속 복사본 없음 보류 기록과 재개 게이트가 우선임을 명시 |
 | `docs/06`, `docs/59`, `docs/72`, `docs/90`, `docs/112`, `docs/124`, `docs/130` | "현재/최신 다음 단계"처럼 읽히는 문구를 문서 기반 검증 유지와 수동 preview 재개 게이트 기준으로 보정 |
 | `docs/57`, `docs/123`, `docs/125`~`docs/129` 및 관련 체크리스트 | "다음 단계가 한컴 preview gap log 기록"처럼 단정되는 문구를 비식별 작업 복사본 준비와 재개 게이트 조건부로 보정 |
+| `docs/53`, `docs/58`, `docs/100`, `docs/115`, `docs/119`~`docs/122`, `checklists/before_automation_checklist.md`, HWPX intake/manual review 체크리스트 | 과거 Phase 2/3/실제 양식 절차 문구를 현재 검증 유지와 `docs/150_manual_preview_resume_gate.md` 선확인 기준으로 보정 |
 | `docs/146`~`docs/149` | 문서 기반 리허설 완료 이후 hold 유지 기준으로 다음 추천 문구 갱신 |
 | `docs/151`~`docs/154` | 이미 완료된 후속 문서를 다음 작업처럼 가리키던 표현을 현재 검증 유지 기준으로 갱신 |
 | `README.md` | 결과물 지도 우선 안내 반영 |

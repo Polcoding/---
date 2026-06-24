@@ -2,7 +2,7 @@
 
 ## 목적
 
-`normalizers/`의 placeholder confirmed values helper, 입력 정규화, 보안 필터, HWPX payload 매핑, validation, dry-run, mapped HWPX 렌더링을 같은 fixture 묶음으로 재검증합니다.
+`normalizers/`의 placeholder confirmed values helper, 입력 정규화, 보안 필터, HWPX payload 매핑, validation, dry-run, mapped HWPX 렌더링, HWPX template 구조 분석을 같은 fixture 묶음으로 재검증합니다.
 
 이 문서는 HWPX 보고서 4종 mapped 렌더링 완료 이후의 최소 회귀 테스트 기준입니다.
 
@@ -28,6 +28,8 @@ python .\normalizers\hwpx_payload_mapper_poc.py
 python .\normalizers\validate_hwpx_payload_poc.py
 python .\normalizers\hwpx_renderer_dry_run_poc.py
 python .\normalizers\render_mapped_hwpx_poc.py
+python .\normalizers\test_hwpx_template_structure_analyzer_poc.py
+python .\normalizers\hwpx_template_structure_analyzer_poc.py
 ```
 
 ## 기대 결과
@@ -81,6 +83,14 @@ python .\normalizers\render_mapped_hwpx_poc.py
 - `status`: `rendered`
 - `remaining_placeholders`: 0
 - `errors`: 없음
+
+### hwpx_template_structure_analyzer_poc.py
+
+- 보고서 4종 local template 후보를 구조 분석
+- 본문 텍스트를 summary에 저장하지 않음
+- section, paragraph, table, placeholder count를 기록
+- template이 없거나 `.hwpx`가 아니면 `template_required`로 안전 중단
+- 구조 분석기 테스트 2건 통과
 
 ## 산출물 정책
 

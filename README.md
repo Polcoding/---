@@ -42,6 +42,9 @@
 - renderer와 normalizer 안내 문서의 표 데이터 후보 오해 가능성 점검
 - 실행 가능한 최소 PoC 경로와 현재 결과물 범위를 `CURRENT_STATUS.md`에 정리
 - 사용자 입력 항목을 `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]`로 구분
+- 외부 HWPX 자동 채우기 skill, 샘플 HWPX, `hwpx-cli` 참고 자료를 현재 보안 원칙과 placeholder 렌더러 흐름에 맞춰 채택 검토
+- 설치된 skill, 저장소 밖 `hwpx-cli`, 기존 Python PoC가 충돌하지 않도록 외부 도구 격리 기준 정리
+- 외부 구조 분석 아이디어를 Python 기반 HWPX template 구조 분석 PoC로 저장소 내부 구현
 
 ## 현재 자동화 우선순위
 
@@ -107,6 +110,9 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - 구형 다음 단계 문구 점검, 사용자 가시 산출물 보안ㆍGit 제외 검증, 현황판 진행률 점검을 `docs/155`부터 `docs/157`까지 정리했습니다.
 - 사용자 quick start, A-to-Z 안내, 리허설 체크리스트에서도 HWPX 열람 전 `docs/150_manual_preview_resume_gate.md` 조건을 먼저 확인하도록 정리했습니다.
 - 현재 작업 운영 기준은 작은 확인마다 멈추지 않고, push 기준점이 생길 때까지 같은 변경 묶음 안에서 다음 추천 작업을 계속 진행하는 방식입니다.
+- 외부 HWPX 자동 채우기 skill, 샘플 HWPX 구조, `hwpx-cli` 참고 방향은 `docs/158_hwpx_autofill_conversion_adoption_review.md`에 정리했습니다.
+- 외부 도구와 기존 PoC의 충돌 방지 기준은 `docs/159_external_tool_isolation_and_conflict_policy.md`에 정리했습니다.
+- 외부 skill과 기존 작업의 충돌 점검 및 내부 구현 전환 결과는 `docs/160_external_skills_conflict_and_modernization_review.md`에 정리했습니다.
 
 ## 현재도 하지 않는 일
 
@@ -335,6 +341,9 @@ Instructions 복사
 - `docs/155_legacy_next_step_language_review.md`: 구형 다음 단계 문구 점검
 - `docs/156_user_visible_artifact_security_and_git_check.md`: 사용자 가시 산출물 묶음 보안ㆍGit 제외 검증
 - `docs/157_current_status_progress_review.md`: CURRENT_STATUS 진행률 점검
+- `docs/158_hwpx_autofill_conversion_adoption_review.md`: HWPX 자동 채우기 외부 자료 채택 검토
+- `docs/159_external_tool_isolation_and_conflict_policy.md`: 외부 도구 격리와 충돌 방지 기준
+- `docs/160_external_skills_conflict_and_modernization_review.md`: 외부 skill 충돌 점검과 구현 전환 검토
 - `prompts/`: GPT 프롬프트와 대화 시작 문구
 - `examples/`: 안전한 요청, 제한 요청, 모범 출력 예시
 - `examples/json/README.md`: 렌더러 검증용 JSON 샘플 안내
@@ -479,6 +488,7 @@ Instructions 복사
 5. `docs/140_user_operation_atoz_guide.md`에서 사용자가 직접 확인할 일과 Codex가 처리할 일을 구분합니다.
 6. `docs/141_user_rehearsal_prompt_examples.md`에서 실제값 없는 요청 예시를 확인합니다.
 7. `docs/150_manual_preview_resume_gate.md`에서 수동 preview 재개 조건을 확인합니다.
-8. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
-9. 한컴 열람과 레이아웃 확인은 `docs/150_manual_preview_resume_gate.md` 조건 충족 후에만 진행합니다.
-10. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.
+8. `docs/158_hwpx_autofill_conversion_adoption_review.md`에서 외부 HWPX 자동 채우기 자료를 현재 흐름에 어떻게 흡수할지 확인합니다.
+9. 실제 HWPX 작업 복사본이 준비되기 전까지 실제 양식 수동 preview는 보류합니다.
+10. 한컴 열람과 레이아웃 확인은 `docs/150_manual_preview_resume_gate.md` 조건 충족 후에만 진행합니다.
+11. 표가 포함된 양식은 표 내부 값이 아니라 표 위치, 폭, 줄바꿈, 겹침, 여백만 확인합니다.

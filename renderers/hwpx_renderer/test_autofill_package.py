@@ -1,0 +1,214 @@
+from __future__ import annotations
+
+import tempfile
+import unittest
+import zipfile
+from pathlib import Path
+
+from autofill_package import render_autofill_draft_to_hwpx, render_autofill_sections_to_hwpx
+from render_autofill_sample_poc import (
+    DEFAULT_ANCHOR_CANDIDATES,
+    build_draft_lines,
+    build_sample_profile_sections,
+)
+
+
+class AutofillPackageTest(unittest.TestCase):
+    def test_appends_deidentified_draft_lines_to_placeholder_free_hwpx(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "placeholder_free.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>template heading</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+                package.writestr("Preview/PrvText.txt", "preview text must not be copied")
+
+            result = render_autofill_draft_to_hwpx(
+                template_path,
+                output_path,
+                ["[제목] 안전 점검 보고", "- 추진 배경: [확인 필요]"],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            self.assertEqual(result["inserted_paragraph_count"], 2)
+            self.assertTrue(output_path.exists())
+
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            self.assertIn("[제목] 안전 점검 보고", rendered_section)
+            self.assertIn("- 추진 배경: [확인 필요]", rendered_section)
+            self.assertNotIn("preview text must not be copied", str(result))
+
+    def test_inserts_deidentified_draft_after_matching_anchor(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "anchored.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>머리말</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>1. 보고 개요</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>2. 기존 후속 항목</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_draft_to_hwpx(
+                template_path,
+                output_path,
+                ["[삽입] 보고 개요 초안"],
+                anchor_candidates=["보고 개요"],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            self.assertTrue(result["inserted_after_anchor"])
+            self.assertEqual(result["matched_anchor"], "보고 개요")
+
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            self.assertLess(
+                rendered_section.index("1. 보고 개요"),
+                rendered_section.index("[삽입] 보고 개요 초안"),
+            )
+            self.assertLess(
+                rendered_section.index("[삽입] 보고 개요 초안"),
+                rendered_section.index("2. 기존 후속 항목"),
+            )
+
+    def test_default_anchor_candidates_match_sample_summary_heading(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "sample_summary.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>OOO 신사업 보고서</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>개요 or 목적</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>추진방안 or 본문</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_draft_to_hwpx(
+                template_path,
+                output_path,
+                ["[삽입] 개요 초안"],
+                anchor_candidates=DEFAULT_ANCHOR_CANDIDATES,
+            )
+
+            self.assertTrue(result["inserted_after_anchor"])
+            self.assertEqual(result["matched_anchor"], "개요")
+
+    def test_anchor_insertion_does_not_duplicate_nested_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "nested_table_anchor.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>simple text style</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>사업 개요</hp:t></hp:run>'
+                '<hp:tbl><hp:tr><hp:tc><hp:p><hp:run><hp:t>nested table text</hp:t></hp:run></hp:p></hp:tc></hp:tr></hp:tbl>'
+                "</hp:p>"
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_draft_to_hwpx(
+                template_path,
+                output_path,
+                ["[삽입] 표 복제 방지"],
+                anchor_candidates=["사업 개요"],
+            )
+
+            self.assertTrue(result["inserted_after_anchor"])
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            self.assertEqual(rendered_section.count("<hp:tbl"), 1)
+            self.assertEqual(rendered_section.count("nested table text"), 1)
+            self.assertIn("[삽입] 표 복제 방지", rendered_section)
+
+    def test_inserts_profile_sections_after_each_matching_anchor(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "profile_sections.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>개요 or 목적</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>기존 개요 후속</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>추진방안 or 본문</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>기존 본문 후속</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_sections_to_hwpx(
+                template_path,
+                output_path,
+                [
+                    {"anchor_candidates": ["개요"], "lines": ["[개요] 목적: [확인 필요]"]},
+                    {"anchor_candidates": ["추진방안"], "lines": ["[본문] 추진방안: [확인 필요]"]},
+                ],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            self.assertEqual(result["inserted_paragraph_count"], 2)
+            self.assertEqual(result["matched_anchor_count"], 2)
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            self.assertLess(rendered_section.index("개요 or 목적"), rendered_section.index("[개요]"))
+            self.assertLess(rendered_section.index("[개요]"), rendered_section.index("기존 개요 후속"))
+            self.assertLess(rendered_section.index("추진방안 or 본문"), rendered_section.index("[본문]"))
+            self.assertLess(rendered_section.index("[본문]"), rendered_section.index("기존 본문 후속"))
+
+    def test_returns_template_required_for_missing_template(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            result = render_autofill_draft_to_hwpx(
+                Path(temp_dir) / "missing.hwpx",
+                Path(temp_dir) / "filled.hwpx",
+                ["[제목] 안전 점검 보고"],
+            )
+
+            self.assertEqual(result["status"], "template_required")
+            self.assertEqual(result["inserted_paragraph_count"], 0)
+
+    def test_builds_deidentified_draft_without_confirmed_values(self) -> None:
+        draft_lines = build_draft_lines("시설 안전 점검")
+        draft_text = "\n".join(draft_lines)
+
+        self.assertIn("[제목] 시설 안전 점검 검토 보고", draft_text)
+        self.assertIn("[확인 필요]", draft_text)
+        self.assertNotRegex(draft_text, r"\d+\s*(명|개|건|원)")
+        self.assertNotIn("담당자:", draft_text)
+
+    def test_builds_summary_sample_profile_sections(self) -> None:
+        sections = build_sample_profile_sections("시설 안전 점검", "보고서 기반 양식(요약).hwpx")
+
+        self.assertGreaterEqual(len(sections), 5)
+        self.assertEqual(sections[0]["anchor_candidates"][0], "개요")
+        self.assertIn("추진방안", sections[1]["anchor_candidates"])
+        self.assertTrue(any("사업예산" in section["anchor_candidates"] for section in sections))
+        self.assertTrue(any("[확인 필요]" in "\n".join(section["lines"]) for section in sections))
+
+
+if __name__ == "__main__":
+    unittest.main()

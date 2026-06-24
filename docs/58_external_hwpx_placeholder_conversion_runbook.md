@@ -8,13 +8,14 @@
 
 ## 핵심 원칙
 
-최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 따릅니다.
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 따릅니다. 수동 preview 재개 여부는 `docs/150_manual_preview_resume_gate.md` 조건을 먼저 확인합니다. 외부 HWPX 자동 채우기 skill 또는 `hwpx-cli` 참고 자료는 `docs/158_hwpx_autofill_conversion_adoption_review.md` 기준으로 구조 분석 참고용으로만 봅니다.
 
 - 실제 기관 양식 원본은 이 저장소에 복사하지 않습니다.
 - 실제 기관 양식 원본은 외부 AI, Custom GPT Knowledge, API 입력으로 사용하지 않습니다.
 - 저장소 밖 로컬 작업 폴더에서만 복사본을 다룹니다.
 - Git에 남길 수 있는 것은 절차 문서, 체크리스트, 코드, placeholder 기반 샘플뿐입니다.
 - 실제 HWPX 템플릿과 output HWPX는 Git에서 제외합니다.
+- 외부 skill, MCP, `hwpx-cli`에 실제 원본이나 실제 기관 양식을 바로 넣지 않습니다.
 
 ## 권장 작업 위치
 
@@ -76,6 +77,7 @@ placeholder_candidate_[document_type].hwpx
    - 예: `{{title}}`, `{{background}}`, `{{main_points}}`, `{{future_plan}}`
    - placeholder 이름에 실제 기관, 실제 부서, 실제 업무명, 실제 사건명을 넣지 않습니다.
    - 여러 줄이 들어갈 placeholder는 가능한 한 서로 다른 문단에 둡니다.
+   - 외부 자동 채우기 자료가 있더라도 placeholder 후보 위치와 HWPX 구조 이해에만 사용합니다.
 
 5. 파일 속성 및 미리보기 확인
    - HWPX 미리보기, 문서 정보, 속성, 마지막 저장자 정보에 실제 정보가 남아 있지 않은지 확인합니다.
@@ -93,6 +95,7 @@ placeholder_candidate_[document_type].hwpx
    - output HWPX가 GitHub Desktop Changes에 나타나지 않는지 확인합니다.
 
 8. 한컴 수동 검수
+   - `docs/150_manual_preview_resume_gate.md` 조건 충족 후에만 진행합니다.
    - 글자 겹침, 줄간격, 문단 간격, 번호체계, 표 표시를 확인합니다.
    - 겹침이 있으면 실제 데이터를 넣지 말고 placeholder 길이와 문단 배치를 조정합니다.
 
@@ -128,6 +131,8 @@ placeholder_candidate_[document_type].hwpx
 - 저장소 밖 복사본 절차가 명확함
 - 실제 식별 요소 제거 기준이 명확함
 - placeholder 이름이 중립적임
+- 외부 HWPX 자동 채우기 자료가 구조 분석 참고용으로만 남음
 - 로컬 HWPX 템플릿과 output HWPX가 Git 제외 상태임
 - 다음 단계에서 사용자가 저장소 밖에서 안전하게 복사본을 만들 수 있음
 - 반복 작업 전 Git 제외 상태 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`에서 확인함
+- 한컴 수동 preview 재개 전 `docs/150_manual_preview_resume_gate.md` 조건을 확인함

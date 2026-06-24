@@ -135,7 +135,7 @@ Phase 3 closeout 판단은 실제값 없이 다음처럼 기록합니다.
 | code_change_required | `아니오` |
 | output_generation | `없음` |
 | local_hwpx_git_status | `Git 제외 유지` |
-| next_action | `Phase 4 문서 템플릿 안정화 진입 판단 후 template manifest와 공통 placeholder 정합성 점검` |
+| next_action | `현재 검증 상태 유지, 수동 preview 재개 게이트 조건 발생 시 확인` |
 
 ## 코드 변경 판단
 
@@ -157,7 +157,7 @@ Phase 3 closeout 판단은 실제값 없이 다음처럼 기록합니다.
 
 후속 판단은 `docs/123_phase4_template_stabilization_entry_judgment.md`에 반영했습니다.
 
-다음 단계는 실제 연동 구현이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
+다음 단계는 실제 연동 구현이 아니라, HWPX 보고서 4종 template manifest와 공통 placeholder 정합성 점검까지 반영된 현재 문서 기준을 유지하는 것입니다.
 
 검토 질문:
 
@@ -185,4 +185,4 @@ Phase 3는 문서 기준으로 마무리 가능 상태입니다.
 
 외부 연동 구현은 승인하지 않고 보류합니다.
 
-Phase 4 진입 판단은 `docs/123_phase4_template_stabilization_entry_judgment.md`에 후속 반영했으며, 다음 단계는 실제 구현이 아니라 HWPX 보고서 4종 template manifest와 공통 placeholder 정합성을 문서로 점검하는 것입니다.
+Phase 4 진입 판단은 `docs/123_phase4_template_stabilization_entry_judgment.md`에 후속 반영했습니다. 현재 최신 기준은 실제 구현이 아니라 문서 기반 검증 상태를 유지하고, 수동 preview는 `docs/150_manual_preview_resume_gate.md` 조건을 만족할 때만 재개하는 것입니다.

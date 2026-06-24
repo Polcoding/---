@@ -25,6 +25,8 @@
 | [x] | `validate_hwpx_payload_poc.py`를 실행했는가 |
 | [x] | `hwpx_renderer_dry_run_poc.py`를 실행했는가 |
 | [x] | `render_mapped_hwpx_poc.py`를 실행했는가 |
+| [x] | `test_hwpx_template_structure_analyzer_poc.py`를 실행했는가 |
+| [x] | `hwpx_template_structure_analyzer_poc.py`를 실행했는가 |
 
 ## 기대 결과
 
@@ -41,6 +43,9 @@
 | [x] | dry-run 상태가 문서의 기대값과 일치하는가 |
 | [x] | mapped HWPX 렌더링 4종이 모두 `rendered`인가 |
 | [x] | mapped HWPX 렌더링 4종의 `remaining_placeholders`가 0인가 |
+| [x] | HWPX 구조 분석기 테스트 2건이 통과했는가 |
+| [x] | HWPX 구조 분석기가 보고서 4종 local template 후보를 분석했는가 |
+| [x] | 구조 분석 결과가 본문 텍스트를 저장하지 않는가 |
 
 ## Git 제외 확인
 
@@ -61,6 +66,7 @@
 | [x] | 실제 공문 또는 보고서 원문을 포함하지 않았는가 |
 | [x] | 실제 예산액, 일정, 실적 수치를 생성하지 않았는가 |
 | [x] | Email/API/Make.com 연동을 하지 않았는가 |
+| [x] | 외부 `hwpx-cli` Node 의존성을 저장소에 추가하지 않았는가 |
 
 ## 다음 단계 판단
 

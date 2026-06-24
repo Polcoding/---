@@ -1,10 +1,11 @@
 # HWPX 렌더링 결과 수동 검수 체크리스트
 
-최신 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`를 따릅니다. 저장소 밖 실제 양식 후보를 다루는 경우 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`의 보류 조건과 `docs/129_local_template_gitignore_repeat_verification_criteria.md`의 Git 제외 반복 검증 기준도 함께 확인합니다.
+최신 HWPX 보고서 4종 수동 preview gap log 기준은 `docs/127_hwpx_manual_preview_gap_log_criteria.md`를 따릅니다. 저장소 밖 실제 양식 후보를 다루는 경우 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`의 보류 조건, `docs/129_local_template_gitignore_repeat_verification_criteria.md`의 Git 제외 반복 검증 기준, `docs/150_manual_preview_resume_gate.md`의 수동 preview 재개 조건을 함께 확인합니다.
 
 ## 수동 preview gap log 기록 전 확인
 
 - [ ] 실제 기관명, 실제 문서번호, 실제 파일명을 기록하지 않는가
+- [ ] `docs/150_manual_preview_resume_gate.md` 조건 충족 후 진행하는가
 - [ ] 실제 공문 원문 또는 보고서 원문을 기록하지 않는가
 - [ ] 실제 개인정보, 담당자명, 연락처를 기록하지 않는가
 - [ ] gap을 문서유형, 항목, 증상, 심각도, 후속 조치로만 기록하는가

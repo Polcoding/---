@@ -1,6 +1,6 @@
 # 실제 HWPX 양식 투입 전 체크리스트
 
-최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다. local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 따릅니다.
+최신 저장소 밖 실제 양식 후보 수동 절차와 보류 조건은 `docs/128_external_hwpx_candidate_manual_procedure_and_hold_criteria.md`를 함께 확인합니다. local template과 output Git 제외 반복 검증 기준은 `docs/129_local_template_gitignore_repeat_verification_criteria.md`를 따르며, 수동 preview 재개 여부는 `docs/150_manual_preview_resume_gate.md`를 먼저 확인합니다. 외부 HWPX 자동 채우기 skill 또는 `hwpx-cli` 참고 자료는 `docs/158_hwpx_autofill_conversion_adoption_review.md` 기준으로 구조 분석 참고용으로만 봅니다.
 
 ## 원본 분류
 
@@ -9,6 +9,7 @@
 - [ ] C등급 내부 참고 문서를 외부 AI 입력이나 샘플 후보로 사용하지 않았는가
 - [ ] D등급 외부 처리 금지 문서가 아닌가
 - [ ] 판단이 애매한 자료를 더 보수적인 등급으로 분류했는가
+- [ ] 외부 skill, MCP, `hwpx-cli`에 실제 원본을 바로 넣지 않았는가
 
 ## 실제 정보 제거
 
@@ -26,6 +27,7 @@
 - [ ] 여러 줄 placeholder가 가능한 한 서로 다른 문단에 배치되었는가
 - [ ] 확인되지 않은 값은 `[확인 필요]`, `null`, 또는 빈 문자열로 처리되는가
 - [ ] 예산, 일정, 담당자, 수량을 임의 생성하지 않았는가
+- [ ] 외부 자동 채우기 자료가 placeholder 후보 위치 참고로만 사용되었는가
 
 ## Git 제외 확인
 
@@ -38,6 +40,7 @@
 
 ## 렌더링 검수
 
+- [ ] `docs/150_manual_preview_resume_gate.md` 조건을 충족했는가
 - [ ] placeholder 기반 샘플 JSON만 사용했는가
 - [ ] 렌더러가 `rendered` 또는 `template_required`처럼 안전한 상태를 반환하는가
 - [ ] `remaining_placeholders`가 없는지 확인했는가

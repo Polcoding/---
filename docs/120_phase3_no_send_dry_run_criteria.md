@@ -97,6 +97,8 @@ no-send dry-run으로는 다음을 확인할 수 없습니다.
 
 `[사용자 확인 필요]`가 남아 있으면 no-send dry-run을 통과로 기록하지 않고 보류로 둡니다.
 
+HWPX 수동 preview가 필요한 경우에는 `docs/150_manual_preview_resume_gate.md` 조건 충족 전까지 no-send dry-run도 통과로 기록하지 않습니다.
+
 ## no-send dry-run 중단 또는 보류 조건
 
 다음 중 하나라도 해당하면 no-send dry-run은 중단 또는 보류합니다.
@@ -181,7 +183,7 @@ no-send dry-run 통과가 의미하지 않는 것:
 
 ## 다음 작업 후보
 
-다음 단계는 실제 연동 구현이 아니라 Phase 4 문서 템플릿 안정화 진입 여부를 문서로 판단하는 것입니다.
+다음 단계는 실제 연동 구현이 아니라, 이미 정리된 Phase 4 문서 템플릿 안정화 기준과 수동 preview 재개 게이트를 유지 점검하는 것입니다.
 
 검토 질문:
 
