@@ -10,7 +10,7 @@
 
 | 구분 | 확인 항목 | 기준 |
 |---|---|---|
-| 사용자 흐름 | 처음 열 파일 순서 | `CURRENT_STATUS.md` -> `docs/143_user_quick_start.md` -> A-to-Z 안내 -> 요청 예시 |
+| 사용자 흐름 | 처음 열 파일 순서 | `CURRENT_STATUS.md` -> `docs/140_user_operation_atoz_guide.md` -> `checklists/user_operation_atoz_rehearsal_checklist.md` -> `docs/141_user_rehearsal_prompt_examples.md` |
 | 역할 구분 | `[사용자 확인 필요]`, `[Codex 처리 가능]`, `[보류]` | 세 표시가 같은 의미로 유지됨 |
 | 요청 예시 | 보고서 4종 비식별 예시 | 실제값 없이 placeholder 유지 |
 | 보안 원칙 | 실제 원문, 개인정보, 기관정보, 문서번호 제외 | 문서 기준으로 확인 가능 |

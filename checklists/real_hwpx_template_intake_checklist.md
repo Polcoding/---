@@ -38,6 +38,13 @@
 - [ ] 실제 HWPX 원본 또는 output 파일을 강제로 추가하지 않았는가
 - [ ] Git에 남는 것은 문서, 체크리스트, 코드, placeholder 샘플뿐인가
 
+## 구조 선확인
+
+- [ ] 비식별 HWPX 작업 복사본 후보가 준비된 경우에도 먼저 `hwpx_template_structure_analyzer_poc.py --template ... --no-output`으로 확인하는가
+- [ ] 구조 선확인이 output 생성이나 수동 preview 재개 승인으로 오해되지 않는가
+- [ ] 구조 선확인 결과에 본문 텍스트, 실제 원문, 개인정보, 실제 표 데이터를 저장하지 않는가
+- [ ] 보류 조건이 있으면 렌더링 검수나 한컴 확인으로 넘어가지 않는가
+
 ## 렌더링 검수
 
 - [ ] `docs/150_manual_preview_resume_gate.md` 조건을 충족했는가
