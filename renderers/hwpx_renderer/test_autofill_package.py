@@ -318,11 +318,46 @@ class AutofillPackageTest(unittest.TestCase):
         self.assertTrue(lines)
         self.assertTrue(all(not line.startswith("-") for line in lines))
 
+    def test_summary_sample_profile_uses_optional_user_fields_without_bullet_duplication(self) -> None:
+        sections = build_sample_profile_sections(
+            "시설 안전 점검",
+            "보고서 기반 양식(요약).hwpx",
+            {
+                "purpose": "현장 점검 준비사항 정리",
+                "target": "비식별 점검 대상",
+                "period": "상반기",
+                "cooperation": "관련 부서 일정 확인",
+            },
+        )
+        lines = [line for section in sections for line in section["lines"]]
+
+        self.assertIn("목적: 현장 점검 준비사항 정리", lines)
+        self.assertIn("대상: 비식별 점검 대상", lines)
+        self.assertIn("기간: 상반기", lines)
+        self.assertIn("협조 필요사항: 관련 부서 일정 확인", lines)
+        self.assertTrue(all(not line.startswith("-") for line in lines))
+
     def test_builds_basic_sample_profile_sections_with_last_anchor_policy(self) -> None:
         sections = build_sample_profile_sections("시설 안전 점검", "보고서 기본 양식.hwpx")
 
         self.assertTrue(sections)
         self.assertTrue(all(section.get("match_policy") == "last" for section in sections))
+
+    def test_basic_sample_profile_uses_optional_user_fields_with_dash_style(self) -> None:
+        sections = build_sample_profile_sections(
+            "시설 안전 점검",
+            "보고서 기본 양식.hwpx",
+            {
+                "purpose": "현장 점검 준비사항 정리",
+                "background": "점검 기준 정비 필요",
+                "scope": "비식별 점검 대상",
+            },
+        )
+        lines = [line for section in sections for line in section["lines"]]
+
+        self.assertIn("- 목적: 현장 점검 준비사항 정리", lines)
+        self.assertIn("- 추진 배경: 점검 기준 정비 필요", lines)
+        self.assertIn("- 적용 범위: 비식별 점검 대상", lines)
 
     def test_builds_basic_sample_profile_sections_with_body_anchor_variants(self) -> None:
         sections = build_sample_profile_sections("시설 안전 점검", "보고서 기본 양식.hwpx")
@@ -346,6 +381,26 @@ class AutofillPackageTest(unittest.TestCase):
 
         self.assertEqual(args.topic, "시설 안전 점검")
         self.assertEqual(args.sample, "all")
+
+    def test_batch_parser_accepts_optional_user_fields(self) -> None:
+        args = parse_batch_args(
+            [
+                "시설 안전 점검",
+                "--purpose",
+                "현장 점검 준비사항 정리",
+                "--target",
+                "비식별 점검 대상",
+                "--period",
+                "상반기",
+                "--cooperation",
+                "관련 부서 일정 확인",
+            ]
+        )
+
+        self.assertEqual(args.profile_fields["purpose"], "현장 점검 준비사항 정리")
+        self.assertEqual(args.profile_fields["target"], "비식별 점검 대상")
+        self.assertEqual(args.profile_fields["period"], "상반기")
+        self.assertEqual(args.profile_fields["cooperation"], "관련 부서 일정 확인")
 
     def test_builds_regression_jobs_for_default_topics_and_samples(self) -> None:
         jobs = build_regression_jobs(Path("samples"), Path("output"))

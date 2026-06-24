@@ -62,16 +62,37 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         default=OUTPUT_DIR,
         help="Output directory. Default is ignored renderer output.",
     )
+    parser.add_argument("--purpose", help="Optional deidentified purpose text.")
+    parser.add_argument("--target", help="Optional deidentified target text.")
+    parser.add_argument("--period", help="Optional deidentified period text.")
+    parser.add_argument("--cooperation", help="Optional deidentified cooperation text.")
+    parser.add_argument("--background", help="Optional deidentified background text for sample 1.")
+    parser.add_argument("--scope", help="Optional deidentified scope text for sample 1.")
     args = parser.parse_args(argv)
     args.topic = args.topic or args.topic_arg
     if not args.topic:
         parser.error("topic is required. Use a positional topic or --topic.")
+    args.profile_fields = build_profile_fields(args)
     return args
+
+
+def build_profile_fields(args: argparse.Namespace) -> dict[str, str]:
+    fields = {
+        "purpose": args.purpose,
+        "target": args.target,
+        "period": args.period,
+        "cooperation": args.cooperation,
+        "background": args.background,
+        "scope": args.scope,
+    }
+    return {key: value.strip() for key, value in fields.items() if value and value.strip()}
 
 
 def main() -> None:
     args = parse_args()
     reasons = has_forbidden_pattern(args.topic)
+    for value in args.profile_fields.values():
+        reasons.extend(has_forbidden_pattern(value))
     if reasons:
         print("batch_autofill_blocked")
         for reason in reasons:
@@ -88,7 +109,7 @@ def main() -> None:
         result = render_autofill_sections_to_hwpx(
             template_path,
             output_path,
-            build_sample_profile_sections(args.topic, str(job["template_name"])),
+            build_sample_profile_sections(args.topic, str(job["template_name"]), args.profile_fields),
         )
         print(f"sample{job['sample']}: {result['status']}")
         print(f"  template: {template_path.name}")

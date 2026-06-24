@@ -49,16 +49,21 @@ def build_draft_lines(topic: str) -> list[str]:
     ]
 
 
-def build_sample_profile_sections(topic: str, template_name: str) -> list[dict[str, object]]:
+def build_sample_profile_sections(
+    topic: str,
+    template_name: str,
+    profile_fields: dict[str, str] | None = None,
+) -> list[dict[str, object]]:
     safe_topic = topic.strip() or "[주제 확인 필요]"
+    fields = _safe_profile_fields(profile_fields)
     if "요약" in template_name:
         return [
             {
                 "anchor_candidates": ["개요", "목적", "개요 or 목적"],
                 "lines": [
-                    f"목적: {safe_topic} 관련 검토 방향 정리",
-                    "대상: [확인 필요]",
-                    "기간: [확인 필요]",
+                    f"목적: {fields.get('purpose') or f'{safe_topic} 관련 검토 방향 정리'}",
+                    f"대상: {fields.get('target') or '[확인 필요]'}",
+                    f"기간: {fields.get('period') or '[확인 필요]'}",
                 ],
             },
             {
@@ -86,7 +91,7 @@ def build_sample_profile_sections(topic: str, template_name: str) -> list[dict[s
             {
                 "anchor_candidates": ["기타사항", "협조사항", "기타사항 or 협조사항"],
                 "lines": [
-                    "협조 필요사항: [확인 필요]",
+                    f"협조 필요사항: {fields.get('cooperation') or '[확인 필요]'}",
                     "보안 검토: 실제 개인정보, 실제 기관명, 실제 문서번호 제외",
                 ],
             },
@@ -97,9 +102,9 @@ def build_sample_profile_sections(topic: str, template_name: str) -> list[dict[s
             "anchor_candidates": ["사업 개요", "Ⅰ. 사업 개요"],
             "match_policy": "last",
             "lines": [
-                f"- 목적: {safe_topic} 관련 기본 방향 정리",
-                "- 추진 배경: [확인 필요]",
-                "- 적용 범위: [확인 필요]",
+                f"- 목적: {fields.get('purpose') or f'{safe_topic} 관련 기본 방향 정리'}",
+                f"- 추진 배경: {fields.get('background') or '[확인 필요]'}",
+                f"- 적용 범위: {fields.get('scope') or fields.get('target') or '[확인 필요]'}",
             ],
         },
         {
@@ -142,6 +147,16 @@ def build_sample_profile_sections(topic: str, template_name: str) -> list[dict[s
             ],
         },
     ]
+
+
+def _safe_profile_fields(profile_fields: dict[str, str] | None) -> dict[str, str]:
+    if not profile_fields:
+        return {}
+    return {
+        key: str(value).strip()
+        for key, value in profile_fields.items()
+        if value is not None and str(value).strip()
+    }
 
 
 def parse_args() -> argparse.Namespace:
