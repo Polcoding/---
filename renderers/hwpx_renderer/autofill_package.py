@@ -162,9 +162,15 @@ def _insert_draft_lines_to_section(
     anchor = _find_anchor_paragraph(root, anchor_candidates)
     if anchor is not None:
         parent, anchor_index, anchor_paragraph, matched_anchor = anchor
-        paragraph_template = _select_insertion_paragraph_template(root, anchor_paragraph)
         insert_index = anchor_index + 1
         for line in draft_lines:
+            paragraph_template = _select_insertion_paragraph_template(
+                root,
+                anchor_paragraph,
+                parent,
+                anchor_index,
+                line,
+            )
             paragraph = _build_text_paragraph(paragraph_template, line)
             parent.insert(insert_index, paragraph)
             insert_index += 1
@@ -202,7 +208,8 @@ def _insert_profile_sections_to_section(
     for profile_section in profile_sections:
         lines = profile_section["lines"]
         anchor_candidates = profile_section["anchor_candidates"]
-        anchor = _find_anchor_paragraph(root, anchor_candidates)
+        match_policy = profile_section.get("match_policy", "first")
+        anchor = _find_anchor_paragraph(root, anchor_candidates, match_policy)
         if anchor is None:
             section_results.append(
                 {
@@ -215,9 +222,15 @@ def _insert_profile_sections_to_section(
             continue
 
         parent, anchor_index, anchor_paragraph, matched_anchor = anchor
-        paragraph_template = _select_insertion_paragraph_template(root, anchor_paragraph)
         insert_index = anchor_index + 1
         for line in lines:
+            paragraph_template = _select_insertion_paragraph_template(
+                root,
+                anchor_paragraph,
+                parent,
+                anchor_index,
+                line,
+            )
             paragraph = _build_text_paragraph(paragraph_template, line)
             parent.insert(insert_index, paragraph)
             insert_index += 1
@@ -253,26 +266,27 @@ def _insert_profile_sections_to_section(
 def _find_anchor_paragraph(
     root: ElementTree.Element,
     anchor_candidates: list[str],
+    match_policy: str = "first",
 ) -> tuple[ElementTree.Element, int, ElementTree.Element, str] | None:
     anchors = [_safe_line(anchor) for anchor in anchor_candidates if _safe_line(anchor)]
     if not anchors:
         return None
 
-    root_match = _find_anchor_in_children(root, anchors)
-    if root_match is not None:
-        return root_match
-
+    matches: list[tuple[ElementTree.Element, int, ElementTree.Element, str]] = []
     for parent in root.iter():
-        match = _find_anchor_in_children(parent, anchors)
-        if match is not None:
-            return match
-    return None
+        matches.extend(_find_anchor_matches_in_children(parent, anchors))
+    if not matches:
+        return None
+    if match_policy == "last":
+        return matches[-1]
+    return matches[0]
 
 
-def _find_anchor_in_children(
+def _find_anchor_matches_in_children(
     parent: ElementTree.Element,
     anchors: list[str],
-) -> tuple[ElementTree.Element, int, ElementTree.Element, str] | None:
+) -> list[tuple[ElementTree.Element, int, ElementTree.Element, str]]:
+    matches: list[tuple[ElementTree.Element, int, ElementTree.Element, str]] = []
     children = list(parent)
     for index, child in enumerate(children):
         if _local_name(child.tag) != "p":
@@ -280,17 +294,23 @@ def _find_anchor_in_children(
         paragraph_text = _paragraph_text(child)
         for anchor in anchors:
             if anchor in paragraph_text:
-                return parent, index, child, anchor
-    return None
+                matches.append((parent, index, child, anchor))
+                break
+    return matches
 
 
-def _find_paragraph_template(root: ElementTree.Element) -> ElementTree.Element | None:
+def _find_paragraph_template(
+    root: ElementTree.Element,
+    style_marker: str | None = None,
+) -> ElementTree.Element | None:
     for child in root:
-        if _is_safe_text_paragraph(child):
+        if _is_safe_text_paragraph(child) and _paragraph_style_marker_matches(child, style_marker):
             return child
     for element in root.iter():
-        if _is_safe_text_paragraph(element):
+        if _is_safe_text_paragraph(element) and _paragraph_style_marker_matches(element, style_marker):
             return element
+    if style_marker is not None:
+        return _find_paragraph_template(root)
     for child in root:
         if _local_name(child.tag) == "p":
             return child
@@ -303,12 +323,28 @@ def _find_paragraph_template(root: ElementTree.Element) -> ElementTree.Element |
 def _select_insertion_paragraph_template(
     root: ElementTree.Element,
     preferred: ElementTree.Element,
+    parent: ElementTree.Element | None = None,
+    anchor_index: int | None = None,
+    value: str | None = None,
 ) -> ElementTree.Element:
-    if _is_safe_text_paragraph(preferred):
-        return preferred
-    fallback = _find_paragraph_template(root)
+    style_marker = _line_style_marker(value)
+    if parent is not None and anchor_index is not None:
+        following_safe_siblings = [
+            sibling
+            for sibling in list(parent)[anchor_index + 1 :]
+            if _is_safe_text_paragraph(sibling)
+        ]
+        for sibling in following_safe_siblings:
+            if _paragraph_style_marker_matches(sibling, style_marker):
+                return sibling
+        for sibling in following_safe_siblings:
+            if _is_safe_text_paragraph(sibling):
+                return sibling
+    fallback = _find_paragraph_template(root, style_marker)
     if fallback is not None:
         return fallback
+    if _is_safe_text_paragraph(preferred):
+        return preferred
     return preferred
 
 
@@ -363,6 +399,23 @@ def _paragraph_text(paragraph: ElementTree.Element) -> str:
     ).strip()
 
 
+def _line_style_marker(value: str | None) -> str | None:
+    stripped = _safe_line(value)
+    for marker in ("-", "□", "○", "❍", "※"):
+        if stripped.startswith(marker):
+            return marker
+    return None
+
+
+def _paragraph_style_marker_matches(
+    paragraph: ElementTree.Element,
+    style_marker: str | None,
+) -> bool:
+    if style_marker is None:
+        return True
+    return _paragraph_text(paragraph).startswith(style_marker)
+
+
 def _register_namespaces(xml_text: str) -> None:
     for prefix, uri in re.findall(r'xmlns:([^=]+)="([^"]+)"', xml_text):
         ElementTree.register_namespace(prefix, uri)
@@ -387,10 +440,17 @@ def _safe_profile_sections(profile_sections: list[dict[str, Any]]) -> list[dict[
     for section in profile_sections:
         anchors = [_safe_line(anchor) for anchor in section.get("anchor_candidates", [])]
         lines = [_safe_line(line) for line in section.get("lines", [])]
+        match_policy = "last" if _safe_line(section.get("match_policy")) == "last" else "first"
         anchors = [anchor for anchor in anchors if anchor]
         lines = [line for line in lines if line]
         if anchors and lines:
-            safe_sections.append({"anchor_candidates": anchors, "lines": lines})
+            safe_sections.append(
+                {
+                    "anchor_candidates": anchors,
+                    "lines": lines,
+                    "match_policy": match_policy,
+                }
+            )
     return safe_sections
 
 

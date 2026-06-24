@@ -45,6 +45,7 @@
 - 외부 HWPX 자동 채우기 skill, 샘플 HWPX, `hwpx-cli` 참고 자료를 현재 보안 원칙과 placeholder 렌더러 흐름에 맞춰 채택 검토
 - 설치된 skill, 저장소 밖 `hwpx-cli`, 기존 Python PoC가 충돌하지 않도록 외부 도구 격리 기준 정리
 - 외부 구조 분석 아이디어를 Python 기반 HWPX template 구조 분석 PoC로 저장소 내부 구현
+- placeholder 없는 제공 샘플 HWPX 2종에 대해 profile-aware 비식별 초안 주입 output을 생성하고 한컴 수동 확인 완료
 
 ## 현재 자동화 우선순위
 
@@ -113,6 +114,7 @@ HWPX 보고서 안의 표는 현재 단계에서 표 틀과 배치 검수 대상
 - 외부 HWPX 자동 채우기 skill, 샘플 HWPX 구조, `hwpx-cli` 참고 방향은 `docs/158_hwpx_autofill_conversion_adoption_review.md`에 정리했습니다.
 - 외부 도구와 기존 PoC의 충돌 방지 기준은 `docs/159_external_tool_isolation_and_conflict_policy.md`에 정리했습니다.
 - 외부 skill과 기존 작업의 충돌 점검 및 내부 구현 전환 결과는 `docs/160_external_skills_conflict_and_modernization_review.md`에 정리했습니다.
+- 제공 샘플 HWPX 2종의 profile-aware output은 샘플1 글자 겹침 없음, 샘플2 bullet 중복 없음으로 수동 확인했습니다.
 
 ## 현재도 하지 않는 일
 

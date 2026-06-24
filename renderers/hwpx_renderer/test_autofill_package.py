@@ -11,6 +11,7 @@ from render_autofill_sample_poc import (
     build_draft_lines,
     build_sample_profile_sections,
 )
+from render_autofill_batch_poc import build_batch_jobs
 
 
 class AutofillPackageTest(unittest.TestCase):
@@ -180,6 +181,106 @@ class AutofillPackageTest(unittest.TestCase):
             self.assertLess(rendered_section.index("추진방안 or 본문"), rendered_section.index("[본문]"))
             self.assertLess(rendered_section.index("[본문]"), rendered_section.index("기존 본문 후속"))
 
+    def test_profile_section_can_use_last_matching_anchor_to_skip_toc(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "duplicate_anchors.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p><hp:run><hp:t>목차</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>사업 개요</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>중간 내용</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>사업 개요</hp:t></hp:run></hp:p>'
+                '<hp:p><hp:run><hp:t>실제 본문 다음</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_sections_to_hwpx(
+                template_path,
+                output_path,
+                [
+                    {
+                        "anchor_candidates": ["사업 개요"],
+                        "match_policy": "last",
+                        "lines": ["[본문] 목차가 아닌 본문 뒤 삽입"],
+                    },
+                ],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            first_anchor_index = rendered_section.index("사업 개요")
+            insert_index = rendered_section.index("[본문] 목차가 아닌 본문 뒤 삽입")
+            second_anchor_index = rendered_section.rindex("사업 개요", 0, insert_index)
+            self.assertGreater(second_anchor_index, first_anchor_index)
+            self.assertLess(insert_index, rendered_section.index("실제 본문 다음"))
+
+    def test_anchor_insert_prefers_next_safe_paragraph_style(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "next_style.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p style="heading"><hp:run><hp:t>사업 개요</hp:t></hp:run></hp:p>'
+                '<hp:p style="body"><hp:run><hp:t>기존 본문</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_sections_to_hwpx(
+                template_path,
+                output_path,
+                [{"anchor_candidates": ["사업 개요"], "lines": ["[삽입] 본문 스타일"]}],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            inserted_index = rendered_section.index("[삽입] 본문 스타일")
+            style_index = rendered_section.rindex('style="body"', 0, inserted_index)
+            self.assertGreater(style_index, rendered_section.index("사업 개요"))
+
+    def test_dash_line_insert_prefers_dash_paragraph_style_after_anchor(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            template_path = Path(temp_dir) / "dash_style.hwpx"
+            output_path = Path(temp_dir) / "filled.hwpx"
+            section_xml = (
+                '<?xml version="1.0" encoding="UTF-8"?>'
+                '<hp:sec xmlns:hp="http://www.hancom.co.kr/hwpml/2011/paragraph">'
+                '<hp:p style="title"><hp:run><hp:t>사업 개요</hp:t></hp:run></hp:p>'
+                '<hp:p style="heading"><hp:run><hp:t>□ 헤드라인M 폰트_15 POINT</hp:t></hp:run></hp:p>'
+                '<hp:p style="body"><hp:run><hp:t>○ 휴먼명조 폰트_14 POINT</hp:t></hp:run></hp:p>'
+                '<hp:p style="dash"><hp:run><hp:t>- 휴먼명조 폰트_14 POINT</hp:t></hp:run></hp:p>'
+                "</hp:sec>"
+            )
+            with zipfile.ZipFile(template_path, "w") as package:
+                package.writestr("mimetype", "application/hwp+zip")
+                package.writestr("Contents/section0.xml", section_xml)
+
+            result = render_autofill_sections_to_hwpx(
+                template_path,
+                output_path,
+                [{"anchor_candidates": ["사업 개요"], "lines": ["- 목적: [확인 필요]"]}],
+            )
+
+            self.assertEqual(result["status"], "rendered")
+            with zipfile.ZipFile(output_path) as package:
+                rendered_section = package.read("Contents/section0.xml").decode("utf-8")
+
+            inserted_index = rendered_section.index("- 목적: [확인 필요]")
+            style_index = rendered_section.rindex('style="dash"', 0, inserted_index)
+            self.assertGreater(style_index, rendered_section.index("사업 개요"))
+
     def test_returns_template_required_for_missing_template(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             result = render_autofill_draft_to_hwpx(
@@ -208,6 +309,36 @@ class AutofillPackageTest(unittest.TestCase):
         self.assertIn("추진방안", sections[1]["anchor_candidates"])
         self.assertTrue(any("사업예산" in section["anchor_candidates"] for section in sections))
         self.assertTrue(any("[확인 필요]" in "\n".join(section["lines"]) for section in sections))
+
+    def test_summary_sample_profile_lines_do_not_duplicate_bullet_marker(self) -> None:
+        sections = build_sample_profile_sections("시설 안전 점검", "보고서 기반 양식(요약).hwpx")
+        lines = [line for section in sections for line in section["lines"]]
+
+        self.assertTrue(lines)
+        self.assertTrue(all(not line.startswith("-") for line in lines))
+
+    def test_builds_basic_sample_profile_sections_with_last_anchor_policy(self) -> None:
+        sections = build_sample_profile_sections("시설 안전 점검", "보고서 기본 양식.hwpx")
+
+        self.assertTrue(sections)
+        self.assertTrue(all(section.get("match_policy") == "last" for section in sections))
+
+    def test_builds_basic_sample_profile_sections_with_body_anchor_variants(self) -> None:
+        sections = build_sample_profile_sections("시설 안전 점검", "보고서 기본 양식.hwpx")
+        anchor_groups = [section["anchor_candidates"] for section in sections]
+
+        self.assertTrue(any("평가 요소" in anchors for anchors in anchor_groups))
+        self.assertTrue(any("평가 요소 및 방법" in anchors for anchors in anchor_groups))
+        self.assertTrue(any("보안 관리" in anchors for anchors in anchor_groups))
+
+    def test_builds_batch_jobs_for_both_primary_samples(self) -> None:
+        jobs = build_batch_jobs(Path("samples"), Path("output"), "all")
+
+        self.assertEqual([job["sample"] for job in jobs], ["1", "2"])
+        self.assertEqual(Path(jobs[0]["template"]).name, "(샘플양식1) 보고서 기본 양식.hwpx")
+        self.assertEqual(Path(jobs[1]["template"]).name, "(샘플양식2) 보고서 기반 양식(요약).hwpx")
+        self.assertEqual(Path(jobs[0]["output"]).name, "autofill_profile_sample1_latest.hwpx")
+        self.assertEqual(Path(jobs[1]["output"]).name, "autofill_profile_sample2_latest.hwpx")
 
 
 if __name__ == "__main__":

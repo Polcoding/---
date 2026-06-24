@@ -88,16 +88,16 @@ local template 후보 4종 분석 결과:
 placeholder 없는 샘플 HWPX autofill 테스트:
 
 ```text
-Ran 8 tests
+Ran 15 tests
 OK
 ```
 
 제공 샘플 HWPX 2종 로컬 실행 결과:
 
-| 샘플 | 상태 | 삽입 문단 | 출력 |
-|---|---|---:|---|
-| 샘플 HWPX 1 | rendered | 11 | 5개 anchor 영역, 표 13→13 |
-| 샘플 HWPX 2 | rendered | 12 | 5개 anchor 영역, 표 2→2 |
+| 샘플 | 상태 | 삽입 문단 | 출력 | 수동 확인 |
+|---|---|---:|---|---|
+| 샘플 HWPX 1 | rendered | 11 | 5개 anchor 영역, 표 13→13 | 글자 겹침 없음 |
+| 샘플 HWPX 2 | rendered | 12 | 5개 anchor 영역, 표 2→2 | `❍ -` bullet 중복 제거 확인 |
 
 ## 보안 검수
 

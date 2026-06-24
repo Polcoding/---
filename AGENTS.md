@@ -71,6 +71,7 @@
 - 외부 HWPX 자동 채우기 skill, 샘플 HWPX 구조, `hwpx-cli` 참고 방향을 저장소 보안 원칙과 placeholder 렌더러 흐름에 맞춰 채택 검토
 - 설치된 skill, 저장소 밖 `hwpx-cli`, 기존 Python PoC가 충돌하지 않도록 외부 도구 격리 기준 정리
 - 외부 구조 분석 방식을 Python 기반 HWPX template 구조 분석 PoC로 저장소 내부 구현
+- placeholder 없는 제공 샘플 HWPX 2종의 profile-aware 비식별 초안 주입 output 생성 및 한컴 수동 확인
 
 ## 1. 최우선 원칙
 
