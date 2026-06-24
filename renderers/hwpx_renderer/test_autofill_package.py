@@ -11,7 +11,8 @@ from render_autofill_sample_poc import (
     build_draft_lines,
     build_sample_profile_sections,
 )
-from render_autofill_batch_poc import build_batch_jobs
+from render_autofill_batch_poc import build_batch_jobs, parse_args as parse_batch_args
+from render_autofill_regression_poc import DEFAULT_REGRESSION_TOPICS, build_regression_jobs
 
 
 class AutofillPackageTest(unittest.TestCase):
@@ -339,6 +340,22 @@ class AutofillPackageTest(unittest.TestCase):
         self.assertEqual(Path(jobs[1]["template"]).name, "(샘플양식2) 보고서 기반 양식(요약).hwpx")
         self.assertEqual(Path(jobs[0]["output"]).name, "autofill_profile_sample1_latest.hwpx")
         self.assertEqual(Path(jobs[1]["output"]).name, "autofill_profile_sample2_latest.hwpx")
+
+    def test_batch_parser_accepts_positional_topic_for_simple_use(self) -> None:
+        args = parse_batch_args(["시설 안전 점검"])
+
+        self.assertEqual(args.topic, "시설 안전 점검")
+        self.assertEqual(args.sample, "all")
+
+    def test_builds_regression_jobs_for_default_topics_and_samples(self) -> None:
+        jobs = build_regression_jobs(Path("samples"), Path("output"))
+
+        self.assertEqual(len(jobs), len(DEFAULT_REGRESSION_TOPICS) * 2)
+        self.assertEqual(jobs[0]["topic_index"], 1)
+        self.assertEqual(jobs[0]["sample"], "1")
+        self.assertEqual(Path(jobs[0]["output"]).parent.name, "topic01")
+        self.assertEqual(Path(jobs[1]["output"]).parent.name, "topic01")
+        self.assertEqual(Path(jobs[2]["output"]).parent.name, "topic02")
 
 
 if __name__ == "__main__":

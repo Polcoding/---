@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from typing import Sequence
 
 from autofill_package import render_autofill_sections_to_hwpx
 from render_autofill_sample_poc import build_sample_profile_sections
@@ -39,9 +40,10 @@ def build_batch_jobs(sample_dir: Path, output_dir: Path, sample: str) -> list[di
     return jobs
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Render the primary sample HWPX forms.")
-    parser.add_argument("--topic", required=True, help="Deidentified topic for the draft.")
+    parser.add_argument("topic_arg", nargs="?", help="Deidentified topic for simple use.")
+    parser.add_argument("--topic", help="Deidentified topic for the draft.")
     parser.add_argument(
         "--sample",
         choices=["1", "2", "all"],
@@ -60,7 +62,11 @@ def parse_args() -> argparse.Namespace:
         default=OUTPUT_DIR,
         help="Output directory. Default is ignored renderer output.",
     )
-    return parser.parse_args()
+    args = parser.parse_args(argv)
+    args.topic = args.topic or args.topic_arg
+    if not args.topic:
+        parser.error("topic is required. Use a positional topic or --topic.")
+    return args
 
 
 def main() -> None:

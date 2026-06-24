@@ -110,6 +110,8 @@ flowchart LR
 | `python .\normalizers\hwpx_template_structure_analyzer_poc.py` | local template 후보 4종 구조 분석 | `normalizers/output/hwpx_template_structure_summary.json` |
 | `python .\renderers\hwpx_renderer\test_autofill_package.py` | 테스트 15건 통과 | 콘솔 출력 |
 | `python .\renderers\hwpx_renderer\render_autofill_batch_poc.py --topic [비식별 주제]` | 샘플 HWPX 2종 profile-aware ignored output 생성 | `renderers/hwpx_renderer/output/autofill_profile_sample*_latest.hwpx` |
+| `python .\renderers\hwpx_renderer\render_autofill_batch_poc.py [비식별 주제]` | `--topic` 없이 주제만 넣어 샘플 HWPX 2종 생성 가능 | 콘솔 출력 |
+| `python .\renderers\hwpx_renderer\render_autofill_regression_poc.py` | 비식별 주제 4개 x 샘플 2종, 총 8건 생성 통과 | `renderers/hwpx_renderer/output/regression/autofill_regression_summary.json` |
 | `python .\normalizers\hwpx_template_structure_analyzer_poc.py --template [원본] --template [output] --no-output` | 샘플1 문단 179→190ㆍ표 13→13, 샘플2 문단 44→56ㆍ표 2→2 | 콘솔 출력 |
 
 ## dry-run에서 확인된 문서 유형
